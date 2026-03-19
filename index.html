@@ -702,16 +702,20 @@
       </p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num">47</div>
+          <div class="hero-stat-num" id="statAlgos">&mdash;</div>
           <div class="hero-stat-label">Algorithms</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="statStars">&mdash;</div>
+          <div class="hero-stat-label">Stars</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="statForks">&mdash;</div>
+          <div class="hero-stat-label">Forks</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">0</div>
           <div class="hero-stat-label">Dependencies</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">4</div>
-          <div class="hero-stat-label">Tiers</div>
         </div>
       </div>
       <div class="hero-cta">
@@ -732,13 +736,7 @@
     <h2 class="section-title">Every algorithm, one file each</h2>
     <p class="section-desc">Each script trains a model from scratch and performs inference. Read top-to-bottom like a tutorial. Comments are the curriculum.</p>
 
-    <nav class="tier-nav" role="tablist">
-      <button class="tier-tab active" data-tier="all" role="tab">All <span class="tab-count">47</span></button>
-      <button class="tier-tab" data-tier="01-foundations" role="tab">Foundations <span class="tab-count">15</span></button>
-      <button class="tier-tab" data-tier="02-alignment" role="tab">Alignment <span class="tab-count">11</span></button>
-      <button class="tier-tab" data-tier="03-systems" role="tab">Systems <span class="tab-count">16</span></button>
-      <button class="tier-tab" data-tier="04-agents" role="tab">Agents <span class="tab-count">5</span></button>
-    </nav>
+    <nav class="tier-nav" role="tablist" id="tierNav"></nav>
 
     <div class="algo-grid" id="algoGrid"></div>
   </section>
@@ -895,56 +893,11 @@
   </div>
 
   <script>
-    // ─── Algorithm data ───
-    const algorithms = [
-      { tier: "01-foundations", name: "microgpt", display: "Autoregressive GPT", thesis: "The autoregressive language model from first principles: GPT learns to predict the next token using masked self-attention, positional encoding, and scalar autograd." },
-      { tier: "01-foundations", name: "micrornn", display: "RNN vs GRU", thesis: "How sequences were modeled with recurrence, and why GRUs solve the vanishing gradient problem that plagues vanilla RNNs." },
-      { tier: "01-foundations", name: "microlstm", display: "LSTM", thesis: "Long Short-Term Memory from first principles: the 4-gate architecture that solved the vanishing gradient problem." },
-      { tier: "01-foundations", name: "microtokenizer", display: "BPE Tokenizer", thesis: "How text becomes numbers \u2014 the compression algorithm hiding inside every LLM." },
-      { tier: "01-foundations", name: "microembedding", display: "Word Embeddings", thesis: "How meaning becomes geometry \u2014 training vectors where distance equals similarity." },
-      { tier: "01-foundations", name: "microrag", display: "RAG Pipeline", thesis: "How retrieval augments generation \u2014 the simplest system that actually works, with BM25 retrieval and MLP generation." },
-      { tier: "01-foundations", name: "microbert", display: "BERT", thesis: "The other half of the transformer \u2014 how BERT learns bidirectional representations by predicting masked tokens." },
-      { tier: "01-foundations", name: "microconv", display: "CNN", thesis: "How a sliding kernel extracts spatial features \u2014 the convolution operation, pooling, and feature maps." },
-      { tier: "01-foundations", name: "microdiffusion", display: "Denoising Diffusion", thesis: "How images emerge from noise \u2014 the denoising diffusion algorithm behind Stable Diffusion." },
-      { tier: "01-foundations", name: "microgan", display: "GAN", thesis: "Two networks at war \u2014 how a generator learns to fool a discriminator in an adversarial minimax game." },
-      { tier: "01-foundations", name: "microoptimizer", display: "Optimizer Comparison", thesis: "Why Adam converges when SGD stalls \u2014 momentum, adaptive learning rates, and the geometry of loss landscapes." },
-      { tier: "01-foundations", name: "microvae", display: "VAE", thesis: "How to learn a compressed, generative representation of data with the reparameterization trick." },
-      { tier: "01-foundations", name: "microvit", display: "Vision Transformer", thesis: "An image is worth 16x16 words \u2014 treating image patches as token sequences for classification." },
-      { tier: "01-foundations", name: "microresnet", display: "ResNet", thesis: "Skip connections as gradient highways \u2014 proving that depth helps when residuals provide shortcuts." },
-      { tier: "01-foundations", name: "attention_vs_none", display: "Attention vs None", thesis: "Attention is the mechanism that lets a model look back across an entire sequence to decide what matters now." },
-      { tier: "02-alignment", name: "microlora", display: "LoRA", thesis: "Fine-tuning a frozen language model by injecting tiny trainable matrices into each layer." },
-      { tier: "02-alignment", name: "microdpo", display: "DPO", thesis: "Aligning a language model with human preferences using paired comparisons \u2014 no reward model needed." },
-      { tier: "02-alignment", name: "microppo", display: "PPO (RLHF)", thesis: "The full RLHF loop: pretrain, train a reward model on human preferences, then optimize the policy with PPO." },
-      { tier: "02-alignment", name: "micromoe", display: "Mixture of Experts", thesis: "A router network learns to dispatch each token to a subset of specialist sub-networks." },
-      { tier: "02-alignment", name: "microbatchnorm", display: "Batch Normalization", thesis: "Normalizing activations within each mini-batch to stabilize training and enable deeper networks." },
-      { tier: "02-alignment", name: "microdropout", display: "Dropout", thesis: "Why randomly destroying neurons during training prevents overfitting \u2014 dropout, weight decay, and early stopping." },
-      { tier: "02-alignment", name: "microgrpo", display: "GRPO", thesis: "How DeepSeek simplified RLHF \u2014 group-based reward normalization that eliminates the value network." },
-      { tier: "02-alignment", name: "microqlora", display: "QLoRA", thesis: "Fine-tuning a 4-bit quantized model with full-precision LoRA adapters." },
-      { tier: "02-alignment", name: "microreinforce", display: "REINFORCE", thesis: "The simplest policy gradient \u2014 how log-probability weighting turns reward signals into parameter updates." },
-      { tier: "02-alignment", name: "adam_vs_sgd", display: "Adam vs SGD", thesis: "Adam converges faster than SGD because it maintains per-parameter learning rates that adapt to gradient history." },
-      { tier: "02-alignment", name: "rnn_vs_gru_vs_lstm", display: "RNN vs GRU vs LSTM", thesis: "Three generations of recurrent architectures on the same task, comparing how gating improves memory." },
-      { tier: "03-systems", name: "microattention", display: "Attention Variants", thesis: "Every attention mechanism that matters, side by side: MHA, GQA, MQA, and sliding window." },
-      { tier: "03-systems", name: "microbeam", display: "Beam Search", thesis: "Six decoding strategies for language models, from deterministic greedy to speculative decoding." },
-      { tier: "03-systems", name: "microflash", display: "Flash Attention", thesis: "Flash Attention computes exact attention but processes data in tiles to minimize memory transfers." },
-      { tier: "03-systems", name: "microkv", display: "KV-Cache", thesis: "Why autoregressive generation recomputes redundant work, and how the KV cache eliminates it." },
-      { tier: "03-systems", name: "microquant", display: "Quantization", thesis: "How to shrink a model by 4x with minimal quality loss \u2014 INT8 and INT4 quantization." },
-      { tier: "03-systems", name: "microrope", display: "RoPE", thesis: "How position information gets baked into attention through rotation matrices." },
-      { tier: "03-systems", name: "microssm", display: "State Space Models", thesis: "The alternative to attention \u2014 how state space models process sequences in linear time." },
-      { tier: "03-systems", name: "microcheckpoint", display: "Activation Checkpointing", thesis: "How to train models twice as deep on the same hardware by trading compute for memory." },
-      { tier: "03-systems", name: "micropaged", display: "PagedAttention", thesis: "How vLLM serves thousands of concurrent requests with paged KV-cache memory management." },
-      { tier: "03-systems", name: "microparallel", display: "Model Parallelism", thesis: "How models that exceed single-device memory get distributed across multiple devices." },
-      { tier: "03-systems", name: "microbm25", display: "BM25", thesis: "The evolution of text retrieval scoring: from raw term frequency through TF-IDF to BM25." },
-      { tier: "03-systems", name: "microcomplexssm", display: "Complex SSM", thesis: "A complex-valued SSM is identical to a real-valued one with rotary position embeddings." },
-      { tier: "03-systems", name: "microdiscretize", display: "Discretization", thesis: "The choice of discretization method changes what a recurrence can learn \u2014 Euler, ZOH, and trapezoidal." },
-      { tier: "03-systems", name: "microroofline", display: "Roofline Model", thesis: "A state update running 100x more FLOPs can be faster if it shifts from memory-bound to compute-bound." },
-      { tier: "03-systems", name: "microspeculative", display: "Speculative Decoding", thesis: "A small draft model proposes tokens that a large model verifies in parallel." },
-      { tier: "03-systems", name: "microvectorsearch", display: "Vector Search", thesis: "Exact brute-force vs approximate nearest neighbors \u2014 the trade-offs in vector retrieval." },
-      { tier: "04-agents", name: "microbandit", display: "Multi-Armed Bandit", thesis: "Three strategies \u2014 Epsilon-Greedy, UCB1, and Thompson Sampling \u2014 for the exploration-exploitation tradeoff." },
-      { tier: "04-agents", name: "micromcts", display: "Monte Carlo Tree Search", thesis: "The algorithm behind AlphaGo \u2014 select, expand, simulate, backpropagate." },
-      { tier: "04-agents", name: "micromemory", display: "Memory-Augmented Network", thesis: "A Neural Turing Machine learns to store and retrieve using differentiable read/write heads." },
-      { tier: "04-agents", name: "microminimax", display: "Minimax + Alpha-Beta", thesis: "Adversarial search from first principles: minimax with alpha-beta pruning for game playing." },
-      { tier: "04-agents", name: "microreact", display: "ReAct", thesis: "The ReAct reasoning loop: Thought \u2192 Action \u2192 Observation as a trainable agent pattern." },
-    ];
+    // ─── Constants ───
+    const CATALOG_URL = 'https://raw.githubusercontent.com/no-magic-ai/no-magic/main/docs/catalog.json';
+    const GITHUB_API = 'https://api.github.com/repos/no-magic-ai/no-magic';
+    const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
+    const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
 
     const TIER_LABELS = {
       '01-foundations': 'Foundations',
@@ -960,38 +913,96 @@
       '04-agents': 'tier-agents',
     };
 
-    const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
-    const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
+    let algorithms = [];
+    let previewSet = new Set();
 
-    // Scripts that have known GIF previews
-    const HAS_PREVIEW = new Set([
-      'microattention','microbandit','microbatchnorm','microbeam','microbert','microbm25',
-      'microcheckpoint','microcomplexssm','microconv','microdiffusion','microdiscretize',
-      'microdpo','microdropout','microembedding','microflash','microgan','microgpt','microgrpo',
-      'microkv','microlora','microlstm','micromcts','micromemory','microminimax','micromoe',
-      'microoptimizer','micropaged','microparallel','microppo','microqlora','microquant',
-      'microrag','microreact','microreinforce','microresnet','micrornn','microroofline',
-      'microrope','microspeculative','microssm','microtokenizer','microvae','microvectorsearch','microvit'
-    ]);
-
-    // ─── Render catalog ───
     const grid = document.getElementById('algoGrid');
+    const tierNav = document.getElementById('tierNav');
+    const modal = document.getElementById('modal');
 
+    // ─── Fetch with sessionStorage cache (5 min TTL) ───
+    async function cachedFetch(url, key, ttlMs = 300000) {
+      const cached = sessionStorage.getItem(key);
+      if (cached) {
+        const { data, ts } = JSON.parse(cached);
+        if (Date.now() - ts < ttlMs) return data;
+      }
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`${url}: ${res.status}`);
+      const data = await res.json();
+      sessionStorage.setItem(key, JSON.stringify({ data, ts: Date.now() }));
+      return data;
+    }
+
+    // ─── Fetch GitHub stars & forks ───
+    async function fetchGitHubStats() {
+      try {
+        const repo = await cachedFetch(GITHUB_API, 'gh-stats');
+        document.getElementById('statStars').textContent = repo.stargazers_count.toLocaleString();
+        document.getElementById('statForks').textContent = repo.forks_count.toLocaleString();
+      } catch {
+        document.getElementById('statStars').textContent = '\u2014';
+        document.getElementById('statForks').textContent = '\u2014';
+      }
+    }
+
+    // ─── Discover which previews exist (via viz repo file listing) ───
+    async function fetchPreviewList() {
+      try {
+        const files = await cachedFetch(
+          'https://api.github.com/repos/no-magic-ai/no-magic-viz/contents/previews',
+          'viz-previews'
+        );
+        files.forEach(f => {
+          if (f.name.endsWith('.gif')) {
+            previewSet.add(f.name.replace('.gif', ''));
+          }
+        });
+      } catch {
+        // If API fails, preview indicators just won't show
+      }
+    }
+
+    // ─── Build tier tabs dynamically ───
+    function buildTabs() {
+      const counts = {};
+      algorithms.forEach(a => { counts[a.tier] = (counts[a.tier] || 0) + 1; });
+
+      const tiers = Object.keys(counts).sort();
+      let html = `<button class="tier-tab active" data-tier="all" role="tab">All <span class="tab-count">${algorithms.length}</span></button>`;
+      tiers.forEach(tier => {
+        const label = TIER_LABELS[tier] || tier;
+        html += `<button class="tier-tab" data-tier="${tier}" role="tab">${label} <span class="tab-count">${counts[tier]}</span></button>`;
+      });
+      tierNav.innerHTML = html;
+
+      tierNav.querySelectorAll('.tier-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          tierNav.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          renderGrid(tab.dataset.tier);
+        });
+      });
+    }
+
+    // ─── Render algorithm cards ───
     function renderGrid(tier) {
       const filtered = tier === 'all' ? algorithms : algorithms.filter(a => a.tier === tier);
       grid.innerHTML = filtered.map(a => {
-        const hasPreview = HAS_PREVIEW.has(a.name);
+        const hasPreview = previewSet.has(a.name);
+        const safeThesis = a.thesis.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        const safeDisplay = a.display.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
         return `
-          <div class="algo-card" data-name="${a.name}" data-tier="${a.tier}" data-thesis="${a.thesis.replace(/"/g, '&quot;')}" data-display="${a.display}">
+          <div class="algo-card" data-name="${a.name}" data-tier="${a.tier}" data-thesis="${safeThesis}" data-display="${safeDisplay}">
             <div class="algo-header">
               <span class="algo-name">${a.display}</span>
-              <span class="algo-tier-badge ${TIER_CLASS[a.tier]}">${TIER_LABELS[a.tier]}</span>
+              <span class="algo-tier-badge ${TIER_CLASS[a.tier] || ''}">${TIER_LABELS[a.tier] || a.tier}</span>
             </div>
             <div class="algo-thesis">${a.thesis}</div>
             <div class="algo-footer">
               <div class="algo-links">
                 <a href="${REPO_BASE}${a.tier}/${a.name}.py" class="algo-link" target="_blank" onclick="event.stopPropagation()">source</a>
-                ${hasPreview ? `<span class="algo-link" onclick="event.stopPropagation(); showPreview('${a.name}', '${a.display.replace(/'/g, "\\'")}', '${a.thesis.replace(/'/g, "\\'")}')">preview</span>` : ''}
+                ${hasPreview ? `<span class="algo-link" onclick="event.stopPropagation(); showPreview('${a.name}')">preview</span>` : ''}
               </div>
               ${hasPreview ? '<div class="algo-preview-indicator"><span class="dot"></span>viz</div>' : ''}
             </div>
@@ -1000,24 +1011,13 @@
       }).join('');
     }
 
-    renderGrid('all');
-
-    // ─── Tab switching ───
-    document.querySelectorAll('.tier-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        renderGrid(tab.dataset.tier);
-      });
-    });
-
     // ─── Preview modal ───
-    const modal = document.getElementById('modal');
-
-    function showPreview(name, display, thesis) {
+    function showPreview(name) {
+      const algo = algorithms.find(a => a.name === name);
+      if (!algo) return;
       document.getElementById('modalImg').src = VIZ_BASE + name + '.gif';
-      document.getElementById('modalTitle').textContent = display;
-      document.getElementById('modalThesis').textContent = thesis;
+      document.getElementById('modalTitle').textContent = algo.display;
+      document.getElementById('modalThesis').textContent = algo.thesis;
       modal.classList.add('active');
     }
 
@@ -1031,16 +1031,34 @@
       if (e.key === 'Escape') modal.classList.remove('active');
     });
 
-    // ─── Card click → preview or source ───
     grid.addEventListener('click', (e) => {
       const card = e.target.closest('.algo-card');
       if (!card || e.target.closest('a')) return;
       const name = card.dataset.name;
-      if (HAS_PREVIEW.has(name)) {
-        showPreview(name, card.dataset.display, card.dataset.thesis);
+      if (previewSet.has(name)) {
+        showPreview(name);
       } else {
         window.open(REPO_BASE + card.dataset.tier + '/' + name + '.py', '_blank');
       }
+    });
+
+    // ─── Initialize ───
+    async function init() {
+      // Fetch catalog and previews in parallel
+      const [catalog] = await Promise.all([
+        cachedFetch(CATALOG_URL, 'catalog'),
+        fetchPreviewList(),
+        fetchGitHubStats(),
+      ]);
+
+      algorithms = catalog;
+      document.getElementById('statAlgos').textContent = algorithms.length;
+      buildTabs();
+      renderGrid('all');
+    }
+
+    init().catch(err => {
+      grid.innerHTML = `<div style="padding:2rem;color:var(--primary)">Failed to load catalog: ${err.message}</div>`;
     });
 
     // ─── Scroll reveal ───
