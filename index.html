@@ -52,6 +52,27 @@
       overflow-x: hidden;
     }
 
+    /* ─── ICON WATERMARK BACKGROUND ─── */
+    .bg-watermark {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .bg-watermark img {
+      width: 85vmin;
+      height: 85vmin;
+      max-width: 900px;
+      max-height: 900px;
+      opacity: 0.04;
+      filter: saturate(0.6);
+    }
+
     /* ─── NOISE OVERLAY ─── */
     body::before {
       content: '';
@@ -253,6 +274,11 @@
     }
 
     /* ─── SECTIONS ─── */
+    section, footer, header {
+      position: relative;
+      z-index: 1;
+    }
+
     section {
       max-width: var(--max-w);
       margin: 0 auto;
@@ -783,6 +809,11 @@
   </style>
 </head>
 <body>
+
+  <!-- ═══ BACKGROUND WATERMARK ═══ -->
+  <div class="bg-watermark">
+    <img src="icon.svg" alt="" aria-hidden="true">
+  </div>
 
   <!-- ═══ HERO ═══ -->
   <header class="hero">
