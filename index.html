@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>no-magic &mdash; AI algorithms without the abstraction</title>
+  <meta name="description" content="47 single-file, zero-dependency Python implementations of the algorithms that power modern AI. No frameworks. No magic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d1a;
+      --bg-surface: #141428;
+      --bg-card: #1a1a2e;
+      --bg-card-hover: #1f1f3a;
+      --primary: #e94560;
+      --primary-dim: #e9456033;
+      --blue: #0f3460;
+      --green: #16c79a;
+      --green-dim: #16c79a22;
+      --text: #eaeaea;
+      --text-dim: #8888a8;
+      --text-muted: #555577;
+      --grid: #2a2a4a;
+      --yellow: #f5c542;
+      --orange: #e97d32;
+      --purple: #9b59b6;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --radius: 6px;
+      --max-w: 1280px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-color: var(--grid) var(--bg);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ─── SCANLINE EFFECT ─── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--yellow); }
+
+    ::selection {
+      background: var(--primary);
+      color: var(--bg);
+    }
+
+    /* ─── HEADER ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 2rem;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.15;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      border: 1px solid var(--primary-dim);
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+      animation: fadeIn 0.8s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: var(--text);
+      animation: fadeIn 0.8s 0.15s ease both;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-dim);
+      max-width: 520px;
+      margin: 1.8rem auto 0;
+      line-height: 1.8;
+      animation: fadeIn 0.8s 0.3s ease both;
+    }
+
+    .hero-sub code {
+      color: var(--green);
+      background: var(--green-dim);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 3rem;
+      animation: fadeIn 0.8s 0.45s ease both;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-num {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 3rem;
+      animation: fadeIn 0.8s 0.6s ease both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: var(--radius);
+      transition: all 0.25s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: #ff5a75;
+      color: var(--bg);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px var(--primary-dim);
+    }
+
+    .btn-ghost {
+      border-color: var(--grid);
+      color: var(--text-dim);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--text-dim);
+      color: var(--text);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: fadeIn 0.8s 1s ease both, pulse 2s 2s ease infinite;
+    }
+
+    .hero-scroll svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--text-muted);
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-dim);
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── TIER TABS ─── */
+    .tier-nav {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 2rem;
+      background: var(--bg-surface);
+      border-radius: var(--radius);
+      padding: 3px;
+      overflow-x: auto;
+      flex-wrap: wrap;
+    }
+
+    .tier-tab {
+      padding: 10px 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-dim);
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .tier-tab:hover {
+      color: var(--text);
+      background: var(--bg-card);
+    }
+
+    .tier-tab.active {
+      color: var(--text);
+      background: var(--bg-card);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .tier-tab .tab-count {
+      display: inline-block;
+      background: var(--primary-dim);
+      color: var(--primary);
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 10px;
+      margin-left: 6px;
+    }
+
+    .tier-tab.active .tab-count {
+      background: var(--primary);
+      color: var(--bg);
+    }
+
+    /* ─── ALGORITHM GRID ─── */
+    .algo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1px;
+      background: var(--grid);
+      border: 1px solid var(--grid);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .algo-card {
+      background: var(--bg-card);
+      padding: 1.5rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .algo-card:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .algo-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--primary);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .algo-card:hover::before {
+      opacity: 1;
+    }
+
+    .algo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.6rem;
+    }
+
+    .algo-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .algo-tier-badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .tier-foundations { background: #0f346022; color: #5b8def; }
+    .tier-alignment { background: #9b59b622; color: #c78ddb; }
+    .tier-systems { background: #16c79a22; color: #16c79a; }
+    .tier-agents { background: #e97d3222; color: #e97d32; }
+
+    .algo-thesis {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .algo-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--grid);
+    }
+
+    .algo-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .algo-link {
+      font-size: 11px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .algo-link:hover {
+      color: var(--primary);
+    }
+
+    .algo-preview-indicator {
+      font-size: 10px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .algo-preview-indicator .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    /* ─── PREVIEW MODAL ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      cursor: pointer;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 560px;
+      width: 100%;
+      cursor: default;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--grid);
+    }
+
+    .modal-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .modal-thesis {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-top: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 24px;
+      color: var(--text-dim);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-mono);
+    }
+
+    .modal-close:hover { color: var(--text); }
+
+    /* ─── LEARNING PATHS ─── */
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .track-card {
+      background: var(--bg-card);
+      border: 1px solid var(--grid);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .track-card:hover {
+      border-color: var(--text-muted);
+      transform: translateY(-2px);
+    }
+
+    .track-num {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-muted);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .track-name {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .track-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+
+    .track-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .track-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ─── REPOS ─── */
+    .repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .repo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--grid);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: all 0.3s;
+      display: block;
+    }
+
+    .repo-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      color: var(--text);
+    }
+
+    .repo-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .repo-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .repo-lang {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .repo-lang .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ─── PHILOSOPHY ─── */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .principle {
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .principle::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 4px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .principle-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .principle-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--grid);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer a { color: var(--text-dim); }
+    footer a:hover { color: var(--text); }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .hero-stats { gap: 1.5rem; }
+      .hero-stat-num { font-size: 1.6rem; }
+      .algo-grid { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; align-items: center; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .tier-nav { gap: 0; }
+      .tier-tab { padding: 8px 14px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <span class="hero-badge">open source</span>
+      <h1 class="hero-title">no-<em>magic</em></h1>
+      <p class="hero-sub">
+        47 single-file, zero-dependency Python implementations of the algorithms that power modern AI.
+        Every script runs with <code>python script.py</code> &mdash; no frameworks, no abstractions.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">47</div>
+          <div class="hero-stat-label">Algorithms</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label">Dependencies</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Tiers</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="https://github.com/no-magic-ai/no-magic" class="btn btn-primary" target="_blank">View on GitHub</a>
+        <a href="#catalog" class="btn btn-ghost">Browse algorithms</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ═══ ALGORITHM CATALOG ═══ -->
+  <section id="catalog" class="reveal">
+    <div class="section-label">Catalog</div>
+    <h2 class="section-title">Every algorithm, one file each</h2>
+    <p class="section-desc">Each script trains a model from scratch and performs inference. Read top-to-bottom like a tutorial. Comments are the curriculum.</p>
+
+    <nav class="tier-nav" role="tablist">
+      <button class="tier-tab active" data-tier="all" role="tab">All <span class="tab-count">47</span></button>
+      <button class="tier-tab" data-tier="01-foundations" role="tab">Foundations <span class="tab-count">15</span></button>
+      <button class="tier-tab" data-tier="02-alignment" role="tab">Alignment <span class="tab-count">11</span></button>
+      <button class="tier-tab" data-tier="03-systems" role="tab">Systems <span class="tab-count">16</span></button>
+      <button class="tier-tab" data-tier="04-agents" role="tab">Agents <span class="tab-count">5</span></button>
+    </nav>
+
+    <div class="algo-grid" id="algoGrid"></div>
+  </section>
+
+  <!-- ═══ LEARNING PATHS ═══ -->
+  <section id="paths" class="reveal">
+    <div class="section-label">Learning Paths</div>
+    <h2 class="section-title">Structured tracks through the collection</h2>
+    <p class="section-desc">Pick a track based on your interest or time budget. Each script builds on the one before it.</p>
+
+    <div class="tracks-grid">
+      <div class="track-card">
+        <div class="track-num">01</div>
+        <div class="track-name">Weekend Sprint: Transformers</div>
+        <div class="track-desc">From raw text to self-attention. Tokenization, embeddings, RNNs, GPT, and BERT.</div>
+        <div class="track-meta">
+          <span>~4 hrs</span>
+          <span>6 scripts</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">02</div>
+        <div class="track-name">Weekend Sprint: Alignment</div>
+        <div class="track-desc">Steering model behavior post-training. LoRA, DPO, PPO, and RLHF.</div>
+        <div class="track-meta">
+          <span>~3 hrs</span>
+          <span>5 scripts</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">03</div>
+        <div class="track-name">Deep Dive: Modern Inference</div>
+        <div class="track-desc">Making models fast and small. Quantization, KV-cache, Flash Attention, parallelism.</div>
+        <div class="track-meta">
+          <span>~7 hrs</span>
+          <span>10 scripts</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">04</div>
+        <div class="track-name">Deep Dive: Generative Models</div>
+        <div class="track-desc">How models create new data. Diffusion, GANs, VAEs, and adversarial training.</div>
+        <div class="track-meta">
+          <span>~4 hrs</span>
+          <span>4 scripts</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">05</div>
+        <div class="track-name">Deep Dive: Retrieval &amp; Search</div>
+        <div class="track-desc">Connecting models to external knowledge. BM25, vector search, RAG pipelines.</div>
+        <div class="track-meta">
+          <span>~3 hrs</span>
+          <span>3 scripts</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">06</div>
+        <div class="track-name">Full Curriculum</div>
+        <div class="track-desc">All 47 scripts in dependency order. The complete no-magic experience.</div>
+        <div class="track-meta">
+          <span>~22 hrs</span>
+          <span>47 scripts</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">07</div>
+        <div class="track-name">Agent Algorithms</div>
+        <div class="track-desc">Search and reasoning for autonomous agents. MCTS, minimax, bandits, ReAct.</div>
+        <div class="track-meta">
+          <span>~3 hrs</span>
+          <span>5 scripts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PHILOSOPHY ═══ -->
+  <section id="philosophy" class="reveal">
+    <div class="section-label">Philosophy</div>
+    <h2 class="section-title">The constraint is the product</h2>
+    <p class="section-desc">Modern ML education has a gap. Library tutorials teach you to call functions. Papers are full of notation. We write the missing middle layer: the algorithm itself, as readable code.</p>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-title">One file per algorithm</div>
+        <div class="principle-desc">No local imports, no utils.py, no companion files. Everything in one place.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-title">Zero dependencies</div>
+        <div class="principle-desc">Python standard library only. If it needs pip install, it doesn't belong here.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-title">Train + infer in one command</div>
+        <div class="principle-desc"><code style="color:var(--green);font-size:12px">python script.py</code> runs the full lifecycle. No setup, no config, no environment.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-title">Comments are the curriculum</div>
+        <div class="principle-desc">30-40% comment density. Math-to-code mappings. Why, not what. Read top-to-bottom like a tutorial.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-title">Reproducible by default</div>
+        <div class="principle-desc"><code style="color:var(--green);font-size:12px">random.seed(42)</code> at the top of every script. Same input, same output, every time.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-title">Under 10 minutes on CPU</div>
+        <div class="principle-desc">Every script completes on a laptop CPU. No GPU required. No cloud. No excuses.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ REPOS ═══ -->
+  <section id="repos" class="reveal">
+    <div class="section-label">Repositories</div>
+    <h2 class="section-title">The no-magic ecosystem</h2>
+
+    <div class="repos-grid">
+      <a href="https://github.com/no-magic-ai/no-magic" class="repo-card" target="_blank">
+        <div class="repo-name">no-magic</div>
+        <div class="repo-desc">47 single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. The core collection.</div>
+        <div class="repo-lang"><span class="dot" style="background:#3572A5"></span> Python</div>
+      </a>
+      <a href="https://github.com/no-magic-ai/no-magic-viz" class="repo-card" target="_blank">
+        <div class="repo-name">no-magic-viz</div>
+        <div class="repo-desc">Manim-powered algorithm visualizations. Animated explainers showing each algorithm's mechanics in motion.</div>
+        <div class="repo-lang"><span class="dot" style="background:#3572A5"></span> Python &middot; Manim</div>
+      </a>
+      <a href="https://github.com/no-magic-ai/.github" class="repo-card" target="_blank">
+        <div class="repo-name">.github</div>
+        <div class="repo-desc">Organization profile, issue templates, and community health files.</div>
+        <div class="repo-lang"><span class="dot" style="background:#888"></span> Markdown</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div>&copy; 2026 no-magic-ai &mdash; MIT License</div>
+    <div class="footer-links">
+      <a href="https://github.com/no-magic-ai/no-magic" target="_blank">GitHub</a>
+      <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+      <a href="https://github.com/no-magic-ai/no-magic/blob/main/LEARNING_PATH.md" target="_blank">Learning Path</a>
+    </div>
+  </footer>
+
+  <!-- ═══ PREVIEW MODAL ═══ -->
+  <div class="modal-overlay" id="modal">
+    <button class="modal-close">&times;</button>
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="">
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-thesis" id="modalThesis"></div>
+    </div>
+  </div>
+
+  <script>
+    // ─── Algorithm data ───
+    const algorithms = [
+      { tier: "01-foundations", name: "microgpt", display: "Autoregressive GPT", thesis: "The autoregressive language model from first principles: GPT learns to predict the next token using masked self-attention, positional encoding, and scalar autograd." },
+      { tier: "01-foundations", name: "micrornn", display: "RNN vs GRU", thesis: "How sequences were modeled with recurrence, and why GRUs solve the vanishing gradient problem that plagues vanilla RNNs." },
+      { tier: "01-foundations", name: "microlstm", display: "LSTM", thesis: "Long Short-Term Memory from first principles: the 4-gate architecture that solved the vanishing gradient problem." },
+      { tier: "01-foundations", name: "microtokenizer", display: "BPE Tokenizer", thesis: "How text becomes numbers \u2014 the compression algorithm hiding inside every LLM." },
+      { tier: "01-foundations", name: "microembedding", display: "Word Embeddings", thesis: "How meaning becomes geometry \u2014 training vectors where distance equals similarity." },
+      { tier: "01-foundations", name: "microrag", display: "RAG Pipeline", thesis: "How retrieval augments generation \u2014 the simplest system that actually works, with BM25 retrieval and MLP generation." },
+      { tier: "01-foundations", name: "microbert", display: "BERT", thesis: "The other half of the transformer \u2014 how BERT learns bidirectional representations by predicting masked tokens." },
+      { tier: "01-foundations", name: "microconv", display: "CNN", thesis: "How a sliding kernel extracts spatial features \u2014 the convolution operation, pooling, and feature maps." },
+      { tier: "01-foundations", name: "microdiffusion", display: "Denoising Diffusion", thesis: "How images emerge from noise \u2014 the denoising diffusion algorithm behind Stable Diffusion." },
+      { tier: "01-foundations", name: "microgan", display: "GAN", thesis: "Two networks at war \u2014 how a generator learns to fool a discriminator in an adversarial minimax game." },
+      { tier: "01-foundations", name: "microoptimizer", display: "Optimizer Comparison", thesis: "Why Adam converges when SGD stalls \u2014 momentum, adaptive learning rates, and the geometry of loss landscapes." },
+      { tier: "01-foundations", name: "microvae", display: "VAE", thesis: "How to learn a compressed, generative representation of data with the reparameterization trick." },
+      { tier: "01-foundations", name: "microvit", display: "Vision Transformer", thesis: "An image is worth 16x16 words \u2014 treating image patches as token sequences for classification." },
+      { tier: "01-foundations", name: "microresnet", display: "ResNet", thesis: "Skip connections as gradient highways \u2014 proving that depth helps when residuals provide shortcuts." },
+      { tier: "01-foundations", name: "attention_vs_none", display: "Attention vs None", thesis: "Attention is the mechanism that lets a model look back across an entire sequence to decide what matters now." },
+      { tier: "02-alignment", name: "microlora", display: "LoRA", thesis: "Fine-tuning a frozen language model by injecting tiny trainable matrices into each layer." },
+      { tier: "02-alignment", name: "microdpo", display: "DPO", thesis: "Aligning a language model with human preferences using paired comparisons \u2014 no reward model needed." },
+      { tier: "02-alignment", name: "microppo", display: "PPO (RLHF)", thesis: "The full RLHF loop: pretrain, train a reward model on human preferences, then optimize the policy with PPO." },
+      { tier: "02-alignment", name: "micromoe", display: "Mixture of Experts", thesis: "A router network learns to dispatch each token to a subset of specialist sub-networks." },
+      { tier: "02-alignment", name: "microbatchnorm", display: "Batch Normalization", thesis: "Normalizing activations within each mini-batch to stabilize training and enable deeper networks." },
+      { tier: "02-alignment", name: "microdropout", display: "Dropout", thesis: "Why randomly destroying neurons during training prevents overfitting \u2014 dropout, weight decay, and early stopping." },
+      { tier: "02-alignment", name: "microgrpo", display: "GRPO", thesis: "How DeepSeek simplified RLHF \u2014 group-based reward normalization that eliminates the value network." },
+      { tier: "02-alignment", name: "microqlora", display: "QLoRA", thesis: "Fine-tuning a 4-bit quantized model with full-precision LoRA adapters." },
+      { tier: "02-alignment", name: "microreinforce", display: "REINFORCE", thesis: "The simplest policy gradient \u2014 how log-probability weighting turns reward signals into parameter updates." },
+      { tier: "02-alignment", name: "adam_vs_sgd", display: "Adam vs SGD", thesis: "Adam converges faster than SGD because it maintains per-parameter learning rates that adapt to gradient history." },
+      { tier: "02-alignment", name: "rnn_vs_gru_vs_lstm", display: "RNN vs GRU vs LSTM", thesis: "Three generations of recurrent architectures on the same task, comparing how gating improves memory." },
+      { tier: "03-systems", name: "microattention", display: "Attention Variants", thesis: "Every attention mechanism that matters, side by side: MHA, GQA, MQA, and sliding window." },
+      { tier: "03-systems", name: "microbeam", display: "Beam Search", thesis: "Six decoding strategies for language models, from deterministic greedy to speculative decoding." },
+      { tier: "03-systems", name: "microflash", display: "Flash Attention", thesis: "Flash Attention computes exact attention but processes data in tiles to minimize memory transfers." },
+      { tier: "03-systems", name: "microkv", display: "KV-Cache", thesis: "Why autoregressive generation recomputes redundant work, and how the KV cache eliminates it." },
+      { tier: "03-systems", name: "microquant", display: "Quantization", thesis: "How to shrink a model by 4x with minimal quality loss \u2014 INT8 and INT4 quantization." },
+      { tier: "03-systems", name: "microrope", display: "RoPE", thesis: "How position information gets baked into attention through rotation matrices." },
+      { tier: "03-systems", name: "microssm", display: "State Space Models", thesis: "The alternative to attention \u2014 how state space models process sequences in linear time." },
+      { tier: "03-systems", name: "microcheckpoint", display: "Activation Checkpointing", thesis: "How to train models twice as deep on the same hardware by trading compute for memory." },
+      { tier: "03-systems", name: "micropaged", display: "PagedAttention", thesis: "How vLLM serves thousands of concurrent requests with paged KV-cache memory management." },
+      { tier: "03-systems", name: "microparallel", display: "Model Parallelism", thesis: "How models that exceed single-device memory get distributed across multiple devices." },
+      { tier: "03-systems", name: "microbm25", display: "BM25", thesis: "The evolution of text retrieval scoring: from raw term frequency through TF-IDF to BM25." },
+      { tier: "03-systems", name: "microcomplexssm", display: "Complex SSM", thesis: "A complex-valued SSM is identical to a real-valued one with rotary position embeddings." },
+      { tier: "03-systems", name: "microdiscretize", display: "Discretization", thesis: "The choice of discretization method changes what a recurrence can learn \u2014 Euler, ZOH, and trapezoidal." },
+      { tier: "03-systems", name: "microroofline", display: "Roofline Model", thesis: "A state update running 100x more FLOPs can be faster if it shifts from memory-bound to compute-bound." },
+      { tier: "03-systems", name: "microspeculative", display: "Speculative Decoding", thesis: "A small draft model proposes tokens that a large model verifies in parallel." },
+      { tier: "03-systems", name: "microvectorsearch", display: "Vector Search", thesis: "Exact brute-force vs approximate nearest neighbors \u2014 the trade-offs in vector retrieval." },
+      { tier: "04-agents", name: "microbandit", display: "Multi-Armed Bandit", thesis: "Three strategies \u2014 Epsilon-Greedy, UCB1, and Thompson Sampling \u2014 for the exploration-exploitation tradeoff." },
+      { tier: "04-agents", name: "micromcts", display: "Monte Carlo Tree Search", thesis: "The algorithm behind AlphaGo \u2014 select, expand, simulate, backpropagate." },
+      { tier: "04-agents", name: "micromemory", display: "Memory-Augmented Network", thesis: "A Neural Turing Machine learns to store and retrieve using differentiable read/write heads." },
+      { tier: "04-agents", name: "microminimax", display: "Minimax + Alpha-Beta", thesis: "Adversarial search from first principles: minimax with alpha-beta pruning for game playing." },
+      { tier: "04-agents", name: "microreact", display: "ReAct", thesis: "The ReAct reasoning loop: Thought \u2192 Action \u2192 Observation as a trainable agent pattern." },
+    ];
+
+    const TIER_LABELS = {
+      '01-foundations': 'Foundations',
+      '02-alignment': 'Alignment',
+      '03-systems': 'Systems',
+      '04-agents': 'Agents',
+    };
+
+    const TIER_CLASS = {
+      '01-foundations': 'tier-foundations',
+      '02-alignment': 'tier-alignment',
+      '03-systems': 'tier-systems',
+      '04-agents': 'tier-agents',
+    };
+
+    const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
+    const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
+
+    // Scripts that have known GIF previews
+    const HAS_PREVIEW = new Set([
+      'microattention','microbandit','microbatchnorm','microbeam','microbert','microbm25',
+      'microcheckpoint','microcomplexssm','microconv','microdiffusion','microdiscretize',
+      'microdpo','microdropout','microembedding','microflash','microgan','microgpt','microgrpo',
+      'microkv','microlora','microlstm','micromcts','micromemory','microminimax','micromoe',
+      'microoptimizer','micropaged','microparallel','microppo','microqlora','microquant',
+      'microrag','microreact','microreinforce','microresnet','micrornn','microroofline',
+      'microrope','microspeculative','microssm','microtokenizer','microvae','microvectorsearch','microvit'
+    ]);
+
+    // ─── Render catalog ───
+    const grid = document.getElementById('algoGrid');
+
+    function renderGrid(tier) {
+      const filtered = tier === 'all' ? algorithms : algorithms.filter(a => a.tier === tier);
+      grid.innerHTML = filtered.map(a => {
+        const hasPreview = HAS_PREVIEW.has(a.name);
+        return `
+          <div class="algo-card" data-name="${a.name}" data-tier="${a.tier}" data-thesis="${a.thesis.replace(/"/g, '&quot;')}" data-display="${a.display}">
+            <div class="algo-header">
+              <span class="algo-name">${a.display}</span>
+              <span class="algo-tier-badge ${TIER_CLASS[a.tier]}">${TIER_LABELS[a.tier]}</span>
+            </div>
+            <div class="algo-thesis">${a.thesis}</div>
+            <div class="algo-footer">
+              <div class="algo-links">
+                <a href="${REPO_BASE}${a.tier}/${a.name}.py" class="algo-link" target="_blank" onclick="event.stopPropagation()">source</a>
+                ${hasPreview ? `<span class="algo-link" onclick="event.stopPropagation(); showPreview('${a.name}', '${a.display.replace(/'/g, "\\'")}', '${a.thesis.replace(/'/g, "\\'")}')">preview</span>` : ''}
+              </div>
+              ${hasPreview ? '<div class="algo-preview-indicator"><span class="dot"></span>viz</div>' : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    renderGrid('all');
+
+    // ─── Tab switching ───
+    document.querySelectorAll('.tier-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderGrid(tab.dataset.tier);
+      });
+    });
+
+    // ─── Preview modal ───
+    const modal = document.getElementById('modal');
+
+    function showPreview(name, display, thesis) {
+      document.getElementById('modalImg').src = VIZ_BASE + name + '.gif';
+      document.getElementById('modalTitle').textContent = display;
+      document.getElementById('modalThesis').textContent = thesis;
+      modal.classList.add('active');
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.classList.contains('modal-close')) {
+        modal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') modal.classList.remove('active');
+    });
+
+    // ─── Card click → preview or source ───
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.algo-card');
+      if (!card || e.target.closest('a')) return;
+      const name = card.dataset.name;
+      if (HAS_PREVIEW.has(name)) {
+        showPreview(name, card.dataset.display, card.dataset.thesis);
+      } else {
+        window.open(REPO_BASE + card.dataset.tier + '/' + name + '.py', '_blank');
+      }
+    });
+
+    // ─── Scroll reveal ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
