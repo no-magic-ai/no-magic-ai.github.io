@@ -632,6 +632,53 @@
       line-height: 1.7;
     }
 
+    /* ─── AUTHOR ─── */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--grid);
+      border-radius: var(--radius);
+      padding: 2rem;
+      max-width: 500px;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--grid);
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .author-bio {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 0.8rem;
+    }
+
+    .author-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 12px;
+    }
+
+    .author-links a {
+      color: var(--text-muted);
+    }
+
+    .author-links a:hover {
+      color: var(--primary);
+    }
+
     /* ─── FOOTER ─── */
     footer {
       max-width: var(--max-w);
@@ -864,17 +911,28 @@
         <div class="repo-desc">Manim-powered algorithm visualizations. Animated explainers showing each algorithm's mechanics in motion.</div>
         <div class="repo-lang"><span class="dot" style="background:#3572A5"></span> Python &middot; Manim</div>
       </a>
-      <a href="https://github.com/no-magic-ai/.github" class="repo-card" target="_blank">
-        <div class="repo-name">.github</div>
-        <div class="repo-desc">Organization profile, issue templates, and community health files.</div>
-        <div class="repo-lang"><span class="dot" style="background:#888"></span> Markdown</div>
-      </a>
+    </div>
+  </section>
+
+  <!-- ═══ AUTHOR ═══ -->
+  <section id="author" class="reveal">
+    <div class="author-card">
+      <img src="https://avatars.githubusercontent.com/u/9562152?v=4" alt="Tom Mathews" class="author-avatar">
+      <div class="author-info">
+        <div class="section-label">Created by</div>
+        <div class="author-name">Tom Mathews</div>
+        <div class="author-bio">Building tools that make AI algorithms transparent and accessible.</div>
+        <div class="author-links">
+          <a href="https://github.com/Mathews-Tom" target="_blank">GitHub</a>
+          <a href="https://x.com/tom_mathews" target="_blank">X / Twitter</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ═══ FOOTER ═══ -->
   <footer>
-    <div>&copy; 2026 no-magic-ai &mdash; MIT License</div>
+    <div>&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank">Tom Mathews</a> &mdash; MIT License</div>
     <div class="footer-links">
       <a href="https://github.com/no-magic-ai/no-magic" target="_blank">GitHub</a>
       <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
