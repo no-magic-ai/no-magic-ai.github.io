@@ -182,6 +182,15 @@
       margin-top: 6px;
     }
 
+    .hero-stats-secondary {
+      margin-top: 1rem;
+      gap: 2.5rem;
+    }
+
+    .hero-stat-sm {
+      font-size: 1.4rem;
+    }
+
     .hero-cta {
       display: flex;
       gap: 1rem;
@@ -633,50 +642,84 @@
     }
 
     /* ─── AUTHOR ─── */
-    .author-card {
+    .author-banner {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 2.5rem;
       background: var(--bg-card);
       border: 1px solid var(--grid);
       border-radius: var(--radius);
-      padding: 2rem;
-      max-width: 500px;
+      padding: 2.5rem 3rem;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .author-banner::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 200px;
+      background: linear-gradient(90deg, transparent, var(--primary-dim));
+      pointer-events: none;
     }
 
     .author-avatar {
-      width: 80px;
-      height: 80px;
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
-      border: 2px solid var(--grid);
+      border: 3px solid var(--grid);
       flex-shrink: 0;
+    }
+
+    .author-info {
+      flex: 1;
     }
 
     .author-name {
       font-family: var(--font-serif);
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 400;
       margin-bottom: 0.3rem;
     }
 
     .author-bio {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-dim);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      max-width: 500px;
     }
 
     .author-links {
       display: flex;
-      gap: 1.2rem;
-      font-size: 12px;
+      gap: 1.5rem;
+      font-size: 13px;
     }
 
     .author-links a {
       color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
     }
 
     .author-links a:hover {
       color: var(--primary);
+    }
+
+    @media (max-width: 640px) {
+      .author-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+      }
+      .author-links { justify-content: center; }
+      .author-bio { max-width: none; }
+      .author-banner::after { display: none; }
     }
 
     /* ─── FOOTER ─── */
@@ -753,16 +796,22 @@
           <div class="hero-stat-label">Algorithms</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num" id="statStars">&mdash;</div>
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label">Dependencies</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Tiers</div>
+        </div>
+      </div>
+      <div class="hero-stats hero-stats-secondary">
+        <div class="hero-stat">
+          <div class="hero-stat-num hero-stat-sm" id="statStars">&mdash;</div>
           <div class="hero-stat-label">Stars</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num" id="statForks">&mdash;</div>
+          <div class="hero-stat-num hero-stat-sm" id="statForks">&mdash;</div>
           <div class="hero-stat-label">Forks</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">0</div>
-          <div class="hero-stat-label">Dependencies</div>
         </div>
       </div>
       <div class="hero-cta">
@@ -911,12 +960,17 @@
         <div class="repo-desc">Manim-powered algorithm visualizations. Animated explainers showing each algorithm's mechanics in motion.</div>
         <div class="repo-lang"><span class="dot" style="background:#3572A5"></span> Python &middot; Manim</div>
       </a>
+      <a href="https://github.com/no-magic-ai/no-magic-ai.github.io" class="repo-card" target="_blank">
+        <div class="repo-name">no-magic-ai.github.io</div>
+        <div class="repo-desc">This website. Algorithm catalog, learning paths, and live GitHub stats. Pure static HTML/CSS/JS.</div>
+        <div class="repo-lang"><span class="dot" style="background:#e34c26"></span> HTML &middot; CSS &middot; JS</div>
+      </a>
     </div>
   </section>
 
   <!-- ═══ AUTHOR ═══ -->
   <section id="author" class="reveal">
-    <div class="author-card">
+    <div class="author-banner">
       <img src="https://avatars.githubusercontent.com/u/9562152?v=4" alt="Tom Mathews" class="author-avatar">
       <div class="author-info">
         <div class="section-label">Created by</div>
@@ -924,6 +978,7 @@
         <div class="author-bio">Building tools that make AI algorithms transparent and accessible.</div>
         <div class="author-links">
           <a href="https://github.com/Mathews-Tom" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/mathews-tom/" target="_blank">LinkedIn</a>
           <a href="https://x.com/tom_mathews" target="_blank">X / Twitter</a>
         </div>
       </div>
