@@ -65,10 +65,10 @@
     }
 
     .bg-watermark img {
-      width: 85vmin;
-      height: 85vmin;
-      max-width: 900px;
-      max-height: 900px;
+      width: 100vmax;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
       opacity: 0.12;
       filter: saturate(0.8);
     }
@@ -812,7 +812,7 @@
 
   <!-- ═══ BACKGROUND WATERMARK ═══ -->
   <div class="bg-watermark">
-    <img src="icon.svg" alt="" aria-hidden="true">
+    <img src="no-magic-bg.webp" alt="" aria-hidden="true">
   </div>
 
   <!-- ═══ HERO ═══ -->
