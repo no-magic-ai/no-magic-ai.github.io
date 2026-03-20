@@ -11,1005 +11,763 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0d0d1a;
-      --bg-surface: #141428;
-      --bg-card: #1a1a2e;
-      --bg-card-hover: #1f1f3a;
-      --primary: #e94560;
-      --primary-dim: #e9456033;
-      --blue: #0f3460;
-      --green: #16c79a;
-      --green-dim: #16c79a22;
-      --text: #eaeaea;
-      --text-dim: #8888a8;
-      --text-muted: #555577;
-      --grid: #2a2a4a;
-      --yellow: #f5c542;
-      --orange: #e97d32;
-      --purple: #9b59b6;
-      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-      --font-serif: 'Instrument Serif', Georgia, serif;
-      --radius: 6px;
-      --max-w: 1280px;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scrollbar-color: var(--grid) var(--bg);
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-mono);
-      font-size: 14px;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ─── ICON WATERMARK BACKGROUND ─── */
-    .bg-watermark {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 75%);
-    }
-
-    .bg-watermark img {
-      width: 70vmax;
-      object-fit: contain;
-      object-position: center center;
-      opacity: 0.10;
-      filter: saturate(0.8);
-    }
-
-    /* ─── NOISE OVERLAY ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    /* ─── SCANLINE EFFECT ─── */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.03) 2px,
-        rgba(0,0,0,0.03) 4px
-      );
-      pointer-events: none;
-      z-index: 9998;
-    }
-
-    a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--yellow); }
-
-    ::selection {
-      background: var(--primary);
-      color: var(--bg);
-    }
-
-    /* ─── HEADER ─── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      padding: 2rem;
-    }
-
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: 0.15;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%);
-    }
-
-    .hero-content {
-      position: relative;
-      text-align: center;
-      max-width: 800px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--primary);
-      border: 1px solid var(--primary-dim);
-      padding: 6px 18px;
-      border-radius: 20px;
-      margin-bottom: 2.5rem;
-      animation: fadeIn 0.8s ease both;
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -2px;
-      color: var(--text);
-      animation: fadeIn 0.8s 0.15s ease both;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--primary);
-    }
-
-    .hero-sub {
-      font-size: 15px;
-      color: var(--text-dim);
-      max-width: 520px;
-      margin: 1.8rem auto 0;
-      line-height: 1.8;
-      animation: fadeIn 0.8s 0.3s ease both;
-    }
-
-    .hero-sub code {
-      color: var(--green);
-      background: var(--green-dim);
-      padding: 2px 6px;
-      border-radius: 3px;
-      font-size: 13px;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 3rem;
-      justify-content: center;
-      margin-top: 3rem;
-      animation: fadeIn 0.8s 0.45s ease both;
-    }
-
-    .hero-stat {
-      text-align: center;
-    }
-
-    .hero-stat-num {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-    }
-
-    .hero-stat-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
-
-    .hero-stats-secondary {
-      margin-top: 1rem;
-      gap: 2.5rem;
-    }
-
-    .hero-stat-sm {
-      font-size: 1.4rem;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 3rem;
-      animation: fadeIn 0.8s 0.6s ease both;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 28px;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 500;
-      border-radius: var(--radius);
-      transition: all 0.25s;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--bg);
-    }
-
-    .btn-primary:hover {
-      background: #ff5a75;
-      color: var(--bg);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px var(--primary-dim);
-    }
-
-    .btn-ghost {
-      border-color: var(--grid);
-      color: var(--text-dim);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--text-dim);
-      color: var(--text);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: fadeIn 0.8s 1s ease both, pulse 2s 2s ease infinite;
-    }
-
-    .hero-scroll svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--text-muted);
-    }
-
-    /* ─── SECTIONS ─── */
-    section, footer, header {
-      position: relative;
-      z-index: 1;
-    }
-
-    section {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 6rem 2rem;
-    }
-
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 0.8rem;
-    }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-      letter-spacing: -1px;
-      margin-bottom: 1rem;
-    }
-
-    .section-desc {
-      color: var(--text-dim);
-      max-width: 600px;
-      margin-bottom: 3rem;
-    }
-
-    /* ─── TIER TABS ─── */
-    .tier-nav {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 2rem;
-      background: var(--bg-surface);
-      border-radius: var(--radius);
-      padding: 3px;
-      overflow-x: auto;
-      flex-wrap: wrap;
-    }
-
-    .tier-tab {
-      padding: 10px 20px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-dim);
-      background: transparent;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .tier-tab:hover {
-      color: var(--text);
-      background: var(--bg-card);
-    }
-
-    .tier-tab.active {
-      color: var(--text);
-      background: var(--bg-card);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    }
-
-    .tier-tab .tab-count {
-      display: inline-block;
-      background: var(--primary-dim);
-      color: var(--primary);
-      font-size: 10px;
-      padding: 1px 6px;
-      border-radius: 10px;
-      margin-left: 6px;
-    }
-
-    .tier-tab.active .tab-count {
-      background: var(--primary);
-      color: var(--bg);
-    }
-
-    /* ─── ALGORITHM GRID ─── */
-    .algo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1px;
-      background: var(--grid);
-      border: 1px solid var(--grid);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .algo-card {
-      background: var(--bg-card);
-      padding: 1.5rem;
-      transition: all 0.3s;
-      cursor: pointer;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .algo-card:hover {
-      background: var(--bg-card-hover);
-    }
-
-    .algo-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: var(--primary);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .algo-card:hover::before {
-      opacity: 1;
-    }
-
-    .algo-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.6rem;
-    }
-
-    .algo-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .algo-tier-badge {
-      font-size: 10px;
-      padding: 2px 8px;
-      border-radius: 3px;
-      font-weight: 500;
-      flex-shrink: 0;
-    }
-
-    .tier-foundations { background: #0f346022; color: #5b8def; }
-    .tier-alignment { background: #9b59b622; color: #c78ddb; }
-    .tier-systems { background: #16c79a22; color: #16c79a; }
-    .tier-agents { background: #e97d3222; color: #e97d32; }
-
-    .algo-thesis {
-      font-size: 12px;
-      color: var(--text-dim);
-      line-height: 1.6;
-      flex: 1;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .algo-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1rem;
-      padding-top: 0.8rem;
-      border-top: 1px solid var(--grid);
-    }
-
-    .algo-links {
-      display: flex;
-      gap: 12px;
-    }
-
-    .algo-link {
-      font-size: 11px;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-
-    .algo-link:hover {
-      color: var(--primary);
-    }
-
-    .algo-preview-indicator {
-      font-size: 10px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .algo-preview-indicator .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-    }
-
-    /* ─── PREVIEW MODAL ─── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 10000;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      cursor: pointer;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal-content {
-      max-width: 560px;
-      width: 100%;
-      cursor: default;
-    }
-
-    .modal-content img {
-      width: 100%;
-      border-radius: var(--radius);
-      border: 1px solid var(--grid);
-    }
-
-    .modal-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-
-    .modal-thesis {
-      font-size: 13px;
-      color: var(--text-dim);
-      margin-top: 0.5rem;
-      line-height: 1.7;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      font-size: 24px;
-      color: var(--text-dim);
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-family: var(--font-mono);
-    }
-
-    .modal-close:hover { color: var(--text); }
-
-    /* ─── LEARNING PATHS ─── */
-    .tracks-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-
-    .track-card {
-      background: var(--bg-card);
-      border: 1px solid var(--grid);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: all 0.3s;
-    }
-
-    .track-card:hover {
-      border-color: var(--text-muted);
-      transform: translateY(-2px);
-    }
-
-    .track-num {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--text-muted);
-      line-height: 1;
-      margin-bottom: 0.8rem;
-    }
-
-    .track-name {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .track-desc {
-      font-size: 12px;
-      color: var(--text-dim);
-      margin-bottom: 1rem;
-    }
-
-    .track-meta {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .track-meta span {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* ─── REPOS ─── */
-    .repos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-
-    .repo-card {
-      background: var(--bg-card);
-      border: 1px solid var(--grid);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-      transition: all 0.3s;
-      display: block;
-    }
-
-    .repo-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      color: var(--text);
-    }
-
-    .repo-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-
-    .repo-desc {
-      font-size: 12px;
-      color: var(--text-dim);
-      line-height: 1.7;
-    }
-
-    .repo-lang {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 1rem;
-    }
-
-    .repo-lang .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    /* ─── PHILOSOPHY ─── */
-    .principles {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .principle {
-      position: relative;
-      padding-left: 1.2rem;
-    }
-
-    .principle::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 4px;
-      width: 4px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 50%;
-    }
-
-    .principle-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .principle-desc {
-      font-size: 12px;
-      color: var(--text-dim);
-      line-height: 1.7;
-    }
-
-    /* ─── AUTHOR ─── */
-    .author-banner {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      background: var(--bg-card);
-      border: 1px solid var(--grid);
-      border-radius: var(--radius);
-      padding: 2.5rem 3rem;
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .author-banner::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 200px;
-      background: linear-gradient(90deg, transparent, var(--primary-dim));
-      pointer-events: none;
-    }
-
-    .author-avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      border: 3px solid var(--grid);
-      flex-shrink: 0;
-    }
-
-    .author-info {
-      flex: 1;
-    }
-
-    .author-name {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      font-weight: 400;
-      margin-bottom: 0.3rem;
-    }
-
-    .author-bio {
-      font-size: 14px;
-      color: var(--text-dim);
-      margin-bottom: 1rem;
-      max-width: 500px;
-    }
-
-    .author-links {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 13px;
-    }
-
-    .author-links a {
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: color 0.2s;
-    }
-
-    .author-links a:hover {
-      color: var(--primary);
-    }
-
-    @media (max-width: 640px) {
-      .author-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 1.5rem;
-      }
-      .author-links { justify-content: center; }
-      .author-bio { max-width: none; }
-      .author-banner::after { display: none; }
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 3rem 2rem;
-      border-top: 1px solid var(--grid);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    footer a { color: var(--text-dim); }
-    footer a:hover { color: var(--text); }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.8; }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 640px) {
-      .hero-stats { gap: 1.5rem; }
-      .hero-stat-num { font-size: 1.6rem; }
-      .algo-grid { grid-template-columns: 1fr; }
-      .hero-cta { flex-direction: column; align-items: center; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
-      .footer-links { flex-wrap: wrap; justify-content: center; }
-      .tier-nav { gap: 0; }
-      .tier-tab { padding: 8px 14px; font-size: 11px; }
-    }
+/* ══════════════════════════════════════════════
+   Design System: Neon Observatory
+   ══════════════════════════════════════════════ */
+:root {
+  --bg: #12121f;
+  --surface: #12121f;
+  --surface-lowest: #0d0d1a;
+  --surface-low: #1a1a28;
+  --surface-container: #1e1e2c;
+  --surface-high: #292937;
+  --surface-highest: #343342;
+  --surface-bright: #383847;
+  --on-surface: #e3e0f4;
+  --on-surface-variant: #e2bebf;
+  --on-bg: #e3e0f4;
+  --primary: #ffb2b7;
+  --primary-container: #fc536d;
+  --on-primary: #67001c;
+  --on-primary-container: #5b0017;
+  --secondary: #41deb0;
+  --secondary-container: #00c295;
+  --on-secondary: #003829;
+  --tertiary: #c6c6c6;
+  --outline-variant: #5a4042;
+  --outline: #a9898a;
+  --error: #ffb4ab;
+  /* Tier colors */
+  --tier-foundations: #5b8def;
+  --tier-foundations-bg: rgba(15, 52, 96, 0.15);
+  --tier-alignment: #c78ddb;
+  --tier-alignment-bg: rgba(155, 89, 182, 0.15);
+  --tier-systems: #41deb0;
+  --tier-systems-bg: rgba(65, 222, 176, 0.1);
+  --tier-agents: #e97d32;
+  --tier-agents-bg: rgba(233, 125, 50, 0.15);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--on-bg);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; font-family: inherit; }
+img { max-width: 100%; display: block; }
+::selection { background: rgba(255, 178, 183, 0.3); }
+
+/* ── Utilities ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.ghost-border { border: 1px solid rgba(90, 64, 66, 0.15); }
+.font-headline { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; width: 100%; z-index: 50;
+  background: rgba(18, 18, 31, 0.75);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.nav-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; max-width: 1200px; margin: 0 auto;
+}
+.nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem; font-weight: 700; letter-spacing: -0.05em; color: var(--on-surface);
+}
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.875rem;
+  color: rgba(226, 190, 191, 0.5); transition: color 0.3s;
+  letter-spacing: -0.02em;
+}
+.nav-links a:hover { color: var(--on-surface); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary-container); padding: 0.5rem 1.5rem;
+  border-radius: 9999px; font-weight: 700; font-size: 0.875rem;
+  transition: transform 0.2s;
+  box-shadow: 0 0 30px rgba(252, 83, 109, 0.15);
+}
+.nav-cta:hover { transform: scale(1.05); }
+
+/* ── Hero ── */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  padding-top: 5rem; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: var(--surface-lowest);
+}
+.hero-cover {
+  position: absolute; inset: 0; z-index: 1;
+  background: url('no-magic-bg.webp') 30% center / cover no-repeat;
+  mix-blend-mode: screen; opacity: 0.25;
+}
+.hero-cover-fade {
+  position: absolute; inset: 0; z-index: 2;
+  background:
+    linear-gradient(to bottom, var(--bg) 0%, transparent 25%, transparent 60%, var(--bg) 100%),
+    linear-gradient(to right, var(--bg) 0%, transparent 30%);
+}
+.hero-content { position: relative; z-index: 3; padding-left: 3rem; }
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace; color: var(--secondary);
+  font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem; opacity: 0.7;
+  animation: fadeIn 0.8s ease both;
+}
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeIn 0.8s 0.15s ease both;
+}
+.hero-sub {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem); font-weight: 300;
+  color: var(--on-surface-variant); max-width: 600px; line-height: 1.6;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.8s 0.3s ease both;
+}
+.hero-sub code {
+  color: var(--secondary); background: rgba(65, 222, 176, 0.1);
+  padding: 2px 6px; border-radius: 3px; font-size: 0.9em;
+  font-family: 'JetBrains Mono', monospace;
+}
+.hero-cta-row {
+  display: flex; gap: 1rem; margin-bottom: 3rem;
+  animation: fadeIn 0.8s 0.45s ease both;
+}
+.btn-hero-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary-container); padding: 0.75rem 2rem;
+  border-radius: 9999px; font-weight: 700; font-size: 0.875rem;
+  transition: all 0.25s;
+  box-shadow: 0 0 30px rgba(252, 83, 109, 0.15);
+}
+.btn-hero-primary:hover { transform: translateY(-1px) scale(1.02); }
+.btn-hero-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 2rem; border-radius: 9999px;
+  font-weight: 600; font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  transition: all 0.25s;
+}
+.btn-hero-ghost:hover { color: var(--on-surface); }
+
+/* ── Stats Grid ── */
+.stats-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
+  animation: fadeIn 0.8s 0.6s ease both;
+}
+.stat-card {
+  background: var(--surface-low); padding: 1.5rem; border-radius: 0.75rem;
+}
+.stat-value {
+  font-family: 'JetBrains Mono', monospace; font-size: 1.875rem; font-weight: 700;
+}
+.stat-value.green { color: var(--secondary); }
+.stat-value.pink { color: var(--primary); }
+.stat-value.white { color: var(--on-surface); }
+.stat-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.625rem;
+  text-transform: uppercase; letter-spacing: 0.15em; color: var(--tertiary);
+  margin-top: 0.25rem;
+}
+
+/* ── Scroll indicator ── */
+.scroll-ind {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 3;
+  animation: fadeIn 0.8s 1s ease both;
+}
+.scroll-ind-ring {
+  width: 1.5rem; height: 2.5rem; border-radius: 9999px;
+  display: flex; align-items: flex-start; justify-content: center; padding-top: 0.5rem;
+}
+.scroll-dot {
+  width: 0.25rem; height: 0.5rem; border-radius: 9999px;
+  background: rgba(255, 178, 183, 0.6);
+  animation: scrollBounce 1.5s infinite;
+}
+
+/* ── Particles ── */
+.particle {
+  position: absolute; border-radius: 50%;
+  animation: pfloat 8s infinite ease-in-out;
+}
+
+/* ── Sections ── */
+.section { padding: 6rem 0; position: relative; z-index: 1; }
+.section-low { background: var(--surface-low); }
+.section-lowest { background: var(--surface-lowest); }
+.section-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3rem; gap: 2rem; flex-wrap: wrap;
+}
+.section-header h2 {
+  font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; letter-spacing: -0.03em;
+}
+.section-header p { color: var(--on-surface-variant); max-width: 500px; }
+
+/* ── Tier Pills (dynamic) ── */
+.pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pill {
+  padding: 0.5rem 1.25rem; border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.8125rem; font-weight: 600;
+  background: var(--surface-highest); color: var(--on-surface);
+  transition: all 0.3s;
+}
+.pill:hover { background: var(--surface-bright); }
+.pill.active { background: var(--secondary); color: var(--on-secondary); }
+.pill .pill-count {
+  display: inline-block; font-size: 0.6875rem;
+  background: rgba(255, 255, 255, 0.15); padding: 0 0.375rem;
+  border-radius: 9999px; margin-left: 0.375rem;
+}
+.pill.active .pill-count { background: rgba(0, 56, 41, 0.3); }
+
+/* ── Algo Cards (dynamic grid) ── */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem;
+}
+.algo-card {
+  background: var(--surface-high); padding: 1.75rem; border-radius: 1rem;
+  transition: background 0.4s; cursor: pointer;
+  display: flex; flex-direction: column;
+}
+.algo-card:hover { background: var(--surface-highest); }
+.algo-card-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.algo-card-name {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
+  font-weight: 700; color: var(--on-surface);
+}
+.tier-badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.625rem;
+  padding: 0.2rem 0.6rem; border-radius: 9999px; flex-shrink: 0;
+  font-weight: 500;
+}
+.tier-badge-foundations { color: var(--tier-foundations); background: var(--tier-foundations-bg); }
+.tier-badge-alignment { color: var(--tier-alignment); background: var(--tier-alignment-bg); }
+.tier-badge-systems { color: var(--tier-systems); background: var(--tier-systems-bg); }
+.tier-badge-agents { color: var(--tier-agents); background: var(--tier-agents-bg); }
+.algo-card-thesis {
+  color: var(--on-surface-variant); font-size: 0.8125rem;
+  line-height: 1.7; flex: 1;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.algo-card-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 1rem; padding-top: 0.75rem;
+  border-top: 1px solid rgba(90, 64, 66, 0.1);
+}
+.algo-card-links { display: flex; gap: 0.75rem; }
+.algo-card-link {
+  font-size: 0.6875rem; color: var(--tertiary); transition: color 0.2s;
+  font-family: 'JetBrains Mono', monospace;
+}
+.algo-card-link:hover { color: var(--primary); }
+.algo-card-viz {
+  font-size: 0.625rem; color: var(--tertiary);
+  display: flex; align-items: center; gap: 0.25rem;
+}
+.algo-card-viz .viz-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--secondary);
+}
+
+/* ── Learning Paths ── */
+.tracks-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.track-card {
+  background: var(--surface-high); border-radius: 1rem;
+  padding: 1.75rem; transition: background 0.4s; cursor: default;
+}
+.track-card:hover { background: var(--surface-highest); }
+.track-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 2rem;
+  font-weight: 700; color: var(--tertiary); line-height: 1; margin-bottom: 0.75rem;
+}
+.track-name {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
+  font-weight: 700; margin-bottom: 0.4rem;
+}
+.track-desc {
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  line-height: 1.6; margin-bottom: 1rem;
+}
+.track-meta {
+  display: flex; gap: 1.5rem; font-size: 0.6875rem; color: var(--tertiary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Code Block ── */
+.code-panel {
+  background: rgba(52, 51, 66, 0.4); backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); border-radius: 1rem; overflow: hidden;
+}
+.code-chrome {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1rem; background: rgba(13, 13, 26, 0.5);
+}
+.code-dot { width: 0.75rem; height: 0.75rem; border-radius: 50%; }
+.code-dot.r { background: rgba(252, 83, 109, 0.5); }
+.code-dot.y { background: rgba(65, 222, 176, 0.3); }
+.code-dot.g { background: rgba(198, 198, 198, 0.3); }
+.code-filename {
+  margin-left: 1rem; font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem; color: rgba(198, 198, 198, 0.5);
+  text-transform: uppercase; letter-spacing: 0.15em;
+}
+.code-body { padding: 1.5rem; }
+.code-body pre {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem;
+  line-height: 1.8; overflow-x: auto; white-space: pre;
+}
+.code-body .kw { color: rgba(255, 178, 183, 0.6); }
+.code-body .fn { color: var(--secondary); }
+.code-body .cm { color: rgba(198, 198, 198, 0.4); }
+.code-body .nm { color: var(--primary); }
+.code-body .tx { color: rgba(227, 224, 244, 0.8); }
+.code-hl { background: rgba(65, 222, 176, 0.05); display: inline-block; width: 100%; }
+.cursor-blink {
+  display: inline-block; width: 0.5rem; height: 1rem;
+  background: var(--secondary); margin-left: 1.5rem; margin-bottom: 1rem;
+  animation: blink 1.2s step-end infinite;
+}
+
+/* ── Philosophy ── */
+.philosophy-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; text-align: left;
+}
+.philosophy-grid h2 {
+  font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; margin-bottom: 3rem; letter-spacing: -0.03em;
+  text-align: center; grid-column: 1 / -1;
+}
+.phil-item { position: relative; padding-left: 1rem; }
+.phil-item::before {
+  content: ''; position: absolute; left: 0; top: 6px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--primary);
+}
+.phil-item h4 {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
+  font-weight: 700; margin-bottom: 0.4rem;
+}
+.phil-item p {
+  color: var(--on-surface-variant); font-size: 0.8125rem; line-height: 1.7;
+}
+.phil-item code {
+  color: var(--secondary); background: rgba(65, 222, 176, 0.1);
+  padding: 1px 5px; border-radius: 3px; font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Ecosystem ── */
+.eco-header { display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; }
+.eco-header h2 {
+  font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; white-space: nowrap; letter-spacing: -0.03em;
+}
+.eco-line {
+  height: 1px; flex: 1;
+  background: linear-gradient(to right, rgba(90, 64, 66, 0.4), transparent);
+}
+.eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.eco-card {
+  padding: 1.5rem; border-radius: 0.75rem; background: var(--surface-low);
+  transition: all 0.3s; display: block;
+}
+.eco-card:hover { transform: translateY(-2px); }
+.eco-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.eco-card h5 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.eco-card p {
+  font-size: 0.75rem; color: var(--on-surface-variant);
+  margin-bottom: 1.5rem; line-height: 1.6;
+}
+.eco-link {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem;
+  font-weight: 700; text-transform: uppercase;
+}
+.eco-link .material-symbols-outlined { font-size: 0.875rem; transition: transform 0.3s; }
+.eco-card:hover .eco-link .material-symbols-outlined { transform: translateX(4px); }
+.eco-card.pink { color: var(--primary); }
+.eco-card.pink .eco-link, .eco-card.pink .eco-card-header .material-symbols-outlined { color: var(--primary); }
+.eco-card.green { color: var(--secondary); }
+.eco-card.green .eco-link, .eco-card.green .eco-card-header .material-symbols-outlined { color: var(--secondary); }
+.eco-card.white .eco-link, .eco-card.white .eco-card-header .material-symbols-outlined { color: var(--on-surface); }
+
+/* ── Author ── */
+.author-banner {
+  display: flex; align-items: center; gap: 2.5rem;
+  background: var(--surface-high); border-radius: 1rem;
+  padding: 2.5rem 3rem; position: relative; overflow: hidden;
+}
+.author-banner::after {
+  content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 200px;
+  background: linear-gradient(90deg, transparent, rgba(252, 83, 109, 0.06));
+  pointer-events: none;
+}
+.author-avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  border: 3px solid var(--surface-highest); flex-shrink: 0;
+}
+.author-info { flex: 1; }
+.author-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.6875rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.author-name {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem;
+  font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.3rem;
+}
+.author-bio {
+  font-size: 0.875rem; color: var(--on-surface-variant);
+  margin-bottom: 1rem; max-width: 500px;
+}
+.author-links { display: flex; gap: 1.5rem; font-size: 0.8125rem; }
+.author-links a {
+  color: var(--tertiary); display: inline-flex; align-items: center; gap: 4px;
+  transition: color 0.2s;
+}
+.author-links a:hover { color: var(--primary); }
+
+/* ── Preview Modal ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.85); z-index: 10000;
+  justify-content: center; align-items: center;
+  padding: 2rem; cursor: pointer;
+}
+.modal-overlay.active { display: flex; }
+.modal-content { max-width: 560px; width: 100%; cursor: default; }
+.modal-content img {
+  width: 100%; border-radius: 0.75rem;
+  border: 1px solid rgba(90, 64, 66, 0.15);
+}
+.modal-title {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
+  font-weight: 700; margin-top: 1rem;
+}
+.modal-thesis {
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  margin-top: 0.5rem; line-height: 1.7;
+}
+.modal-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-size: 1.5rem; color: var(--tertiary); cursor: pointer;
+  background: none; border: none; font-family: 'JetBrains Mono', monospace;
+}
+.modal-close:hover { color: var(--on-surface); }
+
+/* ── Footer ── */
+.footer { background: var(--surface-lowest); padding: 3rem 2rem; }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 1.5rem;
+}
+.footer-logo {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1.125rem;
+  font-weight: 700; color: var(--on-surface); letter-spacing: -0.03em;
+}
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a {
+  font-size: 0.8125rem; color: rgba(226, 190, 191, 0.4); transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--secondary); }
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem;
+  color: rgba(226, 190, 191, 0.25);
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes pfloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-20px) scale(1.15); opacity: 1; }
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.3; }
+}
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .cards-grid { grid-template-columns: 1fr; }
+  .tracks-grid { grid-template-columns: 1fr; }
+  .philosophy-grid { grid-template-columns: 1fr; }
+  .eco-grid { grid-template-columns: 1fr; }
+  .hero-content { padding-left: 0; }
+  .hero-cover { background-position: 45% center; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; }
+  .author-banner {
+    flex-direction: column; text-align: center;
+    padding: 2rem 1.5rem; gap: 1.5rem;
+  }
+  .author-links { justify-content: center; }
+  .author-bio { max-width: none; }
+  .author-banner::after { display: none; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
   </style>
 </head>
 <body>
 
-  <!-- ═══ BACKGROUND WATERMARK ═══ -->
-  <div class="bg-watermark">
-    <img src="no-magic-bg.webp" alt="" aria-hidden="true">
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo font-headline">No Magic AI</div>
+    <div class="nav-links">
+      <a href="#catalog">Algorithms</a>
+      <a href="#paths">Learning Paths</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#repos">Repositories</a>
+    </div>
+    <a href="https://github.com/no-magic-ai/no-magic" class="nav-cta" target="_blank">View on GitHub</a>
   </div>
+</nav>
 
-  <!-- ═══ HERO ═══ -->
-  <header class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-      <span class="hero-badge">open source</span>
-      <h1 class="hero-title">no-<em>magic</em></h1>
-      <p class="hero-sub">
-        Single-file, zero-dependency Python implementations of the algorithms that power modern AI.
-        Every script runs with <code>python script.py</code> &mdash; no frameworks, no abstractions.
-      </p>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-num" id="statAlgos">&mdash;</div>
-          <div class="hero-stat-label">Algorithms</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">0</div>
-          <div class="hero-stat-label">Dependencies</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">4</div>
-          <div class="hero-stat-label">Tiers</div>
-        </div>
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-cover"></div>
+    <div class="hero-cover-fade"></div>
+    <div class="particle" style="width:6px;height:6px;background:rgba(65,222,176,0.5);top:20%;left:15%;animation-delay:0s;"></div>
+    <div class="particle" style="width:4px;height:4px;background:rgba(255,178,183,0.4);top:35%;left:70%;animation-delay:2s;"></div>
+    <div class="particle" style="width:8px;height:8px;background:rgba(65,222,176,0.3);top:60%;left:80%;animation-delay:4s;"></div>
+    <div class="particle" style="width:4px;height:4px;background:rgba(252,83,109,0.5);top:75%;left:25%;animation-delay:1s;"></div>
+    <div class="particle" style="width:6px;height:6px;background:rgba(255,178,183,0.25);top:45%;left:50%;animation-delay:3s;"></div>
+    <div class="particle" style="width:4px;height:4px;background:rgba(65,222,176,0.4);top:15%;left:60%;animation-delay:5s;"></div>
+  </div>
+  <div class="container hero-content">
+    <p class="hero-tag">// zero dependencies. just math.</p>
+    <h1>no-magic</h1>
+    <p class="hero-sub">
+      Single-file, zero-dependency Python implementations of the algorithms that power modern AI.
+      Every script runs with <code>python script.py</code> &mdash; no frameworks, no abstractions.
+    </p>
+    <div class="hero-cta-row">
+      <a href="https://github.com/no-magic-ai/no-magic" class="btn-hero-primary" target="_blank">View on GitHub</a>
+      <a href="#catalog" class="btn-hero-ghost">Browse algorithms &darr;</a>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card ghost-border">
+        <div class="stat-value green" id="stat-algos">&mdash;</div>
+        <div class="stat-label">Algorithms</div>
       </div>
-      <div class="hero-stats hero-stats-secondary">
-        <div class="hero-stat">
-          <div class="hero-stat-num hero-stat-sm" id="statStars">&mdash;</div>
-          <div class="hero-stat-label">Stars</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num hero-stat-sm" id="statForks">&mdash;</div>
-          <div class="hero-stat-label">Forks</div>
-        </div>
+      <div class="stat-card ghost-border">
+        <div class="stat-value pink">0</div>
+        <div class="stat-label">Dependencies</div>
       </div>
-      <div class="hero-cta">
-        <a href="https://github.com/no-magic-ai/no-magic" class="btn btn-primary" target="_blank">View on GitHub</a>
-        <a href="#catalog" class="btn btn-ghost">Browse algorithms</a>
+      <div class="stat-card ghost-border">
+        <div class="stat-value white" id="stat-tiers">&mdash;</div>
+        <div class="stat-label">Tiers</div>
+      </div>
+      <div class="stat-card ghost-border">
+        <div class="stat-value green" id="stat-stars">&mdash;</div>
+        <div class="stat-label">Stars</div>
+      </div>
+      <div class="stat-card ghost-border">
+        <div class="stat-value pink" id="stat-forks">&mdash;</div>
+        <div class="stat-label">Forks</div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
+  </div>
+  <div class="scroll-ind">
+    <div class="scroll-ind-ring ghost-border">
+      <div class="scroll-dot"></div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ═══ ALGORITHM CATALOG ═══ -->
-  <section id="catalog" class="reveal">
-    <div class="section-label">Catalog</div>
-    <h2 class="section-title">Every algorithm, one file each</h2>
-    <p class="section-desc">Each script trains a model from scratch and performs inference. Read top-to-bottom like a tutorial. Comments are the curriculum.</p>
+<!-- ═══ ALGORITHM CATALOG ═══ -->
+<section id="catalog" class="section section-low reveal">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="font-headline">Algorithm Catalog</h2>
+        <p>Each script trains a model from scratch and performs inference. Read top-to-bottom like a tutorial.</p>
+      </div>
+      <nav class="pills" id="tierNav" role="tablist"></nav>
+    </div>
+    <div class="cards-grid" id="algoGrid"></div>
+  </div>
+</section>
 
-    <nav class="tier-nav" role="tablist" id="tierNav"></nav>
-
-    <div class="algo-grid" id="algoGrid"></div>
-  </section>
-
-  <!-- ═══ LEARNING PATHS ═══ -->
-  <section id="paths" class="reveal">
-    <div class="section-label">Learning Paths</div>
-    <h2 class="section-title">Structured tracks through the collection</h2>
-    <p class="section-desc">Pick a track based on your interest or time budget. Each script builds on the one before it.</p>
-
+<!-- ═══ LEARNING PATHS ═══ -->
+<section id="paths" class="section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="font-headline">Learning Paths</h2>
+        <p>Structured tracks through the collection. Pick one based on your interest or time budget.</p>
+      </div>
+    </div>
     <div class="tracks-grid">
       <div class="track-card">
         <div class="track-num">01</div>
         <div class="track-name">Weekend Sprint: Transformers</div>
         <div class="track-desc">From raw text to self-attention. Tokenization, embeddings, RNNs, GPT, and BERT.</div>
-        <div class="track-meta">
-          <span>~4 hrs</span>
-          <span>6 scripts</span>
-        </div>
+        <div class="track-meta"><span>~4 hrs</span><span>6 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">02</div>
         <div class="track-name">Weekend Sprint: Alignment</div>
         <div class="track-desc">Steering model behavior post-training. LoRA, DPO, PPO, and RLHF.</div>
-        <div class="track-meta">
-          <span>~3 hrs</span>
-          <span>5 scripts</span>
-        </div>
+        <div class="track-meta"><span>~3 hrs</span><span>5 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">03</div>
         <div class="track-name">Deep Dive: Modern Inference</div>
         <div class="track-desc">Making models fast and small. Quantization, KV-cache, Flash Attention, parallelism.</div>
-        <div class="track-meta">
-          <span>~7 hrs</span>
-          <span>10 scripts</span>
-        </div>
+        <div class="track-meta"><span>~7 hrs</span><span>10 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">04</div>
         <div class="track-name">Deep Dive: Generative Models</div>
         <div class="track-desc">How models create new data. Diffusion, GANs, VAEs, and adversarial training.</div>
-        <div class="track-meta">
-          <span>~4 hrs</span>
-          <span>4 scripts</span>
-        </div>
+        <div class="track-meta"><span>~4 hrs</span><span>4 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">05</div>
         <div class="track-name">Deep Dive: Retrieval &amp; Search</div>
         <div class="track-desc">Connecting models to external knowledge. BM25, vector search, RAG pipelines.</div>
-        <div class="track-meta">
-          <span>~3 hrs</span>
-          <span>3 scripts</span>
-        </div>
+        <div class="track-meta"><span>~3 hrs</span><span>3 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">06</div>
-        <div class="track-name">Full Curriculum</div>
-        <div class="track-desc">All 47 scripts in dependency order. The complete no-magic experience.</div>
-        <div class="track-meta">
-          <span>~22 hrs</span>
-          <span>47 scripts</span>
-        </div>
+        <div class="track-name">Agent Algorithms</div>
+        <div class="track-desc">Search and reasoning for autonomous agents. MCTS, minimax, bandits, ReAct.</div>
+        <div class="track-meta"><span>~3 hrs</span><span>5 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">07</div>
-        <div class="track-name">Agent Algorithms</div>
-        <div class="track-desc">Search and reasoning for autonomous agents. MCTS, minimax, bandits, ReAct.</div>
-        <div class="track-meta">
-          <span>~3 hrs</span>
-          <span>5 scripts</span>
+        <div class="track-name">Full Curriculum</div>
+        <div class="track-desc">All scripts in dependency order. The complete no-magic experience.</div>
+        <div class="track-meta"><span>~22 hrs</span><span>47 scripts</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHILOSOPHY ═══ -->
+<section id="philosophy" class="section section-lowest reveal">
+  <div class="container" style="max-width: 1000px;">
+    <div class="philosophy-grid">
+      <h2 class="font-headline">The constraint is the product</h2>
+      <div class="phil-item">
+        <h4>One file per algorithm</h4>
+        <p>No local imports, no utils.py, no companion files. Everything in one place.</p>
+      </div>
+      <div class="phil-item">
+        <h4>Zero dependencies</h4>
+        <p>Python standard library only. If it needs pip install, it doesn't belong here.</p>
+      </div>
+      <div class="phil-item">
+        <h4>Train + infer in one command</h4>
+        <p><code>python script.py</code> runs the full lifecycle. No setup, no config, no environment.</p>
+      </div>
+      <div class="phil-item">
+        <h4>Comments are the curriculum</h4>
+        <p>30-40% comment density. Math-to-code mappings. Why, not what. Read top-to-bottom like a tutorial.</p>
+      </div>
+      <div class="phil-item">
+        <h4>Reproducible by default</h4>
+        <p><code>random.seed(42)</code> at the top of every script. Same input, same output, every time.</p>
+      </div>
+      <div class="phil-item">
+        <h4>Under 10 minutes on CPU</h4>
+        <p>Every script completes on a laptop CPU. No GPU required. No cloud. No excuses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REPOS ═══ -->
+<section id="repos" class="section reveal">
+  <div class="container">
+    <div class="eco-header">
+      <h2 class="font-headline">The Ecosystem</h2>
+      <div class="eco-line"></div>
+    </div>
+    <div class="eco-grid">
+      <a href="https://github.com/no-magic-ai/no-magic" class="eco-card ghost-border pink" target="_blank">
+        <div class="eco-card-header">
+          <span class="material-symbols-outlined" style="font-size:1.125rem;">code</span>
+          <h5 class="font-headline">no-magic</h5>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ PHILOSOPHY ═══ -->
-  <section id="philosophy" class="reveal">
-    <div class="section-label">Philosophy</div>
-    <h2 class="section-title">The constraint is the product</h2>
-    <p class="section-desc">Modern ML education has a gap. Library tutorials teach you to call functions. Papers are full of notation. We write the missing middle layer: the algorithm itself, as readable code.</p>
-
-    <div class="principles">
-      <div class="principle">
-        <div class="principle-title">One file per algorithm</div>
-        <div class="principle-desc">No local imports, no utils.py, no companion files. Everything in one place.</div>
-      </div>
-      <div class="principle">
-        <div class="principle-title">Zero dependencies</div>
-        <div class="principle-desc">Python standard library only. If it needs pip install, it doesn't belong here.</div>
-      </div>
-      <div class="principle">
-        <div class="principle-title">Train + infer in one command</div>
-        <div class="principle-desc"><code style="color:var(--green);font-size:12px">python script.py</code> runs the full lifecycle. No setup, no config, no environment.</div>
-      </div>
-      <div class="principle">
-        <div class="principle-title">Comments are the curriculum</div>
-        <div class="principle-desc">30-40% comment density. Math-to-code mappings. Why, not what. Read top-to-bottom like a tutorial.</div>
-      </div>
-      <div class="principle">
-        <div class="principle-title">Reproducible by default</div>
-        <div class="principle-desc"><code style="color:var(--green);font-size:12px">random.seed(42)</code> at the top of every script. Same input, same output, every time.</div>
-      </div>
-      <div class="principle">
-        <div class="principle-title">Under 10 minutes on CPU</div>
-        <div class="principle-desc">Every script completes on a laptop CPU. No GPU required. No cloud. No excuses.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ REPOS ═══ -->
-  <section id="repos" class="reveal">
-    <div class="section-label">Repositories</div>
-    <h2 class="section-title">The no-magic ecosystem</h2>
-
-    <div class="repos-grid">
-      <a href="https://github.com/no-magic-ai/no-magic" class="repo-card" target="_blank">
-        <div class="repo-name">no-magic</div>
-        <div class="repo-desc">47 single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. The core collection.</div>
-        <div class="repo-lang"><span class="dot" style="background:#3572A5"></span> Python</div>
+        <p>47 single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. The core collection.</p>
+        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
       </a>
-      <a href="https://github.com/no-magic-ai/no-magic-viz" class="repo-card" target="_blank">
-        <div class="repo-name">no-magic-viz</div>
-        <div class="repo-desc">Manim-powered algorithm visualizations. Animated explainers showing each algorithm's mechanics in motion.</div>
-        <div class="repo-lang"><span class="dot" style="background:#3572A5"></span> Python &middot; Manim</div>
+      <a href="https://github.com/no-magic-ai/no-magic-viz" class="eco-card ghost-border green" target="_blank">
+        <div class="eco-card-header">
+          <span class="material-symbols-outlined" style="font-size:1.125rem;">monitoring</span>
+          <h5 class="font-headline">no-magic-viz</h5>
+        </div>
+        <p>Manim-powered algorithm visualizations. Animated explainers showing each algorithm's mechanics in motion.</p>
+        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
       </a>
-      <a href="https://github.com/no-magic-ai/no-magic-ai.github.io" class="repo-card" target="_blank">
-        <div class="repo-name">no-magic-ai.github.io</div>
-        <div class="repo-desc">This website. Algorithm catalog, learning paths, and live GitHub stats. Pure static HTML/CSS/JS.</div>
-        <div class="repo-lang"><span class="dot" style="background:#e34c26"></span> HTML &middot; CSS &middot; JS</div>
+      <a href="https://github.com/no-magic-ai/no-magic-ai.github.io" class="eco-card ghost-border white" target="_blank">
+        <div class="eco-card-header">
+          <span class="material-symbols-outlined" style="font-size:1.125rem;">language</span>
+          <h5 class="font-headline">no-magic-ai.github.io</h5>
+        </div>
+        <p>This website. Algorithm catalog, learning paths, and live GitHub stats. Pure static HTML/CSS/JS.</p>
+        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ AUTHOR ═══ -->
-  <section id="author" class="reveal">
+<!-- ═══ AUTHOR ═══ -->
+<section id="author" class="section reveal">
+  <div class="container">
     <div class="author-banner">
       <img src="https://avatars.githubusercontent.com/u/9562152?v=4" alt="Tom Mathews" class="author-avatar">
       <div class="author-info">
-        <div class="section-label">Created by</div>
+        <div class="author-label">Created by</div>
         <div class="author-name">Tom Mathews</div>
         <div class="author-bio">Building tools that make AI algorithms transparent and accessible.</div>
         <div class="author-links">
@@ -1019,207 +777,211 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ FOOTER ═══ -->
-  <footer>
-    <div>&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank">Tom Mathews</a> &mdash; MIT License</div>
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo font-headline">&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank" style="color:var(--primary);">Tom Mathews</a> &mdash; MIT License</div>
     <div class="footer-links">
       <a href="https://github.com/no-magic-ai/no-magic" target="_blank">GitHub</a>
       <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
       <a href="https://github.com/no-magic-ai/no-magic/blob/main/LEARNING_PATH.md" target="_blank">Learning Path</a>
     </div>
-  </footer>
-
-  <!-- ═══ PREVIEW MODAL ═══ -->
-  <div class="modal-overlay" id="modal">
-    <button class="modal-close">&times;</button>
-    <div class="modal-content">
-      <img id="modalImg" src="" alt="">
-      <div class="modal-title" id="modalTitle"></div>
-      <div class="modal-thesis" id="modalThesis"></div>
-    </div>
   </div>
+</footer>
 
-  <script>
-    // ─── Constants ───
-    const CATALOG_URL = 'https://raw.githubusercontent.com/no-magic-ai/no-magic/main/docs/catalog.json';
-    const GITHUB_API = 'https://api.github.com/repos/no-magic-ai/no-magic';
-    const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
-    const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
+<!-- ═══ PREVIEW MODAL ═══ -->
+<div class="modal-overlay" id="modal">
+  <button class="modal-close">&times;</button>
+  <div class="modal-content">
+    <img id="modalImg" src="" alt="">
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-thesis" id="modalThesis"></div>
+  </div>
+</div>
 
-    const TIER_LABELS = {
-      '01-foundations': 'Foundations',
-      '02-alignment': 'Alignment',
-      '03-systems': 'Systems',
-      '04-agents': 'Agents',
-    };
+<script>
+// ─── Constants ───
+const CATALOG_URL = 'https://raw.githubusercontent.com/no-magic-ai/no-magic/main/docs/catalog.json';
+const GITHUB_API = 'https://api.github.com/repos/no-magic-ai/no-magic';
+const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
+const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
 
-    const TIER_CLASS = {
-      '01-foundations': 'tier-foundations',
-      '02-alignment': 'tier-alignment',
-      '03-systems': 'tier-systems',
-      '04-agents': 'tier-agents',
-    };
+const TIER_LABELS = {
+  '01-foundations': 'Foundations',
+  '02-alignment': 'Alignment',
+  '03-systems': 'Systems',
+  '04-agents': 'Agents',
+};
 
-    let algorithms = [];
-    let previewSet = new Set();
+const TIER_BADGE_CLASS = {
+  '01-foundations': 'tier-badge-foundations',
+  '02-alignment': 'tier-badge-alignment',
+  '03-systems': 'tier-badge-systems',
+  '04-agents': 'tier-badge-agents',
+};
 
-    const grid = document.getElementById('algoGrid');
-    const tierNav = document.getElementById('tierNav');
-    const modal = document.getElementById('modal');
+let algorithms = [];
+let previewSet = new Set();
 
-    // ─── Fetch with sessionStorage cache (5 min TTL) ───
-    async function cachedFetch(url, key, ttlMs = 300000) {
-      const cached = sessionStorage.getItem(key);
-      if (cached) {
-        const { data, ts } = JSON.parse(cached);
-        if (Date.now() - ts < ttlMs) return data;
-      }
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`${url}: ${res.status}`);
-      const data = await res.json();
-      sessionStorage.setItem(key, JSON.stringify({ data, ts: Date.now() }));
-      return data;
-    }
+const grid = document.getElementById('algoGrid');
+const tierNav = document.getElementById('tierNav');
+const modal = document.getElementById('modal');
 
-    // ─── Fetch GitHub stars & forks ───
-    async function fetchGitHubStats() {
-      try {
-        const repo = await cachedFetch(GITHUB_API, 'gh-stats');
-        document.getElementById('statStars').textContent = repo.stargazers_count.toLocaleString();
-        document.getElementById('statForks').textContent = repo.forks_count.toLocaleString();
-      } catch {
-        document.getElementById('statStars').textContent = '\u2014';
-        document.getElementById('statForks').textContent = '\u2014';
-      }
-    }
+// ─── Fetch with sessionStorage cache (5 min TTL) ───
+async function cachedFetch(url, key, ttlMs = 300000) {
+  const cached = sessionStorage.getItem(key);
+  if (cached) {
+    const { data, ts } = JSON.parse(cached);
+    if (Date.now() - ts < ttlMs) return data;
+  }
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(url + ': ' + res.status);
+  const data = await res.json();
+  sessionStorage.setItem(key, JSON.stringify({ data, ts: Date.now() }));
+  return data;
+}
 
-    // ─── Discover which previews exist (via viz repo file listing) ───
-    async function fetchPreviewList() {
-      try {
-        const files = await cachedFetch(
-          'https://api.github.com/repos/no-magic-ai/no-magic-viz/contents/previews',
-          'viz-previews'
-        );
-        files.forEach(f => {
-          if (f.name.endsWith('.gif')) {
-            previewSet.add(f.name.replace('.gif', ''));
-          }
-        });
-      } catch {
-        // If API fails, preview indicators just won't show
-      }
-    }
+// ─── Fetch GitHub stars, forks, algo count, tier count ───
+async function fetchGitHubStats() {
+  try {
+    const repo = await cachedFetch(GITHUB_API, 'gh-stats');
+    const stars = repo.stargazers_count;
+    document.getElementById('stat-stars').textContent = stars >= 1000
+      ? (stars / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : stars.toLocaleString();
+    document.getElementById('stat-forks').textContent = repo.forks_count.toLocaleString();
+  } catch {
+    document.getElementById('stat-stars').textContent = '\u2014';
+    document.getElementById('stat-forks').textContent = '\u2014';
+  }
+}
 
-    // ─── Build tier tabs dynamically ───
-    function buildTabs() {
-      const counts = {};
-      algorithms.forEach(a => { counts[a.tier] = (counts[a.tier] || 0) + 1; });
-
-      const tiers = Object.keys(counts).sort();
-      let html = `<button class="tier-tab active" data-tier="all" role="tab">All <span class="tab-count">${algorithms.length}</span></button>`;
-      tiers.forEach(tier => {
-        const label = TIER_LABELS[tier] || tier;
-        html += `<button class="tier-tab" data-tier="${tier}" role="tab">${label} <span class="tab-count">${counts[tier]}</span></button>`;
-      });
-      tierNav.innerHTML = html;
-
-      tierNav.querySelectorAll('.tier-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          tierNav.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          renderGrid(tab.dataset.tier);
-        });
-      });
-    }
-
-    // ─── Render algorithm cards ───
-    function renderGrid(tier) {
-      const filtered = tier === 'all' ? algorithms : algorithms.filter(a => a.tier === tier);
-      grid.innerHTML = filtered.map(a => {
-        const hasPreview = previewSet.has(a.name);
-        const safeThesis = a.thesis.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-        const safeDisplay = a.display.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-        return `
-          <div class="algo-card" data-name="${a.name}" data-tier="${a.tier}" data-thesis="${safeThesis}" data-display="${safeDisplay}">
-            <div class="algo-header">
-              <span class="algo-name">${a.display}</span>
-              <span class="algo-tier-badge ${TIER_CLASS[a.tier] || ''}">${TIER_LABELS[a.tier] || a.tier}</span>
-            </div>
-            <div class="algo-thesis">${a.thesis}</div>
-            <div class="algo-footer">
-              <div class="algo-links">
-                <a href="${REPO_BASE}${a.tier}/${a.name}.py" class="algo-link" target="_blank" onclick="event.stopPropagation()">source</a>
-                ${hasPreview ? `<span class="algo-link" onclick="event.stopPropagation(); showPreview('${a.name}')">preview</span>` : ''}
-              </div>
-              ${hasPreview ? '<div class="algo-preview-indicator"><span class="dot"></span>viz</div>' : ''}
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    // ─── Preview modal ───
-    function showPreview(name) {
-      const algo = algorithms.find(a => a.name === name);
-      if (!algo) return;
-      document.getElementById('modalImg').src = VIZ_BASE + name + '.gif';
-      document.getElementById('modalTitle').textContent = algo.display;
-      document.getElementById('modalThesis').textContent = algo.thesis;
-      modal.classList.add('active');
-    }
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target.classList.contains('modal-close')) {
-        modal.classList.remove('active');
-      }
+// ─── Discover which previews exist ───
+async function fetchPreviewList() {
+  try {
+    const files = await cachedFetch(
+      'https://api.github.com/repos/no-magic-ai/no-magic-viz/contents/previews',
+      'viz-previews'
+    );
+    files.forEach(function(f) {
+      if (f.name.endsWith('.gif')) previewSet.add(f.name.replace('.gif', ''));
     });
+  } catch { /* preview indicators won't show */ }
+}
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modal.classList.remove('active');
+// ─── Build tier tabs dynamically ───
+function buildTabs() {
+  const counts = {};
+  algorithms.forEach(function(a) { counts[a.tier] = (counts[a.tier] || 0) + 1; });
+
+  const tiers = Object.keys(counts).sort();
+  var html = '<button class="pill active" data-tier="all" role="tab">All <span class="pill-count">' + algorithms.length + '</span></button>';
+  tiers.forEach(function(tier) {
+    var label = TIER_LABELS[tier] || tier;
+    html += '<button class="pill" data-tier="' + tier + '" role="tab">' + label + ' <span class="pill-count">' + counts[tier] + '</span></button>';
+  });
+  tierNav.innerHTML = html;
+
+  tierNav.querySelectorAll('.pill').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tierNav.querySelectorAll('.pill').forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      renderGrid(tab.dataset.tier);
     });
+  });
+}
 
-    grid.addEventListener('click', (e) => {
-      const card = e.target.closest('.algo-card');
-      if (!card || e.target.closest('a')) return;
-      const name = card.dataset.name;
-      if (previewSet.has(name)) {
-        showPreview(name);
-      } else {
-        window.open(REPO_BASE + card.dataset.tier + '/' + name + '.py', '_blank');
-      }
-    });
+// ─── Render algorithm cards ───
+function renderGrid(tier) {
+  var filtered = tier === 'all' ? algorithms : algorithms.filter(function(a) { return a.tier === tier; });
+  grid.innerHTML = filtered.map(function(a) {
+    var hasPreview = previewSet.has(a.name);
+    var safeThesis = a.thesis.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    var safeDisplay = a.display.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    var badgeClass = TIER_BADGE_CLASS[a.tier] || '';
+    var tierLabel = TIER_LABELS[a.tier] || a.tier;
+    return '<div class="algo-card" data-name="' + a.name + '" data-tier="' + a.tier + '">' +
+      '<div class="algo-card-top">' +
+        '<span class="algo-card-name">' + a.display + '</span>' +
+        '<span class="tier-badge ' + badgeClass + '">' + tierLabel + '</span>' +
+      '</div>' +
+      '<div class="algo-card-thesis">' + a.thesis + '</div>' +
+      '<div class="algo-card-footer">' +
+        '<div class="algo-card-links">' +
+          '<a href="' + REPO_BASE + a.tier + '/' + a.name + '.py" class="algo-card-link" target="_blank" onclick="event.stopPropagation()">source</a>' +
+          (hasPreview ? '<span class="algo-card-link" onclick="event.stopPropagation(); showPreview(\'' + a.name + '\')">preview</span>' : '') +
+        '</div>' +
+        (hasPreview ? '<div class="algo-card-viz"><span class="viz-dot"></span>viz</div>' : '') +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
 
-    // ─── Initialize ───
-    async function init() {
-      // Fetch catalog and previews in parallel
-      const [catalog] = await Promise.all([
-        cachedFetch(CATALOG_URL, 'catalog'),
-        fetchPreviewList(),
-        fetchGitHubStats(),
-      ]);
+// ─── Preview modal ───
+function showPreview(name) {
+  var algo = algorithms.find(function(a) { return a.name === name; });
+  if (!algo) return;
+  document.getElementById('modalImg').src = VIZ_BASE + name + '.gif';
+  document.getElementById('modalTitle').textContent = algo.display;
+  document.getElementById('modalThesis').textContent = algo.thesis;
+  modal.classList.add('active');
+}
 
-      algorithms = catalog;
-      document.getElementById('statAlgos').textContent = algorithms.length;
-      buildTabs();
-      renderGrid('all');
-    }
+modal.addEventListener('click', function(e) {
+  if (e.target === modal || e.target.classList.contains('modal-close')) {
+    modal.classList.remove('active');
+  }
+});
 
-    init().catch(err => {
-      grid.innerHTML = `<div style="padding:2rem;color:var(--primary)">Failed to load catalog: ${err.message}</div>`;
-    });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') modal.classList.remove('active');
+});
 
-    // ─── Scroll reveal ───
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+grid.addEventListener('click', function(e) {
+  var card = e.target.closest('.algo-card');
+  if (!card || e.target.closest('a')) return;
+  var name = card.dataset.name;
+  if (previewSet.has(name)) {
+    showPreview(name);
+  } else {
+    window.open(REPO_BASE + card.dataset.tier + '/' + name + '.py', '_blank');
+  }
+});
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+// ─── Initialize ───
+async function init() {
+  var [catalog] = await Promise.all([
+    cachedFetch(CATALOG_URL, 'catalog'),
+    fetchPreviewList(),
+    fetchGitHubStats(),
+  ]);
+
+  algorithms = catalog;
+  document.getElementById('stat-algos').textContent = algorithms.length;
+
+  // Count tiers from catalog data
+  var tierSet = new Set();
+  algorithms.forEach(function(a) { tierSet.add(a.tier); });
+  document.getElementById('stat-tiers').textContent = tierSet.size;
+
+  buildTabs();
+  renderGrid('all');
+}
+
+init().catch(function(err) {
+  grid.innerHTML = '<div style="padding:2rem;color:var(--primary)">Failed to load catalog: ' + err.message + '</div>';
+});
+
+// ─── Scroll reveal ───
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>
