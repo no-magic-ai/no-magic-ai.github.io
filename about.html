@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &mdash; no-magic-ai</title>
+  <meta name="description" content="The no-magic-ai manifesto. Why we exist, what each repo does, and what we refuse to become.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <style>
+/* ══════════════════════════════════════════════
+   Design System: Neon Observatory (shared with index.html)
+   ══════════════════════════════════════════════ */
+:root {
+  --bg: #12121f;
+  --surface: #12121f;
+  --surface-lowest: #0d0d1a;
+  --surface-low: #1a1a28;
+  --surface-container: #1e1e2c;
+  --surface-high: #292937;
+  --surface-highest: #343342;
+  --surface-bright: #383847;
+  --on-surface: #e3e0f4;
+  --on-surface-variant: #e2bebf;
+  --on-bg: #e3e0f4;
+  --primary: #ffb2b7;
+  --primary-container: #fc536d;
+  --on-primary: #67001c;
+  --on-primary-container: #5b0017;
+  --secondary: #41deb0;
+  --secondary-container: #00c295;
+  --on-secondary: #003829;
+  --tertiary: #c6c6c6;
+  --outline-variant: #5a4042;
+  --outline: #a9898a;
+  --error: #ffb4ab;
+  --tier-foundations: #5b8def;
+  --tier-foundations-bg: rgba(15, 52, 96, 0.15);
+  --tier-alignment: #c78ddb;
+  --tier-alignment-bg: rgba(155, 89, 182, 0.15);
+  --tier-systems: #41deb0;
+  --tier-systems-bg: rgba(65, 222, 176, 0.1);
+  --tier-agents: #e97d32;
+  --tier-agents-bg: rgba(233, 125, 50, 0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--on-bg);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px; line-height: 1.6;
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; font-family: inherit; }
+::selection { background: rgba(255, 178, 183, 0.3); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.ghost-border { border: 1px solid rgba(90, 64, 66, 0.15); }
+.font-headline { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; width: 100%; z-index: 50;
+  background: rgba(18, 18, 31, 0.75);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.nav-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; max-width: 1200px; margin: 0 auto;
+}
+.nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem; font-weight: 700; letter-spacing: -0.05em; color: var(--on-surface);
+}
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.875rem;
+  color: rgba(226, 190, 191, 0.5); transition: color 0.3s;
+  letter-spacing: -0.02em;
+}
+.nav-links a:hover, .nav-links a.current { color: var(--on-surface); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary-container); padding: 0.5rem 1.5rem;
+  border-radius: 9999px; font-weight: 700; font-size: 0.875rem;
+  transition: transform 0.2s;
+  box-shadow: 0 0 30px rgba(252, 83, 109, 0.15);
+}
+.nav-cta:hover { transform: scale(1.05); }
+
+/* ── Hero ── */
+.hero-compact {
+  position: relative; padding: 10rem 0 4rem; overflow: hidden;
+  background: var(--surface-lowest);
+}
+.hero-compact::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(252, 83, 109, 0.08), transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(65, 222, 176, 0.06), transparent 50%);
+}
+.hero-compact .container { position: relative; z-index: 2; }
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace; color: var(--secondary);
+  font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem; opacity: 0.7;
+}
+.hero-compact h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700; letter-spacing: -0.04em; line-height: 1;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+.hero-compact .lede {
+  font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 300;
+  color: var(--on-surface-variant); max-width: 720px; line-height: 1.7;
+}
+
+/* ── Sections ── */
+.section { padding: 5rem 0; position: relative; z-index: 1; }
+.section-low { background: var(--surface-low); }
+.section-lowest { background: var(--surface-lowest); }
+.section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700; letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+.section h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: 0.75rem; color: var(--on-surface);
+}
+.section p {
+  color: var(--on-surface-variant); line-height: 1.8;
+  margin-bottom: 1rem; max-width: 780px;
+}
+.section p.emphasis {
+  font-size: 1.0625rem; color: var(--on-surface);
+}
+.section code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em; color: var(--secondary);
+  background: rgba(65, 222, 176, 0.08);
+  padding: 2px 6px; border-radius: 3px;
+}
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--primary); font-size: 0.75rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 0.75rem; opacity: 0.9;
+}
+
+/* ── Mission block ── */
+.mission-block {
+  background: var(--surface-high); border-radius: 1rem;
+  padding: 2.5rem 3rem; margin: 1rem 0 2rem;
+  border-left: 3px solid var(--primary);
+}
+.mission-block p {
+  font-size: 1.125rem; color: var(--on-surface);
+  line-height: 1.7; margin-bottom: 0;
+}
+
+/* ── Repo table ── */
+.repo-grid { display: grid; gap: 1rem; margin-top: 2rem; }
+.repo-row {
+  display: grid; grid-template-columns: 200px 1fr 110px;
+  gap: 1.5rem; align-items: center;
+  background: var(--surface-high); padding: 1.5rem;
+  border-radius: 0.75rem; transition: background 0.3s;
+}
+.repo-row:hover { background: var(--surface-highest); }
+.repo-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9375rem; font-weight: 700; color: var(--primary);
+}
+.repo-constraint {
+  font-size: 0.875rem; color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+.repo-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem; padding: 0.25rem 0.625rem;
+  border-radius: 9999px; text-transform: uppercase;
+  letter-spacing: 0.1em; font-weight: 600;
+  text-align: center; justify-self: end;
+}
+.status-live { color: var(--secondary); background: rgba(65, 222, 176, 0.12); }
+.status-design { color: var(--primary); background: rgba(252, 83, 109, 0.12); }
+.status-planned { color: var(--tertiary); background: rgba(198, 198, 198, 0.08); }
+
+/* ── Not-goals block ── */
+.not-goals {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem; margin-top: 1.5rem;
+}
+.not-goal {
+  background: var(--surface-low); padding: 1.25rem 1.5rem;
+  border-radius: 0.625rem; border-left: 2px solid var(--error);
+}
+.not-goal-head {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem; color: var(--error);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 0.5rem; font-weight: 700;
+}
+.not-goal-body {
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  line-height: 1.6; margin: 0;
+}
+
+/* ── Principles grid ── */
+.principles {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem 2.5rem; margin-top: 1rem;
+}
+.principle { padding-left: 1rem; position: relative; }
+.principle::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--primary);
+}
+.principle h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem; font-weight: 700;
+  color: var(--on-surface); margin-bottom: 0.35rem;
+}
+.principle p {
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  line-height: 1.65; margin: 0;
+}
+
+/* ── Callout ── */
+.callout {
+  background: var(--surface-container); border-radius: 0.75rem;
+  padding: 1.75rem 2rem; margin: 1.5rem 0;
+  border-left: 3px solid var(--secondary);
+}
+.callout-label {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--secondary); font-size: 0.75rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 0.75rem; font-weight: 700;
+}
+.callout p { font-size: 0.9375rem; margin-bottom: 0.75rem; color: var(--on-surface); }
+.callout p:last-child { margin-bottom: 0; }
+
+/* ── Attribution rules ── */
+.rules-list {
+  list-style: none; padding: 0; margin-top: 1rem;
+  counter-reset: rule-counter;
+}
+.rules-list li {
+  position: relative; padding: 0.85rem 1rem 0.85rem 3rem;
+  border-bottom: 1px solid rgba(90, 64, 66, 0.12);
+  color: var(--on-surface-variant); font-size: 0.9375rem;
+  line-height: 1.6;
+  counter-increment: rule-counter;
+}
+.rules-list li::before {
+  content: counter(rule-counter, decimal-leading-zero);
+  position: absolute; left: 0; top: 0.95rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem; color: var(--primary);
+  letter-spacing: 0.05em; font-weight: 700;
+}
+.rules-list li strong { color: var(--on-surface); font-weight: 600; }
+
+/* ── Governance card ── */
+.gov-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem; margin-top: 1.5rem;
+}
+.gov-card {
+  background: var(--surface-high); padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+.gov-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem; font-weight: 700;
+  color: var(--on-surface); margin-bottom: 0.5rem;
+}
+.gov-card p {
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  line-height: 1.65; margin: 0;
+}
+.gov-card code { font-size: 0.75rem; }
+
+/* ── CTA row ── */
+.cta-row {
+  display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary-container); padding: 0.75rem 1.75rem;
+  border-radius: 9999px; font-weight: 700; font-size: 0.8125rem;
+  transition: all 0.25s;
+  box-shadow: 0 0 30px rgba(252, 83, 109, 0.15);
+  font-family: 'Space Grotesk', sans-serif;
+}
+.btn-primary:hover { transform: translateY(-1px) scale(1.02); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.75rem; border-radius: 9999px;
+  font-weight: 600; font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+  transition: all 0.25s; font-family: 'Space Grotesk', sans-serif;
+  border: 1px solid rgba(90, 64, 66, 0.3);
+}
+.btn-ghost:hover { color: var(--on-surface); border-color: rgba(255, 178, 183, 0.4); }
+
+/* ── Footer ── */
+.footer { background: var(--surface-lowest); padding: 3rem 2rem; }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 1.5rem;
+}
+.footer-logo {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1.125rem;
+  font-weight: 700; color: var(--on-surface); letter-spacing: -0.03em;
+}
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a {
+  font-size: 0.8125rem; color: rgba(226, 190, 191, 0.4); transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--secondary); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero-compact { padding: 8rem 0 3rem; }
+  .repo-row { grid-template-columns: 1fr; gap: 0.75rem; }
+  .repo-status { justify-self: start; }
+  .not-goals { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo font-headline">No Magic AI</a>
+    <div class="nav-links">
+      <a href="/#catalog">Algorithms</a>
+      <a href="/#paths">Learning Paths</a>
+      <a href="/#philosophy">Philosophy</a>
+      <a href="about.html" class="current">About</a>
+    </div>
+    <a href="https://github.com/no-magic-ai" class="nav-cta" target="_blank">GitHub Org</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero-compact">
+  <div class="container">
+    <p class="hero-tag">// the manifesto</p>
+    <h1>What we are,<br>and what we refuse to become.</h1>
+    <p class="lede">
+      no-magic-ai is an umbrella for studying how modern AI actually works.
+      Not a framework. Not a course platform. Not a chatbot.
+      Every repo under this org enforces a single-sentence constraint.
+      Every algorithm points back to a paper.
+      Everything else is off-charter.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ MISSION ═══ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">// mission</p>
+    <h2 class="font-headline">Because <code>model.fit()</code> isn't an explanation.</h2>
+    <div class="mission-block">
+      <p>
+        Modern AI is taught as a stack of frameworks. <code>transformers.AutoModel</code>. <code>trl.PPOTrainer</code>. <code>peft.LoraConfig</code>.
+        Contributors learn to call the library, not to derive the algorithm.
+        no-magic-ai exists to close that loop &mdash; by implementing every algorithm from its source paper,
+        in Python standard library only, one file at a time, so a determined reader can trace every tensor back to its equation.
+      </p>
+    </div>
+    <p class="emphasis">
+      Our audience is two people: the ML engineer who uses frameworks daily and wants the internals,
+      and the career switcher who read the papers and needs a working implementation they can run on a laptop.
+      Everything we build serves one of these two. When it stops serving them, we delete it.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ CONSTRAINT ═══ -->
+<section class="section section-low">
+  <div class="container">
+    <p class="eyebrow">// the core discipline</p>
+    <h2 class="font-headline">One constraint per repo. No bleed.</h2>
+    <p>
+      no-magic-ai expands through new repos, not feature sprawl. Every repo declares one sentence that governs what belongs
+      and what doesn't. Repos do not share build systems, do not import each other, do not cross-reference code.
+      The website is the only surface that joins them.
+    </p>
+
+    <div class="repo-grid">
+      <div class="repo-row ghost-border">
+        <div class="repo-name">no-magic</div>
+        <div class="repo-constraint">One algorithm per file. Stdlib only. CPU only. Runs in under 10 minutes.</div>
+        <div class="repo-status status-live">live</div>
+      </div>
+      <div class="repo-row ghost-border">
+        <div class="repo-name">no-magic-viz</div>
+        <div class="repo-constraint">One Manim scene per algorithm. Renders to MP4 and GIF.</div>
+        <div class="repo-status status-live">live</div>
+      </div>
+      <div class="repo-row ghost-border">
+        <div class="repo-name">no-magic-ai.github.io</div>
+        <div class="repo-constraint">Static HTML portal. No JS framework. Federates the ecosystem.</div>
+        <div class="repo-status status-live">live</div>
+      </div>
+      <div class="repo-row ghost-border">
+        <div class="repo-name">no-magic-papers</div>
+        <div class="repo-constraint">One markdown per paper. Summary, contribution, status, link to implementation.</div>
+        <div class="repo-status status-planned">next</div>
+      </div>
+      <div class="repo-row ghost-border">
+        <div class="repo-name">no-magic-lessons</div>
+        <div class="repo-constraint">One prose lesson per algorithm. Paper &rarr; intuition &rarr; code walkthrough.</div>
+        <div class="repo-status status-planned">planned</div>
+      </div>
+      <div class="repo-row ghost-border">
+        <div class="repo-name">no-magic-paths</div>
+        <div class="repo-constraint">Curated reading orders with prerequisites across algorithms and lessons.</div>
+        <div class="repo-status status-planned">planned</div>
+      </div>
+      <div class="repo-row ghost-border">
+        <div class="repo-name">no-magic-labs</div>
+        <div class="repo-constraint">Exercises and applied projects that exceed one-file scope.</div>
+        <div class="repo-status status-planned">later</div>
+      </div>
+      <div class="repo-row ghost-border">
+        <div class="repo-name">apprentice</div>
+        <div class="repo-constraint">Agent pipeline that drafts algorithm entries from papers for human review.</div>
+        <div class="repo-status status-design">design</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NOT ═══ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">// the hard no's</p>
+    <h2 class="font-headline">What no-magic-ai refuses to become.</h2>
+    <p>
+      The value of this org is in what it won't do. Every feature we reject keeps the scope tight enough that the code stays readable
+      and the constraints stay honest. These are not deferred &mdash; they are off-charter.
+    </p>
+
+    <div class="not-goals">
+      <div class="not-goal">
+        <div class="not-goal-head">not an LMS</div>
+        <p class="not-goal-body">No user accounts. No progress tracking. No auth. No server-side state. Static files and GitHub Discussions are the whole platform.</p>
+      </div>
+      <div class="not-goal">
+        <div class="not-goal-head">not a chatbot</div>
+        <p class="not-goal-body">No RAG over the catalog. No AI tutor. A good single-file implementation with the right comments is already the explanation.</p>
+      </div>
+      <div class="not-goal">
+        <div class="not-goal-head">not a framework</div>
+        <p class="not-goal-body">No shared base classes. No abstract interfaces. No <code>no_magic.core</code> package. Every script stands alone.</p>
+      </div>
+      <div class="not-goal">
+        <div class="not-goal-head">not a tutorial mirror</div>
+        <p class="not-goal-body">No translations or ports of fast.ai, Karpathy, HuggingFace, or dive-into-llms. We implement from primary sources only.</p>
+      </div>
+      <div class="not-goal">
+        <div class="not-goal-head">not a production library</div>
+        <p class="not-goal-body">The code is pedagogical. It is not performant, not distributed, not hardened, and not meant to be imported by your app.</p>
+      </div>
+      <div class="not-goal">
+        <div class="not-goal-head">not a benchmark</div>
+        <p class="not-goal-body">We show how algorithms work, not which beats which. We cite benchmark results from papers; we do not run leaderboards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRINCIPLES ═══ -->
+<section class="section section-low">
+  <div class="container">
+    <p class="eyebrow">// org-wide principles</p>
+    <h2 class="font-headline">The constraints that hold across every repo.</h2>
+
+    <div class="principles">
+      <div class="principle">
+        <h4>Paper-first sourcing</h4>
+        <p>Every implementation cites the original paper. No content is ported from tutorials, courses, or other educational repos.</p>
+      </div>
+      <div class="principle">
+        <h4>Single-sentence charter per repo</h4>
+        <p>A new repo requires a one-sentence constraint that governs it. Violating the constraint is grounds for PR rejection.</p>
+      </div>
+      <div class="principle">
+        <h4>Slug as the common key</h4>
+        <p>Each algorithm has a canonical slug (e.g. <code>microrope</code>). Every repo references that slug. No other coupling exists.</p>
+      </div>
+      <div class="principle">
+        <h4>Reproducible under commodity hardware</h4>
+        <p>Everything runs on a laptop CPU. No GPU requirement. No cloud credits. No dataset larger than a few MB.</p>
+      </div>
+      <div class="principle">
+        <h4>Comments are the curriculum</h4>
+        <p>Code is the primary teaching artifact. Prose explanations live in <code>no-magic-lessons</code> and remain optional, never authoritative.</p>
+      </div>
+      <div class="principle">
+        <h4>Provenance over abstraction</h4>
+        <p>We'd rather write three similar implementations than one abstracted parent class. Duplication is honest; abstraction hides.</p>
+      </div>
+      <div class="principle">
+        <h4>Deletion is a feature</h4>
+        <p>Scripts, lessons, and paths that stop serving the two audiences get removed. The catalog is curated, not accreted.</p>
+      </div>
+      <div class="principle">
+        <h4>Static or nothing</h4>
+        <p>No databases. No services. No background jobs. If a feature needs stateful infrastructure, it does not belong in this org.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOURCING ═══ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">// sourcing policy</p>
+    <h2 class="font-headline">Where our content comes from.</h2>
+    <p>
+      The most important operating rule of this org is what we read while we write.
+      Implementing from the wrong source creates legal exposure and pedagogical noise. These five rules are binding
+      on every contributor and every agent that operates on these repos.
+    </p>
+
+    <ol class="rules-list">
+      <li><strong>Paper-first.</strong> Every algorithm implementation cites the original paper in its thesis docstring. If no paper exists, the algorithm does not belong in the catalog.</li>
+      <li><strong>No tutorial contact.</strong> Do not read other educational repos (fast.ai notebooks, Karpathy's nn-zero-to-hero, HuggingFace courses, dive-into-llms) while writing a no-magic script. Topic inspiration from their tables of contents is permitted.</li>
+      <li><strong>Attribution is a line, not a link.</strong> Cite sources in docstrings with full bibliographic detail. Avoid opaque URL references that can rot.</li>
+      <li><strong>License vigilance.</strong> Before adopting any external asset (dataset, image, figure, text fragment), verify and record the license in <code>ASSETS.md</code>.</li>
+      <li><strong>Contributor pledge.</strong> <code>CONTRIBUTING.md</code> requires every contributor to affirm they implemented from papers, not from tutorials. Enforcement is by review, not by CI.</li>
+    </ol>
+
+    <div class="callout">
+      <div class="callout-label">// on dive-into-llms specifically</div>
+      <p>
+        The <code>dive-into-llms</code> repository (SJTU BCMI) is an excellent curriculum signal but has no LICENSE file.
+        Its code and prose cannot be redistributed. no-magic-ai has chosen to use its table of contents as a topic menu while
+        implementing strictly from the primary papers that each chapter cites. No code, prose, or translated content enters this org.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GOVERNANCE ═══ -->
+<section class="section section-low">
+  <div class="container">
+    <p class="eyebrow">// governance</p>
+    <h2 class="font-headline">How decisions get made.</h2>
+    <p>
+      The project is small enough today that decisions are captured in documents rather than processes. Documents are versioned,
+      readable by agents, and form the standing record. A decision is binding once it lands in the document; disagreement is handled
+      by opening an issue and amending the document.
+    </p>
+
+    <div class="gov-grid">
+      <div class="gov-card">
+        <h4>Strategy</h4>
+        <p><code>no-magic-ai-expansion-strategy.md</code> is the top-level doc. Every new repo or charter change references it.</p>
+      </div>
+      <div class="gov-card">
+        <h4>Paper ingestion</h4>
+        <p><code>paper-ingestion-process.md</code> describes how a new paper flows through the ecosystem from publication to implementation.</p>
+      </div>
+      <div class="gov-card">
+        <h4>Per-repo CONTRIBUTING</h4>
+        <p>Each repo owns a <code>CONTRIBUTING.md</code> that encodes its single-sentence constraint and review checklist.</p>
+      </div>
+      <div class="gov-card">
+        <h4>GitHub Discussions</h4>
+        <p>Open questions, proposals, and curriculum debates live in <code>no-magic</code> Discussions. Resolved items migrate into documents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">// participate</p>
+    <h2 class="font-headline">Getting involved.</h2>
+    <p>
+      Contributors are welcome. Implementations, lessons, paper summaries, and curriculum paths are all valid contribution surfaces &mdash;
+      each gated by its repo's single-sentence constraint. Read the strategy document, pick a candidate, open an issue before writing code.
+    </p>
+    <div class="cta-row">
+      <a href="https://github.com/no-magic-ai" class="btn-primary" target="_blank">GitHub organization</a>
+      <a href="https://github.com/no-magic-ai/no-magic/discussions" class="btn-ghost" target="_blank">Discussions</a>
+      <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" class="btn-ghost" target="_blank">Contributing guide</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo font-headline">&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank" style="color:var(--primary);">Tom Mathews</a> &mdash; MIT License</div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="https://github.com/no-magic-ai" target="_blank">GitHub Org</a>
+      <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
