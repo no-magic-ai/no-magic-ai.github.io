@@ -1,4 +1,16 @@
+# macOS
 .DS_Store
+
 Thumbs.db
 .vscode/
 .idea/
+
+# Agentic Systems
+.agent
+.claude/
+.gemini
+.opencode/
+.serena/
+
+# Developer workspace
+.docs/
