@@ -205,6 +205,7 @@ button { cursor: pointer; border: none; font-family: inherit; }
 .status-live { color: var(--secondary); background: rgba(65, 222, 176, 0.12); }
 .status-design { color: var(--primary); background: rgba(252, 83, 109, 0.12); }
 .status-planned { color: var(--tertiary); background: rgba(198, 198, 198, 0.08); }
+.status-later { color: var(--tertiary); background: rgba(198, 198, 198, 0.04); opacity: 0.75; }
 
 /* ── Not-goals block ── */
 .not-goals {
@@ -436,13 +437,8 @@ button { cursor: pointer; border: none; font-family: inherit; }
       </div>
       <div class="repo-row ghost-border">
         <div class="repo-name">no-magic-papers</div>
-        <div class="repo-constraint">One markdown per paper. Summary, contribution, status, link to implementation.</div>
+        <div class="repo-constraint">One markdown per paper, plus companion lessons. Summary, contribution, status, link to implementation.</div>
         <div class="repo-status status-live">live</div>
-      </div>
-      <div class="repo-row ghost-border">
-        <div class="repo-name">no-magic-lessons</div>
-        <div class="repo-constraint">One prose lesson per algorithm. Paper &rarr; intuition &rarr; code walkthrough.</div>
-        <div class="repo-status status-planned">planned</div>
       </div>
       <div class="repo-row ghost-border">
         <div class="repo-name">no-magic-paths</div>
@@ -452,7 +448,7 @@ button { cursor: pointer; border: none; font-family: inherit; }
       <div class="repo-row ghost-border">
         <div class="repo-name">no-magic-labs</div>
         <div class="repo-constraint">Exercises and applied projects that exceed one-file scope.</div>
-        <div class="repo-status status-planned">later</div>
+        <div class="repo-status status-later">later</div>
       </div>
       <div class="repo-row ghost-border">
         <div class="repo-name">apprentice</div>
@@ -527,7 +523,7 @@ button { cursor: pointer; border: none; font-family: inherit; }
       </div>
       <div class="principle">
         <h4>Comments are the curriculum</h4>
-        <p>Code is the primary teaching artifact. Prose explanations live in <code>no-magic-lessons</code> and remain optional, never authoritative.</p>
+        <p>Code is the primary teaching artifact. Prose explanations live in <code>no-magic-papers/lessons/</code> and remain optional, never authoritative.</p>
       </div>
       <div class="principle">
         <h4>Provenance over abstraction</h4>
