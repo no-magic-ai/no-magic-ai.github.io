@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithms &mdash; no-magic-ai</title>
+  <meta name="description" content="Browse the no-magic algorithm catalog. 48 single-file Python implementations grouped by tier: foundations, alignment, systems, agents.">
+  <link rel="canonical" href="https://no-magic-ai.github.io/algorithms/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Algorithms — no-magic-ai">
+  <meta property="og:description" content="48 single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. Filter by tier and read top-to-bottom.">
+  <meta property="og:url" content="https://no-magic-ai.github.io/algorithms/">
+  <meta property="og:image" content="https://no-magic-ai.github.io/icon-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="../icon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <style>
+/* Page-specific styles for the Algorithms catalog. Shared tokens,
+   nav, footer, sections, and responsive baselines live in site.css. */
+
+/* ── Hero (compact, mirrors about.html) ── */
+.hero-compact {
+  position: relative; padding: 10rem 0 3rem; overflow: hidden;
+  background: var(--surface-lowest);
+}
+.hero-compact::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(252, 83, 109, 0.08), transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(65, 222, 176, 0.06), transparent 50%);
+}
+.hero-compact .container { position: relative; z-index: 2; }
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace; color: var(--secondary);
+  font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem; opacity: 0.7;
+}
+.hero-compact h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700; letter-spacing: -0.04em; line-height: 1;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+.hero-compact .lede {
+  font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 300;
+  color: var(--on-surface-variant); max-width: 720px; line-height: 1.7;
+}
+
+/* ── Catalog header ── */
+.catalog-toolbar {
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  align-items: center; justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.catalog-meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+  color: var(--tertiary); letter-spacing: 0.05em;
+}
+
+/* ── Tier Pills ── */
+.pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pill {
+  padding: 0.5rem 1.25rem; border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.8125rem; font-weight: 600;
+  background: var(--surface-highest); color: var(--on-surface);
+  transition: all 0.3s;
+}
+.pill:hover { background: var(--surface-bright); }
+.pill.active { background: var(--secondary); color: var(--on-secondary); }
+.pill .pill-count {
+  display: inline-block; font-size: 0.6875rem;
+  background: rgba(255, 255, 255, 0.15); padding: 0 0.375rem;
+  border-radius: 9999px; margin-left: 0.375rem;
+}
+.pill.active .pill-count { background: rgba(0, 56, 41, 0.3); }
+
+/* ── Algo Cards ── */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem;
+}
+.algo-card {
+  background: var(--surface-high); padding: 1.75rem; border-radius: 1rem;
+  transition: background 0.4s; cursor: pointer;
+  display: flex; flex-direction: column;
+}
+.algo-card:hover { background: var(--surface-highest); }
+.algo-card-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.algo-card-name {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
+  font-weight: 700; color: var(--on-surface);
+}
+.tier-badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.625rem;
+  padding: 0.2rem 0.6rem; border-radius: 9999px; flex-shrink: 0;
+  font-weight: 500;
+}
+.tier-badge-foundations { color: var(--tier-foundations); background: var(--tier-foundations-bg); }
+.tier-badge-alignment { color: var(--tier-alignment); background: var(--tier-alignment-bg); }
+.tier-badge-systems { color: var(--tier-systems); background: var(--tier-systems-bg); }
+.tier-badge-agents { color: var(--tier-agents); background: var(--tier-agents-bg); }
+.algo-card-thesis {
+  color: var(--on-surface-variant); font-size: 0.8125rem;
+  line-height: 1.7; flex: 1;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.algo-card-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 1rem; padding-top: 0.75rem;
+  border-top: 1px solid rgba(90, 64, 66, 0.1);
+}
+.algo-card-links { display: flex; gap: 0.75rem; }
+.algo-card-link {
+  font-size: 0.6875rem; color: var(--tertiary); transition: color 0.2s;
+  font-family: 'JetBrains Mono', monospace;
+}
+.algo-card-link:hover { color: var(--primary); }
+.algo-card-viz {
+  font-size: 0.625rem; color: var(--tertiary);
+  display: flex; align-items: center; gap: 0.25rem;
+}
+.algo-card-viz .viz-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--secondary);
+}
+
+/* ── Skeleton (shown during initial fetch) ── */
+.skeleton-card {
+  background: var(--surface-high); padding: 1.75rem; border-radius: 1rem;
+  height: 180px; opacity: 0.4;
+}
+
+/* ── Empty / error state ── */
+.catalog-state {
+  padding: 3rem 1rem; text-align: center;
+  color: var(--on-surface-variant);
+  font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;
+}
+.catalog-state.error { color: var(--primary); }
+
+/* ── Preview Modal ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.85); z-index: 10000;
+  justify-content: center; align-items: center;
+  padding: 2rem; cursor: pointer;
+}
+.modal-overlay.active { display: flex; }
+.modal-content { max-width: 560px; width: 100%; cursor: default; }
+.modal-content img {
+  width: 100%; border-radius: 0.75rem;
+  border: 1px solid rgba(90, 64, 66, 0.15);
+}
+.modal-title {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
+  font-weight: 700; margin-top: 1rem;
+}
+.modal-thesis {
+  font-size: 0.8125rem; color: var(--on-surface-variant);
+  margin-top: 0.5rem; line-height: 1.7;
+}
+.modal-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-size: 1.5rem; color: var(--tertiary); cursor: pointer;
+  background: none; border: none; font-family: 'JetBrains Mono', monospace;
+}
+.modal-close:hover { color: var(--on-surface); }
+
+/* ── Page-specific responsive overrides ── */
+@media (max-width: 768px) {
+  .hero-compact { padding: 8rem 0 2.5rem; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .catalog-toolbar { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo font-headline">No Magic AI</a>
+    <div class="nav-links">
+      <a href="./" class="current">Algorithms</a>
+      <a href="../#paths">Learning Paths</a>
+      <a href="../#philosophy">Philosophy</a>
+      <a href="../#repos">Repositories</a>
+      <a href="../about.html">About</a>
+    </div>
+    <a href="https://github.com/no-magic-ai/no-magic" class="nav-cta" target="_blank">View on GitHub</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero-compact">
+  <div class="container">
+    <p class="hero-tag">// the catalog</p>
+    <h1>Algorithm Catalog</h1>
+    <p class="lede">
+      Single-file Python implementations of the algorithms that power modern AI.
+      Each script trains a model from scratch and performs inference. Read top-to-bottom like a tutorial.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ CATALOG ═══ -->
+<section class="section section-low">
+  <div class="container">
+    <div class="catalog-toolbar">
+      <nav class="pills" id="tierNav" role="tablist" aria-label="Filter by tier"></nav>
+      <div class="catalog-meta" id="catalogMeta">&mdash;</div>
+    </div>
+    <div class="cards-grid" id="algoGrid">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo font-headline">&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank" style="color:var(--primary);">Tom Mathews</a> &mdash; MIT License</div>
+    <div class="footer-links">
+      <a href="https://github.com/no-magic-ai" target="_blank">GitHub</a>
+      <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+      <a href="../#paths">Learning Paths</a>
+      <a href="https://github.com/no-magic-ai/no-magic-papers" target="_blank">Papers</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ PREVIEW MODAL ═══ -->
+<div class="modal-overlay" id="modal">
+  <button class="modal-close" aria-label="Close preview">&times;</button>
+  <div class="modal-content">
+    <img id="modalImg" src="" alt="">
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-thesis" id="modalThesis"></div>
+  </div>
+</div>
+
+<script>
+const CATALOG_URL = 'https://raw.githubusercontent.com/no-magic-ai/no-magic/main/docs/catalog.json';
+const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
+const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
+
+const TIER_LABELS = {
+  '01-foundations': 'Foundations',
+  '02-alignment': 'Alignment',
+  '03-systems': 'Systems',
+  '04-agents': 'Agents',
+};
+
+const TIER_BADGE_CLASS = {
+  '01-foundations': 'tier-badge-foundations',
+  '02-alignment': 'tier-badge-alignment',
+  '03-systems': 'tier-badge-systems',
+  '04-agents': 'tier-badge-agents',
+};
+
+// Map short URL slugs to full tier IDs and vice versa
+const TIER_SLUG = {
+  'foundations': '01-foundations',
+  'alignment': '02-alignment',
+  'systems': '03-systems',
+  'agents': '04-agents',
+};
+const SLUG_FROM_TIER = Object.fromEntries(
+  Object.entries(TIER_SLUG).map(function(e) { return [e[1], e[0]]; })
+);
+
+let algorithms = [];
+let previewSet = new Set();
+
+const grid = document.getElementById('algoGrid');
+const tierNav = document.getElementById('tierNav');
+const meta = document.getElementById('catalogMeta');
+const modal = document.getElementById('modal');
+
+async function cachedFetch(url, key, ttlMs) {
+  ttlMs = ttlMs || 300000;
+  const cached = sessionStorage.getItem(key);
+  if (cached) {
+    try {
+      const parsed = JSON.parse(cached);
+      if (Date.now() - parsed.ts < ttlMs) return parsed.data;
+    } catch { /* fall through to refetch */ }
+  }
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(url + ': ' + res.status);
+  const data = await res.json();
+  sessionStorage.setItem(key, JSON.stringify({ data: data, ts: Date.now() }));
+  return data;
+}
+
+async function fetchPreviewList() {
+  try {
+    const files = await cachedFetch(
+      'https://api.github.com/repos/no-magic-ai/no-magic-viz/contents/previews',
+      'viz-previews'
+    );
+    files.forEach(function(f) {
+      if (f.name.endsWith('.gif')) previewSet.add(f.name.replace('.gif', ''));
+    });
+  } catch { /* preview indicators won't show */ }
+}
+
+function tierFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('tier');
+  if (!slug) return 'all';
+  return TIER_SLUG[slug] || 'all';
+}
+
+function urlForTier(tier) {
+  if (tier === 'all') return window.location.pathname;
+  const slug = SLUG_FROM_TIER[tier];
+  if (!slug) return window.location.pathname;
+  return window.location.pathname + '?tier=' + slug;
+}
+
+function buildTabs(activeTier) {
+  const counts = {};
+  algorithms.forEach(function(a) { counts[a.tier] = (counts[a.tier] || 0) + 1; });
+
+  const tiers = Object.keys(counts).sort();
+  let html = '<button class="pill ' + (activeTier === 'all' ? 'active' : '') +
+    '" data-tier="all" role="tab">All <span class="pill-count">' + algorithms.length + '</span></button>';
+  tiers.forEach(function(tier) {
+    const label = TIER_LABELS[tier] || tier;
+    const isActive = tier === activeTier ? 'active' : '';
+    html += '<button class="pill ' + isActive + '" data-tier="' + tier +
+      '" role="tab">' + label + ' <span class="pill-count">' + counts[tier] + '</span></button>';
+  });
+  tierNav.innerHTML = html;
+
+  tierNav.querySelectorAll('.pill').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      const tier = tab.dataset.tier;
+      tierNav.querySelectorAll('.pill').forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      history.pushState({ tier: tier }, '', urlForTier(tier));
+      renderGrid(tier);
+    });
+  });
+}
+
+function renderGrid(tier) {
+  const filtered = tier === 'all' ? algorithms : algorithms.filter(function(a) { return a.tier === tier; });
+  meta.textContent = filtered.length + ' / ' + algorithms.length + ' algorithms';
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="catalog-state">No algorithms in this tier yet.</div>';
+    return;
+  }
+  grid.innerHTML = filtered.map(function(a) {
+    const hasPreview = previewSet.has(a.name);
+    const badgeClass = TIER_BADGE_CLASS[a.tier] || '';
+    const tierLabel = TIER_LABELS[a.tier] || a.tier;
+    return '<div class="algo-card" data-name="' + a.name + '" data-tier="' + a.tier + '">' +
+      '<div class="algo-card-top">' +
+        '<span class="algo-card-name">' + a.display + '</span>' +
+        '<span class="tier-badge ' + badgeClass + '">' + tierLabel + '</span>' +
+      '</div>' +
+      '<div class="algo-card-thesis">' + a.thesis + '</div>' +
+      '<div class="algo-card-footer">' +
+        '<div class="algo-card-links">' +
+          '<a href="' + REPO_BASE + a.tier + '/' + a.name + '.py" class="algo-card-link" target="_blank" onclick="event.stopPropagation()">source</a>' +
+          (hasPreview ? '<span class="algo-card-link" data-preview="' + a.name + '">preview</span>' : '') +
+        '</div>' +
+        (hasPreview ? '<div class="algo-card-viz"><span class="viz-dot"></span>viz</div>' : '') +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function showPreview(name) {
+  const algo = algorithms.find(function(a) { return a.name === name; });
+  if (!algo) return;
+  document.getElementById('modalImg').src = VIZ_BASE + name + '.gif';
+  document.getElementById('modalImg').alt = algo.display + ' preview';
+  document.getElementById('modalTitle').textContent = algo.display;
+  document.getElementById('modalThesis').textContent = algo.thesis;
+  modal.classList.add('active');
+}
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal || e.target.classList.contains('modal-close')) {
+    modal.classList.remove('active');
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') modal.classList.remove('active');
+});
+
+grid.addEventListener('click', function(e) {
+  const previewSpan = e.target.closest('[data-preview]');
+  if (previewSpan) {
+    e.stopPropagation();
+    showPreview(previewSpan.dataset.preview);
+    return;
+  }
+  const card = e.target.closest('.algo-card');
+  if (!card || e.target.closest('a')) return;
+  const name = card.dataset.name;
+  if (previewSet.has(name)) {
+    showPreview(name);
+  } else {
+    window.open(REPO_BASE + card.dataset.tier + '/' + name + '.py', '_blank');
+  }
+});
+
+window.addEventListener('popstate', function() {
+  const tier = tierFromUrl();
+  tierNav.querySelectorAll('.pill').forEach(function(t) {
+    t.classList.toggle('active', t.dataset.tier === tier);
+  });
+  renderGrid(tier);
+});
+
+async function init() {
+  try {
+    const [catalog] = await Promise.all([
+      cachedFetch(CATALOG_URL, 'catalog'),
+      fetchPreviewList(),
+    ]);
+    algorithms = catalog;
+    const activeTier = tierFromUrl();
+    buildTabs(activeTier);
+    renderGrid(activeTier);
+  } catch (err) {
+    grid.innerHTML = '<div class="catalog-state error">Failed to load catalog: ' + err.message + '</div>';
+    meta.textContent = 'unavailable';
+  }
+}
+
+init();
+</script>
+</body>
+</html>
