@@ -259,6 +259,7 @@
 const CATALOG_URL = 'https://raw.githubusercontent.com/no-magic-ai/no-magic/main/docs/catalog.json';
 const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
 const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
+const PAPERS_BASE = 'https://github.com/no-magic-ai/no-magic-papers/blob/main/papers/';
 
 const TIER_LABELS = {
   '01-foundations': 'Foundations',
@@ -381,6 +382,7 @@ function renderGrid(tier) {
       '<div class="algo-card-footer">' +
         '<div class="algo-card-links">' +
           '<a href="' + REPO_BASE + a.tier + '/' + a.name + '.py" class="algo-card-link" target="_blank" onclick="event.stopPropagation()">source</a>' +
+          (a.paper_slug ? '<a href="' + PAPERS_BASE + a.paper_slug + '.md" class="algo-card-link" target="_blank" onclick="event.stopPropagation()">paper</a>' : '') +
           (hasPreview ? '<span class="algo-card-link" data-preview="' + a.name + '">preview</span>' : '') +
         '</div>' +
         (hasPreview ? '<div class="algo-card-viz"><span class="viz-dot"></span>viz</div>' : '') +
