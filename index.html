@@ -509,32 +509,32 @@
       <div class="track-card">
         <div class="track-num">03</div>
         <div class="track-name">Deep Dive: Modern Inference</div>
-        <div class="track-desc">Making models fast and small. Quantization, KV-cache, Flash Attention, parallelism.</div>
-        <div class="track-meta"><span>~7 hrs</span><span>10 scripts</span></div>
+        <div class="track-desc">Making models fast and small. Efficient attention, RoPE, KV-cache, paging, quantization, decoding and state-space models.</div>
+        <div class="track-meta"><span>~7 hrs</span><span>12 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">04</div>
         <div class="track-name">Deep Dive: Generative Models</div>
-        <div class="track-desc">How models create new data. Diffusion, GANs, VAEs, and adversarial training.</div>
-        <div class="track-meta"><span>~4 hrs</span><span>4 scripts</span></div>
+        <div class="track-desc">How models create new data. VAEs, GANs, and diffusion.</div>
+        <div class="track-meta"><span>~4 hrs</span><span>3 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">05</div>
         <div class="track-name">Deep Dive: Retrieval &amp; Search</div>
-        <div class="track-desc">Connecting models to external knowledge. BM25, vector search, RAG pipelines.</div>
+        <div class="track-desc">Connecting models to external knowledge. Embeddings, RAG pipelines, and tokenization.</div>
         <div class="track-meta"><span>~3 hrs</span><span>3 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">06</div>
         <div class="track-name">Agent Algorithms</div>
-        <div class="track-desc">Search and reasoning for autonomous agents. MCTS, minimax, bandits, ReAct.</div>
-        <div class="track-meta"><span>~3 hrs</span><span>5 scripts</span></div>
+        <div class="track-desc">Search and reasoning for autonomous agents. MCTS and ReAct.</div>
+        <div class="track-meta"><span>~3 hrs</span><span>2 scripts</span></div>
       </div>
       <div class="track-card">
         <div class="track-num">07</div>
         <div class="track-name">Full Curriculum</div>
-        <div class="track-desc">All scripts in dependency order. The complete no-magic experience.</div>
-        <div class="track-meta"><span>~22 hrs</span><span>48 scripts</span></div>
+        <div class="track-desc">The longest track: 36 of the 48 scripts in dependency order.</div>
+        <div class="track-meta"><span>~22 hrs</span><span>36 scripts</span></div>
       </div>
     </div>
   </div>
@@ -554,8 +554,8 @@
         <p>Python standard library only. If it needs pip install, it doesn't belong here.</p>
       </div>
       <div class="phil-item">
-        <h4>Train + infer in one command</h4>
-        <p><code>python script.py</code> runs the full lifecycle. No setup, no config, no environment.</p>
+        <h4>One command, no setup</h4>
+        <p><code>python script.py</code> runs the whole program. Most scripts train, either one model followed by inference or variants compared side by side; a few run untrained mechanisms or non-learning algorithms. Each script's kind is recorded in <a href="https://github.com/no-magic-ai/no-magic/blob/main/docs/catalog.json" target="_blank"><code>no-magic/docs/catalog.json</code></a>; this site does not display it yet. Some scripts download a small names dataset on first run.</p>
       </div>
       <div class="phil-item">
         <h4>Comments are the curriculum</h4>
@@ -567,7 +567,7 @@
       </div>
       <div class="phil-item">
         <h4>Under 10 minutes on CPU</h4>
-        <p>Every script completes on a laptop CPU. No GPU required. No cloud. No excuses.</p>
+        <p>The target for every script is a laptop CPU in under 10 minutes. No GPU required. No cloud. Recorded timings are historical (some, such as RAG at 12m 30s and RNN vs. GRU at 18m 30s, exceeded the target), and there is no current full-corpus runtime check.</p>
       </div>
     </div>
   </div>
@@ -618,7 +618,7 @@
           <span class="material-symbols-outlined" style="font-size:1.125rem;">smart_toy</span>
           <h5 class="font-headline">apprentice</h5>
         </div>
-        <p>Agent pipeline that drafts algorithm entries from papers for human review. Containment guardrails, design phase.</p>
+        <p>Maintainer-side agent pipeline that drafts algorithm entries from papers for human review. Implemented (v0.4.0); autonomous activation deferred.</p>
         <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
       </a>
     </div>
