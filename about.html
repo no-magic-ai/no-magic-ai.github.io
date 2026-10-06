@@ -419,7 +419,7 @@
       </div>
       <div class="principle">
         <h4>Learner artifacts on commodity hardware</h4>
-        <p>Learner code runs on a laptop CPU. No GPU requirement. No cloud credits. No dataset larger than a few MB; scripts that download one on first run are labelled in the catalog. Maintainer tooling such as <code>apprentice</code> uses its own dependencies and LLM providers.</p>
+        <p>Learner code runs on a laptop CPU. No GPU requirement. No cloud credits. No dataset larger than a few MB; scripts that download one on first run are labelled in <a href="https://github.com/no-magic-ai/no-magic/blob/main/docs/catalog.json" target="_blank"><code>no-magic/docs/catalog.json</code></a> (not yet shown on this site). Maintainer tooling such as <code>apprentice</code> uses its own dependencies and LLM providers.</p>
       </div>
       <div class="principle">
         <h4>Comments are the curriculum</h4>
@@ -455,9 +455,9 @@
     <ol class="rules-list">
       <li><strong>Paper-first.</strong> Every algorithm implementation cites its sources in a reference comment directly after its thesis docstring and is explicitly mapped to a paper card; the catalog discloses where the code differs from that card. If no paper exists, the algorithm does not belong in the catalog.</li>
       <li><strong>No tutorial contact.</strong> Do not read other educational repos (fast.ai notebooks, Karpathy's nn-zero-to-hero, HuggingFace courses, dive-into-llms) while writing a no-magic script. Topic inspiration from their tables of contents is permitted.</li>
-      <li><strong>Attribution is a line, not a link.</strong> Cite sources in docstrings with full bibliographic detail. Avoid opaque URL references that can rot.</li>
+      <li><strong>Attribution is a line, not a link.</strong> Cite sources in the reference comment directly after the thesis docstring, with full bibliographic detail. Avoid opaque URL references that can rot.</li>
       <li><strong>License vigilance.</strong> Before adopting any external asset (dataset, image, figure, text fragment), verify and record the license in <code>ASSETS.md</code>.</li>
-      <li><strong>Contributor pledge.</strong> Every contributor affirms they implemented from papers, not from tutorials. Enforcement is by maintainer review, not by CI.</li>
+      <li><strong>Contributor pledge (required policy).</strong> Contributors must affirm that they implemented from papers, not from tutorials. <code>no-magic-papers/CONTRIBUTING.md</code> already states a card and lesson pledge; the implementation pledge is not yet written into <code>no-magic/CONTRIBUTING.md</code>, and no signed affirmations are collected. Enforcement is by maintainer review, not by CI.</li>
     </ol>
 
     <div class="callout">
@@ -497,7 +497,7 @@
       </div>
       <div class="gov-card">
         <h4>Review gates</h4>
-        <p>Algorithm or math changes, newly interpreted research claims, paper cards, lessons, curriculum and exercise answers need actual human maintainer approval of the current PR head; so do mixed, ambiguous or disputed classifications. AI reviews and agent-posted approvals are not human approval. For the current enhancement phase only, purely technical PRs may be merged by a gated runner after independent review, verification and required checks, when both the runner and the independent reviewer classify the diff as technical (<code>no-magic</code> issue #39).</p>
+        <p>Algorithm or math changes, newly interpreted research claims, paper cards, lessons, curriculum and exercise answers need actual human maintainer approval of the current PR head; so do mixed, ambiguous or disputed classifications. AI reviews and agent-posted approvals are not human approval. For the current enhancement phase only, purely technical PRs (tooling, CI, generated metadata, source-state corrections) may be merged by a gated runner after independent review, verification and every required check pass on the current head, and only when both the runner and the independent reviewer classify the current head-versus-base diff as technical (<code>no-magic</code> issue #39). Any change to the head, base or scope invalidates that classification, review and checks.</p>
       </div>
       <div class="gov-card">
         <h4>GitHub Discussions</h4>
