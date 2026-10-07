@@ -315,9 +315,8 @@
     <p>
       no-magic-ai expands through new repos, not feature sprawl. Every repo declares one sentence that governs what belongs
       and what doesn't. Repos do not share build systems and do not import each other's code. Cross-repo coupling is limited
-      to published metadata and links: <code>no-magic-papers</code> CI checks <code>no-magic</code>'s generated <code>docs/catalog.json</code>
-      against the paper cards and emits a receipt for each published cohort, and this website builds a pinned snapshot from that
-      catalog, the generated <code>data/papers.json</code> and the declared previews of one receipt-bound cohort. The website is the only learner surface that joins them.
+      to published metadata and links: <code>no-magic</code>'s generated <code>docs/catalog.json</code> is read by this website
+      and checked against paper cards by <code>no-magic-papers</code> CI. The website is the only learner surface that joins them.
     </p>
 
     <div class="repo-grid">
