@@ -1,0 +1,3417 @@
+{
+  "algorithms": [
+    {
+      "adaptation_note": "Trains two GRU character models, one with additive attention over hidden states and one without; the source cites Bahdanau et al. (2015). It does not implement the Transformer self-attention architecture of the linked card.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Attention vs None",
+      "lines": 511,
+      "media": {
+        "note": "Comparison script without a no-magic-viz scene or preview; media is declared omitted, not backfilled.",
+        "preview_url": null,
+        "scene_url": null,
+        "status": "omitted"
+      },
+      "name": "attention_vs_none",
+      "paper_slug": "transformer",
+      "source_path": "01-foundations/attention_vs_none.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/attention_vs_none.py",
+      "teaching_kind": "comparison",
+      "thesis": "Attention is not just helpful -- it is the mechanism that lets a model look back across an",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "BERT",
+      "lines": 501,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microbert.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microbert.py",
+        "status": "linked"
+      },
+      "name": "microbert",
+      "paper_slug": "bert",
+      "source_path": "01-foundations/microbert.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microbert.py",
+      "teaching_kind": "train_infer",
+      "thesis": "The other half of the transformer — how BERT learns bidirectional representations by predicting",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "CNN",
+      "lines": 549,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microconv.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microconv.py",
+        "status": "linked"
+      },
+      "name": "microconv",
+      "paper_slug": "lenet-5",
+      "source_path": "01-foundations/microconv.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microconv.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How a sliding kernel extracts spatial features — the convolution operation, pooling, and feature",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Denoising Diffusion",
+      "lines": 461,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microdiffusion.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microdiffusion.py",
+        "status": "linked"
+      },
+      "name": "microdiffusion",
+      "paper_slug": "ddpm",
+      "source_path": "01-foundations/microdiffusion.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microdiffusion.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How images emerge from noise -- the denoising diffusion algorithm behind Stable Diffusion,",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Learns name embeddings by projecting character n-gram counts through one linear layer trained with an InfoNCE contrastive loss; the source says it is inspired by SimCLR and sentence-transformers. It does not implement the CBOW or skip-gram word models of the linked word2vec card.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Word Embeddings",
+      "lines": 377,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microembedding.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microembedding.py",
+        "status": "linked"
+      },
+      "name": "microembedding",
+      "paper_slug": "word2vec",
+      "source_path": "01-foundations/microembedding.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microembedding.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How meaning becomes geometry — training vectors where distance equals similarity,",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "GAN",
+      "lines": 534,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microgan.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microgan.py",
+        "status": "linked"
+      },
+      "name": "microgan",
+      "paper_slug": "gan",
+      "source_path": "01-foundations/microgan.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microgan.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Two networks at war -- how a generator learns to fool a discriminator, and why the",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Linked to the GPT-1 card (Radford et al., 2018), but the source says it follows the GPT-2 architecture (Radford et al., 2019) with RMSNorm instead of LayerNorm, ReLU instead of GELU and no bias terms, and that its algorithmic flow was inspired by Karpathy's microgpt.py. It trains a character-level model on names and samples from it; there is no supervised task fine-tuning stage.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Autoregressive GPT",
+      "lines": 513,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microgpt.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microgpt.py",
+        "status": "linked"
+      },
+      "name": "microgpt",
+      "paper_slug": "gpt-1",
+      "source_path": "01-foundations/microgpt.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microgpt.py",
+      "teaching_kind": "train_infer",
+      "thesis": "The autoregressive language model from first principles: GPT learns to predict the next",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "LSTM",
+      "lines": 530,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microlstm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microlstm.py",
+        "status": "linked"
+      },
+      "name": "microlstm",
+      "paper_slug": "lstm",
+      "source_path": "01-foundations/microlstm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microlstm.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Long Short-Term Memory from first principles: the 4-gate architecture that solved the",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Trains character bigram models with SGD, Momentum, RMSProp and Adam, plus a warmup and cosine-decay extension citing Loshchilov & Hutter (2016). The linked card covers Adam only.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Optimizer Comparison",
+      "lines": 585,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microoptimizer.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microoptimizer.py",
+        "status": "linked"
+      },
+      "name": "microoptimizer",
+      "paper_slug": "adam",
+      "source_path": "01-foundations/microoptimizer.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microoptimizer.py",
+      "teaching_kind": "comparison",
+      "thesis": "Why Adam converges when SGD stalls — momentum, adaptive learning rates, and the geometry of",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "RAG Pipeline",
+      "lines": 521,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microrag.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microrag.py",
+        "status": "linked"
+      },
+      "name": "microrag",
+      "paper_slug": "rag",
+      "source_path": "01-foundations/microrag.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microrag.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How retrieval augments generation -- the simplest system that actually works, with BM25",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "ResNet",
+      "lines": 740,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microresnet.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microresnet.py",
+        "status": "linked"
+      },
+      "name": "microresnet",
+      "paper_slug": "resnet",
+      "source_path": "01-foundations/microresnet.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microresnet.py",
+      "teaching_kind": "comparison",
+      "thesis": "Residual networks from first principles: skip connections as gradient highways — proving",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Trains a vanilla RNN and a GRU side by side. The source cites Rumelhart et al. for the vanilla RNN and Cho et al. (2014) for the GRU; the linked card is Elman (1990).",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "RNN vs GRU",
+      "lines": 507,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/micrornn.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_micrornn.py",
+        "status": "linked"
+      },
+      "name": "micrornn",
+      "paper_slug": "rnn-elman",
+      "source_path": "01-foundations/micrornn.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/micrornn.py",
+      "teaching_kind": "comparison",
+      "thesis": "Before attention conquered everything -- how sequences were modeled with recurrence, and why",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "BPE Tokenizer",
+      "lines": 193,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microtokenizer.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microtokenizer.py",
+        "status": "linked"
+      },
+      "name": "microtokenizer",
+      "paper_slug": "bpe",
+      "source_path": "01-foundations/microtokenizer.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microtokenizer.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How text becomes numbers -- the compression algorithm hiding inside every LLM.",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Per the source, uses plain float arrays with manual gradient computation instead of scalar autograd to meet the runtime limit.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "VAE",
+      "lines": 510,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microvae.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microvae.py",
+        "status": "linked"
+      },
+      "name": "microvae",
+      "paper_slug": "vae",
+      "source_path": "01-foundations/microvae.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microvae.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How to learn a compressed, generative representation of data — the reparameterization",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Vision Transformer",
+      "lines": 655,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microvit.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microvit.py",
+        "status": "linked"
+      },
+      "name": "microvit",
+      "paper_slug": "vit",
+      "source_path": "01-foundations/microvit.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/microvit.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Vision Transformer from first principles: an image is worth 16x16 words — treating",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Trains a vanilla RNN, a GRU and an LSTM on a long-range name task. The source cites Elman (1990), Hochreiter & Schmidhuber (1997) and Cho et al. (2014); the linked card covers the GRU.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "RNN vs GRU vs LSTM",
+      "lines": 647,
+      "media": {
+        "note": "Comparison script without a no-magic-viz scene or preview; media is declared omitted, not backfilled.",
+        "preview_url": null,
+        "scene_url": null,
+        "status": "omitted"
+      },
+      "name": "rnn_vs_gru_vs_lstm",
+      "paper_slug": "gru",
+      "source_path": "01-foundations/rnn_vs_gru_vs_lstm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/01-foundations/rnn_vs_gru_vs_lstm.py",
+      "teaching_kind": "comparison",
+      "thesis": "Three generations of recurrent architectures on the same task: vanilla RNN fails at long-range",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Trains the same character bigram model with Adam and with SGD with momentum (0.9) on identical data. The source also cites Robbins & Monro (1951) for SGD; the linked card covers Adam.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Adam vs SGD",
+      "lines": 469,
+      "media": {
+        "note": "Comparison script without a no-magic-viz scene or preview; media is declared omitted, not backfilled.",
+        "preview_url": null,
+        "scene_url": null,
+        "status": "omitted"
+      },
+      "name": "adam_vs_sgd",
+      "paper_slug": "adam",
+      "source_path": "02-alignment/adam_vs_sgd.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/adam_vs_sgd.py",
+      "teaching_kind": "comparison",
+      "thesis": "Adam converges faster than SGD because it maintains per-parameter learning rates that adapt",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Batch Normalization",
+      "lines": 457,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microbatchnorm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microbatchnorm.py",
+        "status": "linked"
+      },
+      "name": "microbatchnorm",
+      "paper_slug": "batchnorm",
+      "source_path": "02-alignment/microbatchnorm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microbatchnorm.py",
+      "teaching_kind": "comparison",
+      "thesis": "How normalizing activations within each mini-batch stabilizes training and enables deeper networks.",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "DPO",
+      "lines": 614,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microdpo.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microdpo.py",
+        "status": "linked"
+      },
+      "name": "microdpo",
+      "paper_slug": "dpo",
+      "source_path": "02-alignment/microdpo.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microdpo.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Direct Preference Optimization (DPO): aligning a language model with human preferences using",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Dropout",
+      "lines": 475,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microdropout.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microdropout.py",
+        "status": "linked"
+      },
+      "name": "microdropout",
+      "paper_slug": "dropout",
+      "source_path": "02-alignment/microdropout.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microdropout.py",
+      "teaching_kind": "comparison",
+      "thesis": "Why randomly destroying neurons during training prevents overfitting — dropout, weight decay,",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "GRPO",
+      "lines": 541,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microgrpo.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microgrpo.py",
+        "status": "linked"
+      },
+      "name": "microgrpo",
+      "paper_slug": "grpo",
+      "source_path": "02-alignment/microgrpo.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microgrpo.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How DeepSeek simplified RLHF — group-based reward normalization that eliminates the value",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "LoRA",
+      "lines": 498,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microlora.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microlora.py",
+        "status": "linked"
+      },
+      "name": "microlora",
+      "paper_slug": "lora",
+      "source_path": "02-alignment/microlora.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microlora.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Low-Rank Adaptation (LoRA): fine-tuning a frozen language model by injecting tiny trainable",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": "Per the source, expert MLPs use plain floats with analytically computed gradients while the router uses scalar autograd, to keep pure-Python runtime tractable.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Mixture of Experts",
+      "lines": 562,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/micromoe.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_micromoe.py",
+        "status": "linked"
+      },
+      "name": "micromoe",
+      "paper_slug": "moe-shazeer",
+      "source_path": "02-alignment/micromoe.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/micromoe.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Mixture of Experts (MoE): a router network learns to dispatch each token to a subset of",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": "Per the source, the reward model is a small MLP trained separately with a pairwise ranking loss and manual SGD, and the reward model and value function use plain floats without autograd.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "PPO (RLHF)",
+      "lines": 802,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microppo.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microppo.py",
+        "status": "linked"
+      },
+      "name": "microppo",
+      "paper_slug": "ppo",
+      "source_path": "02-alignment/microppo.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microppo.py",
+      "teaching_kind": "train_infer",
+      "thesis": "The full RLHF loop: pretrain a language model, train a reward model on human preferences,",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": "Toy-scale simulation: a one-layer, 16-dimensional base model trained on names, NF4 levels from a normal-quantile approximation and quantization blocks of 8 weights (the source notes production QLoRA uses 64). The source says the architecture follows the microgpt pattern with pedagogical simplifications.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "QLoRA",
+      "lines": 671,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microqlora.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microqlora.py",
+        "status": "linked"
+      },
+      "name": "microqlora",
+      "paper_slug": "qlora",
+      "source_path": "02-alignment/microqlora.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microqlora.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How to fine-tune a 4-bit quantized model with full-precision LoRA adapters — the technique",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "REINFORCE",
+      "lines": 465,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microreinforce.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microreinforce.py",
+        "status": "linked"
+      },
+      "name": "microreinforce",
+      "paper_slug": "reinforce",
+      "source_path": "02-alignment/microreinforce.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/02-alignment/microreinforce.py",
+      "teaching_kind": "comparison",
+      "thesis": "The simplest policy gradient algorithm -- how log-probability weighting turns reward signals",
+      "tier": "02-alignment"
+    },
+    {
+      "adaptation_note": "Untrained side-by-side forward computations of multi-head, grouped-query, multi-query and sliding-window attention. Beyond the linked Transformer card, the source cites Shazeer (2019), Ainslie et al. (2023) and Beltagy et al. (2020).",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Attention Variants",
+      "lines": 368,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microattention.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microattention.py",
+        "status": "linked"
+      },
+      "name": "microattention",
+      "paper_slug": "transformer",
+      "source_path": "03-systems/microattention.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microattention.py",
+      "teaching_kind": "forward_pass",
+      "thesis": "Every attention mechanism that matters, side by side: how MHA, GQA, MQA, and sliding",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "Trains a target model (16-dimensional embeddings) and a smaller draft model (8-dimensional) used only as the speculative-decoding auxiliary, then compares six decoding strategies: greedy, temperature, top-k, top-p (nucleus), beam search and speculative decoding. The linked card covers nucleus sampling only; the source also cites Leviathan et al. (2023).",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Beam Search",
+      "lines": 622,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microbeam.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microbeam.py",
+        "status": "linked"
+      },
+      "name": "microbeam",
+      "paper_slug": "nucleus-sampling",
+      "source_path": "03-systems/microbeam.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microbeam.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Beyond greedy: six decoding strategies for language model text generation, from deterministic",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "BM25",
+      "lines": 618,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microbm25.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microbm25.py",
+        "status": "linked"
+      },
+      "name": "microbm25",
+      "paper_slug": "bm25",
+      "source_path": "03-systems/microbm25.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microbm25.py",
+      "teaching_kind": "algorithm_demo",
+      "thesis": "The evolution of text retrieval scoring: from raw term frequency through TF-IDF to BM25,",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "Trains two identically initialized MLPs for the same number of SGD steps, one with standard backpropagation and one with checkpointed recomputation, and compares loss, time, stored activations and gradient equality. It has no separate inference phase.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Activation Checkpointing",
+      "lines": 484,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microcheckpoint.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microcheckpoint.py",
+        "status": "linked"
+      },
+      "name": "microcheckpoint",
+      "paper_slug": "gradient-checkpointing",
+      "source_path": "03-systems/microcheckpoint.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microcheckpoint.py",
+      "teaching_kind": "comparison",
+      "thesis": "How to train models twice as deep on the same hardware — trading compute for memory",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "Teaches the complex-to-real (data-dependent RoPE) SSM equivalence. The source cites Mamba-3 (arXiv:2603.15569) Proposition 3 and RoPE (Su et al., 2021); the linked Mamba-2 card's structured state space duality is not implemented.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v2.0.0",
+      "display": "Complex SSM",
+      "lines": 600,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microcomplexssm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microcomplexssm.py",
+        "status": "linked"
+      },
+      "name": "microcomplexssm",
+      "paper_slug": "mamba-2",
+      "source_path": "03-systems/microcomplexssm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microcomplexssm.py",
+      "teaching_kind": "comparison",
+      "thesis": "A complex-valued state space model is mathematically identical to a real-valued one with",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "Compares Euler, zero-order-hold and trapezoidal discretization. The source cites Mamba-3 (arXiv:2603.15569) Section 3 and S4 (Gu et al., 2022); the linked Mamba-2 card's structured state space duality is not implemented.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v2.0.0",
+      "display": "Discretization",
+      "lines": 625,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microdiscretize.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microdiscretize.py",
+        "status": "linked"
+      },
+      "name": "microdiscretize",
+      "paper_slug": "mamba-2",
+      "source_path": "03-systems/microdiscretize.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microdiscretize.py",
+      "teaching_kind": "comparison",
+      "thesis": "The choice of discretization method changes what a recurrence can learn — Euler, ZOH,",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Flash Attention",
+      "lines": 358,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microflash.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microflash.py",
+        "status": "linked"
+      },
+      "name": "microflash",
+      "paper_slug": "flash-attention",
+      "source_path": "03-systems/microflash.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microflash.py",
+      "teaching_kind": "forward_pass",
+      "thesis": "Flash Attention computes exact attention identical to standard attention, but processes",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "Trains a small model, then compares generation with and without a KV cache and adds a paged-allocation simulation. Beyond the linked Pope et al. (2022) card, the source cites Kwon et al. (2023) for the paged allocation.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "KV-Cache",
+      "lines": 476,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microkv.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microkv.py",
+        "status": "linked"
+      },
+      "name": "microkv",
+      "paper_slug": "kv-cache",
+      "source_path": "03-systems/microkv.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microkv.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Why autoregressive generation recomputes redundant work at every step, and how the KV cache",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "PagedAttention",
+      "lines": 502,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/micropaged.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_micropaged.py",
+        "status": "linked"
+      },
+      "name": "micropaged",
+      "paper_slug": "pagedattention",
+      "source_path": "03-systems/micropaged.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/micropaged.py",
+      "teaching_kind": "forward_pass",
+      "thesis": "How vLLM serves thousands of concurrent requests -- paged memory allocation for KV-caches",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Model Parallelism",
+      "lines": 490,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microparallel.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microparallel.py",
+        "status": "linked"
+      },
+      "name": "microparallel",
+      "paper_slug": "megatron-lm",
+      "source_path": "03-systems/microparallel.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microparallel.py",
+      "teaching_kind": "comparison",
+      "thesis": "How models that exceed single-device memory get distributed — tensor parallelism, pipeline",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Quantization",
+      "lines": 596,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microquant.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microquant.py",
+        "status": "linked"
+      },
+      "name": "microquant",
+      "paper_slug": "llm-int8",
+      "source_path": "03-systems/microquant.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microquant.py",
+      "teaching_kind": "train_infer",
+      "thesis": "How to shrink a model by 4x with minimal quality loss -- the math behind INT8 and INT4",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "Trains SISO and rank-4 MIMO SSMs on dual-sine next-value prediction and compares them, alongside pure-Python operation timings placed on an ASCII roofline plot for this CPU. The source cites Mamba-3 (arXiv:2603.15569) for the MIMO state update and Williams et al. (2009) for the roofline model, which is a hardware performance framework rather than an SSM method. The timings are illustrative, not GPU benchmarks.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Roofline Model",
+      "lines": 834,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microroofline.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microroofline.py",
+        "status": "linked"
+      },
+      "name": "microroofline",
+      "paper_slug": "roofline",
+      "source_path": "03-systems/microroofline.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microroofline.py",
+      "teaching_kind": "comparison",
+      "thesis": "A state update running 100x more FLOPs can be faster on real hardware if it shifts from",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "RoPE",
+      "lines": 325,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microrope.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microrope.py",
+        "status": "linked"
+      },
+      "name": "microrope",
+      "paper_slug": "rope",
+      "source_path": "03-systems/microrope.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microrope.py",
+      "teaching_kind": "forward_pass",
+      "thesis": "How position information gets baked into attention through rotation matrices — why RoPE",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Speculative Decoding",
+      "lines": 798,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microspeculative.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microspeculative.py",
+        "status": "linked"
+      },
+      "name": "microspeculative",
+      "paper_slug": "speculative-decoding",
+      "source_path": "03-systems/microspeculative.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microspeculative.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Speculative decoding from first principles: a small draft model proposes tokens that a",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "The source cites Mamba (Gu & Dao, 2023) and builds a simplified Mamba-style selective SSM with Euler discretization. The linked Mamba-2 card's structured state space duality is not implemented.",
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v2.0.0",
+      "display": "State Space Models",
+      "lines": 510,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microssm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microssm.py",
+        "status": "linked"
+      },
+      "name": "microssm",
+      "paper_slug": "mamba-2",
+      "source_path": "03-systems/microssm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microssm.py",
+      "teaching_kind": "train_infer",
+      "thesis": "The alternative to attention -- how state space models process sequences in linear time",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "names_download",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v2.0.0",
+      "display": "Turboquant",
+      "lines": 351,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microturboquant.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microturboquant.py",
+        "status": "linked"
+      },
+      "name": "microturboquant",
+      "paper_slug": "turboquant",
+      "source_path": "03-systems/microturboquant.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microturboquant.py",
+      "teaching_kind": "algorithm_demo",
+      "thesis": "Why rotating a vector before quantizing it works -- random rotation makes coordinates",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": "Implements exact brute-force search and random-hyperplane locality-sensitive hashing; the source cites Indyk & Motwani (1998) and Charikar (2002). It does not implement the HNSW graph index of the linked card.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Vector Search",
+      "lines": 472,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microvectorsearch.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microvectorsearch.py",
+        "status": "linked"
+      },
+      "name": "microvectorsearch",
+      "paper_slug": "hnsw",
+      "source_path": "03-systems/microvectorsearch.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/03-systems/microvectorsearch.py",
+      "teaching_kind": "algorithm_demo",
+      "thesis": "Vector search from first principles: exact brute-force nearest neighbors vs approximate",
+      "tier": "03-systems"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Multi-Armed Bandit",
+      "lines": 574,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microbandit.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microbandit.py",
+        "status": "linked"
+      },
+      "name": "microbandit",
+      "paper_slug": "ucb1",
+      "source_path": "04-agents/microbandit.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/04-agents/microbandit.py",
+      "teaching_kind": "comparison",
+      "thesis": "Multi-armed bandits from first principles: three strategies — Epsilon-Greedy, UCB1, and",
+      "tier": "04-agents"
+    },
+    {
+      "adaptation_note": "Plays tic-tac-toe with UCB1 child selection and uniformly random rollouts. The source cites Coulom (2006) and Silver et al. (2016) rather than the linked UCT card (Kocsis & Szepesvari, 2006). Unlike AlphaGo, it trains no policy or value network.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Monte Carlo Tree Search",
+      "lines": 522,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/micromcts.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_micromcts.py",
+        "status": "linked"
+      },
+      "name": "micromcts",
+      "paper_slug": "uct",
+      "source_path": "04-agents/micromcts.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/04-agents/micromcts.py",
+      "teaching_kind": "algorithm_demo",
+      "thesis": "Monte Carlo Tree Search from first principles: the algorithm behind AlphaGo's game play —",
+      "tier": "04-agents"
+    },
+    {
+      "adaptation_note": null,
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Memory-Augmented Network",
+      "lines": 930,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/micromemory.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_micromemory.py",
+        "status": "linked"
+      },
+      "name": "micromemory",
+      "paper_slug": "ntm",
+      "source_path": "04-agents/micromemory.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/04-agents/micromemory.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Memory-augmented neural networks from first principles: a Neural Turing Machine learns to",
+      "tier": "04-agents"
+    },
+    {
+      "adaptation_note": "Trains a small MLP on outcome labels from random-play games of 6x7 Connect Four and uses it as the leaf evaluator of depth-limited minimax with alpha-beta pruning and iterative deepening. The source cites Knuth & Moore (1975), which analyses alpha-beta pruning over given position values, and Shannon (1950), which proposes depth-limited minimax over a hand-crafted position evaluator. Learning the evaluator from game outcomes is this script's addition, not a method from either source.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "Minimax + Alpha-Beta",
+      "lines": 830,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microminimax.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microminimax.py",
+        "status": "linked"
+      },
+      "name": "microminimax",
+      "paper_slug": "alpha-beta",
+      "source_path": "04-agents/microminimax.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/04-agents/microminimax.py",
+      "teaching_kind": "train_infer",
+      "thesis": "Adversarial search from first principles: minimax with alpha-beta pruning learns to play",
+      "tier": "04-agents"
+    },
+    {
+      "adaptation_note": "A two-layer MLP policy over an encoded state, trained with REINFORCE, chooses lookup and compute actions over an in-script knowledge base and toy tools; each Thought line is a template derived from the chosen action. The linked ReAct paper (Yao et al., arXiv 2022, ICLR 2023) has a large language model generate free-text reasoning traces and actions; this script has no language model.",
+      "data_source": "in_script",
+      "declared_commit": "4d43527c7eed48f7306ad56e4d04e5bd43cfd045",
+      "declared_release": "v3.0.0",
+      "display": "ReAct",
+      "lines": 893,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/previews/microreact.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5/scenes/scene_microreact.py",
+        "status": "linked"
+      },
+      "name": "microreact",
+      "paper_slug": "react",
+      "source_path": "04-agents/microreact.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/77d71f5c7507ba67fa67daac269c26daed471b7f/04-agents/microreact.py",
+      "teaching_kind": "train_infer",
+      "thesis": "The ReAct reasoning loop from first principles: Thought -> Action -> Observation as a",
+      "tier": "04-agents"
+    }
+  ],
+  "cohort": {
+    "inputs": {
+      "no-magic": {
+        "blob": "97774b773d4f4f6bd59800393d5e744d5cd3fafa",
+        "path": "docs/catalog.json",
+        "sha256": "50c77d970c17adcb61272fec63c4314502af7ed62f95e73b1e306c9e389971ff"
+      },
+      "no-magic-papers": {
+        "blob": "be28336949407f2e15560fdced66e7fe565452cb",
+        "path": "data/papers.json",
+        "sha256": "6204215e0bcba0e94d2ebc36f5b0087a6ce0c54902dc2f58270776069d58adc4"
+      }
+    },
+    "receipt_sha256": "d3d8bf5da3a97e9fcd154636ef556a3236377a7a270e9fe2de2d722d5f907711",
+    "repositories": {
+      "no-magic": {
+        "commit": "77d71f5c7507ba67fa67daac269c26daed471b7f",
+        "tree": "9769b409035aa854916fa7e70cdbddcf1f8f54d7"
+      },
+      "no-magic-papers": {
+        "commit": "b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0",
+        "tree": "a82bdf7f60ea208fcc999e17158ec90571400846"
+      },
+      "no-magic-viz": {
+        "commit": "7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5",
+        "tree": "3a4bf66636c04e4e428150770990c50ec248c6c5"
+      }
+    }
+  },
+  "papers": [
+    {
+      "arxiv_id": "1412.6980",
+      "authors": [
+        "Diederik P. Kingma",
+        "Jimmy Ba"
+      ],
+      "card_path": "papers/adam.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/adam.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "adam_vs_sgd",
+        "microoptimizer"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microoptimizer.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microoptimizer",
+        "target_tier": "01-foundations"
+      },
+      "slug": "adam",
+      "status": "implemented",
+      "tags": [
+        "adam",
+        "adaptive-learning-rate",
+        "momentum",
+        "optimization"
+      ],
+      "themes": {
+        "primary": "training-dynamics",
+        "secondary": []
+      },
+      "title": "Adam: A Method for Stochastic Optimization",
+      "url": "https://arxiv.org/abs/1412.6980",
+      "venue": "ICLR",
+      "year": "2015"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Donald E. Knuth",
+        "Ronald W. Moore"
+      ],
+      "card_path": "papers/alpha-beta.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/alpha-beta.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1016/0004-3702(75)90019-3",
+      "implementations": [
+        "microminimax"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-agents",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "04-agents/microminimax.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microminimax",
+        "target_tier": "04-agents"
+      },
+      "slug": "alpha-beta",
+      "status": "implemented",
+      "tags": [
+        "game-tree",
+        "minimax",
+        "pruning",
+        "adversarial-search"
+      ],
+      "themes": {
+        "primary": "agents",
+        "secondary": [
+          "reasoning"
+        ]
+      },
+      "title": "An Analysis of Alpha-Beta Pruning",
+      "url": "https://www.sciencedirect.com/science/article/pii/0004370275900193",
+      "venue": "Artificial Intelligence",
+      "year": "1975"
+    },
+    {
+      "arxiv_id": "1502.03167",
+      "authors": [
+        "Sergey Ioffe",
+        "Christian Szegedy"
+      ],
+      "card_path": "papers/batchnorm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/batchnorm.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microbatchnorm"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microbatchnorm.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microbatchnorm",
+        "target_tier": "02-alignment"
+      },
+      "slug": "batchnorm",
+      "status": "implemented",
+      "tags": [
+        "normalization",
+        "batch-statistics",
+        "covariate-shift",
+        "regularization"
+      ],
+      "themes": {
+        "primary": "training-dynamics",
+        "secondary": []
+      },
+      "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+      "url": "https://arxiv.org/abs/1502.03167",
+      "venue": "ICML",
+      "year": "2015"
+    },
+    {
+      "arxiv_id": "1810.04805",
+      "authors": [
+        "Jacob Devlin",
+        "Ming-Wei Chang",
+        "Kenton Lee",
+        "Kristina Toutanova"
+      ],
+      "card_path": "papers/bert.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/bert.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microbert"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microbert.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microbert",
+        "target_tier": "01-foundations"
+      },
+      "slug": "bert",
+      "status": "implemented",
+      "tags": [
+        "bert",
+        "masked-language-model",
+        "bidirectional",
+        "pretraining",
+        "next-sentence-prediction"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "url": "https://arxiv.org/abs/1810.04805",
+      "venue": "NAACL",
+      "year": "2019"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Stephen Robertson",
+        "Hugo Zaragoza"
+      ],
+      "card_path": "papers/bm25.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/bm25.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1561/1500000019",
+      "implementations": [
+        "microbm25"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microbm25.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microbm25",
+        "target_tier": "03-systems"
+      },
+      "slug": "bm25",
+      "status": "implemented",
+      "tags": [
+        "bm25",
+        "probabilistic-retrieval",
+        "tf-idf",
+        "okapi"
+      ],
+      "themes": {
+        "primary": "retrieval",
+        "secondary": []
+      },
+      "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+      "url": "https://www.nowpublishers.com/article/Details/INR-019",
+      "venue": "Foundations and Trends in Information Retrieval",
+      "year": "2009"
+    },
+    {
+      "arxiv_id": "1508.07909",
+      "authors": [
+        "Rico Sennrich",
+        "Barry Haddow",
+        "Alexandra Birch"
+      ],
+      "card_path": "papers/bpe.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/bpe.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microtokenizer"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microtokenizer.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microtokenizer",
+        "target_tier": "01-foundations"
+      },
+      "slug": "bpe",
+      "status": "implemented",
+      "tags": [
+        "bpe",
+        "tokenization",
+        "subword",
+        "machine-translation"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Neural Machine Translation of Rare Words with Subword Units",
+      "url": "https://arxiv.org/abs/1508.07909",
+      "venue": "ACL",
+      "year": "2016"
+    },
+    {
+      "arxiv_id": "2006.11239",
+      "authors": [
+        "Jonathan Ho",
+        "Ajay Jain",
+        "Pieter Abbeel"
+      ],
+      "card_path": "papers/ddpm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/ddpm.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microdiffusion"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microdiffusion.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microdiffusion",
+        "target_tier": "01-foundations"
+      },
+      "slug": "ddpm",
+      "status": "implemented",
+      "tags": [
+        "diffusion",
+        "ddpm",
+        "score-matching",
+        "denoising",
+        "generative"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Denoising Diffusion Probabilistic Models",
+      "url": "https://arxiv.org/abs/2006.11239",
+      "venue": "NeurIPS",
+      "year": "2020"
+    },
+    {
+      "arxiv_id": "2501.12948",
+      "authors": [
+        "DeepSeek-AI"
+      ],
+      "card_path": "papers/deepseek-r1.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/deepseek-r1.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-25",
+      "discovered_via": "seed-papers-proposal",
+      "doi": "10.1038/s41586-025-09422-z",
+      "implementations": [],
+      "lesson": {
+        "path": "no-magic-papers/lessons/deepseek-r1.md",
+        "status": "drafted",
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/lessons/deepseek-r1.md"
+      },
+      "routing": {
+        "batch_label": "reasoning-seed",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/micror1.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "micror1",
+        "target_tier": "02-alignment"
+      },
+      "slug": "deepseek-r1",
+      "status": "summarized",
+      "tags": [
+        "reinforcement-learning",
+        "grpo",
+        "reasoning",
+        "distillation"
+      ],
+      "themes": {
+        "primary": "reasoning",
+        "secondary": [
+          "alignment"
+        ]
+      },
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "venue": "Nature",
+      "year": "2025"
+    },
+    {
+      "arxiv_id": "2305.18290",
+      "authors": [
+        "Rafael Rafailov",
+        "Archit Sharma",
+        "Eric Mitchell",
+        "Stefano Ermon",
+        "Christopher D. Manning",
+        "Chelsea Finn"
+      ],
+      "card_path": "papers/dpo.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/dpo.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microdpo"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microdpo.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microdpo",
+        "target_tier": "02-alignment"
+      },
+      "slug": "dpo",
+      "status": "implemented",
+      "tags": [
+        "dpo",
+        "preference-optimization",
+        "rlhf-alternative",
+        "bradley-terry"
+      ],
+      "themes": {
+        "primary": "alignment",
+        "secondary": []
+      },
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "url": "https://arxiv.org/abs/2305.18290",
+      "venue": "NeurIPS",
+      "year": "2023"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Nitish Srivastava",
+        "Geoffrey Hinton",
+        "Alex Krizhevsky",
+        "Ilya Sutskever",
+        "Ruslan Salakhutdinov"
+      ],
+      "card_path": "papers/dropout.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/dropout.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microdropout"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microdropout.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microdropout",
+        "target_tier": "02-alignment"
+      },
+      "slug": "dropout",
+      "status": "implemented",
+      "tags": [
+        "dropout",
+        "regularization",
+        "overfitting",
+        "bagging"
+      ],
+      "themes": {
+        "primary": "training-dynamics",
+        "secondary": []
+      },
+      "title": "Dropout: A Simple Way to Prevent Neural Networks from Overfitting",
+      "url": "https://jmlr.org/papers/v15/srivastava14a.html",
+      "venue": "JMLR",
+      "year": "2014"
+    },
+    {
+      "arxiv_id": "2205.14135",
+      "authors": [
+        "Tri Dao",
+        "Daniel Y. Fu",
+        "Stefano Ermon",
+        "Atri Rudra",
+        "Christopher Ré"
+      ],
+      "card_path": "papers/flash-attention.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/flash-attention.md",
+      "dependencies": [
+        "transformer"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microflash"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microflash.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microflash",
+        "target_tier": "03-systems"
+      },
+      "slug": "flash-attention",
+      "status": "implemented",
+      "tags": [
+        "flash-attention",
+        "io-aware",
+        "tiled-softmax",
+        "kernel-fusion"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": [
+          "long-context"
+        ]
+      },
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "url": "https://arxiv.org/abs/2205.14135",
+      "venue": "NeurIPS",
+      "year": "2022"
+    },
+    {
+      "arxiv_id": "1406.2661",
+      "authors": [
+        "Ian J. Goodfellow",
+        "Jean Pouget-Abadie",
+        "Mehdi Mirza",
+        "Bing Xu",
+        "David Warde-Farley",
+        "Sherjil Ozair",
+        "Aaron Courville",
+        "Yoshua Bengio"
+      ],
+      "card_path": "papers/gan.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/gan.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microgan"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microgan.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microgan",
+        "target_tier": "01-foundations"
+      },
+      "slug": "gan",
+      "status": "implemented",
+      "tags": [
+        "gan",
+        "adversarial",
+        "generative",
+        "minimax"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Generative Adversarial Networks",
+      "url": "https://arxiv.org/abs/1406.2661",
+      "venue": "NeurIPS",
+      "year": "2014"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Alec Radford",
+        "Karthik Narasimhan",
+        "Tim Salimans",
+        "Ilya Sutskever"
+      ],
+      "card_path": "papers/gpt-1.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/gpt-1.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microgpt"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microgpt.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microgpt",
+        "target_tier": "01-foundations"
+      },
+      "slug": "gpt-1",
+      "status": "implemented",
+      "tags": [
+        "gpt",
+        "autoregressive",
+        "language-model",
+        "pretraining",
+        "decoder-transformer"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Improving Language Understanding by Generative Pre-Training",
+      "url": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf",
+      "venue": "OpenAI Technical Report",
+      "year": "2018"
+    },
+    {
+      "arxiv_id": "1604.06174",
+      "authors": [
+        "Tianqi Chen",
+        "Bing Xu",
+        "Chiyuan Zhang",
+        "Carlos Guestrin"
+      ],
+      "card_path": "papers/gradient-checkpointing.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/gradient-checkpointing.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microcheckpoint"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microcheckpoint.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microcheckpoint",
+        "target_tier": "03-systems"
+      },
+      "slug": "gradient-checkpointing",
+      "status": "implemented",
+      "tags": [
+        "gradient-checkpointing",
+        "activation-recomputation",
+        "memory-compute-tradeoff"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": []
+      },
+      "title": "Training Deep Nets with Sublinear Memory Cost",
+      "url": "https://arxiv.org/abs/1604.06174",
+      "venue": "arXiv",
+      "year": "2016"
+    },
+    {
+      "arxiv_id": "2402.03300",
+      "authors": [
+        "Zhihong Shao",
+        "Peiyi Wang",
+        "Qihao Zhu",
+        "Runxin Xu",
+        "Junxiao Song",
+        "Xiao Bi",
+        "Haowei Zhang",
+        "Mingchuan Zhang",
+        "Y. K. Li",
+        "Y. Wu",
+        "Daya Guo"
+      ],
+      "card_path": "papers/grpo.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/grpo.md",
+      "dependencies": [
+        "ppo"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microgrpo"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microgrpo.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microgrpo",
+        "target_tier": "02-alignment"
+      },
+      "slug": "grpo",
+      "status": "implemented",
+      "tags": [
+        "grpo",
+        "rlhf",
+        "math-reasoning",
+        "group-relative-advantage",
+        "critic-free"
+      ],
+      "themes": {
+        "primary": "alignment",
+        "secondary": [
+          "reasoning"
+        ]
+      },
+      "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+      "url": "https://arxiv.org/abs/2402.03300",
+      "venue": "arXiv",
+      "year": "2024"
+    },
+    {
+      "arxiv_id": "1406.1078",
+      "authors": [
+        "Kyunghyun Cho",
+        "Bart van Merriënboer",
+        "Caglar Gulcehre",
+        "Dzmitry Bahdanau",
+        "Fethi Bougares",
+        "Holger Schwenk",
+        "Yoshua Bengio"
+      ],
+      "card_path": "papers/gru.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/gru.md",
+      "dependencies": [
+        "rnn-elman",
+        "lstm"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "rnn_vs_gru_vs_lstm"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/rnn_vs_gru_vs_lstm.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "rnn_vs_gru_vs_lstm",
+        "target_tier": "01-foundations"
+      },
+      "slug": "gru",
+      "status": "implemented",
+      "tags": [
+        "gru",
+        "rnn-encoder-decoder",
+        "reset-gate",
+        "update-gate",
+        "machine-translation"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation",
+      "url": "https://arxiv.org/abs/1406.1078",
+      "venue": "EMNLP",
+      "year": "2014"
+    },
+    {
+      "arxiv_id": "1603.09320",
+      "authors": [
+        "Yu A. Malkov",
+        "D. A. Yashunin"
+      ],
+      "card_path": "papers/hnsw.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/hnsw.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microvectorsearch"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microvectorsearch.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microvectorsearch",
+        "target_tier": "03-systems"
+      },
+      "slug": "hnsw",
+      "status": "implemented",
+      "tags": [
+        "hnsw",
+        "ann",
+        "small-world-graph",
+        "vector-search"
+      ],
+      "themes": {
+        "primary": "retrieval",
+        "secondary": []
+      },
+      "title": "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs",
+      "url": "https://arxiv.org/abs/1603.09320",
+      "venue": "arXiv",
+      "year": "2016"
+    },
+    {
+      "arxiv_id": "2211.05102",
+      "authors": [
+        "Reiner Pope",
+        "Sholto Douglas",
+        "Aakanksha Chowdhery",
+        "Jacob Devlin",
+        "James Bradbury",
+        "Anselm Levskaya",
+        "Jonathan Heek",
+        "Kefan Xiao",
+        "Shivani Agrawal",
+        "Jeff Dean"
+      ],
+      "card_path": "papers/kv-cache.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/kv-cache.md",
+      "dependencies": [
+        "transformer"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microkv"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microkv.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microkv",
+        "target_tier": "03-systems"
+      },
+      "slug": "kv-cache",
+      "status": "implemented",
+      "tags": [
+        "kv-cache",
+        "inference",
+        "autoregressive-decoding",
+        "memory-bound"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": []
+      },
+      "title": "Efficiently Scaling Transformer Inference",
+      "url": "https://arxiv.org/abs/2211.05102",
+      "venue": "MLSys",
+      "year": "2023"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Yann LeCun",
+        "Léon Bottou",
+        "Yoshua Bengio",
+        "Patrick Haffner"
+      ],
+      "card_path": "papers/lenet-5.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/lenet-5.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1109/5.726791",
+      "implementations": [
+        "microconv"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microconv.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microconv",
+        "target_tier": "01-foundations"
+      },
+      "slug": "lenet-5",
+      "status": "implemented",
+      "tags": [
+        "cnn",
+        "lenet",
+        "convolution",
+        "pooling",
+        "mnist"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Gradient-Based Learning Applied to Document Recognition",
+      "url": "http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf",
+      "venue": "Proceedings of the IEEE",
+      "year": "1998"
+    },
+    {
+      "arxiv_id": "2208.07339",
+      "authors": [
+        "Tim Dettmers",
+        "Mike Lewis",
+        "Younes Belkada",
+        "Luke Zettlemoyer"
+      ],
+      "card_path": "papers/llm-int8.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/llm-int8.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microquant"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microquant.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microquant",
+        "target_tier": "03-systems"
+      },
+      "slug": "llm-int8",
+      "status": "implemented",
+      "tags": [
+        "quantization",
+        "int8",
+        "mixed-precision",
+        "outlier-features"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": []
+      },
+      "title": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
+      "url": "https://arxiv.org/abs/2208.07339",
+      "venue": "NeurIPS",
+      "year": "2022"
+    },
+    {
+      "arxiv_id": "2106.09685",
+      "authors": [
+        "Edward J. Hu",
+        "Yelong Shen",
+        "Phillip Wallis",
+        "Zeyuan Allen-Zhu",
+        "Yuanzhi Li",
+        "Shean Wang",
+        "Lu Wang",
+        "Weizhu Chen"
+      ],
+      "card_path": "papers/lora.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/lora.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microlora"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microlora.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microlora",
+        "target_tier": "02-alignment"
+      },
+      "slug": "lora",
+      "status": "implemented",
+      "tags": [
+        "lora",
+        "adapters",
+        "low-rank",
+        "fine-tuning"
+      ],
+      "themes": {
+        "primary": "parameter-efficient",
+        "secondary": [
+          "alignment"
+        ]
+      },
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "venue": "ICLR",
+      "year": "2022"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Sepp Hochreiter",
+        "Jürgen Schmidhuber"
+      ],
+      "card_path": "papers/lstm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/lstm.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1162/neco.1997.9.8.1735",
+      "implementations": [
+        "microlstm"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microlstm.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microlstm",
+        "target_tier": "01-foundations"
+      },
+      "slug": "lstm",
+      "status": "implemented",
+      "tags": [
+        "lstm",
+        "recurrent",
+        "gated-cell",
+        "vanishing-gradient"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Long Short-Term Memory",
+      "url": "https://www.bioinf.jku.at/publications/older/2604.pdf",
+      "venue": "Neural Computation",
+      "year": "1997"
+    },
+    {
+      "arxiv_id": "2405.21060",
+      "authors": [
+        "Tri Dao",
+        "Albert Gu"
+      ],
+      "card_path": "papers/mamba-2.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/mamba-2.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-25",
+      "discovered_via": "seed-papers-proposal",
+      "doi": "10.48550/arXiv.2405.21060",
+      "implementations": [
+        "microcomplexssm",
+        "microdiscretize",
+        "microssm"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "architecture-seed",
+        "decision": "reference-only",
+        "review_date": null,
+        "target_path": "03-systems/microssm.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microssm",
+        "target_tier": "03-systems"
+      },
+      "slug": "mamba-2",
+      "status": "implemented",
+      "tags": [
+        "ssm",
+        "mamba",
+        "state-space-duality",
+        "semiseparable-matrices"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": [
+          "efficient-inference",
+          "long-context"
+        ]
+      },
+      "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+      "url": "https://arxiv.org/abs/2405.21060",
+      "venue": "ICML",
+      "year": "2024"
+    },
+    {
+      "arxiv_id": "1909.08053",
+      "authors": [
+        "Mohammad Shoeybi",
+        "Mostofa Patwary",
+        "Raul Puri",
+        "Patrick LeGresley",
+        "Jared Casper",
+        "Bryan Catanzaro"
+      ],
+      "card_path": "papers/megatron-lm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/megatron-lm.md",
+      "dependencies": [
+        "transformer"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microparallel"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microparallel.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microparallel",
+        "target_tier": "03-systems"
+      },
+      "slug": "megatron-lm",
+      "status": "implemented",
+      "tags": [
+        "tensor-parallelism",
+        "model-parallelism",
+        "megatron",
+        "transformer-training"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": []
+      },
+      "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+      "url": "https://arxiv.org/abs/1909.08053",
+      "venue": "arXiv",
+      "year": "2019"
+    },
+    {
+      "arxiv_id": "1701.06538",
+      "authors": [
+        "Noam Shazeer",
+        "Azalia Mirhoseini",
+        "Krzysztof Maziarz",
+        "Andy Davis",
+        "Quoc Le",
+        "Geoffrey Hinton",
+        "Jeff Dean"
+      ],
+      "card_path": "papers/moe-shazeer.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/moe-shazeer.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "micromoe"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/micromoe.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "micromoe",
+        "target_tier": "02-alignment"
+      },
+      "slug": "moe-shazeer",
+      "status": "implemented",
+      "tags": [
+        "moe",
+        "sparse-gating",
+        "top-k-routing",
+        "load-balancing",
+        "conditional-computation"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": [
+          "efficient-inference"
+        ]
+      },
+      "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+      "url": "https://arxiv.org/abs/1701.06538",
+      "venue": "ICLR",
+      "year": "2017"
+    },
+    {
+      "arxiv_id": "2502.11089",
+      "authors": [
+        "Jingyang Yuan",
+        "Huazuo Gao",
+        "Damai Dai",
+        "Junyu Luo",
+        "Liang Zhao",
+        "Zhengyan Zhang",
+        "Zhenda Xie",
+        "Y. X. Wei",
+        "Lean Wang",
+        "Zhiping Xiao",
+        "Yuqing Wang",
+        "Chong Ruan",
+        "Ming Zhang",
+        "Wenfeng Liang",
+        "Wangding Zeng"
+      ],
+      "card_path": "papers/nsa.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/nsa.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-25",
+      "discovered_via": "seed-papers-proposal",
+      "doi": "10.48550/arXiv.2502.11089",
+      "implementations": [],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "sparse-attention-seed",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/micronsa.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "micronsa",
+        "target_tier": "03-systems"
+      },
+      "slug": "nsa",
+      "status": "summarized",
+      "tags": [
+        "sparse-attention",
+        "long-context",
+        "gqa",
+        "hardware-aligned"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": [
+          "long-context",
+          "efficient-inference"
+        ]
+      },
+      "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+      "url": "https://arxiv.org/abs/2502.11089",
+      "venue": "arXiv",
+      "year": "2025"
+    },
+    {
+      "arxiv_id": "1410.5401",
+      "authors": [
+        "Alex Graves",
+        "Greg Wayne",
+        "Ivo Danihelka"
+      ],
+      "card_path": "papers/ntm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/ntm.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "micromemory"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-agents",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "04-agents/micromemory.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "micromemory",
+        "target_tier": "04-agents"
+      },
+      "slug": "ntm",
+      "status": "implemented",
+      "tags": [
+        "external-memory",
+        "differentiable-memory",
+        "content-addressing",
+        "location-addressing",
+        "copy-task"
+      ],
+      "themes": {
+        "primary": "agents",
+        "secondary": [
+          "architecture"
+        ]
+      },
+      "title": "Neural Turing Machines",
+      "url": "https://arxiv.org/abs/1410.5401",
+      "venue": "arXiv",
+      "year": "2014"
+    },
+    {
+      "arxiv_id": "1904.09751",
+      "authors": [
+        "Ari Holtzman",
+        "Jan Buys",
+        "Li Du",
+        "Maxwell Forbes",
+        "Yejin Choi"
+      ],
+      "card_path": "papers/nucleus-sampling.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/nucleus-sampling.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microbeam"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microbeam.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microbeam",
+        "target_tier": "03-systems"
+      },
+      "slug": "nucleus-sampling",
+      "status": "implemented",
+      "tags": [
+        "nucleus-sampling",
+        "top-p",
+        "decoding",
+        "text-degeneration",
+        "beam-search"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": []
+      },
+      "title": "The Curious Case of Neural Text Degeneration",
+      "url": "https://arxiv.org/abs/1904.09751",
+      "venue": "ICLR",
+      "year": "2020"
+    },
+    {
+      "arxiv_id": "2309.06180",
+      "authors": [
+        "Woosuk Kwon",
+        "Zhuohan Li",
+        "Siyuan Zhuang",
+        "Ying Sheng",
+        "Lianmin Zheng",
+        "Cody Hao Yu",
+        "Joseph E. Gonzalez",
+        "Hao Zhang",
+        "Ion Stoica"
+      ],
+      "card_path": "papers/pagedattention.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/pagedattention.md",
+      "dependencies": [
+        "transformer"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "micropaged"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/micropaged.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "micropaged",
+        "target_tier": "03-systems"
+      },
+      "slug": "pagedattention",
+      "status": "implemented",
+      "tags": [
+        "vllm",
+        "kv-cache",
+        "paging",
+        "serving",
+        "memory-management"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": [
+          "long-context"
+        ]
+      },
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "venue": "SOSP",
+      "year": "2023"
+    },
+    {
+      "arxiv_id": "1707.06347",
+      "authors": [
+        "John Schulman",
+        "Filip Wolski",
+        "Prafulla Dhariwal",
+        "Alec Radford",
+        "Oleg Klimov"
+      ],
+      "card_path": "papers/ppo.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/ppo.md",
+      "dependencies": [
+        "reinforce"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microppo"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microppo.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microppo",
+        "target_tier": "02-alignment"
+      },
+      "slug": "ppo",
+      "status": "implemented",
+      "tags": [
+        "ppo",
+        "policy-gradient",
+        "clipped-objective",
+        "rlhf"
+      ],
+      "themes": {
+        "primary": "alignment",
+        "secondary": [
+          "reasoning"
+        ]
+      },
+      "title": "Proximal Policy Optimization Algorithms",
+      "url": "https://arxiv.org/abs/1707.06347",
+      "venue": "arXiv",
+      "year": "2017"
+    },
+    {
+      "arxiv_id": "2305.14314",
+      "authors": [
+        "Tim Dettmers",
+        "Artidoro Pagnoni",
+        "Ari Holtzman",
+        "Luke Zettlemoyer"
+      ],
+      "card_path": "papers/qlora.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/qlora.md",
+      "dependencies": [
+        "lora"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microqlora"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microqlora.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microqlora",
+        "target_tier": "02-alignment"
+      },
+      "slug": "qlora",
+      "status": "implemented",
+      "tags": [
+        "qlora",
+        "4-bit",
+        "nf4",
+        "double-quantization",
+        "paged-optimizer"
+      ],
+      "themes": {
+        "primary": "parameter-efficient",
+        "secondary": [
+          "efficient-inference",
+          "alignment"
+        ]
+      },
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "url": "https://arxiv.org/abs/2305.14314",
+      "venue": "NeurIPS",
+      "year": "2023"
+    },
+    {
+      "arxiv_id": "2005.11401",
+      "authors": [
+        "Patrick Lewis",
+        "Ethan Perez",
+        "Aleksandra Piktus",
+        "Fabio Petroni",
+        "Vladimir Karpukhin",
+        "Naman Goyal",
+        "Heinrich Küttler",
+        "Mike Lewis",
+        "Wen-tau Yih",
+        "Tim Rocktäschel",
+        "Sebastian Riedel",
+        "Douwe Kiela"
+      ],
+      "card_path": "papers/rag.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/rag.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microrag"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microrag.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microrag",
+        "target_tier": "01-foundations"
+      },
+      "slug": "rag",
+      "status": "implemented",
+      "tags": [
+        "rag",
+        "dense-retrieval",
+        "generation",
+        "knowledge"
+      ],
+      "themes": {
+        "primary": "retrieval",
+        "secondary": [
+          "architecture"
+        ]
+      },
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "venue": "NeurIPS",
+      "year": "2020"
+    },
+    {
+      "arxiv_id": "2210.03629",
+      "authors": [
+        "Shunyu Yao",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du",
+        "Izhak Shafran",
+        "Karthik Narasimhan",
+        "Yuan Cao"
+      ],
+      "card_path": "papers/react.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/react.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microreact"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-agents",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "04-agents/microreact.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microreact",
+        "target_tier": "04-agents"
+      },
+      "slug": "react",
+      "status": "implemented",
+      "tags": [
+        "tool-use",
+        "prompting",
+        "action-loop",
+        "hotpotqa",
+        "alfworld"
+      ],
+      "themes": {
+        "primary": "agents",
+        "secondary": [
+          "reasoning"
+        ]
+      },
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "venue": "ICLR",
+      "year": "2023"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Ronald J. Williams"
+      ],
+      "card_path": "papers/reinforce.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/reinforce.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1007/BF00992696",
+      "implementations": [
+        "microreinforce"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-alignment",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "02-alignment/microreinforce.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microreinforce",
+        "target_tier": "02-alignment"
+      },
+      "slug": "reinforce",
+      "status": "implemented",
+      "tags": [
+        "reinforce",
+        "policy-gradient",
+        "score-function-estimator",
+        "log-derivative-trick"
+      ],
+      "themes": {
+        "primary": "alignment",
+        "secondary": []
+      },
+      "title": "Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning",
+      "url": "https://link.springer.com/article/10.1007/BF00992696",
+      "venue": "Machine Learning",
+      "year": "1992"
+    },
+    {
+      "arxiv_id": "1512.03385",
+      "authors": [
+        "Kaiming He",
+        "Xiangyu Zhang",
+        "Shaoqing Ren",
+        "Jian Sun"
+      ],
+      "card_path": "papers/resnet.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/resnet.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microresnet"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microresnet.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microresnet",
+        "target_tier": "01-foundations"
+      },
+      "slug": "resnet",
+      "status": "implemented",
+      "tags": [
+        "resnet",
+        "residual",
+        "skip-connection",
+        "deep-network"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Deep Residual Learning for Image Recognition",
+      "url": "https://arxiv.org/abs/1512.03385",
+      "venue": "CVPR",
+      "year": "2016"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Jeffrey L. Elman"
+      ],
+      "card_path": "papers/rnn-elman.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/rnn-elman.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1207/s15516709cog1402_1",
+      "implementations": [
+        "micrornn"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/micrornn.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "micrornn",
+        "target_tier": "01-foundations"
+      },
+      "slug": "rnn-elman",
+      "status": "implemented",
+      "tags": [
+        "rnn",
+        "simple-recurrent-network",
+        "context-units",
+        "sequence-modeling"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Finding Structure in Time",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1207/s15516709cog1402_1",
+      "venue": "Cognitive Science",
+      "year": "1990"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Samuel Williams",
+        "Andrew Waterman",
+        "David Patterson"
+      ],
+      "card_path": "papers/roofline.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/roofline.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1145/1498765.1498785",
+      "implementations": [
+        "microroofline"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microroofline.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microroofline",
+        "target_tier": "03-systems"
+      },
+      "slug": "roofline",
+      "status": "implemented",
+      "tags": [
+        "roofline",
+        "performance-model",
+        "arithmetic-intensity",
+        "memory-bandwidth"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": []
+      },
+      "title": "Roofline: An Insightful Visual Performance Model for Multicore Architectures",
+      "url": "https://dl.acm.org/doi/10.1145/1498765.1498785",
+      "venue": "Communications of the ACM",
+      "year": "2009"
+    },
+    {
+      "arxiv_id": "2104.09864",
+      "authors": [
+        "Jianlin Su",
+        "Yu Lu",
+        "Shengfeng Pan",
+        "Bo Wen",
+        "Yunfeng Liu"
+      ],
+      "card_path": "papers/rope.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/rope.md",
+      "dependencies": [
+        "transformer"
+      ],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microrope"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microrope.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microrope",
+        "target_tier": "03-systems"
+      },
+      "slug": "rope",
+      "status": "implemented",
+      "tags": [
+        "rope",
+        "rotary-position-embedding",
+        "relative-position"
+      ],
+      "themes": {
+        "primary": "long-context",
+        "secondary": [
+          "architecture"
+        ]
+      },
+      "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+      "url": "https://arxiv.org/abs/2104.09864",
+      "venue": "arXiv",
+      "year": "2021"
+    },
+    {
+      "arxiv_id": "2211.17192",
+      "authors": [
+        "Yaniv Leviathan",
+        "Matan Kalman",
+        "Yossi Matias"
+      ],
+      "card_path": "papers/speculative-decoding.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/speculative-decoding.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microspeculative"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-systems",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microspeculative.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microspeculative",
+        "target_tier": "03-systems"
+      },
+      "slug": "speculative-decoding",
+      "status": "implemented",
+      "tags": [
+        "speculative-decoding",
+        "draft-model",
+        "rejection-sampling",
+        "inference-speedup"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": []
+      },
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "url": "https://arxiv.org/abs/2211.17192",
+      "venue": "ICML",
+      "year": "2023"
+    },
+    {
+      "arxiv_id": "2501.00663",
+      "authors": [
+        "Ali Behrouz",
+        "Peilin Zhong",
+        "Vahab Mirrokni"
+      ],
+      "card_path": "papers/titans-2501.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/titans-2501.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-25",
+      "discovered_via": "seed-papers-proposal",
+      "doi": "10.48550/arXiv.2501.00663",
+      "implementations": [],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "long-context-seed",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microtitans.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microtitans",
+        "target_tier": "01-foundations"
+      },
+      "slug": "titans-2501",
+      "status": "summarized",
+      "tags": [
+        "neural-memory",
+        "test-time-learning",
+        "long-context",
+        "memory-architecture"
+      ],
+      "themes": {
+        "primary": "long-context",
+        "secondary": [
+          "architecture"
+        ]
+      },
+      "title": "Titans: Learning to Memorize at Test Time",
+      "url": "https://arxiv.org/abs/2501.00663",
+      "venue": "arXiv",
+      "year": "2025"
+    },
+    {
+      "arxiv_id": "1706.03762",
+      "authors": [
+        "Ashish Vaswani",
+        "Noam Shazeer",
+        "Niki Parmar",
+        "Jakob Uszkoreit",
+        "Llion Jones",
+        "Aidan N. Gomez",
+        "Łukasz Kaiser",
+        "Illia Polosukhin"
+      ],
+      "card_path": "papers/transformer.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/transformer.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "attention_vs_none",
+        "microattention"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microattention.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microattention",
+        "target_tier": "03-systems"
+      },
+      "slug": "transformer",
+      "status": "implemented",
+      "tags": [
+        "transformer",
+        "self-attention",
+        "multi-head-attention",
+        "positional-encoding"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": [
+          "long-context"
+        ]
+      },
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "venue": "NeurIPS",
+      "year": "2017"
+    },
+    {
+      "arxiv_id": "2504.19874",
+      "authors": [
+        "Amir Zandieh",
+        "Majid Daliri",
+        "Majid Hadian",
+        "Vahab Mirrokni"
+      ],
+      "card_path": "papers/turboquant.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/turboquant.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-25",
+      "discovered_via": "maintainer",
+      "doi": "10.48550/arXiv.2504.19874",
+      "implementations": [
+        "microturboquant"
+      ],
+      "lesson": {
+        "path": "no-magic-papers/lessons/turboquant.md",
+        "status": "published",
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/lessons/turboquant.md"
+      },
+      "routing": {
+        "batch_label": "efficient-inference-seed",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "03-systems/microturboquant.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microturboquant",
+        "target_tier": "03-systems"
+      },
+      "slug": "turboquant",
+      "status": "implemented",
+      "tags": [
+        "vector-quantization",
+        "kv-cache",
+        "qjl",
+        "random-rotation"
+      ],
+      "themes": {
+        "primary": "efficient-inference",
+        "secondary": [
+          "retrieval"
+        ]
+      },
+      "title": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+      "url": "https://arxiv.org/abs/2504.19874",
+      "venue": "arXiv",
+      "year": "2025"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Peter Auer",
+        "Nicolò Cesa-Bianchi",
+        "Paul Fischer"
+      ],
+      "card_path": "papers/ucb1.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/ucb1.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1023/A:1013689704352",
+      "implementations": [
+        "microbandit"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-agents",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "04-agents/microbandit.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microbandit",
+        "target_tier": "04-agents"
+      },
+      "slug": "ucb1",
+      "status": "implemented",
+      "tags": [
+        "bandits",
+        "exploration",
+        "regret-bounds",
+        "ucb"
+      ],
+      "themes": {
+        "primary": "agents",
+        "secondary": [
+          "reasoning"
+        ]
+      },
+      "title": "Finite-time Analysis of the Multiarmed Bandit Problem",
+      "url": "https://link.springer.com/article/10.1023/A:1013689704352",
+      "venue": "Machine Learning",
+      "year": "2002"
+    },
+    {
+      "arxiv_id": null,
+      "authors": [
+        "Levente Kocsis",
+        "Csaba Szepesvári"
+      ],
+      "card_path": "papers/uct.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/uct.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": "10.1007/11871842_29",
+      "implementations": [
+        "micromcts"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-agents",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "04-agents/micromcts.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "micromcts",
+        "target_tier": "04-agents"
+      },
+      "slug": "uct",
+      "status": "implemented",
+      "tags": [
+        "mcts",
+        "uct",
+        "bandits",
+        "planning",
+        "tree-search"
+      ],
+      "themes": {
+        "primary": "agents",
+        "secondary": [
+          "reasoning"
+        ]
+      },
+      "title": "Bandit Based Monte-Carlo Planning",
+      "url": "https://link.springer.com/chapter/10.1007/11871842_29",
+      "venue": "ECML",
+      "year": "2006"
+    },
+    {
+      "arxiv_id": "1312.6114",
+      "authors": [
+        "Diederik P. Kingma",
+        "Max Welling"
+      ],
+      "card_path": "papers/vae.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/vae.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microvae"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microvae.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microvae",
+        "target_tier": "01-foundations"
+      },
+      "slug": "vae",
+      "status": "implemented",
+      "tags": [
+        "vae",
+        "variational-inference",
+        "reparameterization-trick",
+        "elbo",
+        "latent-variable"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": []
+      },
+      "title": "Auto-Encoding Variational Bayes",
+      "url": "https://arxiv.org/abs/1312.6114",
+      "venue": "ICLR",
+      "year": "2014"
+    },
+    {
+      "arxiv_id": "2010.11929",
+      "authors": [
+        "Alexey Dosovitskiy",
+        "Lucas Beyer",
+        "Alexander Kolesnikov",
+        "Dirk Weissenborn",
+        "Xiaohua Zhai",
+        "Thomas Unterthiner",
+        "Mostafa Dehghani",
+        "Matthias Minderer",
+        "Georg Heigold",
+        "Sylvain Gelly",
+        "Jakob Uszkoreit",
+        "Neil Houlsby"
+      ],
+      "card_path": "papers/vit.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/vit.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microvit"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microvit.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microvit",
+        "target_tier": "01-foundations"
+      },
+      "slug": "vit",
+      "status": "implemented",
+      "tags": [
+        "vit",
+        "vision-transformer",
+        "patch-embedding",
+        "image-classification"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": [
+          "multimodal"
+        ]
+      },
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+      "url": "https://arxiv.org/abs/2010.11929",
+      "venue": "ICLR",
+      "year": "2021"
+    },
+    {
+      "arxiv_id": "1301.3781",
+      "authors": [
+        "Tomas Mikolov",
+        "Kai Chen",
+        "Greg Corrado",
+        "Jeffrey Dean"
+      ],
+      "card_path": "papers/word2vec.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0/papers/word2vec.md",
+      "dependencies": [],
+      "discovered_date": "2026-04-26",
+      "discovered_via": "v3-backfill",
+      "doi": null,
+      "implementations": [
+        "microembedding"
+      ],
+      "lesson": {
+        "path": null,
+        "status": "none",
+        "url": null
+      },
+      "routing": {
+        "batch_label": "v3-backfill-foundations",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microembedding.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microembedding",
+        "target_tier": "01-foundations"
+      },
+      "slug": "word2vec",
+      "status": "implemented",
+      "tags": [
+        "word2vec",
+        "skip-gram",
+        "cbow",
+        "word-embeddings"
+      ],
+      "themes": {
+        "primary": "architecture",
+        "secondary": [
+          "retrieval"
+        ]
+      },
+      "title": "Efficient Estimation of Word Representations in Vector Space",
+      "url": "https://arxiv.org/abs/1301.3781",
+      "venue": "arXiv",
+      "year": "2013"
+    }
+  ],
+  "schema_version": 1
+}
