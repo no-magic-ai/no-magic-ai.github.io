@@ -1,0 +1,1076 @@
+{
+  "cohort": "published",
+  "invariants": [
+    "repository-identity",
+    "revision-binding",
+    "committed-input-binding",
+    "validator-authority-committed",
+    "frontmatter-schema",
+    "card-body-sections",
+    "dependency-links",
+    "lesson-lifecycle",
+    "implementation-path-shape",
+    "duplicate-ownership",
+    "version-valid",
+    "catalog-shape",
+    "invariant-1-catalog-script-owned",
+    "invariant-2-implementation-resolves",
+    "invariant-3-paper-slug-backref",
+    "media-declaration",
+    "media-omission-comparison-only",
+    "media-assets",
+    "index-fresh",
+    "metadata-json-fresh",
+    "publication-ancestry"
+  ],
+  "media": {
+    "linked": 45,
+    "omitted": 3
+  },
+  "omissions": [
+    {
+      "media_note": "Comparison script without a no-magic-viz scene or preview; media is declared omitted, not backfilled.",
+      "media_status": "omitted",
+      "paper_slug": "adam",
+      "script_slug": "adam_vs_sgd",
+      "teaching_kind": "comparison"
+    },
+    {
+      "media_note": "Comparison script without a no-magic-viz scene or preview; media is declared omitted, not backfilled.",
+      "media_status": "omitted",
+      "paper_slug": "gru",
+      "script_slug": "rnn_vs_gru_vs_lstm",
+      "teaching_kind": "comparison"
+    },
+    {
+      "media_note": "Comparison script without a no-magic-viz scene or preview; media is declared omitted, not backfilled.",
+      "media_status": "omitted",
+      "paper_slug": "transformer",
+      "script_slug": "attention_vs_none",
+      "teaching_kind": "comparison"
+    }
+  ],
+  "repositories": {
+    "no-magic": {
+      "commit": "77d71f5c7507ba67fa67daac269c26daed471b7f",
+      "identity": "no-magic-ai/no-magic",
+      "inputs": [
+        {
+          "blob": "8d0365d992e221b92e02a43e49ec9c93f4a65a4f",
+          "path": "01-foundations/attention_vs_none.py",
+          "sha256": "71c50dfcf3764cc4ad56200606b9daa3943eb1f6efdca7ec300c50f506dcb892"
+        },
+        {
+          "blob": "3eaf1cac7288ab4eea69b698accf81a337e92269",
+          "path": "01-foundations/microbert.py",
+          "sha256": "77992e5055f9372c218f23b71f346f5cf0f35cfa4f9dbad4eef84db80b611298"
+        },
+        {
+          "blob": "ddd80fc7d1b3f42400533a94efa9390a662fed98",
+          "path": "01-foundations/microconv.py",
+          "sha256": "f19f5a627695ff803c7d8008b15ffee6af5d4d38f3ba53a27cd3a949a13a0ecd"
+        },
+        {
+          "blob": "73fa38febbff35104350d1a355c4a117d9cf204f",
+          "path": "01-foundations/microdiffusion.py",
+          "sha256": "98ac6030885a3dc6406ad20277fc42d54cd47d94202e3a4709d07ecaf61fe25e"
+        },
+        {
+          "blob": "f82fd4052c2abc8f4687e92ce16374bd61fee1e1",
+          "path": "01-foundations/microembedding.py",
+          "sha256": "bb280cfea68a4afcd099de038064efc51e8aa8c2ecf571762494429c3eaabc02"
+        },
+        {
+          "blob": "47f20b54fc8af855919ea76b1ceec5c88096fe78",
+          "path": "01-foundations/microgan.py",
+          "sha256": "c4dc0929b23bd4ce50294d00fa83cdf1ea3a6a1b172544542d418054957f6ba9"
+        },
+        {
+          "blob": "fd375cae01e1ff1c738174b80000175d32fc643f",
+          "path": "01-foundations/microgpt.py",
+          "sha256": "537408f0edc540901d71032ad9c65886e4fd6c6c3be8b115ade49792f8d9ba84"
+        },
+        {
+          "blob": "a56a6f0313531f9a618e5e0327847b7d6db56bd2",
+          "path": "01-foundations/microlstm.py",
+          "sha256": "85722487f87af3de2251f03c106410fe7dcf120b9b86617c20f326af29e5e6a4"
+        },
+        {
+          "blob": "d23d658cb2a6dcb6d194b5b5c0767d5559d7e2ac",
+          "path": "01-foundations/microoptimizer.py",
+          "sha256": "124cd22eab35e64b72f6031291d602c1abec630fd8ed0a4026cb2feb12f89912"
+        },
+        {
+          "blob": "e5a2b13bb9c2d562e0caec786497df10df66d12d",
+          "path": "01-foundations/microrag.py",
+          "sha256": "e34c0b9f369ee8afa426da06fef55754ce55db283f837e4e3fc41f468af9a66f"
+        },
+        {
+          "blob": "e2d5c3c8872ce326c16152ca4219954bd5af0524",
+          "path": "01-foundations/microresnet.py",
+          "sha256": "dda1467aceea12bbd901e5ec1b61d3ab9fc5379097650cab0d617e06c4b36254"
+        },
+        {
+          "blob": "cb5ab6cbeb0dfe82d09604e515aef442e6d344a1",
+          "path": "01-foundations/micrornn.py",
+          "sha256": "84c3628783a61f925ccbb0b825fdd891cb9d94880702fff223a0e51bf63dd2f9"
+        },
+        {
+          "blob": "5861c7c95619489fa83b55c7a436b8e7b711db52",
+          "path": "01-foundations/microtokenizer.py",
+          "sha256": "f0817496dac775331cf8a15f97f67cd2f9046cb290a1b9e75fdd52e8eef7cf08"
+        },
+        {
+          "blob": "8f074bfd6481b78bdd6bd083abbb9bae3c2b10a2",
+          "path": "01-foundations/microvae.py",
+          "sha256": "6289ef257be484288b8317b6184ade3b11b6018318dcf4d63d50e9bfc4bc57c1"
+        },
+        {
+          "blob": "accc4ec901664d22d9bae6b330f3aecf4c168d75",
+          "path": "01-foundations/microvit.py",
+          "sha256": "78b9d66c2ee9764740c023e8df0e0b04085b1e7053545e82cea5eec0b8ce3eac"
+        },
+        {
+          "blob": "d69c2013b8dcbef5c0523c136c70ee5a4b7d1f07",
+          "path": "01-foundations/rnn_vs_gru_vs_lstm.py",
+          "sha256": "5f7add1933475c57700e6a5b7257bf62a694894ae318938dce059b751462d59a"
+        },
+        {
+          "blob": "03fd4df4f63e13a98d2cdfce775ef9b97a6858fc",
+          "path": "02-alignment/adam_vs_sgd.py",
+          "sha256": "3642635224b4f2b2fa7d6b72b6bba2ef2b16d4cf138d3f05a78c8fcd124e109b"
+        },
+        {
+          "blob": "bbb16f61ecf91849905e6d8ee601db3e535e3117",
+          "path": "02-alignment/microbatchnorm.py",
+          "sha256": "f53d883265821cc7752e05c1392a816aede0a3a62fda7a600590bb615bebdf92"
+        },
+        {
+          "blob": "4e2d997a920a982eb8f9795211a05d96a81c1474",
+          "path": "02-alignment/microdpo.py",
+          "sha256": "dfc358226693331299860577046c7d69f309112a30c6317880738817de2ded4c"
+        },
+        {
+          "blob": "3199a9dc772ad4b4b5890991f0d9a97402523215",
+          "path": "02-alignment/microdropout.py",
+          "sha256": "830e6bcabbc385545e9473471188bdf4d50a4107a1d8873b95a2c9fa2b030654"
+        },
+        {
+          "blob": "2886b42d54a4df3a1a6fa11c0f907f59f5c9506e",
+          "path": "02-alignment/microgrpo.py",
+          "sha256": "1e91ca606db8752e429de40f9a1d20a7db63a55380892bf8b7171fd89e83a954"
+        },
+        {
+          "blob": "74f8c6f0d6da5c5d955e034df0a98b0e2edae6d8",
+          "path": "02-alignment/microlora.py",
+          "sha256": "20cfdc56b36c443b569d922cc1c4ba8704e5883e1c8b838c3ee3439db992fef7"
+        },
+        {
+          "blob": "bb23c209f9b02b262ef02d98f93bd93677b2b10c",
+          "path": "02-alignment/micromoe.py",
+          "sha256": "b94aadf099b7842bae53365c308ff4aacecdd6740253bcf343a3c5130d8876bf"
+        },
+        {
+          "blob": "02514944f47126c100d6dad35379b983ee0cad28",
+          "path": "02-alignment/microppo.py",
+          "sha256": "a2fcb87041d7608a35854bdc86d4f06e02da0339fdb91d88c84d0f0627681cd2"
+        },
+        {
+          "blob": "de3688aa4d48cee55d35170210c93987be1d3d89",
+          "path": "02-alignment/microqlora.py",
+          "sha256": "4c0ec00f34eb108712c994911d389822ef3eaf3bfa30ed0c66533c2cd98ea0be"
+        },
+        {
+          "blob": "1848bf86b80e77ed7a8b6430c5d29ead8605ce25",
+          "path": "02-alignment/microreinforce.py",
+          "sha256": "e2ba5a0c71f30e99bd3ac74ff67a7a8a0efd6903ec6794c8c18b28f87e76bec8"
+        },
+        {
+          "blob": "6e293a8059e89c6fb30a8a1d2814b2ab2a7092a6",
+          "path": "03-systems/microattention.py",
+          "sha256": "b05370f0a1ebb0c9ae2351db1fb2c66a7556abf5616c96645432737bdb68fbf9"
+        },
+        {
+          "blob": "2dd9a2455d19d154c9e1c18bb1d23a7214b87851",
+          "path": "03-systems/microbeam.py",
+          "sha256": "e60f804b9b37860f9cb3289a007b642c85f4d7badba6a2c418b2cfc2f02b4fb9"
+        },
+        {
+          "blob": "0a878d48a0d169f63edabc28ae740473cd43ab26",
+          "path": "03-systems/microbm25.py",
+          "sha256": "9cc2ea20a1298f7e3f6499cbd6072a665c79d24ad86cf3d0340f56282d6c7e79"
+        },
+        {
+          "blob": "ec5fe3334f4a01a15a1167fa1aaa0a6d183fd138",
+          "path": "03-systems/microcheckpoint.py",
+          "sha256": "077f099de40bfc46f2300a7189f047dcd66137f64b70267b0b4d731950f7847c"
+        },
+        {
+          "blob": "0e2368783f082f160f82040c65ee05d605e1f7c2",
+          "path": "03-systems/microcomplexssm.py",
+          "sha256": "64c247c04ae4a6a740fb04dcea2adfd511302cf678d01c5c802fd90007a449ed"
+        },
+        {
+          "blob": "2b3adb6843eafee7f8407b8b00370d9b40fd1788",
+          "path": "03-systems/microdiscretize.py",
+          "sha256": "c8b2d4602ca39f72f43a24dfc36ac26de1001e2bea8e10cc36711965e32e9d81"
+        },
+        {
+          "blob": "65e2b5ac67c67e2da70c1ab258050608bcf29430",
+          "path": "03-systems/microflash.py",
+          "sha256": "d5139f612cede4fd09169a0d62b1bcbed6b6ed7a5514811726065c86828bc2de"
+        },
+        {
+          "blob": "4b5607bbe4c25de96808a857f9e7aa5cc0f23ba7",
+          "path": "03-systems/microkv.py",
+          "sha256": "c5bde40f5453b218ad358c8dda6331c2796084fa2e756f64d6d3e613cd6a7312"
+        },
+        {
+          "blob": "ea30ee1be3fc6f852c091237511a1ef4e434b77a",
+          "path": "03-systems/micropaged.py",
+          "sha256": "2a9ace7d129074b747b7910a2767ed4b534cd2f2c8c0be489c0dd9c16a28c5c0"
+        },
+        {
+          "blob": "c6b82d85b27d33e35b05cc27cd9d1e95cd3ce323",
+          "path": "03-systems/microparallel.py",
+          "sha256": "340128d46637f02621e3686aac4781a849bce0908646e9dbd2151c3c533e32bb"
+        },
+        {
+          "blob": "9f3315bbed36668c262f07e24ead36e961363d72",
+          "path": "03-systems/microquant.py",
+          "sha256": "ff6dd25b29da54b543de20e772f6c60c01513985ec130de38d153c1d2eb07714"
+        },
+        {
+          "blob": "3167e0269091887697e93c3593c12921fe8feed5",
+          "path": "03-systems/microroofline.py",
+          "sha256": "bfb4b7cc7653a75c89e1de5d2f70532b7e4ac81c650552c659760b6ad59bfd4a"
+        },
+        {
+          "blob": "9b1117fa1f79ca471c639eddb65d3f7720bfd53a",
+          "path": "03-systems/microrope.py",
+          "sha256": "7d9ec88fee06988e08b7788c8f2eb6ef3a42387cdf6d5a169a7ac601bc24cac4"
+        },
+        {
+          "blob": "e969aeac5479ae7ac63c7d3e4c1f1309552fd775",
+          "path": "03-systems/microspeculative.py",
+          "sha256": "607e6183edf60ef70ce62ae3615de9700bdff90ef8e4b89b00a1573dc2246b8c"
+        },
+        {
+          "blob": "f642c6faa1fd3ebff17f583cf58c7ff5f5a2ce4f",
+          "path": "03-systems/microssm.py",
+          "sha256": "88257f25dd51229b0b510a88b533c3326943af0d2679ee6863c6af172e3b23df"
+        },
+        {
+          "blob": "488edc41275c07a015495eb474fae6147fd6c2d6",
+          "path": "03-systems/microturboquant.py",
+          "sha256": "05d84a81e066457c82a1a007159833c499e5e0dc6f7e7648c9bcc8449c9bcea8"
+        },
+        {
+          "blob": "be02475a3a0acc3b25435c96fabcad291b550c03",
+          "path": "03-systems/microvectorsearch.py",
+          "sha256": "d2ccbb3fe315c3c1277ba313b88f0e07c3ac8801a73f8d60b005bff5bc0a60f9"
+        },
+        {
+          "blob": "ad0d1321b5bc42d9a2af97bc227f16e63c9d9aa5",
+          "path": "04-agents/microbandit.py",
+          "sha256": "1ba582cabe9b4611ef07205cb7b8f156dd6723c75c8b29274154bbf079528bed"
+        },
+        {
+          "blob": "26c9a0480a6d5d6fd03861844fc80d2744f2b071",
+          "path": "04-agents/micromcts.py",
+          "sha256": "be6b552b5771c0b695749f32deb1c49bff0ca3d587c0588aa009d09fc52ae9fd"
+        },
+        {
+          "blob": "7b00f36279de01dd02f1a537efdf026812ea1943",
+          "path": "04-agents/micromemory.py",
+          "sha256": "6740e9a2389bc2d7e9c28feed5bc71e3a2e512510333fa1c0743e29f9c904ffa"
+        },
+        {
+          "blob": "403228ac1b50cb276fc90744fdc51d0e17bc65ab",
+          "path": "04-agents/microminimax.py",
+          "sha256": "a768c2ec7500ba8e4b565b1d228262e127af41c8bff854a34b28b361d725c9e6"
+        },
+        {
+          "blob": "010779256de54c02473136d21fddd342b8a77247",
+          "path": "04-agents/microreact.py",
+          "sha256": "8ac0346b4e3c9c8de0e1ccc08c62aa109c383f5481028b2dc9be9937baf833b6"
+        },
+        {
+          "blob": "4a36342fcab700951adb18ae7adc930997f6c3f4",
+          "path": "VERSION",
+          "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c"
+        },
+        {
+          "blob": "97774b773d4f4f6bd59800393d5e744d5cd3fafa",
+          "path": "docs/catalog.json",
+          "sha256": "50c77d970c17adcb61272fec63c4314502af7ed62f95e73b1e306c9e389971ff"
+        },
+        {
+          "blob": "05387d1c5862926245c2c62ca107fcef0053991e",
+          "path": "scripts/generate_catalog.py",
+          "sha256": "fce6b0fde0b7b566fe40eda67270305233ef2ea4f65e483c238de542721740b9"
+        }
+      ],
+      "object_format": "sha1",
+      "publication": {
+        "evidence": "selected commit is an ancestor of provider main in local history",
+        "main_commit": "77d71f5c7507ba67fa67daac269c26daed471b7f",
+        "provider": "https://github.com/no-magic-ai/no-magic.git",
+        "ref": "refs/heads/main",
+        "status": "published"
+      },
+      "tree": "9769b409035aa854916fa7e70cdbddcf1f8f54d7"
+    },
+    "no-magic-papers": {
+      "commit": "b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0",
+      "identity": "no-magic-ai/no-magic-papers",
+      "inputs": [
+        {
+          "blob": "4b39753f70738e4fbacb53c81f4a0c25714706af",
+          "path": "INDEX.md",
+          "sha256": "44ac017fc61de780e2b0da8954223a39ad37bb0f1bfbf324f76d76c0c284ef7a"
+        },
+        {
+          "blob": "972ebea7652b02889f3d0990b18e83c9740cfb05",
+          "path": "SCHEMA.md",
+          "sha256": "0fb1d318819e402662e633286fde08b1cc2f3ed421ea1a27948bdf5b045f9071"
+        },
+        {
+          "blob": "be28336949407f2e15560fdced66e7fe565452cb",
+          "path": "data/papers.json",
+          "sha256": "6204215e0bcba0e94d2ebc36f5b0087a6ce0c54902dc2f58270776069d58adc4"
+        },
+        {
+          "blob": "a966cea354d2dc1d83eaa9e94312b5b7ff6e8d62",
+          "path": "lessons/deepseek-r1.md",
+          "sha256": "19312b4683dc6d0760009846dc22c1a38762f9cb322ee3325d955ca861ca55f5"
+        },
+        {
+          "blob": "bac0de1e462c24f84433b8989e8fb0bd8f2cc28b",
+          "path": "lessons/turboquant.md",
+          "sha256": "ca10dff859d2c54894018a048a6760b5c592ded762abbbec3c8d9803df1d2fe0"
+        },
+        {
+          "blob": "c093483d40b49b0cdd1105d83b65cbd812673d0d",
+          "path": "papers/adam.md",
+          "sha256": "38e13e136de56003f767d9a5d76b89f36c2a7fe6a91fc79516549238314de2a5"
+        },
+        {
+          "blob": "5b56f3b8c8f1185e3b6428313bae676e133fe8d2",
+          "path": "papers/alpha-beta.md",
+          "sha256": "bdd9fffb3dc1db7688d17a98c28cd70291d5b67a5c72e9d28b1e54dee304bfea"
+        },
+        {
+          "blob": "9cb463ac8b8d43d1d3dcb0c0812aaf7bb53934fb",
+          "path": "papers/batchnorm.md",
+          "sha256": "2e67977e951295fbf5f5c714ce135edc4e002283440bf35f454e76585446bc3b"
+        },
+        {
+          "blob": "ec098a108e2e4c56a463e0304a0acdfb4ff6e371",
+          "path": "papers/bert.md",
+          "sha256": "575c8afa7d93ff409fafd155827dd134bdb18ab0a0fdf652d490e9a5a26f7a38"
+        },
+        {
+          "blob": "1a51c0e6d9faba518c434139d9dc3693f2cff469",
+          "path": "papers/bm25.md",
+          "sha256": "35255b61c160da3178de38be883b72d72340ad5a6e32eb96eb61640c053a6e24"
+        },
+        {
+          "blob": "5cd8d0660b6cfdcca32561004da6fe48d3e57928",
+          "path": "papers/bpe.md",
+          "sha256": "3e26a9e41152ab8687f1118744e4616269ca1a2ff46b9497deb8134758dae44b"
+        },
+        {
+          "blob": "9f645b75d1ab69ab6d1141cd0bafa0c2421d89c0",
+          "path": "papers/ddpm.md",
+          "sha256": "363f85d78ed8f83cf597d2d8ecf8099c2ac897a734c8f3cc04968c241deb2d39"
+        },
+        {
+          "blob": "226a0738f155f2c6bf921d5cba90413d745b90d0",
+          "path": "papers/deepseek-r1.md",
+          "sha256": "0c5d9217d2554f386f99737ae21d5110936fe05d004c11c19af2bf765463de15"
+        },
+        {
+          "blob": "e5c2a5ad6e19de9141a911c896db0727f197beb4",
+          "path": "papers/dpo.md",
+          "sha256": "affdc875353e8f80351bce8678b06125a7937f5ba142b9c78137d3b29ce822e6"
+        },
+        {
+          "blob": "55e99020dcd478840b5e2e7fcdf772b511835b84",
+          "path": "papers/dropout.md",
+          "sha256": "78bb7ed54127701d3a88ba63ec6107cb80becb89c8bd06dd18691132de4de9e5"
+        },
+        {
+          "blob": "ee9cf4537d292e44029f8b6a9eacb06a52fc1916",
+          "path": "papers/flash-attention.md",
+          "sha256": "2b709088e10f972c4ef95f5d13cb2e0ca168273c9e12c5c547e4d8454dbe9110"
+        },
+        {
+          "blob": "1d75cb3fcbd8d3a9c08ddad6eb8e9194232312ef",
+          "path": "papers/gan.md",
+          "sha256": "ad00904316a25e94b95ba4eee736c04b5485705e874f1d7dea1a882d8921e034"
+        },
+        {
+          "blob": "70d4e678b17d31bde27adf99b60b74727572478c",
+          "path": "papers/gpt-1.md",
+          "sha256": "f2b7a9125d729722c9e821659bc29e5024351df81b2057c0f1b299e7fdd38c7d"
+        },
+        {
+          "blob": "982ced2d6cfe22fa4e451c43653decada31de2b6",
+          "path": "papers/gradient-checkpointing.md",
+          "sha256": "91ac000d121dfac0aa8fc6966110316f051050bbfaec4842d5b1bc1be12e114c"
+        },
+        {
+          "blob": "5f58f26c56484c86ada5cf9946df10e5e34c8f81",
+          "path": "papers/grpo.md",
+          "sha256": "0e62939914c9f6254c98776a3ee2c196abeecc7f2bcd8acf6a282d77a10b1ac5"
+        },
+        {
+          "blob": "d5498d99502562d792fc9ca974b2fd105155ee8b",
+          "path": "papers/gru.md",
+          "sha256": "650e63e3041f903b547eb84c5b9cd52528828066622c596486fb1bcffc030e23"
+        },
+        {
+          "blob": "e04d953b614e47023c7d1c1a89e97b79b6caa21a",
+          "path": "papers/hnsw.md",
+          "sha256": "391ac87af4c0b334accf3c3e0305177fa384bbcc0ebcf4f871154f69ab6ea10e"
+        },
+        {
+          "blob": "da3f5be3001941bc63e55346df77fb15f36cb9a3",
+          "path": "papers/kv-cache.md",
+          "sha256": "70d50b46b4361fa170d8f5866415131846b93ca8d9eca38227052072984ffb89"
+        },
+        {
+          "blob": "7788e18c76804539da5fe73ab956e0c9269c9bdb",
+          "path": "papers/lenet-5.md",
+          "sha256": "f782a524af66088db8993932bc0d1c87918071235e33fd80ab178a4602f5326f"
+        },
+        {
+          "blob": "44340b3336aea81b34a4443a5353fd8e3f68e332",
+          "path": "papers/llm-int8.md",
+          "sha256": "fb9408bf5c4e51e523337821f4be561304c36a4a9daa47f4aa655ccf92002d02"
+        },
+        {
+          "blob": "51b1cf8b4100c7b6c5455fecd07069910b16e75e",
+          "path": "papers/lora.md",
+          "sha256": "2151428b90d80ceeb7316907789d070df56b7823096374bd33674ac26b0de646"
+        },
+        {
+          "blob": "3cd4399ffb19418835acf119fe19d53544773f56",
+          "path": "papers/lstm.md",
+          "sha256": "c4cc2d01cf46492154a8c57cd36b36389f7c20bcb3888f423743cdb8fe9e45ae"
+        },
+        {
+          "blob": "b5ad856accd474d8e07f07bbe56bf85b65432e8a",
+          "path": "papers/mamba-2.md",
+          "sha256": "f47e5d48d6defc8e1ffacd4403a5f38140e30790ba0c7cbbb69c9c6fff974beb"
+        },
+        {
+          "blob": "66f8e92b2fb64c8fb21186f6802e251896a253cf",
+          "path": "papers/megatron-lm.md",
+          "sha256": "d162eb87c8282229da143f1dbfbbfa6c16e449a7788913a110d21c8c59d386bd"
+        },
+        {
+          "blob": "42173f33c7d570d7e9e2b6cf2034e9bf872b5b61",
+          "path": "papers/moe-shazeer.md",
+          "sha256": "02952f09b1570a4c2215a5b419dbcc713ceb032f7ec5fc9823816ff9a67fdffb"
+        },
+        {
+          "blob": "8ca34f67098b52efd38b3cbdc8f6c15c95616946",
+          "path": "papers/nsa.md",
+          "sha256": "5373fd334229c10ab846a4b97893af6634223e17fd97c129f72716e149490139"
+        },
+        {
+          "blob": "00187484c0b199b94c1c4c2f5d86f27c7473b1a4",
+          "path": "papers/ntm.md",
+          "sha256": "8f4f90d2c7977e42a3f7c49a02babc72577625e4da84b9cbfc429692a738c52d"
+        },
+        {
+          "blob": "2054b5203d4e93c1df5a6bba52d2ba98cf00d9ff",
+          "path": "papers/nucleus-sampling.md",
+          "sha256": "40b28b086a3b21ef18c71c9343aee02712c331a6a4e9620ff5332e9e01545912"
+        },
+        {
+          "blob": "fac410ff8b68fd987f74822c9648e95973a4df06",
+          "path": "papers/pagedattention.md",
+          "sha256": "b6278e9267c0778f54608d7fce628c242e83c8d86e2b38059de9bb111d1ace84"
+        },
+        {
+          "blob": "043d19ac78f06bd98bf3d029c1981e20636145b6",
+          "path": "papers/ppo.md",
+          "sha256": "e4bd440f39261fbe871529a8d76ade88fda3e031cfe157ec3b845f2ef235361e"
+        },
+        {
+          "blob": "f99a1ebe02a33dd15026e2a66814e00709515c53",
+          "path": "papers/qlora.md",
+          "sha256": "3d99c0c691631fddc8c810ce0596dfdfadeccde6a73d828fd9fcb4df9a283ef4"
+        },
+        {
+          "blob": "1497b553ad595485fca44e1276553376b126ca52",
+          "path": "papers/rag.md",
+          "sha256": "8dc0972e3044c87f14df37c58c013fc2f2e45a527f76db9c2dedeef4ebea77db"
+        },
+        {
+          "blob": "bb76ace19a9561674b23addbaa4a26ec293738cf",
+          "path": "papers/react.md",
+          "sha256": "55070ae3470e4654d770c9e8ed9489e0cc219ccb75abea6a07bc1aae6998ff48"
+        },
+        {
+          "blob": "fc8add8db3dda007d454565cb7a0ce3f2e4e8d28",
+          "path": "papers/reinforce.md",
+          "sha256": "7fe9d8f2875a4840d2c5796f58ba9c1ff4bd1129ea05f3fbac274f6bb09cfb75"
+        },
+        {
+          "blob": "5654c98b48bf3e5f9ed3644f82450d0fadf2ab4b",
+          "path": "papers/resnet.md",
+          "sha256": "80e0429767af608e3a1e78bb75c362e64feb70c45d6ce76804dcde9153dcd957"
+        },
+        {
+          "blob": "f5dd003f011674a026aa5345390171904efea8f5",
+          "path": "papers/rnn-elman.md",
+          "sha256": "70d92d9ab51eaa877a5366ba1bb90cd2f8de403817509f38f6e863fb0ea8a3aa"
+        },
+        {
+          "blob": "8a8bc895429ae09bf2701c3332f869ba17f3d22b",
+          "path": "papers/roofline.md",
+          "sha256": "2bee5cf4ebb95682538988674463f9dc59d191d328faf3968d0064d6ae661501"
+        },
+        {
+          "blob": "a8c92788f8da44c846c5eea82110ed7579467f07",
+          "path": "papers/rope.md",
+          "sha256": "522ec735d1d16b2e31d8941f310424d3c45cff65d7e3009e626296da1b5428a9"
+        },
+        {
+          "blob": "cc2679f21cbd0c2f750b4ff71564c829a3bf9279",
+          "path": "papers/speculative-decoding.md",
+          "sha256": "463c549723b4503ec435925f83e46a7ee1b1792fc26df881790086fb0be7cf83"
+        },
+        {
+          "blob": "1b6bd328d33e0279080d12d207b63c87da8d2ffb",
+          "path": "papers/titans-2501.md",
+          "sha256": "b2520c278387de689caf4344ec65bd0de9097f98720435ca975ef20ec26b6436"
+        },
+        {
+          "blob": "8cea8f15ae92c08cf36e4ee3d41a6e45a598714e",
+          "path": "papers/transformer.md",
+          "sha256": "963666ca4f5779c070433a3f12e94ca83baa988bb51aedff82894493db50838d"
+        },
+        {
+          "blob": "2cc9e096c752923add77bac83b206ea6e1f9519a",
+          "path": "papers/turboquant.md",
+          "sha256": "dea75d416a626eb6a52a7d6999117c12728fd30abb2c78abb6e1ac28d7799070"
+        },
+        {
+          "blob": "4c488b17fb002f711688225c1f3c311812ec4c28",
+          "path": "papers/ucb1.md",
+          "sha256": "834eb1e55c34eba2eda86d1e369c00fd296a5ce0089350f61041ff55e97fbaba"
+        },
+        {
+          "blob": "c9cc682daf79b135c47424ad2c63d1359db1bbf6",
+          "path": "papers/uct.md",
+          "sha256": "83395ec1f153fc16f2f1b45fb0244b44f5b353976a1dcd2e4588a24ee690d4af"
+        },
+        {
+          "blob": "0f212cc68dde29ad3f7350d6b46d25468b632b57",
+          "path": "papers/vae.md",
+          "sha256": "d0e50381edbadf7913ef5f26afaefedf9c9aed441816beedc89e6beec19d664e"
+        },
+        {
+          "blob": "c2c8b544b31edef70910635b05bded120bcee592",
+          "path": "papers/vit.md",
+          "sha256": "2d98d20608830b33de16ca85f7a06a79dc83e13be487ea23cd313859f77369f9"
+        },
+        {
+          "blob": "e2b54711df30f7db531136b0a5fd0a23cdbd0afd",
+          "path": "papers/word2vec.md",
+          "sha256": "e8f029a6b5282024d28da7b8fdfb8af756d9447f759d1ad472b32c91bee2b587"
+        },
+        {
+          "blob": "d007fcc670a362f81c3fd20e501d44beb66e172b",
+          "path": "scripts/generate_index.py",
+          "sha256": "f859bc0d802ee6a37e8e34037f4858c1886d9cd171f7f9f7c5824598d4265914"
+        },
+        {
+          "blob": "32d0db9c3f6f938f27ccb274c0544576cf0ce7d2",
+          "path": "scripts/validate_invariants.py",
+          "sha256": "09e35ec7dcde11b70c47aaee13d36de930fa1c30c2ad96ab1fd98816b70ae823"
+        }
+      ],
+      "object_format": "sha1",
+      "publication": {
+        "evidence": "selected commit is an ancestor of provider main in local history",
+        "main_commit": "b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0",
+        "provider": "https://github.com/no-magic-ai/no-magic-papers.git",
+        "ref": "refs/heads/main",
+        "status": "published"
+      },
+      "tree": "a82bdf7f60ea208fcc999e17158ec90571400846"
+    },
+    "no-magic-viz": {
+      "commit": "7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5",
+      "identity": "no-magic-ai/no-magic-viz",
+      "inputs": [
+        {
+          "blob": "eea08e9c7dab8f89cada4f9e91ff775a1cb9a3bb",
+          "path": "previews/microattention.gif",
+          "sha256": "0a67817e5eb9e80ec5b8771f331819aa35aa9ac7283760249a8c718426c66813"
+        },
+        {
+          "blob": "d9d7d37013d244fe1a24db6db6c06fa0f2b91c8f",
+          "path": "previews/microbandit.gif",
+          "sha256": "0bf826ca847f705a4b0e41e94d1fac3c3d48672942dc953d9cfd3068f4b83b06"
+        },
+        {
+          "blob": "a16f7a962af7072f21c63439e935ac5d37b7ba00",
+          "path": "previews/microbatchnorm.gif",
+          "sha256": "8ecb828313de43808c7ed5470b1e460e8d17ab625efe9dbd58b45969fab06a53"
+        },
+        {
+          "blob": "2f429763e207ff6ccd5e81a9c8b3b19d5cf0c9fc",
+          "path": "previews/microbeam.gif",
+          "sha256": "b03d683d52cfcb58850ba0e759ce607c20ab89a66c46fb6274f8114c4b26e73a"
+        },
+        {
+          "blob": "43ffa6c256df7971c35afb9db4c68344d94cb7a2",
+          "path": "previews/microbert.gif",
+          "sha256": "53c5c25e9bdad378de3141551d45d26d55a77e6ef8b4b0c34738e4a902faa9a0"
+        },
+        {
+          "blob": "9246bfb392dbd95fe2f905163d733b78e2976175",
+          "path": "previews/microbm25.gif",
+          "sha256": "344008554c39ef63ec6832a7d23b512c50d29151757965edc2e0f5318c16c69f"
+        },
+        {
+          "blob": "f3adad10c6ba98bc9b6df63d0365bcaf6cb03fde",
+          "path": "previews/microcheckpoint.gif",
+          "sha256": "f4015163a874066362dd24b5d8e3692ecaedea447106f3c0db828406aa397ad0"
+        },
+        {
+          "blob": "479697bb592ed8a1cd54edb41a26f2cff9747ffc",
+          "path": "previews/microcomplexssm.gif",
+          "sha256": "7cfb99c589bdc30255c87a38718266d9d573a308e049c427fe0cc6e3a6eb2eb3"
+        },
+        {
+          "blob": "3e08201f5c454249c4616b1bb98df4d240731f07",
+          "path": "previews/microconv.gif",
+          "sha256": "1af0a68df561a93c13de62b7007811defad56d1e341eb621f7ff7d63dc3f7819"
+        },
+        {
+          "blob": "33ece21335a19fdeba80159f7a1c935b8f3e9c71",
+          "path": "previews/microdiffusion.gif",
+          "sha256": "e9b2adbae91ead3c37c559085568ff6add0008240dd11506fc0c3d840e984109"
+        },
+        {
+          "blob": "20b0f6315bf433c2078e1bfacdeb16c079629bae",
+          "path": "previews/microdiscretize.gif",
+          "sha256": "df9b049ff7c89ce0a41435e9dc47efd8971b32fa3626459e95c1e475b1de78b6"
+        },
+        {
+          "blob": "505a7b993ed88851c0a34984a0291de3a7090600",
+          "path": "previews/microdpo.gif",
+          "sha256": "c04171f7064ee2bc37b1b9606d9c390dd33a6e15415cc6885603426b7552689a"
+        },
+        {
+          "blob": "5d627675489900c082acdcec9bb57a5a63c9ebae",
+          "path": "previews/microdropout.gif",
+          "sha256": "3c67b788ef24a126036d38e2ebe6358cff94c188bbba00ca2dabc5622348caa5"
+        },
+        {
+          "blob": "ea2628a38f4b07d08670ab4f6c5c883e72dad724",
+          "path": "previews/microembedding.gif",
+          "sha256": "7708abda493c4295d873577caedcdf71459fb7cd1811c9588a02f967e447d580"
+        },
+        {
+          "blob": "d88cfcac1b82de16587e6607ad2ec12c585c1399",
+          "path": "previews/microflash.gif",
+          "sha256": "d2b44fe7141c92863cd5f727c332181958453f44fd2275f9bb623f8da3557209"
+        },
+        {
+          "blob": "91bf7538fac2aa9888a96f0bbff6b20b1b5f66b2",
+          "path": "previews/microgan.gif",
+          "sha256": "28bbe34e4d29497041e4b2a48a8f7fc3aa8f2fff6eefaef2b2440522ba864842"
+        },
+        {
+          "blob": "456a6b83a33d537751da7b620716551fa8390957",
+          "path": "previews/microgpt.gif",
+          "sha256": "7b692b266168f3384785d26cd0bc5884a322222b0dad3bb6c91dca17c9ed6564"
+        },
+        {
+          "blob": "157c6ffa103ac1a3f3471c66940128d6e77bd5eb",
+          "path": "previews/microgrpo.gif",
+          "sha256": "cb3315cea2d58776468585dc29175e00750aaeaabc529d7521fb90af9ef22d03"
+        },
+        {
+          "blob": "295767be07f4d9008f48315e5823b4be46a3d4a6",
+          "path": "previews/microkv.gif",
+          "sha256": "13f75130a895c0ca7c2e279d5d9340e524449c1f2f12f9bf64885ec029d4824e"
+        },
+        {
+          "blob": "192229e15b6db84018b0b315036d20aaf0393e3c",
+          "path": "previews/microlora.gif",
+          "sha256": "77bccf5a683b018568021ae37dc63544fedd7866daba210b8cd4f573e477e339"
+        },
+        {
+          "blob": "f63187042aea5f7c7321ddfc1e98bd606c9f3b7d",
+          "path": "previews/microlstm.gif",
+          "sha256": "f2930039fd00205e07e5460efc99127b8cc6f976ce9a28035b2586a3e7f95c81"
+        },
+        {
+          "blob": "b69ae1abc270c78e9d8a62dc1be791b504cf1109",
+          "path": "previews/micromcts.gif",
+          "sha256": "6547473cb29a6990c18788b2aa1a6d6b3c9c436e9c5082193830cad60231a8a1"
+        },
+        {
+          "blob": "421947af19afef3b5d5e7d5d9062c484e1636f4a",
+          "path": "previews/micromemory.gif",
+          "sha256": "a3aab5f8fbf70528d6e711464725bb61d979e6e7ff2f47631340a1067972ef66"
+        },
+        {
+          "blob": "543c07cde12613cf365f6905767dc19a903ed7eb",
+          "path": "previews/microminimax.gif",
+          "sha256": "69a19f2f68722e77849d58da48546ef5e457d6ffa54af686a5ca4e8951a15922"
+        },
+        {
+          "blob": "efc895ef40b594457f120d53087b01dc6d70cf8b",
+          "path": "previews/micromoe.gif",
+          "sha256": "77cdef7d9dfdfee0700cb6a32d116c8232c1e6aa20607d8fa244c357d2d1f1be"
+        },
+        {
+          "blob": "4d5cf5588d634ca1e4e56b3f2e57238b1f3c4089",
+          "path": "previews/microoptimizer.gif",
+          "sha256": "4ad4b29ef8ed685d34b00efdbabc8654f607964b4a3948fe891536caf5b25b59"
+        },
+        {
+          "blob": "55e7f210093290dcd8c3fb5508b5d104624e146c",
+          "path": "previews/micropaged.gif",
+          "sha256": "15dd3241b7d5d484e58dd851af4c07ae1b46cb94a7071c9cac7a9095a2f4146d"
+        },
+        {
+          "blob": "fd81992621aa5a6e4944a6055b5f0d8bba2b5cf0",
+          "path": "previews/microparallel.gif",
+          "sha256": "0ed67c0c2b7ce5e77ad6fd56bc0b0c1f756e7fb143e161f863bcc6f43fd78a93"
+        },
+        {
+          "blob": "bb115034b0ecc9fa603b5b1f24253f4f31b5f1f5",
+          "path": "previews/microppo.gif",
+          "sha256": "285b9d81628096a0fc5dad4c6bfb71b6243aad4cc7ec8143f3098f76cbcca839"
+        },
+        {
+          "blob": "8eb38847892c50c8c1e3fd14c9684edad1b2c236",
+          "path": "previews/microqlora.gif",
+          "sha256": "90e7e7f9141f0ace052b45c6efae553aacea65252e8eeb86d73fee9b5e8b4a51"
+        },
+        {
+          "blob": "d7dbe0d74ac9be0843970649542be786dd387297",
+          "path": "previews/microquant.gif",
+          "sha256": "920c6c5d5c27131463f2637f2586dcc03fa7bedb302d4859f74aff54f48c9199"
+        },
+        {
+          "blob": "62384028f35f5eda6d6247abf541f3cd277aab7f",
+          "path": "previews/microrag.gif",
+          "sha256": "3bdd45352be91aa41808f0ff03fca861125c1b841d0c257e52cd20640e7ff8e5"
+        },
+        {
+          "blob": "cceb1acf6e3ba3f9ca0d5f28be7af86011d0b831",
+          "path": "previews/microreact.gif",
+          "sha256": "cabdc4245a8b1ad718804a8aebbdd1c27884df834c59a1ae1cc395495acdb62c"
+        },
+        {
+          "blob": "2a2a7476c1a1deeea0cf63986c480aa0e1174825",
+          "path": "previews/microreinforce.gif",
+          "sha256": "39d4a955b69a16c894cc022c7b4060851e6812c5831bca011168d2bd6d6299e2"
+        },
+        {
+          "blob": "fe2acd93f0df6eefbffffb7644f232280e3e14ef",
+          "path": "previews/microresnet.gif",
+          "sha256": "760faa619adae67761ff4d10629f91b3023e00823df5f5799ce981302bb8cb56"
+        },
+        {
+          "blob": "215f1cebb0a575195d70ee87c2043758e528e791",
+          "path": "previews/micrornn.gif",
+          "sha256": "8ef7dac5eca5bf4f33e0149373a29437cafb8073b9499a0fb81b818702b23bd8"
+        },
+        {
+          "blob": "e5e37b8eff505cda29c2bb0e463d6ea33fe41f08",
+          "path": "previews/microroofline.gif",
+          "sha256": "2be2dc4a5ef1e6e99798a17e568424a015b21a4b01e2d8c32a4ab629a0b49d88"
+        },
+        {
+          "blob": "f47c3a673f6ebe9db8ff01c2d6a55fca60e02055",
+          "path": "previews/microrope.gif",
+          "sha256": "53ef3696963a853fc8b777c12b6486aba6226bdaf0278e44bfe6b32807af3e3f"
+        },
+        {
+          "blob": "73c3937fdfe93b09b3542f7a0f3d83bb89533cff",
+          "path": "previews/microspeculative.gif",
+          "sha256": "4e8f8b04ae9c8b28e47cc09a8d3a3209be4fe09a56b51e4027dcd2360c31061a"
+        },
+        {
+          "blob": "8faae2b4e6b2ff01a70d9b171e2208f99ec69238",
+          "path": "previews/microssm.gif",
+          "sha256": "9c69bd7736674e4041a10a86b0db6ce05955680b80726bca294ecd98619c688c"
+        },
+        {
+          "blob": "4268b6ed78d97b40e43b5f592e452b77a203dc59",
+          "path": "previews/microtokenizer.gif",
+          "sha256": "bcff523d360381ae9ce1b548c5af9549d3fd5fe8f8267795f122568ee43dbfb7"
+        },
+        {
+          "blob": "8333ec4b79fea581b05bf93a83f4b72266d6ed4f",
+          "path": "previews/microturboquant.gif",
+          "sha256": "a5f8f89a14c77eabf6967e6c75399577e40c268f69da531141b31f3ff155bd3c"
+        },
+        {
+          "blob": "cf48599fcfaac68505de0042c9df034b3469ab2c",
+          "path": "previews/microvae.gif",
+          "sha256": "2389e283f858f7fc14502d45aacfc71c091de1a4d6dc56d0c6df9dd1a84246a1"
+        },
+        {
+          "blob": "ef653daba921f9cfebd8ce56cd451a6b8965870c",
+          "path": "previews/microvectorsearch.gif",
+          "sha256": "92873065fc6be192a37860789be41ed9c2d69306c19f6e945eececef6eaf1c6b"
+        },
+        {
+          "blob": "4431b55079858a23472e0152fc7020d9358ed649",
+          "path": "previews/microvit.gif",
+          "sha256": "bd540854b93ac5ac01758f5950ad2dc03f89c6e09227841fd48cb0467a29bad0"
+        },
+        {
+          "blob": "719062c10392727242d7c4e22a28a0025c159cca",
+          "path": "scenes/scene_microattention.py",
+          "sha256": "ff5d066e0afcf34a4eb966f9b8e1ad7b300cbe2f07248e68644739bb31a7b387"
+        },
+        {
+          "blob": "7ef7ce399692bcb2038158a398961caa7a2600f8",
+          "path": "scenes/scene_microbandit.py",
+          "sha256": "590939f7489a4783edf7c48c83b045e22ebef9820c4c13bb9596a2855b878254"
+        },
+        {
+          "blob": "89998cf8358f20e18c80e4695d5f2fb66a9adbfb",
+          "path": "scenes/scene_microbatchnorm.py",
+          "sha256": "f671dcf4e4f1df535d96b5a6f877dadbdf754ff82ead27af3361a90b59934c00"
+        },
+        {
+          "blob": "94791c2db8889ff60606c22e83e16a91e5d396c7",
+          "path": "scenes/scene_microbeam.py",
+          "sha256": "0e9a4410c080ca44a07240440ab552a657bd9615d32252600b283d3bd1a0ea0a"
+        },
+        {
+          "blob": "d1a4df5a077027830e61a65ac6cff31b0f138ed0",
+          "path": "scenes/scene_microbert.py",
+          "sha256": "8e524da330484490e90bce7336300d1ede6d18225e7ed93958cc4aafff2b6a6e"
+        },
+        {
+          "blob": "0910d9af8b0e1bab5cea4d3f97100a7b2b2fe57e",
+          "path": "scenes/scene_microbm25.py",
+          "sha256": "d3f4f31d79c17a35f067481d5b7c8421d7baf2e154e2ff0a271ab3f36ebaa895"
+        },
+        {
+          "blob": "420e4b454a8d6be41e17288974ee6a5961639c76",
+          "path": "scenes/scene_microcheckpoint.py",
+          "sha256": "ae91724a5fc08043744e23701134948f4428621476d8898bd37b6e96baa26934"
+        },
+        {
+          "blob": "b7820e390e82c35d611aaed25f2e179cc0130965",
+          "path": "scenes/scene_microcomplexssm.py",
+          "sha256": "c7a754b5650bec54e762a177a69757d4daf91b48778a22faf1474da870c9dac9"
+        },
+        {
+          "blob": "08160050c7998af94bb7f8056fb4021d3d847496",
+          "path": "scenes/scene_microconv.py",
+          "sha256": "7be55904e147c902044474ccbe153bdd1e6cd26c0952a0c2e25ffdbbba96e0b6"
+        },
+        {
+          "blob": "6573e67f31d69a7132ce49addbbbf8898307c305",
+          "path": "scenes/scene_microdiffusion.py",
+          "sha256": "da2a1ba148952904d1a77b7dd05f31b34823ceb60986affb7e46eaa90099c359"
+        },
+        {
+          "blob": "0da59249709ba0887b7314cebe6c257a1475d7a1",
+          "path": "scenes/scene_microdiscretize.py",
+          "sha256": "74c14b1ec6aa3a52098bb36e3a2ab7be7b8825d6fb85775fd4808474009bbb92"
+        },
+        {
+          "blob": "4bce6879d4141d2222f35daded60a599e711be76",
+          "path": "scenes/scene_microdpo.py",
+          "sha256": "bb65b84cd9786c2ef51d747be12fc28eb1eb899c139d83d469c8fc396d35ed36"
+        },
+        {
+          "blob": "6bacfa2ec37ff06a29d71291d6f41c863a0c04b3",
+          "path": "scenes/scene_microdropout.py",
+          "sha256": "1518e1f7518486ad7243ae3e306a82bdddf83ff527e59cf23804831f6585cf03"
+        },
+        {
+          "blob": "a74885e1605d472bcc437983c2bfc8ff64c717f6",
+          "path": "scenes/scene_microembedding.py",
+          "sha256": "fc35bb9945d6b6dcdf842cfa06c8b89aa5f67e10f18c78da88914d5421fc02f4"
+        },
+        {
+          "blob": "590d4833010ca0acf4a89cd7fa0f7cd1286df095",
+          "path": "scenes/scene_microflash.py",
+          "sha256": "08fe92735166ff7837c82a6e8415b52ebc7c49c8256f5b9b40485b83f546e215"
+        },
+        {
+          "blob": "3183d08ea50b3ae2e9c1b708e43bec16ccdbd606",
+          "path": "scenes/scene_microgan.py",
+          "sha256": "4acbfec9e5ffacfb616dcfdc70a8054b568f55112f99ab27838909536dbbe8b2"
+        },
+        {
+          "blob": "53b6a1c0ba2c562b7b07749f7a0db29ea5f4421a",
+          "path": "scenes/scene_microgpt.py",
+          "sha256": "8394e284256054a0ad39a51c274e736822e6616109672821da6251d1e95f4b14"
+        },
+        {
+          "blob": "395db07799dfa7593580dba09b265b048f2a9372",
+          "path": "scenes/scene_microgrpo.py",
+          "sha256": "e3f85319a5d1980239a860f0ec40e650a4332f49506e65d8e29dd543ddad3eb5"
+        },
+        {
+          "blob": "ebb3e9e22f8225e3920bfdf424c69d67b786ee22",
+          "path": "scenes/scene_microkv.py",
+          "sha256": "68adc6ceeda5d74101ff195f1de042d5fd45b5ad7afa200cec74fe46577b2eb3"
+        },
+        {
+          "blob": "d32647c91e9b2a906c1fcbc7de21453a1f244acb",
+          "path": "scenes/scene_microlora.py",
+          "sha256": "c8054b6f1ce4aa52d625ea126aaf0791217f292aae0642658ffd6ccf19c8151f"
+        },
+        {
+          "blob": "3e17c5601a5f38f1918708c51203792ab388600a",
+          "path": "scenes/scene_microlstm.py",
+          "sha256": "f2fd9c86e5fbf37c8b57d1b6fb8b27f2d924b7ff2b44f5f3982cddc449662b17"
+        },
+        {
+          "blob": "78cd8c2c15b28c9241b8bad5a6a87dea056a33b1",
+          "path": "scenes/scene_micromcts.py",
+          "sha256": "aa7f4764a5fbf46166d22068ff9b2e89e8d36a81cadde68c3abd566024c70168"
+        },
+        {
+          "blob": "3ef40b0b4c65a5e9c23c9a54814557375dd0e797",
+          "path": "scenes/scene_micromemory.py",
+          "sha256": "d92b305f0f5e4e8d6fb308a70a30de976efda06a2d3bbb19e8460d646db73a42"
+        },
+        {
+          "blob": "2ac684e41cbcbd0ae7afd21e21c5c692f31b0515",
+          "path": "scenes/scene_microminimax.py",
+          "sha256": "5654c9eb572eb915e3f881d6b5d31adbb4f11f6fad7fb6518ac0db2bedefd46f"
+        },
+        {
+          "blob": "b0aa37f59b9d2269559c5d0f2bf8587c6e0d1643",
+          "path": "scenes/scene_micromoe.py",
+          "sha256": "79a63c6207f670e40bce1f2c0ddfff1d6b8a9c129c34a33dbf025cc49c40a2a0"
+        },
+        {
+          "blob": "8e6cc50799f97efb01a505ca345e5e22818990c9",
+          "path": "scenes/scene_microoptimizer.py",
+          "sha256": "779133a96341f745e583c1d1f72846ff6950fd047db3779ee5bf53495e021ff4"
+        },
+        {
+          "blob": "21f1c0af8da4dd5ab7cf767403645e9374511443",
+          "path": "scenes/scene_micropaged.py",
+          "sha256": "507019a9e0c3031d2f3da44d7ea7edfd7f4b984a3b6976de788f926d30a9d372"
+        },
+        {
+          "blob": "b7e212f0eb91c0583a6564f2adc53e7afa4464be",
+          "path": "scenes/scene_microparallel.py",
+          "sha256": "0788431617ec6dc4124e6bca0f78b5df6a1cb3a9da4e3fb6295749af5bff4365"
+        },
+        {
+          "blob": "2201df7632b25c31d4549653b871aa7ac5102252",
+          "path": "scenes/scene_microppo.py",
+          "sha256": "bc582b86422ba6f7422f7fffffffeba092544935ffeed1f3328e97ac07af20d4"
+        },
+        {
+          "blob": "ae16f6edc54454e8532257a773a887247fd6725c",
+          "path": "scenes/scene_microqlora.py",
+          "sha256": "684be649e5d060e12bc6612bde302b0787ec25de119f62ecd6433b957f54ba55"
+        },
+        {
+          "blob": "2fd5a3723984aacb8f288c8453faccc284162ead",
+          "path": "scenes/scene_microquant.py",
+          "sha256": "86636e5b8e285a76e10557781b432bcd22e7da05376fe351277b6145bd362936"
+        },
+        {
+          "blob": "ddccbf5ff9d1c82757fcbe77c43afa7e5c6abf40",
+          "path": "scenes/scene_microrag.py",
+          "sha256": "165cb569036d69a22fcd157e3aba6f0842ff1aa858e46a80a54df4a97b9bc33d"
+        },
+        {
+          "blob": "3f065a3d8be387a2b72b8b3cc2b5887d7dfe3cf5",
+          "path": "scenes/scene_microreact.py",
+          "sha256": "84df550d0aa97f9f121da9420b42400217f8ceb48791f302de120e1a948353ae"
+        },
+        {
+          "blob": "ac81e50bdd66b300d620a1ce3c00d1b2830d2dd1",
+          "path": "scenes/scene_microreinforce.py",
+          "sha256": "67671cfe4b7f6721b4c90c0868479cfd6c1b34cf528144e499f49791f879f197"
+        },
+        {
+          "blob": "85e0cd141fbe8bf2846029ce21f76c8ae091a74d",
+          "path": "scenes/scene_microresnet.py",
+          "sha256": "7db99f37a051cc0a76b1bb80f8eb0708ebf82f224ae037cf6996f0ffc6480838"
+        },
+        {
+          "blob": "425010769b6935e6d462a1ffb2389d5254b31b69",
+          "path": "scenes/scene_micrornn.py",
+          "sha256": "93c4d8ae34c3ede5546bd273e896c48b2c2e03fa78febfa446182b5e19f2e7cd"
+        },
+        {
+          "blob": "de6a5b6b88b537452a1e160136aa85a0928b4967",
+          "path": "scenes/scene_microroofline.py",
+          "sha256": "076d85eaa6b596a5d98a03afaa7b8b412fb77309c6e0b250f0b7c449a29469ca"
+        },
+        {
+          "blob": "67c18d08248d391d065c0d7231fa68b6270f3440",
+          "path": "scenes/scene_microrope.py",
+          "sha256": "fed3d771da1c581fe3d1af4ca4072f98cd0b4f4305ccf16fe496e4473f400613"
+        },
+        {
+          "blob": "8602b9b067dcad86ee68e60d9a11c7d0325df877",
+          "path": "scenes/scene_microspeculative.py",
+          "sha256": "e109edc7757b79bc084735e3660c4c1df3f8874dbe3d9e4e3c614847970874e1"
+        },
+        {
+          "blob": "343f1b913ecdbe4fe4b0a6ce0d2b6f4b4d3f7c47",
+          "path": "scenes/scene_microssm.py",
+          "sha256": "571dfae85d9176d862b03255087ce2bfd7c6ba6f811a6a6a6a3026ae30960c87"
+        },
+        {
+          "blob": "6e67ac4d899147de921bf81a06dc6edde4a5959a",
+          "path": "scenes/scene_microtokenizer.py",
+          "sha256": "81d8bffb8e57a0b842fcc9e1dbd9fcaa66d8775b247e8d3376a9f2f10c3ff219"
+        },
+        {
+          "blob": "1c7888646133a0c69530a4a2c4fc82ace5f03a77",
+          "path": "scenes/scene_microturboquant.py",
+          "sha256": "d28a422e9130ee9c77c504f745a3fb90443fd10376bd3c3753a4b8f5ae751364"
+        },
+        {
+          "blob": "f1987f57294c7b29a773b763c0d5c6ba36addbb1",
+          "path": "scenes/scene_microvae.py",
+          "sha256": "ef76bed46493635f881f9eb066cd41af86e2dfbf3bea9979d4619ea37affe8ae"
+        },
+        {
+          "blob": "7ae5fb004616105693e9f157707732c282cabad8",
+          "path": "scenes/scene_microvectorsearch.py",
+          "sha256": "51c49d34dcc3ebf7e5aaa977a188c22d1164513d9a435d6274348e2394aad917"
+        },
+        {
+          "blob": "e8cc3d5e096f0a9ae78d8c376e90c8f302716e91",
+          "path": "scenes/scene_microvit.py",
+          "sha256": "a4a541b5ca9bd872988b8178cc18fec46fba320e397cfb12234933513abe6c7e"
+        }
+      ],
+      "object_format": "sha1",
+      "publication": {
+        "evidence": "selected commit is an ancestor of provider main in local history",
+        "main_commit": "7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5",
+        "provider": "https://github.com/no-magic-ai/no-magic-viz.git",
+        "ref": "refs/heads/main",
+        "status": "published"
+      },
+      "tree": "3a4bf66636c04e4e428150770990c50ec248c6c5"
+    }
+  },
+  "schema_version": 1
+}
