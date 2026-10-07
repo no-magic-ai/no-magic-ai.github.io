@@ -32,12 +32,14 @@
   --error: #ffb4ab;
   --tier-foundations: #5b8def;
   --tier-foundations-bg: rgba(15, 52, 96, 0.15);
+  --tier-foundations-text: #8fb2f5;
   --tier-alignment: #c78ddb;
   --tier-alignment-bg: rgba(155, 89, 182, 0.15);
   --tier-systems: #41deb0;
   --tier-systems-bg: rgba(65, 222, 176, 0.1);
   --tier-agents: #e97d32;
   --tier-agents-bg: rgba(233, 125, 50, 0.15);
+  --tier-agents-text: #f4a46e;
 }
 
 /* ── Reset ── */
@@ -56,16 +58,18 @@ a { color: inherit; text-decoration: none; }
 button { cursor: pointer; border: none; font-family: inherit; }
 img { max-width: 100%; display: block; }
 ::selection { background: rgba(255, 178, 183, 0.3); }
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; border-radius: 4px; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
 
 /* ── Utilities ── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 .ghost-border { border: 1px solid rgba(90, 64, 66, 0.15); }
 .font-headline { font-family: 'Space Grotesk', sans-serif; }
 .font-mono { font-family: 'JetBrains Mono', monospace; }
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  vertical-align: middle;
-}
+.glyph { display: inline-block; vertical-align: middle; }
 
 /* ── Nav ── */
 .nav {
@@ -84,7 +88,7 @@ img { max-width: 100%; display: block; }
 .nav-links { display: flex; gap: 2rem; }
 .nav-links a {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.875rem;
-  color: rgba(226, 190, 191, 0.5); transition: color 0.3s;
+  color: rgba(226, 190, 191, 0.75); transition: color 0.3s;
   letter-spacing: -0.02em;
 }
 .nav-links a:hover, .nav-links a.current { color: var(--on-surface); }
@@ -109,13 +113,15 @@ img { max-width: 100%; display: block; }
   display: flex; justify-content: space-between; align-items: center;
   max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 1.5rem;
 }
+/* The owner link sits in running text, so it is underlined, not colour-only. */
+.footer-logo a { text-decoration: underline; text-underline-offset: 3px; }
 .footer-logo {
   font-family: 'Space Grotesk', sans-serif; font-size: 1.125rem;
   font-weight: 700; color: var(--on-surface); letter-spacing: -0.03em;
 }
 .footer-links { display: flex; gap: 2rem; }
 .footer-links a {
-  font-size: 0.8125rem; color: rgba(226, 190, 191, 0.4); transition: color 0.3s;
+  font-size: 0.8125rem; color: rgba(226, 190, 191, 0.7); transition: color 0.3s;
 }
 .footer-links a:hover { color: var(--secondary); }
 .footer-copy {
@@ -145,7 +151,22 @@ img { max-width: 100%; display: block; }
 
 /* ── Responsive (shared) ── */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
+  .nav-inner { flex-wrap: wrap; row-gap: 0.5rem; padding: 0.75rem 1rem; }
+  .nav-links {
+    order: 3; width: 100%; gap: 1.25rem;
+    overflow-x: auto; padding-bottom: 0.25rem;
+  }
+  .nav-links a { white-space: nowrap; }
+  .nav-cta { padding: 0.4rem 1rem; font-size: 0.8125rem; }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }

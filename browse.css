@@ -1,0 +1,180 @@
+/* Styles shared by the algorithm and paper browsing pages
+   (algorithms/index.html, papers/index.html). Tokens, nav, footer and
+   sections live in site.css. */
+
+/* ── Hero (compact, mirrors about.html) ── */
+.hero-compact {
+  position: relative; padding: 10rem 0 3rem; overflow: hidden;
+  background: var(--surface-lowest);
+}
+.hero-compact::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(252, 83, 109, 0.08), transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(65, 222, 176, 0.06), transparent 50%);
+}
+.hero-compact .container { position: relative; z-index: 2; }
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace; color: var(--secondary);
+  font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem; opacity: 0.85;
+}
+.hero-compact h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700; letter-spacing: -0.04em; line-height: 1;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+.hero-compact .lede {
+  font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 300;
+  color: var(--on-surface-variant); max-width: 760px; line-height: 1.7;
+}
+.hero-compact .lede a, .snapshot-note a, .algo-card a, .paper-card a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Snapshot / network disclosure ── */
+.snapshot-note {
+  margin-top: 1.5rem; max-width: 760px;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; line-height: 1.7;
+  color: var(--tertiary);
+}
+
+/* ── Filters ── */
+.filters {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem; margin-bottom: 1.25rem;
+}
+.filter { display: flex; flex-direction: column; gap: 0.375rem; min-width: 0; }
+.filter.search { grid-column: 1 / -1; }
+.filter label {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--tertiary);
+}
+.filter input, .filter select {
+  width: 100%; min-width: 0;
+  background: var(--surface-highest); color: var(--on-surface);
+  border: 1px solid rgba(169, 137, 138, 0.35); border-radius: 0.75rem;
+  padding: 0.65rem 0.85rem; font: inherit; font-size: 0.875rem;
+}
+.filter input::placeholder { color: rgba(227, 224, 244, 0.6); }
+.filter-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.catalog-meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+  color: var(--tertiary); letter-spacing: 0.05em;
+}
+.btn-reset {
+  padding: 0.5rem 1.25rem; border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.8125rem; font-weight: 600;
+  background: var(--surface-highest); color: var(--on-surface);
+}
+.btn-reset:hover { background: var(--surface-bright); }
+
+/* ── States ── */
+.catalog-state {
+  padding: 2rem 1.5rem; border-radius: 1rem;
+  background: var(--surface-high); color: var(--on-surface-variant);
+  font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.7;
+}
+.catalog-state.error { color: var(--error); border: 1px solid rgba(255, 180, 171, 0.4); }
+.catalog-state[hidden] { display: none; }
+
+/* ── Cards ── */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem;
+}
+.algo-card, .paper-card {
+  background: var(--surface-high); padding: 1.75rem; border-radius: 1rem;
+  display: flex; flex-direction: column; gap: 0.75rem; min-width: 0;
+  scroll-margin-top: 6rem;
+}
+.algo-card:target, .paper-card:target, .algo-card:focus, .paper-card:focus { outline: 2px solid var(--secondary); outline-offset: 2px; }
+.algo-card-top {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;
+}
+.algo-card-name {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1.0625rem;
+  font-weight: 700; color: var(--on-surface); overflow-wrap: anywhere;
+}
+.algo-card-file {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--tertiary);
+  overflow-wrap: anywhere;
+}
+.badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem;
+  padding: 0.2rem 0.6rem; border-radius: 9999px; flex-shrink: 0; font-weight: 500;
+  background: var(--surface-bright); color: var(--on-surface);
+}
+.tier-badge-foundations { color: var(--tier-foundations-text); background: var(--tier-foundations-bg); }
+.tier-badge-alignment { color: var(--tier-alignment); background: var(--tier-alignment-bg); }
+.tier-badge-systems { color: var(--tier-systems); background: var(--tier-systems-bg); }
+.tier-badge-agents { color: var(--tier-agents-text); background: var(--tier-agents-bg); }
+.status-implemented { color: var(--secondary); background: rgba(65, 222, 176, 0.12); }
+.status-other { color: var(--primary); background: rgba(255, 178, 183, 0.12); }
+.algo-card-thesis, .paper-authors {
+  color: var(--on-surface-variant); font-size: 0.8125rem; line-height: 1.7;
+}
+.facts {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.3rem 0.85rem; font-size: 0.8125rem; line-height: 1.55;
+}
+.facts dt {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem;
+  color: var(--tertiary); padding-top: 0.15rem;
+}
+.facts dd { color: var(--on-surface); min-width: 0; overflow-wrap: anywhere; }
+.card-note { font-size: 0.8125rem; line-height: 1.6; color: var(--on-surface-variant); }
+.card-note strong { color: var(--on-surface); font-weight: 600; }
+.card-links {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center;
+  margin-top: auto; padding-top: 0.75rem;
+  border-top: 1px solid rgba(90, 64, 66, 0.25);
+}
+.card-links a {
+  font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+  color: var(--primary); text-decoration: none;
+}
+.card-links a:hover { text-decoration: underline; }
+.ext-host { color: var(--tertiary); font-size: 0.6875rem; }
+.btn-preview {
+  padding: 0.4rem 0.9rem; border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.8125rem; font-weight: 600;
+  background: var(--secondary); color: var(--on-secondary);
+}
+.btn-preview:hover { background: var(--secondary-container); }
+.preview-omitted { font-size: 0.75rem; color: var(--on-surface-variant); }
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.375rem; list-style: none; }
+.tag-list li {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem;
+  padding: 0.1rem 0.5rem; border-radius: 9999px;
+  background: var(--surface-bright); color: var(--on-surface);
+}
+
+/* ── Preview dialog ── */
+.preview-dialog {
+  margin: auto; width: min(640px, calc(100vw - 2rem)); max-height: calc(100vh - 2rem);
+  background: var(--surface-container); color: var(--on-surface);
+  border: 1px solid rgba(169, 137, 138, 0.35); border-radius: 1rem;
+  padding: 1.5rem; overflow: auto;
+}
+.preview-dialog::backdrop { background: rgba(0, 0, 0, 0.8); }
+.preview-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+.preview-head h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.125rem; overflow-wrap: anywhere; }
+.preview-close {
+  padding: 0.4rem 0.9rem; border-radius: 9999px; flex-shrink: 0;
+  background: var(--surface-highest); color: var(--on-surface); font-weight: 600;
+}
+.preview-close:hover { background: var(--surface-bright); }
+.preview-status { font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--on-surface-variant); }
+.preview-status.error { color: var(--error); }
+.preview-dialog img { width: 100%; border-radius: 0.75rem; margin-top: 0.75rem; background: var(--surface-lowest); }
+.preview-dialog img[hidden] { display: none; }
+.preview-meta { margin-top: 1rem; font-size: 0.75rem; line-height: 1.6; color: var(--tertiary); }
+.preview-meta a { color: var(--primary); text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-compact { padding: 8.5rem 0 2.5rem; }
+  .cards-grid { grid-template-columns: minmax(0, 1fr); }
+  .algo-card, .paper-card { padding: 1.25rem; }
+}

@@ -46,4 +46,8 @@ Every repository URL is pinned to the cohort commit: `https://github.com/no-magi
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8000/`. The snapshot files are served from `/data/`.
+Open `http://127.0.0.1:8000/`. The home, algorithm (`/algorithms/`) and paper (`/papers/`) pages load `data/content.json` through `content.js`, which rejects a snapshot whose shape, enumerations or pinned URLs do not match the description above and then shows an explicit error instead of partial data. Browsing, search and filters therefore work without GitHub API access. Filters live in the address (`?q=…&tier=…&kind=…&theme=…&data=…&adaptation=…` on `/algorithms/`, `?q=…&status=…&theme=…&lesson=…` on `/papers/`); an unrecognized parameter or value is reported rather than ignored.
+
+Preview GIFs, scene and source files, paper cards, lessons and paper links are external: previews load from `raw.githubusercontent.com` only when a preview is opened, and every outbound link names its host. They need network access, as do the optional web fonts, the author avatar and the GitHub star and fork counts on the home page. The previews are historical excerpts, not full, current or fidelity-certified renders.
+
+The site has no JavaScript toolchain; check changes in a real browser against the served pages.

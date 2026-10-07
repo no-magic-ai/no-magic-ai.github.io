@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   <style>
 /* Page-specific styles for the About page. Shared tokens, nav,
@@ -257,11 +256,12 @@
 <body>
 
 <!-- ═══ NAV ═══ -->
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <div class="nav-inner">
     <a href="/" class="nav-logo font-headline">No Magic AI</a>
     <div class="nav-links">
       <a href="/algorithms/">Algorithms</a>
+      <a href="/papers/">Papers</a>
       <a href="/#paths">Learning Paths</a>
       <a href="/#philosophy">Philosophy</a>
       <a href="/#repos">Repositories</a>
@@ -315,8 +315,9 @@
     <p>
       no-magic-ai expands through new repos, not feature sprawl. Every repo declares one sentence that governs what belongs
       and what doesn't. Repos do not share build systems and do not import each other's code. Cross-repo coupling is limited
-      to published metadata and links: <code>no-magic</code>'s generated <code>docs/catalog.json</code> is read by this website
-      and checked against paper cards by <code>no-magic-papers</code> CI. The website is the only learner surface that joins them.
+      to published metadata and links: <code>no-magic-papers</code> CI checks <code>no-magic</code>'s generated <code>docs/catalog.json</code>
+      against the paper cards and emits a receipt for each published cohort, and this website builds a pinned snapshot from that
+      catalog, the generated <code>data/papers.json</code> and the declared previews of one receipt-bound cohort. The website is the only learner surface that joins them.
     </p>
 
     <div class="repo-grid">
@@ -419,7 +420,7 @@
       </div>
       <div class="principle">
         <h4>Learner artifacts on commodity hardware</h4>
-        <p>Learner code runs on a laptop CPU. No GPU requirement. No cloud credits. No dataset larger than a few MB; scripts that download one on first run are labelled in <a href="https://github.com/no-magic-ai/no-magic/blob/main/docs/catalog.json" target="_blank"><code>no-magic/docs/catalog.json</code></a> (not yet shown on this site). Maintainer tooling such as <code>apprentice</code> uses its own dependencies and LLM providers.</p>
+        <p>Learner code runs on a laptop CPU. No GPU requirement. No cloud credits. No dataset larger than a few MB; scripts that download one on first run are labelled in <a href="https://github.com/no-magic-ai/no-magic/blob/main/docs/catalog.json" target="_blank"><code>no-magic/docs/catalog.json</code></a> (shown and filterable on each <a href="algorithms/">algorithm card</a>). Maintainer tooling such as <code>apprentice</code> uses its own dependencies and LLM providers.</p>
       </div>
       <div class="principle">
         <h4>Comments are the curriculum</h4>

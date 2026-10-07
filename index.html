@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   <style>
 /* Page-specific styles for the landing. Shared tokens, nav,
@@ -169,15 +168,15 @@
   margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.4rem;
 }
 .tier-preview.foundations { border-top-color: var(--tier-foundations); }
-.tier-preview.foundations .tier-preview-link { color: var(--tier-foundations); }
+.tier-preview.foundations .tier-preview-link { color: var(--tier-foundations-text); }
 .tier-preview.alignment { border-top-color: var(--tier-alignment); }
 .tier-preview.alignment .tier-preview-link { color: var(--tier-alignment); }
 .tier-preview.systems { border-top-color: var(--tier-systems); }
 .tier-preview.systems .tier-preview-link { color: var(--tier-systems); }
 .tier-preview.agents { border-top-color: var(--tier-agents); }
-.tier-preview.agents .tier-preview-link { color: var(--tier-agents); }
+.tier-preview.agents .tier-preview-link { color: var(--tier-agents-text); }
 .catalog-cta-row {
-  display: flex; justify-content: center; margin-top: 2.5rem;
+  display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2.5rem;
 }
 .btn-catalog {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -306,13 +305,13 @@
   font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem;
   font-weight: 700; text-transform: uppercase;
 }
-.eco-link .material-symbols-outlined { font-size: 0.875rem; transition: transform 0.3s; }
-.eco-card:hover .eco-link .material-symbols-outlined { transform: translateX(4px); }
+.eco-link .glyph { font-size: 0.875rem; transition: transform 0.3s; }
+.eco-card:hover .eco-link .glyph { transform: translateX(4px); }
 .eco-card.pink { color: var(--primary); }
-.eco-card.pink .eco-link, .eco-card.pink .eco-card-header .material-symbols-outlined { color: var(--primary); }
+.eco-card.pink .eco-link, .eco-card.pink .eco-card-header .glyph { color: var(--primary); }
 .eco-card.green { color: var(--secondary); }
-.eco-card.green .eco-link, .eco-card.green .eco-card-header .material-symbols-outlined { color: var(--secondary); }
-.eco-card.white .eco-link, .eco-card.white .eco-card-header .material-symbols-outlined { color: var(--on-surface); }
+.eco-card.green .eco-link, .eco-card.green .eco-card-header .glyph { color: var(--secondary); }
+.eco-card.white .eco-link, .eco-card.white .eco-card-header .glyph { color: var(--on-surface); }
 
 /* ── Author ── */
 .author-banner {
@@ -360,6 +359,7 @@
   .tracks-grid { grid-template-columns: 1fr; }
   .philosophy-grid { grid-template-columns: 1fr; }
   .eco-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 7.5rem; }
   .hero-content { padding-left: 0; }
   .hero-cover { background-position: 45% center; }
   .hero-cta-row { flex-direction: column; align-items: flex-start; }
@@ -376,11 +376,12 @@
 <body>
 
 <!-- ═══ NAV ═══ -->
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <div class="nav-inner">
     <div class="nav-logo font-headline">No Magic AI</div>
     <div class="nav-links">
       <a href="algorithms/">Algorithms</a>
+      <a href="papers/">Papers</a>
       <a href="#paths">Learning Paths</a>
       <a href="#philosophy">Philosophy</a>
       <a href="#repos">Repositories</a>
@@ -428,11 +429,11 @@
       </div>
       <div class="stat-card ghost-border">
         <div class="stat-value green" id="stat-stars">&mdash;</div>
-        <div class="stat-label">Stars</div>
+        <div class="stat-label" id="label-stars">Stars</div>
       </div>
       <div class="stat-card ghost-border">
         <div class="stat-value pink" id="stat-forks">&mdash;</div>
-        <div class="stat-label">Forks</div>
+        <div class="stat-label" id="label-forks">Forks</div>
       </div>
     </div>
   </div>
@@ -457,29 +458,30 @@
         <div class="tier-preview-name">Foundations</div>
         <div class="tier-preview-count" id="count-foundations">&mdash;</div>
         <p class="tier-preview-desc">The architectures the rest is built on. Tokenization, embeddings, RNNs, attention, GPT, BERT, ResNet, diffusion, GANs.</p>
-        <span class="tier-preview-link">Explore <span class="material-symbols-outlined" style="font-size:0.875rem;">arrow_forward</span></span>
+        <span class="tier-preview-link">Explore <span class="glyph" aria-hidden="true" style="font-size:0.875rem;">&rarr;</span></span>
       </a>
       <a href="algorithms/?tier=alignment" class="tier-preview alignment">
         <div class="tier-preview-name">Alignment</div>
         <div class="tier-preview-count" id="count-alignment">&mdash;</div>
         <p class="tier-preview-desc">Steering model behavior post-training. LoRA, QLoRA, DPO, PPO, GRPO, MoE, regularization.</p>
-        <span class="tier-preview-link">Explore <span class="material-symbols-outlined" style="font-size:0.875rem;">arrow_forward</span></span>
+        <span class="tier-preview-link">Explore <span class="glyph" aria-hidden="true" style="font-size:0.875rem;">&rarr;</span></span>
       </a>
       <a href="algorithms/?tier=systems" class="tier-preview systems">
         <div class="tier-preview-name">Systems</div>
         <div class="tier-preview-count" id="count-systems">&mdash;</div>
         <p class="tier-preview-desc">Making models fast and small. Flash Attention, KV-cache, quantization, RoPE, parallelism, SSMs.</p>
-        <span class="tier-preview-link">Explore <span class="material-symbols-outlined" style="font-size:0.875rem;">arrow_forward</span></span>
+        <span class="tier-preview-link">Explore <span class="glyph" aria-hidden="true" style="font-size:0.875rem;">&rarr;</span></span>
       </a>
       <a href="algorithms/?tier=agents" class="tier-preview agents">
         <div class="tier-preview-name">Agents</div>
         <div class="tier-preview-count" id="count-agents">&mdash;</div>
         <p class="tier-preview-desc">Search and reasoning for autonomous agents. MCTS, ReAct, bandits, minimax, memory networks.</p>
-        <span class="tier-preview-link">Explore <span class="material-symbols-outlined" style="font-size:0.875rem;">arrow_forward</span></span>
+        <span class="tier-preview-link">Explore <span class="glyph" aria-hidden="true" style="font-size:0.875rem;">&rarr;</span></span>
       </a>
     </div>
     <div class="catalog-cta-row">
-      <a href="algorithms/" class="btn-catalog">Browse all algorithms <span class="material-symbols-outlined">arrow_forward</span></a>
+      <a href="algorithms/" class="btn-catalog">Browse all algorithms <span class="glyph" aria-hidden="true">&rarr;</span></a>
+      <a href="papers/" class="btn-catalog">Browse <span id="count-papers">all</span> paper cards <span class="glyph" aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -555,7 +557,7 @@
       </div>
       <div class="phil-item">
         <h4>One command, no setup</h4>
-        <p><code>python script.py</code> runs the whole program. Most scripts train, either one model followed by inference or variants compared side by side; a few run untrained mechanisms or non-learning algorithms. Each script's kind is recorded in <a href="https://github.com/no-magic-ai/no-magic/blob/main/docs/catalog.json" target="_blank"><code>no-magic/docs/catalog.json</code></a>; this site does not display it yet. Some scripts download a small names dataset on first run.</p>
+        <p><code>python script.py</code> runs the whole program. Most scripts train, either one model followed by inference or variants compared side by side; a few run untrained mechanisms or non-learning algorithms. Each script's kind is recorded in <a href="https://github.com/no-magic-ai/no-magic/blob/main/docs/catalog.json" target="_blank"><code>no-magic/docs/catalog.json</code></a> and shown on every <a href="algorithms/">algorithm card</a>, where you can filter by it. Some scripts download a small names dataset on first run; their cards say so.</p>
       </div>
       <div class="phil-item">
         <h4>Comments are the curriculum</h4>
@@ -583,43 +585,43 @@
     <div class="eco-grid">
       <a href="https://github.com/no-magic-ai/no-magic" class="eco-card ghost-border pink" target="_blank">
         <div class="eco-card-header">
-          <span class="material-symbols-outlined" style="font-size:1.125rem;">code</span>
+          <span class="glyph" aria-hidden="true" style="font-size:1.125rem;">{ }</span>
           <h5 class="font-headline">no-magic</h5>
         </div>
-        <p>48 single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. The core collection.</p>
-        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
+        <p>Single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. The core collection.</p>
+        <div class="eco-link">Explore <span class="glyph" aria-hidden="true">&rarr;</span></div>
       </a>
       <a href="https://github.com/no-magic-ai/no-magic-viz" class="eco-card ghost-border green" target="_blank">
         <div class="eco-card-header">
-          <span class="material-symbols-outlined" style="font-size:1.125rem;">monitoring</span>
+          <span class="glyph" aria-hidden="true" style="font-size:1.125rem;">&#9654;</span>
           <h5 class="font-headline">no-magic-viz</h5>
         </div>
         <p>Manim-powered algorithm visualizations. Animated explainers showing each algorithm's mechanics in motion.</p>
-        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
+        <div class="eco-link">Explore <span class="glyph" aria-hidden="true">&rarr;</span></div>
       </a>
       <a href="https://github.com/no-magic-ai/no-magic-ai.github.io" class="eco-card ghost-border white" target="_blank">
         <div class="eco-card-header">
-          <span class="material-symbols-outlined" style="font-size:1.125rem;">language</span>
+          <span class="glyph" aria-hidden="true" style="font-size:1.125rem;">&#9678;</span>
           <h5 class="font-headline">no-magic-ai.github.io</h5>
         </div>
-        <p>This website. Algorithm catalog, learning paths, and live GitHub stats. Pure static HTML/CSS/JS.</p>
-        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
+        <p>This website. Algorithm and paper browsing from a pinned snapshot of published metadata, plus learning paths. Pure static HTML/CSS/JS.</p>
+        <div class="eco-link">Explore <span class="glyph" aria-hidden="true">&rarr;</span></div>
       </a>
       <a href="https://github.com/no-magic-ai/no-magic-papers" class="eco-card ghost-border white" target="_blank">
         <div class="eco-card-header">
-          <span class="material-symbols-outlined" style="font-size:1.125rem;">description</span>
+          <span class="glyph" aria-hidden="true" style="font-size:1.125rem;">&para;</span>
           <h5 class="font-headline">no-magic-papers</h5>
         </div>
         <p>Paper cards and lessons. Primary sources only. One markdown per paper, plus companion code walkthroughs.</p>
-        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
+        <div class="eco-link">Explore <span class="glyph" aria-hidden="true">&rarr;</span></div>
       </a>
       <a href="https://github.com/no-magic-ai/apprentice" class="eco-card ghost-border white" target="_blank">
         <div class="eco-card-header">
-          <span class="material-symbols-outlined" style="font-size:1.125rem;">smart_toy</span>
+          <span class="glyph" aria-hidden="true" style="font-size:1.125rem;">&#9881;</span>
           <h5 class="font-headline">apprentice</h5>
         </div>
         <p>Maintainer-side agent pipeline that drafts algorithm entries from papers for human review. Implemented (v0.4.0); autonomous activation deferred.</p>
-        <div class="eco-link">Explore <span class="material-symbols-outlined">arrow_forward</span></div>
+        <div class="eco-link">Explore <span class="glyph" aria-hidden="true">&rarr;</span></div>
       </a>
     </div>
   </div>
@@ -657,75 +659,58 @@
   </div>
 </footer>
 
+<script src="content.js"></script>
 <script>
-const CATALOG_URL = 'https://raw.githubusercontent.com/no-magic-ai/no-magic/main/docs/catalog.json';
-const GITHUB_API = 'https://api.github.com/repos/no-magic-ai/no-magic';
+'use strict';
+(function () {
+  const C = window.NoMagicContent;
+  const TIER_COUNT_IDS = {
+    '01-foundations': 'count-foundations',
+    '02-alignment': 'count-alignment',
+    '03-systems': 'count-systems',
+    '04-agents': 'count-agents',
+  };
 
-const COUNT_ID_BY_TIER = {
-  '01-foundations': 'count-foundations',
-  '02-alignment': 'count-alignment',
-  '03-systems': 'count-systems',
-  '04-agents': 'count-agents',
-};
+  C.load('data/content.json').then(function (content) {
+    document.getElementById('stat-algos').textContent = content.algorithms.length;
+    const tierCounts = {};
+    content.algorithms.forEach(function (a) { tierCounts[a.tier] = (tierCounts[a.tier] || 0) + 1; });
+    document.getElementById('stat-tiers').textContent = Object.keys(tierCounts).length;
+    Object.keys(TIER_COUNT_IDS).forEach(function (tier) {
+      const n = tierCounts[tier] || 0;
+      document.getElementById(TIER_COUNT_IDS[tier]).textContent = n + ' ' + (n === 1 ? 'algorithm' : 'algorithms');
+    });
+    document.getElementById('count-papers').textContent = content.papers.length;
+  }).catch(function (err) {
+    ['stat-algos', 'stat-tiers'].concat(Object.values(TIER_COUNT_IDS)).forEach(function (id) {
+      const node = document.getElementById(id);
+      node.textContent = 'n/a';
+      node.title = 'Catalog snapshot unavailable: ' + err.message;
+    });
+  });
 
-async function cachedFetch(url, key, ttlMs) {
-  ttlMs = ttlMs || 300000;
-  const cached = sessionStorage.getItem(key);
-  if (cached) {
-    try {
-      const parsed = JSON.parse(cached);
-      if (Date.now() - parsed.ts < ttlMs) return parsed.data;
-    } catch { /* fall through to refetch */ }
-  }
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(url + ': ' + res.status);
-  const data = await res.json();
-  sessionStorage.setItem(key, JSON.stringify({ data: data, ts: Date.now() }));
-  return data;
-}
-
-async function fetchGitHubStats() {
-  try {
-    const repo = await cachedFetch(GITHUB_API, 'gh-stats');
+  // Stars and forks are live GitHub API values: optional and not part of the snapshot.
+  fetch('https://api.github.com/repos/no-magic-ai/no-magic').then(function (response) {
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    return response.json();
+  }).then(function (repo) {
+    if (!Number.isInteger(repo.stargazers_count) || !Number.isInteger(repo.forks_count)) throw new Error('unexpected response');
     const stars = repo.stargazers_count;
     document.getElementById('stat-stars').textContent = stars >= 1000
       ? (stars / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : stars.toLocaleString();
     document.getElementById('stat-forks').textContent = repo.forks_count.toLocaleString();
-  } catch {
-    document.getElementById('stat-stars').textContent = '—';
-    document.getElementById('stat-forks').textContent = '—';
-  }
-}
-
-async function hydrateCatalogStats() {
-  try {
-    const catalog = await cachedFetch(CATALOG_URL, 'catalog');
-    document.getElementById('stat-algos').textContent = catalog.length;
-    const tierCounts = {};
-    catalog.forEach(function(a) { tierCounts[a.tier] = (tierCounts[a.tier] || 0) + 1; });
-    document.getElementById('stat-tiers').textContent = Object.keys(tierCounts).length;
-    Object.keys(COUNT_ID_BY_TIER).forEach(function(tier) {
-      const el = document.getElementById(COUNT_ID_BY_TIER[tier]);
-      if (!el) return;
-      const n = tierCounts[tier] || 0;
-      el.textContent = n + ' ' + (n === 1 ? 'algorithm' : 'algorithms');
-    });
-  } catch {
-    document.getElementById('stat-algos').textContent = '—';
-    document.getElementById('stat-tiers').textContent = '—';
-  }
-}
-
-fetchGitHubStats();
-hydrateCatalogStats();
-
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
+  }).catch(function () {
+    document.getElementById('label-stars').textContent = 'Stars (GitHub API unavailable)';
+    document.getElementById('label-forks').textContent = 'Forks (GitHub API unavailable)';
   });
-}, { threshold: 0.1 });
 
-document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function (node) { observer.observe(node); });
+})();
 </script>
 </body>
 </html>
