@@ -199,6 +199,8 @@
   padding: 1.75rem; transition: background 0.4s; cursor: default;
 }
 .track-card:hover { background: var(--surface-highest); }
+a.track-card { cursor: pointer; }
+a.track-card:focus-visible { border-radius: 1rem; }
 .track-num {
   font-family: 'JetBrains Mono', monospace; font-size: 2rem;
   font-weight: 700; color: var(--tertiary); line-height: 1; margin-bottom: 0.75rem;
@@ -496,24 +498,24 @@
       </div>
     </div>
     <div class="tracks-grid">
-      <div class="track-card">
+      <a class="track-card" href="https://github.com/no-magic-ai/no-magic/blob/main/LEARNING_PATH.md#track-1-weekend-sprint--transformers-4-hrs" target="_blank">
         <div class="track-num">01</div>
         <div class="track-name">Weekend Sprint: Transformers</div>
         <div class="track-desc">From raw text to self-attention. Tokenization, embeddings, RNNs, GPT, and BERT.</div>
         <div class="track-meta"><span>~4 hrs</span><span>6 scripts</span></div>
-      </div>
-      <div class="track-card">
+      </a>
+      <a class="track-card" href="https://github.com/no-magic-ai/no-magic/blob/main/LEARNING_PATH.md#track-2-weekend-sprint--alignment-3-hrs" target="_blank">
         <div class="track-num">02</div>
         <div class="track-name">Weekend Sprint: Alignment</div>
         <div class="track-desc">Steering model behavior post-training. LoRA, DPO, PPO, and RLHF.</div>
         <div class="track-meta"><span>~3 hrs</span><span>5 scripts</span></div>
-      </div>
-      <div class="track-card">
+      </a>
+      <a class="track-card" href="https://github.com/no-magic-ai/no-magic/blob/main/LEARNING_PATH.md#track-3-deep-dive--modern-inference-7-hrs" target="_blank">
         <div class="track-num">03</div>
         <div class="track-name">Deep Dive: Modern Inference</div>
         <div class="track-desc">Making models fast and small. Efficient attention, RoPE, KV-cache, paging, quantization, decoding and state-space models.</div>
         <div class="track-meta"><span>~7 hrs</span><span>12 scripts</span></div>
-      </div>
+      </a>
       <div class="track-card">
         <div class="track-num">04</div>
         <div class="track-name">Deep Dive: Generative Models</div>
