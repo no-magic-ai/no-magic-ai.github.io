@@ -62,24 +62,24 @@
     <form class="filters" id="filters" role="search" aria-label="Search and filter papers">
       <div class="filter search">
         <label for="q">Search titles, authors, tags and scripts</label>
-        <input type="search" id="q" name="q" autocomplete="off" placeholder="e.g. LoRA, Vaswani, quantization, microrope">
+        <input type="search" id="q" disabled name="q" autocomplete="off" placeholder="e.g. LoRA, Vaswani, quantization, microrope">
       </div>
       <div class="filter">
         <label for="status">Status</label>
-        <select id="status" name="status"><option value="">All statuses</option></select>
+        <select id="status" name="status" disabled><option value="">All statuses</option></select>
       </div>
       <div class="filter">
         <label for="theme">Theme</label>
-        <select id="theme" name="theme"><option value="">All themes</option></select>
+        <select id="theme" name="theme" disabled><option value="">All themes</option></select>
       </div>
       <div class="filter">
         <label for="lesson">Lesson</label>
-        <select id="lesson" name="lesson"><option value="">Any lesson state</option></select>
+        <select id="lesson" name="lesson" disabled><option value="">Any lesson state</option></select>
       </div>
     </form>
     <div class="filter-actions">
       <p class="catalog-meta" id="catalogMeta" role="status" aria-live="polite">Loading&hellip;</p>
-      <button type="button" class="btn-reset" id="reset">Clear search and filters</button>
+      <button type="button" class="btn-reset" id="reset" disabled>Clear search and filters</button>
     </div>
     <div class="catalog-state" id="catalogState" hidden></div>
     <div class="cards-grid" id="paperGrid" role="region" aria-label="Paper results"></div>
@@ -170,7 +170,6 @@
       const filter = FILTERS[key];
       Object.keys(filter.values).forEach(function (value) {
         const count = content.papers.filter(function (p) { return filter.test(p, value); }).length;
-        if (count === 0) return;
         select.append(el('option', { value: value, text: filter.values[value] + ' (' + count + ')' }));
       });
     });
@@ -187,7 +186,10 @@
     state.textContent = message;
   }
 
+  // Until a validated snapshot is loaded there is nothing to filter, and the
+  // loading or failure message in #catalogState must stay visible.
   function render(view) {
+    if (content === null) return;
     grid.replaceChildren();
     state.hidden = true;
     if (view.unknown.length) {
@@ -273,8 +275,10 @@
   });
   window.addEventListener('popstate', function () { const view = readUrl(); syncControls(view); render(view); });
 
-  C.load('../data/content.json').then(function (loaded) {
+  function onLoaded(loaded) {
     content = loaded;
+    Array.from(form.elements).forEach(function (control) { control.disabled = false; });
+    document.getElementById('reset').disabled = false;
     note.textContent = 'Card metadata comes from this site’s snapshot of published no-magic-papers ' +
       C.shortCommit(content.commits.papers) + ', so browsing works without the GitHub API. Card and lesson links are pinned to that ' +
       'commit on github.com; paper links open the publisher’s site. Both need network access.';
@@ -282,18 +286,27 @@
     const view = readUrl();
     syncControls(view);
     render(view);
-    if (window.location.hash) {
-      const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
-      if (target) {
+    // Card ids are generated slugs and script names ([a-z0-9_-]); any other
+    // fragment cannot name a card and is left alone.
+    const anchor = window.location.hash.slice(1);
+    if (/^[a-z0-9_-]+$/.test(anchor)) {
+      const target = document.getElementById(anchor);
+      if (target && grid.contains(target)) {
         target.setAttribute('tabindex', '-1');
         target.focus();
       }
     }
-  }).catch(function (err) {
+  }
+
+  // Only a failed fetch or validation reaches this handler; errors raised while
+  // rendering valid content are not reported as an unavailable snapshot.
+  function onLoadFailed(err) {
     note.textContent = 'The paper snapshot is unavailable.';
     meta.textContent = 'Papers unavailable';
     showState('Could not load the paper snapshot: ' + err.message, true);
-  });
+  }
+
+  C.load('../data/content.json').then(onLoaded, onLoadFailed);
 })();
 </script>
 </body>

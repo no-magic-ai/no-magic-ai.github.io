@@ -63,32 +63,32 @@
     <form class="filters" id="filters" role="search" aria-label="Search and filter algorithms">
       <div class="filter search">
         <label for="q">Search algorithms, papers and concepts</label>
-        <input type="search" id="q" name="q" autocomplete="off" placeholder="e.g. microgpt, Attention Is All You Need, quantization, Kingma">
+        <input type="search" id="q" disabled name="q" autocomplete="off" placeholder="e.g. microgpt, Attention Is All You Need, quantization, Kingma">
       </div>
       <div class="filter">
         <label for="tier">Tier</label>
-        <select id="tier" name="tier"><option value="">All tiers</option></select>
+        <select id="tier" name="tier" disabled><option value="">All tiers</option></select>
       </div>
       <div class="filter">
         <label for="kind">Kind</label>
-        <select id="kind" name="kind"><option value="">All kinds</option></select>
+        <select id="kind" name="kind" disabled><option value="">All kinds</option></select>
       </div>
       <div class="filter">
         <label for="theme">Purpose (paper theme)</label>
-        <select id="theme" name="theme"><option value="">All themes</option></select>
+        <select id="theme" name="theme" disabled><option value="">All themes</option></select>
       </div>
       <div class="filter">
         <label for="data">Data source</label>
-        <select id="data" name="data"><option value="">All data sources</option></select>
+        <select id="data" name="data" disabled><option value="">All data sources</option></select>
       </div>
       <div class="filter">
         <label for="adaptation">Paper relation</label>
-        <select id="adaptation" name="adaptation"><option value="">Any</option></select>
+        <select id="adaptation" name="adaptation" disabled><option value="">Any</option></select>
       </div>
     </form>
     <div class="filter-actions">
       <p class="catalog-meta" id="catalogMeta" role="status" aria-live="polite">Loading&hellip;</p>
-      <button type="button" class="btn-reset" id="reset">Clear search and filters</button>
+      <button type="button" class="btn-reset" id="reset" disabled>Clear search and filters</button>
     </div>
     <div class="catalog-state" id="catalogState" hidden></div>
     <div class="cards-grid" id="algoGrid" role="region" aria-label="Algorithm results"></div>
@@ -206,7 +206,6 @@
       const filter = FILTERS[key];
       Object.keys(filter.values).forEach(function (value) {
         const count = content.algorithms.filter(function (a) { return filter.test(a, value); }).length;
-        if (count === 0) return;
         select.append(el('option', { value: value, text: filter.values[value] + ' (' + count + ')' }));
       });
     });
@@ -225,7 +224,10 @@
     state.textContent = message;
   }
 
+  // Until a validated snapshot is loaded there is nothing to filter, and the
+  // loading or failure message in #catalogState must stay visible.
   function render(view) {
+    if (content === null) return;
     grid.replaceChildren();
     state.hidden = true;
     if (view.unknown.length) {
@@ -336,8 +338,22 @@
     closePreview();
   });
   dialog.addEventListener('close', finishPreview);
+  // The dialog element is also the target for clicks on its own padding and on
+  // the gaps between its children, so only a press that starts and ends outside
+  // the visible box counts as a backdrop click.
+  function outsideDialog(event) {
+    const box = dialog.getBoundingClientRect();
+    return event.clientX < box.left || event.clientX > box.right ||
+      event.clientY < box.top || event.clientY > box.bottom;
+  }
+  let pressedOnBackdrop = false;
+  dialog.addEventListener('pointerdown', function (event) {
+    pressedOnBackdrop = event.target === dialog && outsideDialog(event);
+  });
   dialog.addEventListener('click', function (event) {
-    if (event.target === dialog) closePreview();
+    const backdrop = pressedOnBackdrop && event.target === dialog && outsideDialog(event);
+    pressedOnBackdrop = false;
+    if (backdrop) closePreview();
   });
   document.getElementById('previewClose').addEventListener('click', closePreview);
 
@@ -353,8 +369,10 @@
   });
   window.addEventListener('popstate', function () { const view = readUrl(); syncControls(view); render(view); });
 
-  C.load('../data/content.json').then(function (loaded) {
+  function onLoaded(loaded) {
     content = loaded;
+    Array.from(form.elements).forEach(function (control) { control.disabled = false; });
+    document.getElementById('reset').disabled = false;
     note.textContent = '';
     note.append(
       'Metadata comes from this site’s snapshot of published no-magic ' + C.shortCommit(content.commits.core) +
@@ -366,18 +384,27 @@
     const view = readUrl();
     syncControls(view);
     render(view);
-    if (window.location.hash) {
-      const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
-      if (target) {
+    // Card ids are generated slugs and script names ([a-z0-9_-]); any other
+    // fragment cannot name a card and is left alone.
+    const anchor = window.location.hash.slice(1);
+    if (/^[a-z0-9_-]+$/.test(anchor)) {
+      const target = document.getElementById(anchor);
+      if (target && grid.contains(target)) {
         target.setAttribute('tabindex', '-1');
         target.focus();
       }
     }
-  }).catch(function (err) {
+  }
+
+  // Only a failed fetch or validation reaches this handler; errors raised while
+  // rendering valid content are not reported as an unavailable snapshot.
+  function onLoadFailed(err) {
     note.textContent = 'The catalog snapshot is unavailable.';
     meta.textContent = 'Catalog unavailable';
     showState('Could not load the catalog snapshot: ' + err.message, true);
-  });
+  }
+
+  C.load('../data/content.json').then(onLoaded, onLoadFailed);
 })();
 </script>
 </body>
