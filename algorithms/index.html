@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Algorithms &mdash; no-magic-ai</title>
-  <meta name="description" content="Browse the no-magic algorithm catalog. 48 single-file Python implementations grouped by tier: foundations, alignment, systems, agents.">
+  <meta name="description" content="Browse the no-magic algorithm catalog: single-file Python implementations grouped by tier, searchable by paper and concept, filterable by kind, purpose and data source.">
   <link rel="canonical" href="https://no-magic-ai.github.io/algorithms/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Algorithms — no-magic-ai">
-  <meta property="og:description" content="48 single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. Filter by tier and read top-to-bottom.">
+  <meta property="og:description" content="Single-file Python implementations of AI/ML algorithms. Zero dependencies, pure stdlib. Search by paper or concept and read top-to-bottom.">
   <meta property="og:url" content="https://no-magic-ai.github.io/algorithms/">
   <meta property="og:image" content="https://no-magic-ai.github.io/icon-512.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,442 +19,393 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../site.css">
-  <style>
-/* Page-specific styles for the Algorithms catalog. Shared tokens,
-   nav, footer, sections, and responsive baselines live in site.css. */
-
-/* ── Hero (compact, mirrors about.html) ── */
-.hero-compact {
-  position: relative; padding: 10rem 0 3rem; overflow: hidden;
-  background: var(--surface-lowest);
-}
-.hero-compact::before {
-  content: ''; position: absolute; inset: 0; z-index: 0;
-  background: radial-gradient(ellipse at 30% 40%, rgba(252, 83, 109, 0.08), transparent 50%),
-              radial-gradient(ellipse at 70% 60%, rgba(65, 222, 176, 0.06), transparent 50%);
-}
-.hero-compact .container { position: relative; z-index: 2; }
-.hero-tag {
-  font-family: 'JetBrains Mono', monospace; color: var(--secondary);
-  font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 1rem; opacity: 0.7;
-}
-.hero-compact h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 700; letter-spacing: -0.04em; line-height: 1;
-  background: linear-gradient(135deg, var(--primary), var(--primary-container));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
-}
-.hero-compact .lede {
-  font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 300;
-  color: var(--on-surface-variant); max-width: 720px; line-height: 1.7;
-}
-
-/* ── Catalog header ── */
-.catalog-toolbar {
-  display: flex; flex-wrap: wrap; gap: 1.5rem;
-  align-items: center; justify-content: space-between;
-  margin-bottom: 2rem;
-}
-.catalog-meta {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
-  color: var(--tertiary); letter-spacing: 0.05em;
-}
-
-/* ── Tier Pills ── */
-.pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.pill {
-  padding: 0.5rem 1.25rem; border-radius: 9999px;
-  font-family: 'Space Grotesk', sans-serif; font-size: 0.8125rem; font-weight: 600;
-  background: var(--surface-highest); color: var(--on-surface);
-  transition: all 0.3s;
-}
-.pill:hover { background: var(--surface-bright); }
-.pill.active { background: var(--secondary); color: var(--on-secondary); }
-.pill .pill-count {
-  display: inline-block; font-size: 0.6875rem;
-  background: rgba(255, 255, 255, 0.15); padding: 0 0.375rem;
-  border-radius: 9999px; margin-left: 0.375rem;
-}
-.pill.active .pill-count { background: rgba(0, 56, 41, 0.3); }
-
-/* ── Algo Cards ── */
-.cards-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem;
-}
-.algo-card {
-  background: var(--surface-high); padding: 1.75rem; border-radius: 1rem;
-  transition: background 0.4s; cursor: pointer;
-  display: flex; flex-direction: column;
-}
-.algo-card:hover { background: var(--surface-highest); }
-.algo-card-top {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  margin-bottom: 0.75rem;
-}
-.algo-card-name {
-  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
-  font-weight: 700; color: var(--on-surface);
-}
-.tier-badge {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.625rem;
-  padding: 0.2rem 0.6rem; border-radius: 9999px; flex-shrink: 0;
-  font-weight: 500;
-}
-.tier-badge-foundations { color: var(--tier-foundations); background: var(--tier-foundations-bg); }
-.tier-badge-alignment { color: var(--tier-alignment); background: var(--tier-alignment-bg); }
-.tier-badge-systems { color: var(--tier-systems); background: var(--tier-systems-bg); }
-.tier-badge-agents { color: var(--tier-agents); background: var(--tier-agents-bg); }
-.algo-card-thesis {
-  color: var(--on-surface-variant); font-size: 0.8125rem;
-  line-height: 1.7; flex: 1;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.algo-card-footer {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-top: 1rem; padding-top: 0.75rem;
-  border-top: 1px solid rgba(90, 64, 66, 0.1);
-}
-.algo-card-links { display: flex; gap: 0.75rem; }
-.algo-card-link {
-  font-size: 0.6875rem; color: var(--tertiary); transition: color 0.2s;
-  font-family: 'JetBrains Mono', monospace;
-}
-.algo-card-link:hover { color: var(--primary); }
-.algo-card-viz {
-  font-size: 0.625rem; color: var(--tertiary);
-  display: flex; align-items: center; gap: 0.25rem;
-}
-.algo-card-viz .viz-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--secondary);
-}
-
-/* ── Skeleton (shown during initial fetch) ── */
-.skeleton-card {
-  background: var(--surface-high); padding: 1.75rem; border-radius: 1rem;
-  height: 180px; opacity: 0.4;
-}
-
-/* ── Empty / error state ── */
-.catalog-state {
-  padding: 3rem 1rem; text-align: center;
-  color: var(--on-surface-variant);
-  font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;
-}
-.catalog-state.error { color: var(--primary); }
-
-/* ── Preview Modal ── */
-.modal-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(0, 0, 0, 0.85); z-index: 10000;
-  justify-content: center; align-items: center;
-  padding: 2rem; cursor: pointer;
-}
-.modal-overlay.active { display: flex; }
-.modal-content { max-width: 560px; width: 100%; cursor: default; }
-.modal-content img {
-  width: 100%; border-radius: 0.75rem;
-  border: 1px solid rgba(90, 64, 66, 0.15);
-}
-.modal-title {
-  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
-  font-weight: 700; margin-top: 1rem;
-}
-.modal-thesis {
-  font-size: 0.8125rem; color: var(--on-surface-variant);
-  margin-top: 0.5rem; line-height: 1.7;
-}
-.modal-close {
-  position: absolute; top: 1.5rem; right: 1.5rem;
-  font-size: 1.5rem; color: var(--tertiary); cursor: pointer;
-  background: none; border: none; font-family: 'JetBrains Mono', monospace;
-}
-.modal-close:hover { color: var(--on-surface); }
-
-/* ── Page-specific responsive overrides ── */
-@media (max-width: 768px) {
-  .hero-compact { padding: 8rem 0 2.5rem; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .catalog-toolbar { flex-direction: column; align-items: flex-start; }
-}
-  </style>
+  <link rel="stylesheet" href="../browse.css">
 </head>
 <body>
 
 <!-- ═══ NAV ═══ -->
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <div class="nav-inner">
     <a href="../" class="nav-logo font-headline">No Magic AI</a>
     <div class="nav-links">
-      <a href="./" class="current">Algorithms</a>
+      <a href="./" class="current" aria-current="page">Algorithms</a>
+      <a href="../papers/">Papers</a>
       <a href="../#paths">Learning Paths</a>
       <a href="../#philosophy">Philosophy</a>
       <a href="../#repos">Repositories</a>
       <a href="../about.html">About</a>
     </div>
-    <a href="https://github.com/no-magic-ai/no-magic" class="nav-cta" target="_blank">View on GitHub</a>
+    <a href="https://github.com/no-magic-ai/no-magic" class="nav-cta" target="_blank" rel="noopener noreferrer">View on GitHub</a>
   </div>
 </nav>
 
+<main>
 <!-- ═══ HERO ═══ -->
 <section class="hero-compact">
   <div class="container">
     <p class="hero-tag">// the catalog</p>
     <h1>Algorithm Catalog</h1>
     <p class="lede">
-      Single-file Python implementations of the algorithms that power modern AI.
-      Most scripts train from scratch: some train one model and then run inference, others train alternative variants side by side
-      and compare them, often running inference too. A few run untrained forward-pass mechanisms or non-learning algorithms;
-      <a href="https://github.com/no-magic-ai/no-magic/blob/main/docs/catalog.json" target="_blank">catalog.json</a> records each script's kind. Read top-to-bottom like a tutorial.
+      Single-file Python implementations of the algorithms that power modern AI. Most scripts train from scratch: some train one
+      model and then run inference, others train alternative variants side by side and compare them. A few run untrained
+      forward-pass mechanisms or non-learning algorithms. Each card shows the script's kind, data source and the paper card it is
+      mapped to, including the catalog's adaptation note where the code differs from that paper. Read the source top-to-bottom like a tutorial.
     </p>
+    <p class="snapshot-note" id="snapshotNote">Loading the catalog snapshot&hellip;</p>
   </div>
 </section>
 
 <!-- ═══ CATALOG ═══ -->
-<section class="section section-low">
+<section class="section section-low" aria-labelledby="catalogHeading">
   <div class="container">
-    <div class="catalog-toolbar">
-      <nav class="pills" id="tierNav" role="tablist" aria-label="Filter by tier"></nav>
-      <div class="catalog-meta" id="catalogMeta">&mdash;</div>
+    <h2 id="catalogHeading" class="visually-hidden">Algorithms</h2>
+    <form class="filters" id="filters" role="search" aria-label="Search and filter algorithms">
+      <div class="filter search">
+        <label for="q">Search algorithms, papers and concepts</label>
+        <input type="search" id="q" disabled name="q" autocomplete="off" placeholder="e.g. microgpt, Attention Is All You Need, quantization, Kingma">
+      </div>
+      <div class="filter">
+        <label for="tier">Tier</label>
+        <select id="tier" name="tier" disabled><option value="">All tiers</option></select>
+      </div>
+      <div class="filter">
+        <label for="kind">Kind</label>
+        <select id="kind" name="kind" disabled><option value="">All kinds</option></select>
+      </div>
+      <div class="filter">
+        <label for="theme">Purpose (paper theme)</label>
+        <select id="theme" name="theme" disabled><option value="">All themes</option></select>
+      </div>
+      <div class="filter">
+        <label for="data">Data source</label>
+        <select id="data" name="data" disabled><option value="">All data sources</option></select>
+      </div>
+      <div class="filter">
+        <label for="adaptation">Paper relation</label>
+        <select id="adaptation" name="adaptation" disabled><option value="">Any</option></select>
+      </div>
+    </form>
+    <div class="filter-actions">
+      <p class="catalog-meta" id="catalogMeta" role="status" aria-live="polite">Loading&hellip;</p>
+      <button type="button" class="btn-reset" id="reset" disabled>Clear search and filters</button>
     </div>
-    <div class="cards-grid" id="algoGrid">
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-    </div>
+    <div class="catalog-state" id="catalogState" hidden></div>
+    <div class="cards-grid" id="algoGrid" role="region" aria-label="Algorithm results"></div>
   </div>
 </section>
+</main>
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo font-headline">&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank" style="color:var(--primary);">Tom Mathews</a> &mdash; MIT License</div>
+    <div class="footer-logo font-headline">&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">Tom Mathews</a> &mdash; MIT License</div>
     <div class="footer-links">
-      <a href="https://github.com/no-magic-ai" target="_blank">GitHub</a>
-      <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+      <a href="https://github.com/no-magic-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/no-magic-ai/no-magic/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing</a>
       <a href="../#paths">Learning Paths</a>
-      <a href="https://github.com/no-magic-ai/no-magic-papers" target="_blank">Papers</a>
+      <a href="../papers/">Papers</a>
+      <a href="../about.html">About</a>
     </div>
   </div>
 </footer>
 
-<!-- ═══ PREVIEW MODAL ═══ -->
-<div class="modal-overlay" id="modal">
-  <button class="modal-close" aria-label="Close preview">&times;</button>
-  <div class="modal-content">
-    <img id="modalImg" src="" alt="">
-    <div class="modal-title" id="modalTitle"></div>
-    <div class="modal-thesis" id="modalThesis"></div>
+<!-- ═══ PREVIEW DIALOG ═══ -->
+<dialog class="preview-dialog" id="preview" aria-labelledby="previewTitle">
+  <div class="preview-head">
+    <h2 id="previewTitle"></h2>
+    <button type="button" class="preview-close" id="previewClose" autofocus>Close</button>
   </div>
-</div>
+  <p class="preview-status" id="previewStatus" role="status" aria-live="polite"></p>
+  <img id="previewImg" alt="" hidden>
+  <p class="preview-meta" id="previewMeta"></p>
+</dialog>
 
+<script src="../content.js"></script>
 <script>
-const CATALOG_URL = 'https://raw.githubusercontent.com/no-magic-ai/no-magic/main/docs/catalog.json';
-const VIZ_BASE = 'https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/main/previews/';
-const REPO_BASE = 'https://github.com/no-magic-ai/no-magic/blob/main/';
-const PAPERS_BASE = 'https://github.com/no-magic-ai/no-magic-papers/blob/main/papers/';
+'use strict';
+(function () {
+  const C = window.NoMagicContent;
+  const el = C.el;
+  const grid = document.getElementById('algoGrid');
+  const meta = document.getElementById('catalogMeta');
+  const state = document.getElementById('catalogState');
+  const note = document.getElementById('snapshotNote');
+  const form = document.getElementById('filters');
+  const query = document.getElementById('q');
+  const dialog = document.getElementById('preview');
+  const previewImg = document.getElementById('previewImg');
+  const previewStatus = document.getElementById('previewStatus');
+  let content = null;
+  let invoker = null;
+  let loadToken = 0;
 
-const TIER_LABELS = {
-  '01-foundations': 'Foundations',
-  '02-alignment': 'Alignment',
-  '03-systems': 'Systems',
-  '04-agents': 'Agents',
-};
+  // URL parameter -> filter. `values` maps each accepted parameter value to its label.
+  const FILTERS = {
+    tier: {
+      values: Object.fromEntries(Object.entries(C.TIERS).map(function (e) { return [e[1].slug, e[1].label]; })),
+      test: function (a, v) { return C.TIERS[a.tier].slug === v; },
+    },
+    kind: {
+      values: Object.fromEntries(Object.entries(C.KINDS).map(function (e) { return [e[0], e[1].label]; })),
+      test: function (a, v) { return a.teaching_kind === v; },
+    },
+    theme: {
+      values: Object.fromEntries(C.THEMES.map(function (t) { return [t, t]; })),
+      test: function (a, v) { return themesOf(a).includes(v); },
+    },
+    data: {
+      values: Object.fromEntries(Object.entries(C.DATA_SOURCES).map(function (e) { return [e[0], e[1].label]; })),
+      test: function (a, v) { return a.data_source === v; },
+    },
+    adaptation: {
+      values: { noted: 'Adaptation note recorded', none: 'No adaptation note' },
+      test: function (a, v) { return (a.adaptation_note !== null) === (v === 'noted'); },
+    },
+  };
 
-const TIER_BADGE_CLASS = {
-  '01-foundations': 'tier-badge-foundations',
-  '02-alignment': 'tier-badge-alignment',
-  '03-systems': 'tier-badge-systems',
-  '04-agents': 'tier-badge-agents',
-};
+  function paperOf(a) { return content.bySlug.get(a.paper_slug); }
+  function themesOf(a) { const t = paperOf(a).themes; return [t.primary].concat(t.secondary); }
 
-// Map short URL slugs to full tier IDs and vice versa
-const TIER_SLUG = {
-  'foundations': '01-foundations',
-  'alignment': '02-alignment',
-  'systems': '03-systems',
-  'agents': '04-agents',
-};
-const SLUG_FROM_TIER = Object.fromEntries(
-  Object.entries(TIER_SLUG).map(function(e) { return [e[1], e[0]]; })
-);
-
-let algorithms = [];
-let previewSet = new Set();
-
-const grid = document.getElementById('algoGrid');
-const tierNav = document.getElementById('tierNav');
-const meta = document.getElementById('catalogMeta');
-const modal = document.getElementById('modal');
-
-async function cachedFetch(url, key, ttlMs) {
-  ttlMs = ttlMs || 300000;
-  const cached = sessionStorage.getItem(key);
-  if (cached) {
-    try {
-      const parsed = JSON.parse(cached);
-      if (Date.now() - parsed.ts < ttlMs) return parsed.data;
-    } catch { /* fall through to refetch */ }
+  function haystack(a) {
+    const p = paperOf(a);
+    return [
+      a.name, a.display, a.thesis, a.adaptation_note || '', C.TIERS[a.tier].label,
+      C.KINDS[a.teaching_kind].label, p.slug, p.title, p.authors.join(' '), p.tags.join(' '),
+      themesOf(a).join(' '), p.arxiv_id || '', p.year,
+    ].join('\n').toLowerCase();
   }
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(url + ': ' + res.status);
-  const data = await res.json();
-  sessionStorage.setItem(key, JSON.stringify({ data: data, ts: Date.now() }));
-  return data;
-}
 
-async function fetchPreviewList() {
-  try {
-    const files = await cachedFetch(
-      'https://api.github.com/repos/no-magic-ai/no-magic-viz/contents/previews',
-      'viz-previews'
-    );
-    files.forEach(function(f) {
-      if (f.name.endsWith('.gif')) previewSet.add(f.name.replace('.gif', ''));
+  function readUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const selected = {};
+    const unknown = [];
+    let q = '';
+    params.forEach(function (value, key) {
+      if (key === 'q') q = value;
+      else if (FILTERS[key] && Object.prototype.hasOwnProperty.call(FILTERS[key].values, value)) selected[key] = value;
+      else unknown.push(key + '=' + value);
     });
-  } catch { /* preview indicators won't show */ }
-}
+    return { q: q, selected: selected, unknown: unknown };
+  }
 
-function tierFromUrl() {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get('tier');
-  if (!slug) return 'all';
-  return TIER_SLUG[slug] || 'all';
-}
-
-function urlForTier(tier) {
-  if (tier === 'all') return window.location.pathname;
-  const slug = SLUG_FROM_TIER[tier];
-  if (!slug) return window.location.pathname;
-  return window.location.pathname + '?tier=' + slug;
-}
-
-function buildTabs(activeTier) {
-  const counts = {};
-  algorithms.forEach(function(a) { counts[a.tier] = (counts[a.tier] || 0) + 1; });
-
-  const tiers = Object.keys(counts).sort();
-  let html = '<button class="pill ' + (activeTier === 'all' ? 'active' : '') +
-    '" data-tier="all" role="tab">All <span class="pill-count">' + algorithms.length + '</span></button>';
-  tiers.forEach(function(tier) {
-    const label = TIER_LABELS[tier] || tier;
-    const isActive = tier === activeTier ? 'active' : '';
-    html += '<button class="pill ' + isActive + '" data-tier="' + tier +
-      '" role="tab">' + label + ' <span class="pill-count">' + counts[tier] + '</span></button>';
-  });
-  tierNav.innerHTML = html;
-
-  tierNav.querySelectorAll('.pill').forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      const tier = tab.dataset.tier;
-      tierNav.querySelectorAll('.pill').forEach(function(t) { t.classList.remove('active'); });
-      tab.classList.add('active');
-      history.pushState({ tier: tier }, '', urlForTier(tier));
-      renderGrid(tier);
+  function writeUrl() {
+    const params = new URLSearchParams();
+    if (query.value.trim()) params.set('q', query.value.trim());
+    Object.keys(FILTERS).forEach(function (key) {
+      const value = document.getElementById(key).value;
+      if (value) params.set(key, value);
     });
-  });
-}
-
-function renderGrid(tier) {
-  const filtered = tier === 'all' ? algorithms : algorithms.filter(function(a) { return a.tier === tier; });
-  meta.textContent = filtered.length + ' / ' + algorithms.length + ' algorithms';
-  if (filtered.length === 0) {
-    grid.innerHTML = '<div class="catalog-state">No algorithms in this tier yet.</div>';
-    return;
+    const search = params.toString();
+    history.replaceState(null, '', window.location.pathname + (search ? '?' + search : ''));
   }
-  grid.innerHTML = filtered.map(function(a) {
-    const hasPreview = previewSet.has(a.name);
-    const badgeClass = TIER_BADGE_CLASS[a.tier] || '';
-    const tierLabel = TIER_LABELS[a.tier] || a.tier;
-    return '<div class="algo-card" data-name="' + a.name + '" data-tier="' + a.tier + '">' +
-      '<div class="algo-card-top">' +
-        '<span class="algo-card-name">' + a.display + '</span>' +
-        '<span class="tier-badge ' + badgeClass + '">' + tierLabel + '</span>' +
-      '</div>' +
-      '<div class="algo-card-thesis">' + a.thesis + '</div>' +
-      '<div class="algo-card-footer">' +
-        '<div class="algo-card-links">' +
-          '<a href="' + REPO_BASE + a.tier + '/' + a.name + '.py" class="algo-card-link" target="_blank" onclick="event.stopPropagation()">source</a>' +
-          (a.paper_slug ? '<a href="' + PAPERS_BASE + a.paper_slug + '.md" class="algo-card-link" target="_blank" onclick="event.stopPropagation()">paper</a>' : '') +
-          (hasPreview ? '<span class="algo-card-link" data-preview="' + a.name + '">preview</span>' : '') +
-        '</div>' +
-        (hasPreview ? '<div class="algo-card-viz"><span class="viz-dot"></span>viz</div>' : '') +
-      '</div>' +
-    '</div>';
-  }).join('');
-}
 
-function showPreview(name) {
-  const algo = algorithms.find(function(a) { return a.name === name; });
-  if (!algo) return;
-  document.getElementById('modalImg').src = VIZ_BASE + name + '.gif';
-  document.getElementById('modalImg').alt = algo.display + ' preview';
-  document.getElementById('modalTitle').textContent = algo.display;
-  document.getElementById('modalThesis').textContent = algo.thesis;
-  modal.classList.add('active');
-}
-
-modal.addEventListener('click', function(e) {
-  if (e.target === modal || e.target.classList.contains('modal-close')) {
-    modal.classList.remove('active');
+  function populate() {
+    Object.keys(FILTERS).forEach(function (key) {
+      const select = document.getElementById(key);
+      const filter = FILTERS[key];
+      Object.keys(filter.values).forEach(function (value) {
+        const count = content.algorithms.filter(function (a) { return filter.test(a, value); }).length;
+        select.append(el('option', { value: value, text: filter.values[value] + ' (' + count + ')' }));
+      });
+    });
   }
-});
 
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') modal.classList.remove('active');
-});
-
-grid.addEventListener('click', function(e) {
-  const previewSpan = e.target.closest('[data-preview]');
-  if (previewSpan) {
-    e.stopPropagation();
-    showPreview(previewSpan.dataset.preview);
-    return;
+  function syncControls(view) {
+    query.value = view.q;
+    Object.keys(FILTERS).forEach(function (key) {
+      document.getElementById(key).value = view.selected[key] || '';
+    });
   }
-  const card = e.target.closest('.algo-card');
-  if (!card || e.target.closest('a')) return;
-  const name = card.dataset.name;
-  if (previewSet.has(name)) {
-    showPreview(name);
-  } else {
-    window.open(REPO_BASE + card.dataset.tier + '/' + name + '.py', '_blank');
+
+  function showState(message, isError) {
+    state.hidden = false;
+    state.className = 'catalog-state' + (isError ? ' error' : '');
+    state.textContent = message;
   }
-});
 
-window.addEventListener('popstate', function() {
-  const tier = tierFromUrl();
-  tierNav.querySelectorAll('.pill').forEach(function(t) {
-    t.classList.toggle('active', t.dataset.tier === tier);
-  });
-  renderGrid(tier);
-});
+  // Until a validated snapshot is loaded there is nothing to filter, and the
+  // loading or failure message in #catalogState must stay visible.
+  function render(view) {
+    if (content === null) return;
+    grid.replaceChildren();
+    state.hidden = true;
+    if (view.unknown.length) {
+      meta.textContent = 'No results: unrecognized filter in the address';
+      showState('Unrecognized filter or value: ' + view.unknown.join(', ') +
+        '. Nothing is shown rather than silently ignoring it. Use "Clear search and filters" or pick a filter above.', true);
+      return;
+    }
+    const tokens = view.q.toLowerCase().split(/\s+/).filter(Boolean);
+    const matches = content.algorithms.filter(function (a) {
+      const text = haystack(a);
+      return tokens.every(function (t) { return text.includes(t); }) &&
+        Object.keys(view.selected).every(function (key) { return FILTERS[key].test(a, view.selected[key]); });
+    });
+    meta.textContent = 'Showing ' + matches.length + ' of ' + content.algorithms.length + ' algorithms';
+    if (matches.length === 0) {
+      showState('No algorithm matches this search and filter combination. Every algorithm in the snapshot was checked.', false);
+      return;
+    }
+    grid.replaceChildren.apply(grid, matches.map(card));
+  }
 
-async function init() {
-  try {
-    const [catalog] = await Promise.all([
-      cachedFetch(CATALOG_URL, 'catalog'),
-      fetchPreviewList(),
+  function card(a) {
+    const p = paperOf(a);
+    const kind = C.KINDS[a.teaching_kind];
+    const data = C.DATA_SOURCES[a.data_source];
+    const declared = [a.declared_release, a.declared_commit && C.shortCommit(a.declared_commit)].filter(Boolean).join(' · ');
+    const facts = el('dl', { class: 'facts' }, [
+      el('dt', { text: 'Kind' }), el('dd', { text: kind.label + ' — ' + kind.detail }),
+      el('dt', { text: 'Data' }), el('dd', { text: data.label + ' — ' + data.detail }),
+      el('dt', { text: 'Paper' }), el('dd', null, [
+        el('a', { href: '../papers/#' + p.slug, text: p.title }), ' (' + p.year + ', ' + p.status + ')',
+      ]),
+      el('dt', { text: 'Purpose' }), el('dd', { text: themesOf(a).join(', ') }),
+      el('dt', { text: 'Record' }), el('dd', { text: declared ? 'declared at ' + declared + ' (historical implementation record)' : 'no release or commit declared' }),
     ]);
-    algorithms = catalog;
-    const activeTier = tierFromUrl();
-    buildTabs(activeTier);
-    renderGrid(activeTier);
-  } catch (err) {
-    grid.innerHTML = '<div class="catalog-state error">Failed to load catalog: ' + err.message + '</div>';
-    meta.textContent = 'unavailable';
+    const links = el('div', { class: 'card-links' }, [
+      C.externalLink(a.source_url, 'Source'),
+      C.externalLink(p.card_url, 'Paper card'),
+    ]);
+    if (a.media.status === 'linked') {
+      const button = el('button', { type: 'button', class: 'btn-preview', text: 'Preview' });
+      button.setAttribute('aria-label', 'Preview ' + a.display + ' animation');
+      button.addEventListener('click', function () { openPreview(a, button); });
+      links.append(button);
+    } else {
+      links.append(el('p', { class: 'preview-omitted', text: 'Preview omitted: ' + a.media.note }));
+    }
+    return el('article', { class: 'algo-card', id: a.name }, [
+      el('div', { class: 'algo-card-top' }, [
+        el('h3', { class: 'algo-card-name', text: a.display }),
+        el('span', { class: 'badge tier-badge-' + C.TIERS[a.tier].slug, text: C.TIERS[a.tier].label }),
+      ]),
+      el('p', { class: 'algo-card-file', text: a.source_path + ' · ' + a.lines + ' lines' }),
+      el('p', { class: 'algo-card-thesis', text: a.thesis }),
+      facts,
+      a.adaptation_note ? el('p', { class: 'card-note' }, [el('strong', { text: 'Adaptation: ' }), a.adaptation_note]) : null,
+      links,
+    ]);
   }
-}
 
-init();
+  function openPreview(a, button) {
+    invoker = button;
+    const token = ++loadToken;
+    document.getElementById('previewTitle').textContent = a.display + ' preview';
+    previewStatus.className = 'preview-status';
+    previewStatus.textContent = 'Loading the GIF from raw.githubusercontent.com…';
+    previewImg.hidden = true;
+    previewImg.alt = a.display + ' animated preview';
+    previewImg.onload = function () {
+      if (token !== loadToken) return;
+      previewStatus.textContent = 'Loaded.';
+      previewImg.hidden = false;
+    };
+    previewImg.onerror = function () {
+      if (token !== loadToken) return;
+      previewStatus.className = 'preview-status error';
+      previewStatus.textContent = 'The preview could not be loaded from raw.githubusercontent.com. ' +
+        'It needs network access to GitHub; open the GIF link below to retry.';
+    };
+    const metaLine = document.getElementById('previewMeta');
+    metaLine.replaceChildren(
+      'Historical GIF excerpt from no-magic-viz at ' + C.shortCommit(content.commits.viz) +
+        '; it is not a full, current or fidelity-certified render of the script. ',
+      C.externalLink(a.media.preview_url, 'Open GIF'), ' ',
+      C.externalLink(a.media.scene_url, 'Scene source'),
+    );
+    previewImg.src = a.media.preview_url;
+    dialog.showModal();
+  }
+
+  // Runs directly from every close path (Escape via cancel, Close button,
+  // backdrop) and again on the native close event; repeated calls are harmless.
+  function finishPreview() {
+    const target = invoker;
+    invoker = null;
+    loadToken += 1;
+    previewImg.removeAttribute('src');
+    previewImg.hidden = true;
+    if (target) target.focus();
+  }
+  function closePreview() {
+    if (dialog.open) dialog.close();
+    finishPreview();
+  }
+  dialog.addEventListener('cancel', function (event) {
+    event.preventDefault();
+    closePreview();
+  });
+  dialog.addEventListener('close', finishPreview);
+  // The dialog element is also the target for clicks on its own padding and on
+  // the gaps between its children, so only a press that starts and ends outside
+  // the visible box counts as a backdrop click.
+  function outsideDialog(event) {
+    const box = dialog.getBoundingClientRect();
+    return event.clientX < box.left || event.clientX > box.right ||
+      event.clientY < box.top || event.clientY > box.bottom;
+  }
+  let pressedOnBackdrop = false;
+  dialog.addEventListener('pointerdown', function (event) {
+    pressedOnBackdrop = event.target === dialog && outsideDialog(event);
+  });
+  dialog.addEventListener('click', function (event) {
+    const backdrop = pressedOnBackdrop && event.target === dialog && outsideDialog(event);
+    pressedOnBackdrop = false;
+    if (backdrop) closePreview();
+  });
+  document.getElementById('previewClose').addEventListener('click', closePreview);
+
+  form.addEventListener('submit', function (event) { event.preventDefault(); });
+  function onFilterChange() { writeUrl(); render(readUrl()); }
+  form.addEventListener('input', onFilterChange);
+  form.addEventListener('change', onFilterChange);
+  document.getElementById('reset').addEventListener('click', function () {
+    history.replaceState(null, '', window.location.pathname);
+    const view = readUrl();
+    syncControls(view);
+    render(view);
+  });
+  window.addEventListener('popstate', function () { const view = readUrl(); syncControls(view); render(view); });
+
+  function onLoaded(loaded) {
+    content = loaded;
+    Array.from(form.elements).forEach(function (control) { control.disabled = false; });
+    document.getElementById('reset').disabled = false;
+    note.textContent = '';
+    note.append(
+      'Metadata comes from this site’s snapshot of published no-magic ' + C.shortCommit(content.commits.core) +
+        ', no-magic-papers ' + C.shortCommit(content.commits.papers) + ' and no-magic-viz ' +
+        C.shortCommit(content.commits.viz) + ', so browsing works without the GitHub API. Source, paper-card and preview links ' +
+        'are pinned to those commits and open github.com or raw.githubusercontent.com, which need network access.'
+    );
+    populate();
+    const view = readUrl();
+    syncControls(view);
+    render(view);
+    // Card ids are generated slugs and script names ([a-z0-9_-]); any other
+    // fragment cannot name a card and is left alone.
+    const anchor = window.location.hash.slice(1);
+    if (/^[a-z0-9_-]+$/.test(anchor)) {
+      const target = document.getElementById(anchor);
+      if (target && grid.contains(target)) {
+        target.setAttribute('tabindex', '-1');
+        target.focus();
+      }
+    }
+  }
+
+  // Only a failed fetch or validation reaches this handler; errors raised while
+  // rendering valid content are not reported as an unavailable snapshot.
+  function onLoadFailed(err) {
+    note.textContent = 'The catalog snapshot is unavailable.';
+    meta.textContent = 'Catalog unavailable';
+    showState('Could not load the catalog snapshot: ' + err.message, true);
+  }
+
+  C.load('../data/content.json').then(onLoaded, onLoadFailed);
+})();
 </script>
 </body>
 </html>

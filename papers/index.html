@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papers &mdash; no-magic-ai</title>
+  <meta name="description" content="Browse the no-magic-papers cards: primary-source paper summaries, their status, themes, lessons and the no-magic scripts that implement them.">
+  <link rel="canonical" href="https://no-magic-ai.github.io/papers/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Papers — no-magic-ai">
+  <meta property="og:description" content="Paper cards mapped to single-file no-magic implementations, with status, themes and lessons.">
+  <meta property="og:url" content="https://no-magic-ai.github.io/papers/">
+  <meta property="og:image" content="https://no-magic-ai.github.io/icon-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="../icon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../browse.css">
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo font-headline">No Magic AI</a>
+    <div class="nav-links">
+      <a href="../algorithms/">Algorithms</a>
+      <a href="./" class="current" aria-current="page">Papers</a>
+      <a href="../#paths">Learning Paths</a>
+      <a href="../#philosophy">Philosophy</a>
+      <a href="../#repos">Repositories</a>
+      <a href="../about.html">About</a>
+    </div>
+    <a href="https://github.com/no-magic-ai/no-magic-papers" class="nav-cta" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+  </div>
+</nav>
+
+<main>
+<!-- ═══ HERO ═══ -->
+<section class="hero-compact">
+  <div class="container">
+    <p class="hero-tag">// the papers</p>
+    <h1>Paper Cards</h1>
+    <p class="lede">
+      Every no-magic algorithm is mapped to a paper card in <code>no-magic-papers</code>: a short, primary-source summary with its
+      bibliography, status, themes and optional lesson. One card may own several scripts. Summarized cards have no implementation
+      yet; their routing entry records a plan, not shipped code.
+    </p>
+    <p class="snapshot-note" id="snapshotNote">Loading the paper snapshot&hellip;</p>
+  </div>
+</section>
+
+<!-- ═══ PAPERS ═══ -->
+<section class="section section-low" aria-labelledby="papersHeading">
+  <div class="container">
+    <h2 id="papersHeading" class="visually-hidden">Papers</h2>
+    <form class="filters" id="filters" role="search" aria-label="Search and filter papers">
+      <div class="filter search">
+        <label for="q">Search titles, authors, tags and scripts</label>
+        <input type="search" id="q" disabled name="q" autocomplete="off" placeholder="e.g. LoRA, Vaswani, quantization, microrope">
+      </div>
+      <div class="filter">
+        <label for="status">Status</label>
+        <select id="status" name="status" disabled><option value="">All statuses</option></select>
+      </div>
+      <div class="filter">
+        <label for="theme">Theme</label>
+        <select id="theme" name="theme" disabled><option value="">All themes</option></select>
+      </div>
+      <div class="filter">
+        <label for="lesson">Lesson</label>
+        <select id="lesson" name="lesson" disabled><option value="">Any lesson state</option></select>
+      </div>
+    </form>
+    <div class="filter-actions">
+      <p class="catalog-meta" id="catalogMeta" role="status" aria-live="polite">Loading&hellip;</p>
+      <button type="button" class="btn-reset" id="reset" disabled>Clear search and filters</button>
+    </div>
+    <div class="catalog-state" id="catalogState" hidden></div>
+    <div class="cards-grid" id="paperGrid" role="region" aria-label="Paper results"></div>
+  </div>
+</section>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo font-headline">&copy; 2026 <a href="https://github.com/Mathews-Tom" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">Tom Mathews</a> &mdash; MIT License</div>
+    <div class="footer-links">
+      <a href="https://github.com/no-magic-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/no-magic-ai/no-magic-papers/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing</a>
+      <a href="../algorithms/">Algorithms</a>
+      <a href="../about.html">About</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../content.js"></script>
+<script>
+'use strict';
+(function () {
+  const C = window.NoMagicContent;
+  const el = C.el;
+  const grid = document.getElementById('paperGrid');
+  const meta = document.getElementById('catalogMeta');
+  const state = document.getElementById('catalogState');
+  const note = document.getElementById('snapshotNote');
+  const form = document.getElementById('filters');
+  const query = document.getElementById('q');
+  let content = null;
+
+  function lessonState(p) { return p.lesson.status === null ? 'unset' : p.lesson.status; }
+
+  const FILTERS = {
+    status: {
+      values: Object.fromEntries(C.PAPER_STATUSES.map(function (s) { return [s, s]; })),
+      test: function (p, v) { return p.status === v; },
+    },
+    theme: {
+      values: Object.fromEntries(C.THEMES.map(function (t) { return [t, t]; })),
+      test: function (p, v) { return p.themes.primary === v || p.themes.secondary.includes(v); },
+    },
+    lesson: {
+      values: { none: 'none', planned: 'planned', drafted: 'drafted', published: 'published', unset: 'not set' },
+      test: function (p, v) { return lessonState(p) === v; },
+    },
+  };
+
+  function haystack(p) {
+    return [
+      p.slug, p.title, p.authors.join(' '), p.venue, p.year, p.arxiv_id || '', p.doi || '',
+      p.tags.join(' '), p.themes.primary, p.themes.secondary.join(' '), p.status,
+      p.implementations.join(' '),
+      p.implementations.map(function (n) { return content.byName.get(n).display; }).join(' '),
+    ].join('\n').toLowerCase();
+  }
+
+  function readUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const selected = {};
+    const unknown = [];
+    let q = '';
+    params.forEach(function (value, key) {
+      if (key === 'q') q = value;
+      else if (FILTERS[key] && Object.prototype.hasOwnProperty.call(FILTERS[key].values, value)) selected[key] = value;
+      else unknown.push(key + '=' + value);
+    });
+    return { q: q, selected: selected, unknown: unknown };
+  }
+
+  function writeUrl() {
+    const params = new URLSearchParams();
+    if (query.value.trim()) params.set('q', query.value.trim());
+    Object.keys(FILTERS).forEach(function (key) {
+      const value = document.getElementById(key).value;
+      if (value) params.set(key, value);
+    });
+    const search = params.toString();
+    history.replaceState(null, '', window.location.pathname + (search ? '?' + search : ''));
+  }
+
+  function populate() {
+    Object.keys(FILTERS).forEach(function (key) {
+      const select = document.getElementById(key);
+      const filter = FILTERS[key];
+      Object.keys(filter.values).forEach(function (value) {
+        const count = content.papers.filter(function (p) { return filter.test(p, value); }).length;
+        select.append(el('option', { value: value, text: filter.values[value] + ' (' + count + ')' }));
+      });
+    });
+  }
+
+  function syncControls(view) {
+    query.value = view.q;
+    Object.keys(FILTERS).forEach(function (key) { document.getElementById(key).value = view.selected[key] || ''; });
+  }
+
+  function showState(message, isError) {
+    state.hidden = false;
+    state.className = 'catalog-state' + (isError ? ' error' : '');
+    state.textContent = message;
+  }
+
+  // Until a validated snapshot is loaded there is nothing to filter, and the
+  // loading or failure message in #catalogState must stay visible.
+  function render(view) {
+    if (content === null) return;
+    grid.replaceChildren();
+    state.hidden = true;
+    if (view.unknown.length) {
+      meta.textContent = 'No results: unrecognized filter in the address';
+      showState('Unrecognized filter or value: ' + view.unknown.join(', ') +
+        '. Nothing is shown rather than silently ignoring it. Use "Clear search and filters" or pick a filter above.', true);
+      return;
+    }
+    const tokens = view.q.toLowerCase().split(/\s+/).filter(Boolean);
+    const matches = content.papers.filter(function (p) {
+      const text = haystack(p);
+      return tokens.every(function (t) { return text.includes(t); }) &&
+        Object.keys(view.selected).every(function (key) { return FILTERS[key].test(p, view.selected[key]); });
+    });
+    meta.textContent = 'Showing ' + matches.length + ' of ' + content.papers.length + ' paper cards';
+    if (matches.length === 0) {
+      showState('No paper card matches this search and filter combination. Every card in the snapshot was checked.', false);
+      return;
+    }
+    grid.replaceChildren.apply(grid, matches.map(card));
+  }
+
+  function implementationList(p) {
+    if (p.implementations.length === 0) {
+      const r = p.routing;
+      const plan = [r.decision, r.target_path && 'target ' + r.target_repo + '/' + r.target_path].filter(Boolean).join(', ');
+      return el('dd', { text: 'None in no-magic yet. Routing plan (not code): ' + (plan || 'none recorded') + '.' });
+    }
+    return el('dd', null, p.implementations.map(function (name, i) {
+      const a = content.byName.get(name);
+      const link = el('a', { href: '../algorithms/#' + name, text: a.display + ' (' + name + '.py)' });
+      return i === 0 ? link : el('span', null, [', ', link]);
+    }));
+  }
+
+  function lessonFacts(p) {
+    const status = lessonState(p);
+    if (p.lesson.url) {
+      return el('dd', null, [status + ' — ', C.externalLink(p.lesson.url, 'Read lesson')]);
+    }
+    return el('dd', { text: status === 'unset' ? 'not set' : status });
+  }
+
+  function card(p) {
+    const ids = [p.arxiv_id && 'arXiv ' + p.arxiv_id, p.doi && 'DOI ' + p.doi].filter(Boolean).join(' · ');
+    const facts = el('dl', { class: 'facts' }, [
+      el('dt', { text: 'Published' }), el('dd', { text: p.venue + ', ' + p.year + (ids ? ' · ' + ids : '') }),
+      el('dt', { text: 'Themes' }), el('dd', { text: [p.themes.primary].concat(p.themes.secondary).join(', ') }),
+      el('dt', { text: 'Scripts' }), implementationList(p),
+      el('dt', { text: 'Lesson' }), lessonFacts(p),
+    ]);
+    if (p.dependencies.length) {
+      facts.append(el('dt', { text: 'Builds on' }), el('dd', null, p.dependencies.map(function (slug, i) {
+        const link = el('a', { href: '#' + slug, text: content.bySlug.get(slug).title });
+        return i === 0 ? link : el('span', null, [', ', link]);
+      })));
+    }
+    return el('article', { class: 'paper-card', id: p.slug }, [
+      el('div', { class: 'algo-card-top' }, [
+        el('h3', { class: 'algo-card-name', text: p.title }),
+        el('span', { class: 'badge ' + (p.status === 'implemented' ? 'status-implemented' : 'status-other'), text: p.status }),
+      ]),
+      el('p', { class: 'algo-card-file', text: p.card_path }),
+      el('p', { class: 'paper-authors', text: p.authors.join(', ') }),
+      facts,
+      p.tags.length ? el('ul', { class: 'tag-list', 'aria-label': 'Tags' }, p.tags.map(function (t) { return el('li', { text: t }); })) : null,
+      el('div', { class: 'card-links' }, [
+        C.externalLink(p.url, 'Paper'),
+        C.externalLink(p.card_url, 'Card'),
+      ]),
+    ]);
+  }
+
+  form.addEventListener('submit', function (event) { event.preventDefault(); });
+  function onFilterChange() { writeUrl(); render(readUrl()); }
+  form.addEventListener('input', onFilterChange);
+  form.addEventListener('change', onFilterChange);
+  document.getElementById('reset').addEventListener('click', function () {
+    history.replaceState(null, '', window.location.pathname);
+    const view = readUrl();
+    syncControls(view);
+    render(view);
+  });
+  window.addEventListener('popstate', function () { const view = readUrl(); syncControls(view); render(view); });
+
+  function onLoaded(loaded) {
+    content = loaded;
+    Array.from(form.elements).forEach(function (control) { control.disabled = false; });
+    document.getElementById('reset').disabled = false;
+    note.textContent = 'Card metadata comes from this site’s snapshot of published no-magic-papers ' +
+      C.shortCommit(content.commits.papers) + ', so browsing works without the GitHub API. Card and lesson links are pinned to that ' +
+      'commit on github.com; paper links open the publisher’s site. Both need network access.';
+    populate();
+    const view = readUrl();
+    syncControls(view);
+    render(view);
+    // Card ids are generated slugs and script names ([a-z0-9_-]); any other
+    // fragment cannot name a card and is left alone.
+    const anchor = window.location.hash.slice(1);
+    if (/^[a-z0-9_-]+$/.test(anchor)) {
+      const target = document.getElementById(anchor);
+      if (target && grid.contains(target)) {
+        target.setAttribute('tabindex', '-1');
+        target.focus();
+      }
+    }
+  }
+
+  // Only a failed fetch or validation reaches this handler; errors raised while
+  // rendering valid content are not reported as an unavailable snapshot.
+  function onLoadFailed(err) {
+    note.textContent = 'The paper snapshot is unavailable.';
+    meta.textContent = 'Papers unavailable';
+    showState('Could not load the paper snapshot: ' + err.message, true);
+  }
+
+  C.load('../data/content.json').then(onLoaded, onLoadFailed);
+})();
+</script>
+</body>
+</html>
