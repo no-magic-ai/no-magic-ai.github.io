@@ -267,6 +267,7 @@
     const links = el('div', { class: 'card-links' }, [
       C.externalLink(a.source_url, 'Source'),
       C.externalLink(p.card_url, 'Paper card'),
+      p.lesson.url ? C.externalLink(p.lesson.url, 'Lesson (' + p.lesson.status + ')') : null,
     ]);
     if (a.media.status === 'linked') {
       const button = el('button', { type: 'button', class: 'btn-preview', text: 'Preview' });
