@@ -267,6 +267,7 @@
     const links = el('div', { class: 'card-links' }, [
       C.externalLink(a.source_url, 'Source'),
       C.externalLink(p.card_url, 'Paper card'),
+      p.lesson.url ? C.externalLink(p.lesson.url, 'Lesson (' + p.lesson.status + ')') : null,
     ]);
     if (a.media.status === 'linked') {
       const button = el('button', { type: 'button', class: 'btn-preview', text: 'Preview' });
@@ -360,7 +361,6 @@
   form.addEventListener('submit', function (event) { event.preventDefault(); });
   function onFilterChange() { writeUrl(); render(readUrl()); }
   form.addEventListener('input', onFilterChange);
-  form.addEventListener('change', onFilterChange);
   document.getElementById('reset').addEventListener('click', function () {
     history.replaceState(null, '', window.location.pathname);
     const view = readUrl();

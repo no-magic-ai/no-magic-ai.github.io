@@ -266,7 +266,6 @@
   form.addEventListener('submit', function (event) { event.preventDefault(); });
   function onFilterChange() { writeUrl(); render(readUrl()); }
   form.addEventListener('input', onFilterChange);
-  form.addEventListener('change', onFilterChange);
   document.getElementById('reset').addEventListener('click', function () {
     history.replaceState(null, '', window.location.pathname);
     const view = readUrl();
