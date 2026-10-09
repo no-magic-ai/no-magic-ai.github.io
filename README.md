@@ -40,6 +40,8 @@ UTF-8 JSON with keys sorted at every level and non-ASCII text kept literal.
 
 Every repository URL is pinned to the cohort commit: `https://github.com/no-magic-ai/<repo>/blob/<commit>/<path>` for scripts, cards, lessons and scenes and `https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/<commit>/previews/<script>.gif` for previews. The snapshot is a derivative of those repositories, not a new metadata authority.
 
+The committed snapshot is built from the published cohort `no-magic` `456e9b5f5944979e3844bd2c8e0066bd73ab52be`, `no-magic-papers` `f0be575ae9bbe75bd787c5b7495d036920ef39d4` and `no-magic-viz` `7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5`. In it, six paper cards have a published lesson (`gpt-1`, `lora`, `dpo`, `kv-cache`, `rope`, `turboquant`) and one has a drafted lesson (`deepseek-r1`); their lesson links point at that `no-magic-papers` commit.
+
 ## Serve locally
 
 ```sh
@@ -47,6 +49,8 @@ python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
 Open `http://127.0.0.1:8000/`. The home, algorithm (`/algorithms/`) and paper (`/papers/`) pages load `data/content.json` through `content.js`, which rejects a snapshot whose shape, enumerations or pinned URLs do not match the description above and then shows an explicit error instead of partial data. Browsing, search and filters therefore work without GitHub API access. Filters live in the address (`?q=…&tier=…&kind=…&theme=…&data=…&adaptation=…` on `/algorithms/`, `?q=…&status=…&theme=…&lesson=…` on `/papers/`); an unrecognized parameter or value is reported rather than ignored.
+
+When a paper has a drafted or published lesson, its paper card and the cards of the algorithms that implement it show a lesson link labelled with the lesson's status, taken from `lesson.url`. The first three learning-track cards on the home page (Transformers, Alignment, Modern Inference) are plain links to their sections of the maintained `LEARNING_PATH.md` on `no-magic`'s `main` branch; unlike every snapshot link, they are not pinned to the cohort commit and follow later curriculum changes.
 
 Preview GIFs, scene and source files, paper cards, lessons and paper links are external: previews load from `raw.githubusercontent.com` only when a preview is opened, and every outbound link names its host. They need network access, as do the optional web fonts, the author avatar and the GitHub star and fork counts on the home page. The previews are historical excerpts, not full, current or fidelity-certified renders.
 

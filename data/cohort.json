@@ -52,7 +52,7 @@
   ],
   "repositories": {
     "no-magic": {
-      "commit": "77d71f5c7507ba67fa67daac269c26daed471b7f",
+      "commit": "456e9b5f5944979e3844bd2c8e0066bd73ab52be",
       "identity": "no-magic-ai/no-magic",
       "inputs": [
         {
@@ -314,21 +314,21 @@
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "77d71f5c7507ba67fa67daac269c26daed471b7f",
+        "main_commit": "456e9b5f5944979e3844bd2c8e0066bd73ab52be",
         "provider": "https://github.com/no-magic-ai/no-magic.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "9769b409035aa854916fa7e70cdbddcf1f8f54d7"
+      "tree": "cc0efcce4ce3a9d449658e67186623418f124db1"
     },
     "no-magic-papers": {
-      "commit": "b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0",
+      "commit": "f0be575ae9bbe75bd787c5b7495d036920ef39d4",
       "identity": "no-magic-ai/no-magic-papers",
       "inputs": [
         {
-          "blob": "4b39753f70738e4fbacb53c81f4a0c25714706af",
+          "blob": "c8fa4dca779df8fb0ea743b67df04134a3678286",
           "path": "INDEX.md",
-          "sha256": "44ac017fc61de780e2b0da8954223a39ad37bb0f1bfbf324f76d76c0c284ef7a"
+          "sha256": "4351e9a759c472745f74d6acf568daf235b4b771649f80fc02cd5cf9ab2b4f19"
         },
         {
           "blob": "972ebea7652b02889f3d0990b18e83c9740cfb05",
@@ -336,9 +336,9 @@
           "sha256": "0fb1d318819e402662e633286fde08b1cc2f3ed421ea1a27948bdf5b045f9071"
         },
         {
-          "blob": "be28336949407f2e15560fdced66e7fe565452cb",
+          "blob": "a282c3354008cb8d5b46b067711f7e28b99b766d",
           "path": "data/papers.json",
-          "sha256": "6204215e0bcba0e94d2ebc36f5b0087a6ce0c54902dc2f58270776069d58adc4"
+          "sha256": "8fea7ae9ba383b9e9a18f0cf1e436f66c0453abd0c1458416d48f14162406851"
         },
         {
           "blob": "a966cea354d2dc1d83eaa9e94312b5b7ff6e8d62",
@@ -346,9 +346,34 @@
           "sha256": "19312b4683dc6d0760009846dc22c1a38762f9cb322ee3325d955ca861ca55f5"
         },
         {
-          "blob": "bac0de1e462c24f84433b8989e8fb0bd8f2cc28b",
+          "blob": "1d898e00e1ff239e5ced306e0acfe488e7c0949d",
+          "path": "lessons/dpo.md",
+          "sha256": "dd62c583b3ccddf7601b8998af7387947979d6d8b6261ddd7eb21133fca35687"
+        },
+        {
+          "blob": "d9aafa8cf1dfc4984fb65d608f96387f90e38fca",
+          "path": "lessons/gpt-1.md",
+          "sha256": "fcd94997db84361c49810bd7a57752694f5a35a8cd538fa52ac4a3dff86438a8"
+        },
+        {
+          "blob": "5c34ae55685e054deccebac43a817f7a52c370da",
+          "path": "lessons/kv-cache.md",
+          "sha256": "89372693cceab5f89a3aa35a3070ca808750ba5e871937e84e342d20c3d2d719"
+        },
+        {
+          "blob": "a011c58e4d055bcd470c2c0bd92f7a5e6b52b350",
+          "path": "lessons/lora.md",
+          "sha256": "12f2056299daa3bb9034d74b0dda65695dc9b63f1f0150cfbfaecdc7b12c643b"
+        },
+        {
+          "blob": "5deba8dc8951423c6ed591859a50ae92c221feb4",
+          "path": "lessons/rope.md",
+          "sha256": "ea7181c3bad45c8b508d5a6b1235874b0b94f37893bdd0c71fbd44c7c4afc8b8"
+        },
+        {
+          "blob": "02be7e0964803a6e8a3104da5e34eb895b67892c",
           "path": "lessons/turboquant.md",
-          "sha256": "ca10dff859d2c54894018a048a6760b5c592ded762abbbec3c8d9803df1d2fe0"
+          "sha256": "f4437ff51b03cad2d3d74fa206c9babb3264867dd56a8ec648a5aebd2da5aee6"
         },
         {
           "blob": "c093483d40b49b0cdd1105d83b65cbd812673d0d",
@@ -391,9 +416,9 @@
           "sha256": "0c5d9217d2554f386f99737ae21d5110936fe05d004c11c19af2bf765463de15"
         },
         {
-          "blob": "e5c2a5ad6e19de9141a911c896db0727f197beb4",
+          "blob": "ca18bf6af01dccfc41e8767020a7dbd12e30ea7b",
           "path": "papers/dpo.md",
-          "sha256": "affdc875353e8f80351bce8678b06125a7937f5ba142b9c78137d3b29ce822e6"
+          "sha256": "91c4eec963b2c5b7f579634a0525bc669e23447e29433958366270f69437efc0"
         },
         {
           "blob": "55e99020dcd478840b5e2e7fcdf772b511835b84",
@@ -411,9 +436,9 @@
           "sha256": "ad00904316a25e94b95ba4eee736c04b5485705e874f1d7dea1a882d8921e034"
         },
         {
-          "blob": "70d4e678b17d31bde27adf99b60b74727572478c",
+          "blob": "cab4b21664b31f8f538908cecaa009a7bda73110",
           "path": "papers/gpt-1.md",
-          "sha256": "f2b7a9125d729722c9e821659bc29e5024351df81b2057c0f1b299e7fdd38c7d"
+          "sha256": "060dadaae647094c228250455407b5dccddefd553d38fec7f139f2224e86774e"
         },
         {
           "blob": "982ced2d6cfe22fa4e451c43653decada31de2b6",
@@ -436,9 +461,9 @@
           "sha256": "391ac87af4c0b334accf3c3e0305177fa384bbcc0ebcf4f871154f69ab6ea10e"
         },
         {
-          "blob": "da3f5be3001941bc63e55346df77fb15f36cb9a3",
+          "blob": "93dd6c47c83f975a3e418d3c56a4a621d9fd3225",
           "path": "papers/kv-cache.md",
-          "sha256": "70d50b46b4361fa170d8f5866415131846b93ca8d9eca38227052072984ffb89"
+          "sha256": "e997b437642a8fe37a3fc4f99269b5d6d2306afe3d61e40053c8114647620a0b"
         },
         {
           "blob": "7788e18c76804539da5fe73ab956e0c9269c9bdb",
@@ -451,9 +476,9 @@
           "sha256": "fb9408bf5c4e51e523337821f4be561304c36a4a9daa47f4aa655ccf92002d02"
         },
         {
-          "blob": "51b1cf8b4100c7b6c5455fecd07069910b16e75e",
+          "blob": "7daa0586769e274ac153d4b93e2c49db820af721",
           "path": "papers/lora.md",
-          "sha256": "2151428b90d80ceeb7316907789d070df56b7823096374bd33674ac26b0de646"
+          "sha256": "a04797802b429e69dfbaa2109e4682983c69c4366539006d5fb00437480367ce"
         },
         {
           "blob": "3cd4399ffb19418835acf119fe19d53544773f56",
@@ -536,9 +561,9 @@
           "sha256": "2bee5cf4ebb95682538988674463f9dc59d191d328faf3968d0064d6ae661501"
         },
         {
-          "blob": "a8c92788f8da44c846c5eea82110ed7579467f07",
+          "blob": "91ccbbd787524d6bec069687310ecccc1fcf437a",
           "path": "papers/rope.md",
-          "sha256": "522ec735d1d16b2e31d8941f310424d3c45cff65d7e3009e626296da1b5428a9"
+          "sha256": "bac26ed029c40c177b89e12b9c660006d78731421aa48d8f80cb16a9e33bc119"
         },
         {
           "blob": "cc2679f21cbd0c2f750b4ff71564c829a3bf9279",
@@ -599,12 +624,12 @@
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "b92bb02d9cfd6584b43a3b37b2b629ddfceaa7f0",
+        "main_commit": "f0be575ae9bbe75bd787c5b7495d036920ef39d4",
         "provider": "https://github.com/no-magic-ai/no-magic-papers.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "a82bdf7f60ea208fcc999e17158ec90571400846"
+      "tree": "6608575de8199f3d2828a79eeb37419e66be26b0"
     },
     "no-magic-viz": {
       "commit": "7a3e9423326a7d0c83e7240b7c967b09ce8ccdf5",
