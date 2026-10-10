@@ -24,7 +24,7 @@
     "publication-ancestry"
   ],
   "media": {
-    "linked": 47,
+    "linked": 48,
     "omitted": 3
   },
   "omissions": [
@@ -52,7 +52,7 @@
   ],
   "repositories": {
     "no-magic": {
-      "commit": "eedbfb60c6815e9ea97aa88ca0b3622cc645e41d",
+      "commit": "b23dcfc56d375b4f2f57dfd48e4992eb6db2a729",
       "identity": "no-magic-ai/no-magic",
       "inputs": [
         {
@@ -191,6 +191,11 @@
           "sha256": "e2ba5a0c71f30e99bd3ac74ff67a7a8a0efd6903ec6794c8c18b28f87e76bec8"
         },
         {
+          "blob": "33c7aaeeb3afaf499db5bf83a6025c4cf6447db1",
+          "path": "02-alignment/microrome.py",
+          "sha256": "3f559d12097a18e5f4723e431f54dd5b180f99aab2dca92854b20fdd33b2bb45"
+        },
+        {
           "blob": "509ad50faa9962b9d80c11baa66a40cd9d5397a6",
           "path": "02-alignment/microsft.py",
           "sha256": "93cb4f8a5db7d1bca7aac6e473c8a1e067fd12575bb93de740e5577015fbf710"
@@ -311,34 +316,34 @@
           "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c"
         },
         {
-          "blob": "1dc80667e5721c791f4ae956138e54410944a7ed",
+          "blob": "f695a1ba3dbeb4cae6a377baf7fd5eaacda6cfd5",
           "path": "docs/catalog.json",
-          "sha256": "bb68f59d2dcf06668e62f49d4ebc95a14da82f2a42983998ffc169cbfccedd38"
+          "sha256": "c085cba785552c80b0c9e9c3338a0ede2398db8f5104eeb8476cbc0e3106e9c8"
         },
         {
-          "blob": "b6f2511cff72080ac9700e85a198d48817e3a2d3",
+          "blob": "171a7a8af8dee584cf6e0ca607ee84ed2f7155b7",
           "path": "scripts/generate_catalog.py",
-          "sha256": "780b77e161c41c71ecbf6fa25d00e2057146cb99932816b5ca7416180ce7f882"
+          "sha256": "2adc283e12bbd280bf5ab009d535e4af137364a25ebc619a1438faa034d89fba"
         }
       ],
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "eedbfb60c6815e9ea97aa88ca0b3622cc645e41d",
+        "main_commit": "b23dcfc56d375b4f2f57dfd48e4992eb6db2a729",
         "provider": "https://github.com/no-magic-ai/no-magic.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "cc915ef5b9d02dde05a4cfc4eda88a5d59f5c7e7"
+      "tree": "d240455a771377a00734cf5cb7a4b143331ed2af"
     },
     "no-magic-papers": {
-      "commit": "6aab7a4bb457c92db569680034b22e1f608cc33e",
+      "commit": "d018df55ece13ba9c97f1526be871f5c15783a3d",
       "identity": "no-magic-ai/no-magic-papers",
       "inputs": [
         {
-          "blob": "662b313f0e4620e4737d9c0dc0e5f58355e73a22",
+          "blob": "a82f95059b7e50337e1d3f28997f0e3db427fa89",
           "path": "INDEX.md",
-          "sha256": "2ad284fd7336f93d0120344a6c61fc5949d9b60b0f5b8ae25a825c045d157171"
+          "sha256": "6f75178116ec2abce6cb256e89d8bd1e3c323dc912379ef4144ad912be36e057"
         },
         {
           "blob": "972ebea7652b02889f3d0990b18e83c9740cfb05",
@@ -346,9 +351,9 @@
           "sha256": "0fb1d318819e402662e633286fde08b1cc2f3ed421ea1a27948bdf5b045f9071"
         },
         {
-          "blob": "b53f10996623972eae58bd4f159c2cdef8694610",
+          "blob": "a2de7da453d0010d1f981242aaf3568579329f81",
           "path": "data/papers.json",
-          "sha256": "578bac93f45e46e2a9b6e67cd33f0aa6b70d175d547a1860af59fefa8205afef"
+          "sha256": "ed3de3d2c81d2a00b7d78c2b9034fe9d582de21430c0f295c032e8c45ad45b30"
         },
         {
           "blob": "a966cea354d2dc1d83eaa9e94312b5b7ff6e8d62",
@@ -576,6 +581,11 @@
           "sha256": "70d92d9ab51eaa877a5366ba1bb90cd2f8de403817509f38f6e863fb0ea8a3aa"
         },
         {
+          "blob": "6c1fa372d8c20341efe261461488b7fe906e7009",
+          "path": "papers/rome.md",
+          "sha256": "15a8fc1d381eddd86e93ad6ab3e7d56a1b799fb899fbc0f30dc4324782124291"
+        },
+        {
           "blob": "8a8bc895429ae09bf2701c3332f869ba17f3d22b",
           "path": "papers/roofline.md",
           "sha256": "2bee5cf4ebb95682538988674463f9dc59d191d328faf3968d0064d6ae661501"
@@ -644,15 +654,15 @@
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "6aab7a4bb457c92db569680034b22e1f608cc33e",
+        "main_commit": "d018df55ece13ba9c97f1526be871f5c15783a3d",
         "provider": "https://github.com/no-magic-ai/no-magic-papers.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "5819dd70f7d4aae1e9cbd764211aa59ca21acb32"
+      "tree": "0106d2ecf1ba17b69293f3e6c745991524080048"
     },
     "no-magic-viz": {
-      "commit": "9f019feeca0d685311526cc4aedea60abfb0cb5c",
+      "commit": "7f648167162eb999741dd9a8754961bbd30ccd42",
       "identity": "no-magic-ai/no-magic-viz",
       "inputs": [
         {
@@ -839,6 +849,11 @@
           "blob": "215f1cebb0a575195d70ee87c2043758e528e791",
           "path": "previews/micrornn.gif",
           "sha256": "8ef7dac5eca5bf4f33e0149373a29437cafb8073b9499a0fb81b818702b23bd8"
+        },
+        {
+          "blob": "eeb9f2a65c03a3f295a1e5e315da5df0679323bd",
+          "path": "previews/microrome.gif",
+          "sha256": "c9382a8cf9089b148d0204d1af586f3375372c1366838601c0d3b7c07ffbbfbb"
         },
         {
           "blob": "e5e37b8eff505cda29c2bb0e463d6ea33fe41f08",
@@ -1076,6 +1091,11 @@
           "sha256": "93c4d8ae34c3ede5546bd273e896c48b2c2e03fa78febfa446182b5e19f2e7cd"
         },
         {
+          "blob": "1403d2f547945cc6047be026d17c195d18f594fd",
+          "path": "scenes/scene_microrome.py",
+          "sha256": "13c23099f71f45a0116dbc81da06be233c1e0ef9e887909d2416d944a9ffe011"
+        },
+        {
           "blob": "de6a5b6b88b537452a1e160136aa85a0928b4967",
           "path": "scenes/scene_microroofline.py",
           "sha256": "076d85eaa6b596a5d98a03afaa7b8b412fb77309c6e0b250f0b7c449a29469ca"
@@ -1129,12 +1149,12 @@
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "9f019feeca0d685311526cc4aedea60abfb0cb5c",
+        "main_commit": "7f648167162eb999741dd9a8754961bbd30ccd42",
         "provider": "https://github.com/no-magic-ai/no-magic-viz.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "f16afb5e661a3d794d9c483265f4a2e591d0e9e1"
+      "tree": "70276e36eaed668eb5af9b5f8d2728595bc78663"
     }
   },
   "schema_version": 1
