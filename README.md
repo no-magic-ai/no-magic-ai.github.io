@@ -40,7 +40,7 @@ UTF-8 JSON with keys sorted at every level and non-ASCII text kept literal.
 
 Every repository URL is pinned to the cohort commit: `https://github.com/no-magic-ai/<repo>/blob/<commit>/<path>` for scripts, cards, lessons and scenes and `https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/<commit>/previews/<script>.gif` for previews. The snapshot is a derivative of those repositories, not a new metadata authority.
 
-The committed snapshot is built from the published cohort `no-magic` `b23dcfc56d375b4f2f57dfd48e4992eb6db2a729`, `no-magic-papers` `d018df55ece13ba9c97f1526be871f5c15783a3d` and `no-magic-viz` `7f648167162eb999741dd9a8754961bbd30ccd42`. In it, six paper cards have a published lesson (`gpt-1`, `lora`, `dpo`, `kv-cache`, `rope`, `turboquant`) and one has a drafted lesson (`deepseek-r1`); their lesson links point at that `no-magic-papers` commit.
+The committed snapshot is built from the published cohort `no-magic` `df26347c549499c35cea0adaa267779ea62f0795`, `no-magic-papers` `8879f6636ca14776f48bc5ed6b187092ada60a18` and `no-magic-viz` `5be1b2ec4a44e887e49c853feb8bff940b33d5ae`. In it, six paper cards have a published lesson (`gpt-1`, `lora`, `dpo`, `kv-cache`, `rope`, `turboquant`) and one has a drafted lesson (`deepseek-r1`); their lesson links point at that `no-magic-papers` commit.
 
 ## Serve locally
 
