@@ -24,7 +24,7 @@
     "publication-ancestry"
   ],
   "media": {
-    "linked": 49,
+    "linked": 50,
     "omitted": 3
   },
   "omissions": [
@@ -52,7 +52,7 @@
   ],
   "repositories": {
     "no-magic": {
-      "commit": "df26347c549499c35cea0adaa267779ea62f0795",
+      "commit": "76ca0b70b293784825bc296df7ce67419f0228db",
       "identity": "no-magic-ai/no-magic",
       "inputs": [
         {
@@ -226,6 +226,11 @@
           "sha256": "64c247c04ae4a6a740fb04dcea2adfd511302cf678d01c5c802fd90007a449ed"
         },
         {
+          "blob": "546e03c8a6559174e549561919432f39113009e2",
+          "path": "03-systems/microcot.py",
+          "sha256": "e2e97a87de84ef690fbd7def34b4adef1e0dc5fc4b239b063807b9d9c12559fb"
+        },
+        {
           "blob": "2b3adb6843eafee7f8407b8b00370d9b40fd1788",
           "path": "03-systems/microdiscretize.py",
           "sha256": "c8b2d4602ca39f72f43a24dfc36ac26de1001e2bea8e10cc36711965e32e9d81"
@@ -321,34 +326,34 @@
           "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c"
         },
         {
-          "blob": "c0a4ff341cf313375f77f013a8396791e64970eb",
+          "blob": "afec3b6a2708f93e0e777ad33676ac0341568520",
           "path": "docs/catalog.json",
-          "sha256": "f0c1b9601f00cd08be5fd7f79c83e88bf21c4f3164f145408e7636c84bba7c4f"
+          "sha256": "e580c9abcfa8f74a7ff2ed4baf4fb1c0bb34d8b388b474bb2d53cca6d316f34e"
         },
         {
-          "blob": "a90d136135d3e69677c42513497be79e4b01e79a",
+          "blob": "8099e2e38c712fcde904a26a1936d9e82457a5f5",
           "path": "scripts/generate_catalog.py",
-          "sha256": "0b4fb8a8578dc422efd466cb627979e64124086370c0376b9febb2bd7ba1681e"
+          "sha256": "b78c1f5cfeb7997dbfe54d9d9f532d873529e0803e240e891b656de1982ae17d"
         }
       ],
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "df26347c549499c35cea0adaa267779ea62f0795",
+        "main_commit": "76ca0b70b293784825bc296df7ce67419f0228db",
         "provider": "https://github.com/no-magic-ai/no-magic.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "afc38212eea8767ad7e7d670eab031938b4a10d2"
+      "tree": "6362c675d149e932c95df3e61490102b6a655a66"
     },
     "no-magic-papers": {
-      "commit": "8879f6636ca14776f48bc5ed6b187092ada60a18",
+      "commit": "f4a8893bffdb833a81d088824d33ad06b561cb4f",
       "identity": "no-magic-ai/no-magic-papers",
       "inputs": [
         {
-          "blob": "b8f0c3a5651c47292779c16ca5d972f4aff69788",
+          "blob": "f28ae8b1f64c819d80f0e9c3b679cd15251415e8",
           "path": "INDEX.md",
-          "sha256": "a07bf42c115248ce4e1f2036d6ef27c05cb6c18cbcc80010f420645ebeee498f"
+          "sha256": "b4c8893866ee2a1089b909b54aa102be3cadcdb3e7fe104f161cfc7dfa1a4d00"
         },
         {
           "blob": "972ebea7652b02889f3d0990b18e83c9740cfb05",
@@ -356,9 +361,9 @@
           "sha256": "0fb1d318819e402662e633286fde08b1cc2f3ed421ea1a27948bdf5b045f9071"
         },
         {
-          "blob": "162ecbb542b14af3218ced9db5b147843037f5e6",
+          "blob": "8e0ceb68364e980137e2143de9ce3c647c22ec68",
           "path": "data/papers.json",
-          "sha256": "4ed280e8c98de6de065028a3d981adac232ec24acf7256eff5b4954abb2771af"
+          "sha256": "b9329a48bbc22235fe4f53c64e9f737878155b0a2b29fe12c27b7fbaaf8941ba"
         },
         {
           "blob": "a966cea354d2dc1d83eaa9e94312b5b7ff6e8d62",
@@ -424,6 +429,11 @@
           "blob": "5cd8d0660b6cfdcca32561004da6fe48d3e57928",
           "path": "papers/bpe.md",
           "sha256": "3e26a9e41152ab8687f1118744e4616269ca1a2ff46b9497deb8134758dae44b"
+        },
+        {
+          "blob": "aa8e1e3223839ebdb2161b743d87ed2af1a16e28",
+          "path": "papers/chain-of-thought.md",
+          "sha256": "60fcbe1bd055e0186b8f1588ccbcf7a4bcf3fa0fd960d084c840cd261310ab67"
         },
         {
           "blob": "9f645b75d1ab69ab6d1141cd0bafa0c2421d89c0",
@@ -606,6 +616,11 @@
           "sha256": "bac26ed029c40c177b89e12b9c660006d78731421aa48d8f80cb16a9e33bc119"
         },
         {
+          "blob": "b5d01f9a25e9fc0eae28f5a947ebc17f2a5634c0",
+          "path": "papers/self-consistency.md",
+          "sha256": "57a6c93ea7c1fa3d12b1168064dad7a7d672ce8d031c5696273c6f009db22412"
+        },
+        {
           "blob": "cc2679f21cbd0c2f750b4ff71564c829a3bf9279",
           "path": "papers/speculative-decoding.md",
           "sha256": "463c549723b4503ec435925f83e46a7ee1b1792fc26df881790086fb0be7cf83"
@@ -664,15 +679,15 @@
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "8879f6636ca14776f48bc5ed6b187092ada60a18",
+        "main_commit": "f4a8893bffdb833a81d088824d33ad06b561cb4f",
         "provider": "https://github.com/no-magic-ai/no-magic-papers.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "97322e643d97d9d4b0548dd636f44571e5e83c8b"
+      "tree": "98703619ad1b0b64455af5830c13bf8e0112aac7"
     },
     "no-magic-viz": {
-      "commit": "5be1b2ec4a44e887e49c853feb8bff940b33d5ae",
+      "commit": "7d852bc286f745c751dc5fbb03995c4bb6bc6f91",
       "identity": "no-magic-ai/no-magic-viz",
       "inputs": [
         {
@@ -719,6 +734,11 @@
           "blob": "3e08201f5c454249c4616b1bb98df4d240731f07",
           "path": "previews/microconv.gif",
           "sha256": "1af0a68df561a93c13de62b7007811defad56d1e341eb621f7ff7d63dc3f7819"
+        },
+        {
+          "blob": "3aa3bb10ce059e4b87eee0f8ce5f85dae63e9994",
+          "path": "previews/microcot.gif",
+          "sha256": "92d02116974cc047eb4c957ccdc00076e9ec3efe554ddabaebd3c29c2437443e"
         },
         {
           "blob": "33ece21335a19fdeba80159f7a1c935b8f3e9c71",
@@ -966,6 +986,11 @@
           "sha256": "7be55904e147c902044474ccbe153bdd1e6cd26c0952a0c2e25ffdbbba96e0b6"
         },
         {
+          "blob": "360d426951a9d561157c66a26ab39c61b176d273",
+          "path": "scenes/scene_microcot.py",
+          "sha256": "a0b4e0eac4a9a8ed870d63b8c00365a533e50df0449b97e322d960b5491bff95"
+        },
+        {
           "blob": "6573e67f31d69a7132ce49addbbbf8898307c305",
           "path": "scenes/scene_microdiffusion.py",
           "sha256": "da2a1ba148952904d1a77b7dd05f31b34823ceb60986affb7e46eaa90099c359"
@@ -1169,12 +1194,12 @@
       "object_format": "sha1",
       "publication": {
         "evidence": "selected commit is an ancestor of provider main in local history",
-        "main_commit": "5be1b2ec4a44e887e49c853feb8bff940b33d5ae",
+        "main_commit": "7d852bc286f745c751dc5fbb03995c4bb6bc6f91",
         "provider": "https://github.com/no-magic-ai/no-magic-viz.git",
         "ref": "refs/heads/main",
         "status": "published"
       },
-      "tree": "c6583750d4c6558c645607e3b5ed6e20690e1be5"
+      "tree": "16defcb16344a0fdfdc7b611004b43765120b537"
     }
   },
   "schema_version": 1
