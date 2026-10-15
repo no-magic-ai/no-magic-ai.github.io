@@ -16,7 +16,7 @@
       "name": "attention_vs_none",
       "paper_slug": "transformer",
       "source_path": "01-foundations/attention_vs_none.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/attention_vs_none.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/attention_vs_none.py",
       "teaching_kind": "comparison",
       "thesis": "Attention is not just helpful -- it is the mechanism that lets a model look back across an",
       "tier": "01-foundations"
@@ -30,14 +30,14 @@
       "lines": 501,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microbert.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microbert.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microbert.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microbert.py",
         "status": "linked"
       },
       "name": "microbert",
       "paper_slug": "bert",
       "source_path": "01-foundations/microbert.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microbert.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microbert.py",
       "teaching_kind": "train_infer",
       "thesis": "The other half of the transformer — how BERT learns bidirectional representations by predicting",
       "tier": "01-foundations"
@@ -51,14 +51,14 @@
       "lines": 549,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microconv.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microconv.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microconv.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microconv.py",
         "status": "linked"
       },
       "name": "microconv",
       "paper_slug": "lenet-5",
       "source_path": "01-foundations/microconv.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microconv.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microconv.py",
       "teaching_kind": "train_infer",
       "thesis": "How a sliding kernel extracts spatial features — the convolution operation, pooling, and feature",
       "tier": "01-foundations"
@@ -72,14 +72,14 @@
       "lines": 461,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microdiffusion.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microdiffusion.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microdiffusion.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microdiffusion.py",
         "status": "linked"
       },
       "name": "microdiffusion",
       "paper_slug": "ddpm",
       "source_path": "01-foundations/microdiffusion.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microdiffusion.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microdiffusion.py",
       "teaching_kind": "train_infer",
       "thesis": "How images emerge from noise -- the denoising diffusion algorithm behind Stable Diffusion,",
       "tier": "01-foundations"
@@ -93,16 +93,37 @@
       "lines": 377,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microembedding.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microembedding.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microembedding.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microembedding.py",
         "status": "linked"
       },
       "name": "microembedding",
       "paper_slug": "word2vec",
       "source_path": "01-foundations/microembedding.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microembedding.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microembedding.py",
       "teaching_kind": "train_infer",
       "thesis": "How meaning becomes geometry — training vectors where distance equals similarity,",
+      "tier": "01-foundations"
+    },
+    {
+      "adaptation_note": "Trains two logistic-regression arms (8 and 7 of 8 synthetic Gaussian features) and simulates seeded evals. The coverage study of CLT, bootstrap and Wilson intervals and the Wilson reference extend the card; the unpaired minimum-detectable-effect and required-n rows extend Eq. 10. Toy synthetic arms, not real LLM evals; one seed, no clustered standard errors.",
+      "data_source": "in_script",
+      "declared_commit": null,
+      "declared_release": null,
+      "display": "Error Bars for Evals",
+      "lines": 505,
+      "media": {
+        "note": null,
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microerrorbars.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microerrorbars.py",
+        "status": "linked"
+      },
+      "name": "microerrorbars",
+      "paper_slug": "adding-error-bars-to-evals",
+      "source_path": "01-foundations/microerrorbars.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microerrorbars.py",
+      "teaching_kind": "comparison",
+      "thesis": "Eval error bars checked against a known truth: coverage, paired comparisons and questions needed.",
       "tier": "01-foundations"
     },
     {
@@ -114,14 +135,14 @@
       "lines": 534,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microgan.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microgan.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microgan.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microgan.py",
         "status": "linked"
       },
       "name": "microgan",
       "paper_slug": "gan",
       "source_path": "01-foundations/microgan.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microgan.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microgan.py",
       "teaching_kind": "train_infer",
       "thesis": "Two networks at war -- how a generator learns to fool a discriminator, and why the",
       "tier": "01-foundations"
@@ -135,14 +156,14 @@
       "lines": 513,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microgpt.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microgpt.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microgpt.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microgpt.py",
         "status": "linked"
       },
       "name": "microgpt",
       "paper_slug": "gpt-1",
       "source_path": "01-foundations/microgpt.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microgpt.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microgpt.py",
       "teaching_kind": "train_infer",
       "thesis": "The autoregressive language model from first principles: GPT learns to predict the next",
       "tier": "01-foundations"
@@ -156,14 +177,14 @@
       "lines": 530,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microlstm.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microlstm.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microlstm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microlstm.py",
         "status": "linked"
       },
       "name": "microlstm",
       "paper_slug": "lstm",
       "source_path": "01-foundations/microlstm.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microlstm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microlstm.py",
       "teaching_kind": "train_infer",
       "thesis": "Long Short-Term Memory from first principles: the 4-gate architecture that solved the",
       "tier": "01-foundations"
@@ -177,14 +198,14 @@
       "lines": 585,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microoptimizer.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microoptimizer.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microoptimizer.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microoptimizer.py",
         "status": "linked"
       },
       "name": "microoptimizer",
       "paper_slug": "adam",
       "source_path": "01-foundations/microoptimizer.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microoptimizer.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microoptimizer.py",
       "teaching_kind": "comparison",
       "thesis": "Why Adam converges when SGD stalls — momentum, adaptive learning rates, and the geometry of",
       "tier": "01-foundations"
@@ -198,14 +219,14 @@
       "lines": 521,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microrag.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microrag.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microrag.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microrag.py",
         "status": "linked"
       },
       "name": "microrag",
       "paper_slug": "rag",
       "source_path": "01-foundations/microrag.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microrag.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microrag.py",
       "teaching_kind": "train_infer",
       "thesis": "How retrieval augments generation -- the simplest system that actually works, with BM25",
       "tier": "01-foundations"
@@ -219,14 +240,14 @@
       "lines": 740,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microresnet.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microresnet.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microresnet.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microresnet.py",
         "status": "linked"
       },
       "name": "microresnet",
       "paper_slug": "resnet",
       "source_path": "01-foundations/microresnet.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microresnet.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microresnet.py",
       "teaching_kind": "comparison",
       "thesis": "Residual networks from first principles: skip connections as gradient highways — proving",
       "tier": "01-foundations"
@@ -240,14 +261,14 @@
       "lines": 507,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/micrornn.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_micrornn.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/micrornn.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_micrornn.py",
         "status": "linked"
       },
       "name": "micrornn",
       "paper_slug": "rnn-elman",
       "source_path": "01-foundations/micrornn.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/micrornn.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/micrornn.py",
       "teaching_kind": "comparison",
       "thesis": "Before attention conquered everything -- how sequences were modeled with recurrence, and why",
       "tier": "01-foundations"
@@ -261,14 +282,14 @@
       "lines": 193,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microtokenizer.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microtokenizer.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microtokenizer.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microtokenizer.py",
         "status": "linked"
       },
       "name": "microtokenizer",
       "paper_slug": "bpe",
       "source_path": "01-foundations/microtokenizer.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microtokenizer.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microtokenizer.py",
       "teaching_kind": "train_infer",
       "thesis": "How text becomes numbers -- the compression algorithm hiding inside every LLM.",
       "tier": "01-foundations"
@@ -282,14 +303,14 @@
       "lines": 510,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microvae.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microvae.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microvae.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microvae.py",
         "status": "linked"
       },
       "name": "microvae",
       "paper_slug": "vae",
       "source_path": "01-foundations/microvae.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microvae.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microvae.py",
       "teaching_kind": "train_infer",
       "thesis": "How to learn a compressed, generative representation of data — the reparameterization",
       "tier": "01-foundations"
@@ -303,14 +324,14 @@
       "lines": 655,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microvit.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microvit.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microvit.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microvit.py",
         "status": "linked"
       },
       "name": "microvit",
       "paper_slug": "vit",
       "source_path": "01-foundations/microvit.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/microvit.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/microvit.py",
       "teaching_kind": "train_infer",
       "thesis": "Vision Transformer from first principles: an image is worth 16x16 words — treating",
       "tier": "01-foundations"
@@ -331,7 +352,7 @@
       "name": "rnn_vs_gru_vs_lstm",
       "paper_slug": "gru",
       "source_path": "01-foundations/rnn_vs_gru_vs_lstm.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/01-foundations/rnn_vs_gru_vs_lstm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/01-foundations/rnn_vs_gru_vs_lstm.py",
       "teaching_kind": "comparison",
       "thesis": "Three generations of recurrent architectures on the same task: vanilla RNN fails at long-range",
       "tier": "01-foundations"
@@ -352,7 +373,7 @@
       "name": "adam_vs_sgd",
       "paper_slug": "adam",
       "source_path": "02-alignment/adam_vs_sgd.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/adam_vs_sgd.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/adam_vs_sgd.py",
       "teaching_kind": "comparison",
       "thesis": "Adam converges faster than SGD because it maintains per-parameter learning rates that adapt",
       "tier": "02-alignment"
@@ -366,14 +387,14 @@
       "lines": 457,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microbatchnorm.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microbatchnorm.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microbatchnorm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microbatchnorm.py",
         "status": "linked"
       },
       "name": "microbatchnorm",
       "paper_slug": "batchnorm",
       "source_path": "02-alignment/microbatchnorm.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microbatchnorm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microbatchnorm.py",
       "teaching_kind": "comparison",
       "thesis": "How normalizing activations within each mini-batch stabilizes training and enables deeper networks.",
       "tier": "02-alignment"
@@ -387,14 +408,14 @@
       "lines": 359,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microdistill.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microdistill.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microdistill.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microdistill.py",
         "status": "linked"
       },
       "name": "microdistill",
       "paper_slug": "distillation",
       "source_path": "02-alignment/microdistill.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microdistill.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microdistill.py",
       "teaching_kind": "train_infer",
       "thesis": "Knowledge distillation from first principles: a trained, frozen teacher network passes on its",
       "tier": "02-alignment"
@@ -408,14 +429,14 @@
       "lines": 614,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microdpo.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microdpo.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microdpo.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microdpo.py",
         "status": "linked"
       },
       "name": "microdpo",
       "paper_slug": "dpo",
       "source_path": "02-alignment/microdpo.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microdpo.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microdpo.py",
       "teaching_kind": "train_infer",
       "thesis": "Direct Preference Optimization (DPO): aligning a language model with human preferences using",
       "tier": "02-alignment"
@@ -429,14 +450,14 @@
       "lines": 475,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microdropout.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microdropout.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microdropout.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microdropout.py",
         "status": "linked"
       },
       "name": "microdropout",
       "paper_slug": "dropout",
       "source_path": "02-alignment/microdropout.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microdropout.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microdropout.py",
       "teaching_kind": "comparison",
       "thesis": "Why randomly destroying neurons during training prevents overfitting — dropout, weight decay,",
       "tier": "02-alignment"
@@ -450,14 +471,14 @@
       "lines": 541,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microgrpo.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microgrpo.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microgrpo.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microgrpo.py",
         "status": "linked"
       },
       "name": "microgrpo",
       "paper_slug": "grpo",
       "source_path": "02-alignment/microgrpo.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microgrpo.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microgrpo.py",
       "teaching_kind": "train_infer",
       "thesis": "How DeepSeek simplified RLHF — group-based reward normalization that eliminates the value",
       "tier": "02-alignment"
@@ -471,14 +492,14 @@
       "lines": 498,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microlora.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microlora.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microlora.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microlora.py",
         "status": "linked"
       },
       "name": "microlora",
       "paper_slug": "lora",
       "source_path": "02-alignment/microlora.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microlora.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microlora.py",
       "teaching_kind": "train_infer",
       "thesis": "Low-Rank Adaptation (LoRA): fine-tuning a frozen language model by injecting tiny trainable",
       "tier": "02-alignment"
@@ -492,14 +513,14 @@
       "lines": 562,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/micromoe.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_micromoe.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/micromoe.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_micromoe.py",
         "status": "linked"
       },
       "name": "micromoe",
       "paper_slug": "moe-shazeer",
       "source_path": "02-alignment/micromoe.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/micromoe.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/micromoe.py",
       "teaching_kind": "train_infer",
       "thesis": "Mixture of Experts (MoE): a router network learns to dispatch each token to a subset of",
       "tier": "02-alignment"
@@ -513,14 +534,14 @@
       "lines": 802,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microppo.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microppo.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microppo.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microppo.py",
         "status": "linked"
       },
       "name": "microppo",
       "paper_slug": "ppo",
       "source_path": "02-alignment/microppo.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microppo.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microppo.py",
       "teaching_kind": "train_infer",
       "thesis": "The full RLHF loop: pretrain a language model, train a reward model on human preferences,",
       "tier": "02-alignment"
@@ -534,14 +555,14 @@
       "lines": 671,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microqlora.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microqlora.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microqlora.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microqlora.py",
         "status": "linked"
       },
       "name": "microqlora",
       "paper_slug": "qlora",
       "source_path": "02-alignment/microqlora.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microqlora.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microqlora.py",
       "teaching_kind": "train_infer",
       "thesis": "How to fine-tune a 4-bit quantized model with full-precision LoRA adapters — the technique",
       "tier": "02-alignment"
@@ -555,14 +576,14 @@
       "lines": 465,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microreinforce.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microreinforce.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microreinforce.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microreinforce.py",
         "status": "linked"
       },
       "name": "microreinforce",
       "paper_slug": "reinforce",
       "source_path": "02-alignment/microreinforce.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microreinforce.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microreinforce.py",
       "teaching_kind": "comparison",
       "thesis": "The simplest policy gradient algorithm -- how log-probability weighting turns reward signals",
       "tier": "02-alignment"
@@ -576,14 +597,14 @@
       "lines": 957,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microrome.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microrome.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microrome.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microrome.py",
         "status": "linked"
       },
       "name": "microrome",
       "paper_slug": "rome",
       "source_path": "02-alignment/microrome.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microrome.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microrome.py",
       "teaching_kind": "train_infer",
       "thesis": "Rank-One Model Editing (ROME) from first principles: a fact that a trained decoder recalls is",
       "tier": "02-alignment"
@@ -597,14 +618,14 @@
       "lines": 543,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microsft.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microsft.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microsft.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microsft.py",
         "status": "linked"
       },
       "name": "microsft",
       "paper_slug": "instructgpt",
       "source_path": "02-alignment/microsft.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/02-alignment/microsft.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/02-alignment/microsft.py",
       "teaching_kind": "train_infer",
       "thesis": "Supervised fine-tuning from first principles: a tiny causal decoder is first pretrained on plain",
       "tier": "02-alignment"
@@ -618,14 +639,14 @@
       "lines": 368,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microattention.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microattention.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microattention.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microattention.py",
         "status": "linked"
       },
       "name": "microattention",
       "paper_slug": "transformer",
       "source_path": "03-systems/microattention.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microattention.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microattention.py",
       "teaching_kind": "forward_pass",
       "thesis": "Every attention mechanism that matters, side by side: how MHA, GQA, MQA, and sliding",
       "tier": "03-systems"
@@ -639,14 +660,14 @@
       "lines": 622,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microbeam.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microbeam.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microbeam.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microbeam.py",
         "status": "linked"
       },
       "name": "microbeam",
       "paper_slug": "nucleus-sampling",
       "source_path": "03-systems/microbeam.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microbeam.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microbeam.py",
       "teaching_kind": "train_infer",
       "thesis": "Beyond greedy: six decoding strategies for language model text generation, from deterministic",
       "tier": "03-systems"
@@ -660,14 +681,14 @@
       "lines": 618,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microbm25.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microbm25.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microbm25.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microbm25.py",
         "status": "linked"
       },
       "name": "microbm25",
       "paper_slug": "bm25",
       "source_path": "03-systems/microbm25.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microbm25.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microbm25.py",
       "teaching_kind": "algorithm_demo",
       "thesis": "The evolution of text retrieval scoring: from raw term frequency through TF-IDF to BM25,",
       "tier": "03-systems"
@@ -681,14 +702,14 @@
       "lines": 484,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microcheckpoint.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microcheckpoint.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microcheckpoint.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microcheckpoint.py",
         "status": "linked"
       },
       "name": "microcheckpoint",
       "paper_slug": "gradient-checkpointing",
       "source_path": "03-systems/microcheckpoint.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microcheckpoint.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microcheckpoint.py",
       "teaching_kind": "comparison",
       "thesis": "How to train models twice as deep on the same hardware — trading compute for memory",
       "tier": "03-systems"
@@ -702,14 +723,14 @@
       "lines": 600,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microcomplexssm.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microcomplexssm.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microcomplexssm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microcomplexssm.py",
         "status": "linked"
       },
       "name": "microcomplexssm",
       "paper_slug": "mamba-2",
       "source_path": "03-systems/microcomplexssm.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microcomplexssm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microcomplexssm.py",
       "teaching_kind": "comparison",
       "thesis": "A complex-valued state space model is mathematically identical to a real-valued one with",
       "tier": "03-systems"
@@ -723,14 +744,14 @@
       "lines": 1093,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microcot.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microcot.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microcot.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microcot.py",
         "status": "linked"
       },
       "name": "microcot",
       "paper_slug": "self-consistency",
       "source_path": "03-systems/microcot.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microcot.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microcot.py",
       "teaching_kind": "comparison",
       "thesis": "Self-consistency on learned reasoning traces: sample several traces from a tiny model, then vote.",
       "tier": "03-systems"
@@ -744,14 +765,14 @@
       "lines": 625,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microdiscretize.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microdiscretize.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microdiscretize.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microdiscretize.py",
         "status": "linked"
       },
       "name": "microdiscretize",
       "paper_slug": "mamba-2",
       "source_path": "03-systems/microdiscretize.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microdiscretize.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microdiscretize.py",
       "teaching_kind": "comparison",
       "thesis": "The choice of discretization method changes what a recurrence can learn — Euler, ZOH,",
       "tier": "03-systems"
@@ -765,14 +786,14 @@
       "lines": 358,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microflash.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microflash.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microflash.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microflash.py",
         "status": "linked"
       },
       "name": "microflash",
       "paper_slug": "flash-attention",
       "source_path": "03-systems/microflash.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microflash.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microflash.py",
       "teaching_kind": "forward_pass",
       "thesis": "Flash Attention computes exact attention identical to standard attention, but processes",
       "tier": "03-systems"
@@ -786,14 +807,14 @@
       "lines": 476,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microkv.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microkv.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microkv.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microkv.py",
         "status": "linked"
       },
       "name": "microkv",
       "paper_slug": "kv-cache",
       "source_path": "03-systems/microkv.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microkv.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microkv.py",
       "teaching_kind": "train_infer",
       "thesis": "Why autoregressive generation recomputes redundant work at every step, and how the KV cache",
       "tier": "03-systems"
@@ -807,14 +828,14 @@
       "lines": 502,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/micropaged.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_micropaged.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/micropaged.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_micropaged.py",
         "status": "linked"
       },
       "name": "micropaged",
       "paper_slug": "pagedattention",
       "source_path": "03-systems/micropaged.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/micropaged.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/micropaged.py",
       "teaching_kind": "forward_pass",
       "thesis": "How vLLM serves thousands of concurrent requests -- paged memory allocation for KV-caches",
       "tier": "03-systems"
@@ -828,14 +849,14 @@
       "lines": 490,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microparallel.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microparallel.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microparallel.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microparallel.py",
         "status": "linked"
       },
       "name": "microparallel",
       "paper_slug": "megatron-lm",
       "source_path": "03-systems/microparallel.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microparallel.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microparallel.py",
       "teaching_kind": "comparison",
       "thesis": "How models that exceed single-device memory get distributed — tensor parallelism, pipeline",
       "tier": "03-systems"
@@ -849,14 +870,14 @@
       "lines": 596,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microquant.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microquant.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microquant.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microquant.py",
         "status": "linked"
       },
       "name": "microquant",
       "paper_slug": "llm-int8",
       "source_path": "03-systems/microquant.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microquant.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microquant.py",
       "teaching_kind": "train_infer",
       "thesis": "How to shrink a model by 4x with minimal quality loss -- the math behind INT8 and INT4",
       "tier": "03-systems"
@@ -870,14 +891,14 @@
       "lines": 834,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microroofline.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microroofline.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microroofline.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microroofline.py",
         "status": "linked"
       },
       "name": "microroofline",
       "paper_slug": "roofline",
       "source_path": "03-systems/microroofline.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microroofline.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microroofline.py",
       "teaching_kind": "comparison",
       "thesis": "A state update running 100x more FLOPs can be faster on real hardware if it shifts from",
       "tier": "03-systems"
@@ -891,14 +912,14 @@
       "lines": 325,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microrope.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microrope.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microrope.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microrope.py",
         "status": "linked"
       },
       "name": "microrope",
       "paper_slug": "rope",
       "source_path": "03-systems/microrope.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microrope.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microrope.py",
       "teaching_kind": "forward_pass",
       "thesis": "How position information gets baked into attention through rotation matrices — why RoPE",
       "tier": "03-systems"
@@ -912,14 +933,14 @@
       "lines": 798,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microspeculative.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microspeculative.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microspeculative.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microspeculative.py",
         "status": "linked"
       },
       "name": "microspeculative",
       "paper_slug": "speculative-decoding",
       "source_path": "03-systems/microspeculative.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microspeculative.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microspeculative.py",
       "teaching_kind": "train_infer",
       "thesis": "Speculative decoding from first principles: a small draft model proposes tokens that a",
       "tier": "03-systems"
@@ -933,14 +954,14 @@
       "lines": 510,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microssm.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microssm.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microssm.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microssm.py",
         "status": "linked"
       },
       "name": "microssm",
       "paper_slug": "mamba-2",
       "source_path": "03-systems/microssm.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microssm.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microssm.py",
       "teaching_kind": "train_infer",
       "thesis": "The alternative to attention -- how state space models process sequences in linear time",
       "tier": "03-systems"
@@ -954,14 +975,14 @@
       "lines": 351,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microturboquant.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microturboquant.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microturboquant.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microturboquant.py",
         "status": "linked"
       },
       "name": "microturboquant",
       "paper_slug": "turboquant",
       "source_path": "03-systems/microturboquant.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microturboquant.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microturboquant.py",
       "teaching_kind": "algorithm_demo",
       "thesis": "Why rotating a vector before quantizing it works -- random rotation makes coordinates",
       "tier": "03-systems"
@@ -975,14 +996,14 @@
       "lines": 472,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microvectorsearch.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microvectorsearch.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microvectorsearch.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microvectorsearch.py",
         "status": "linked"
       },
       "name": "microvectorsearch",
       "paper_slug": "hnsw",
       "source_path": "03-systems/microvectorsearch.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microvectorsearch.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microvectorsearch.py",
       "teaching_kind": "algorithm_demo",
       "thesis": "Vector search from first principles: exact brute-force nearest neighbors vs approximate",
       "tier": "03-systems"
@@ -996,14 +1017,14 @@
       "lines": 1413,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microwatermark.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microwatermark.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microwatermark.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microwatermark.py",
         "status": "linked"
       },
       "name": "microwatermark",
       "paper_slug": "green-list-watermark",
       "source_path": "03-systems/microwatermark.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/03-systems/microwatermark.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/03-systems/microwatermark.py",
       "teaching_kind": "train_infer",
       "thesis": "Keyed green-list watermarking and its z-test detector, on a tiny language model trained here.",
       "tier": "03-systems"
@@ -1017,14 +1038,14 @@
       "lines": 574,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microbandit.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microbandit.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microbandit.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microbandit.py",
         "status": "linked"
       },
       "name": "microbandit",
       "paper_slug": "ucb1",
       "source_path": "04-agents/microbandit.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/04-agents/microbandit.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/04-agents/microbandit.py",
       "teaching_kind": "comparison",
       "thesis": "Multi-armed bandits from first principles: three strategies — Epsilon-Greedy, UCB1, and",
       "tier": "04-agents"
@@ -1038,14 +1059,14 @@
       "lines": 522,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/micromcts.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_micromcts.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/micromcts.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_micromcts.py",
         "status": "linked"
       },
       "name": "micromcts",
       "paper_slug": "uct",
       "source_path": "04-agents/micromcts.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/04-agents/micromcts.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/04-agents/micromcts.py",
       "teaching_kind": "algorithm_demo",
       "thesis": "Monte Carlo Tree Search from first principles: the algorithm behind AlphaGo's game play —",
       "tier": "04-agents"
@@ -1059,14 +1080,14 @@
       "lines": 930,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/micromemory.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_micromemory.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/micromemory.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_micromemory.py",
         "status": "linked"
       },
       "name": "micromemory",
       "paper_slug": "ntm",
       "source_path": "04-agents/micromemory.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/04-agents/micromemory.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/04-agents/micromemory.py",
       "teaching_kind": "train_infer",
       "thesis": "Memory-augmented neural networks from first principles: a Neural Turing Machine learns to",
       "tier": "04-agents"
@@ -1080,14 +1101,14 @@
       "lines": 830,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microminimax.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microminimax.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microminimax.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microminimax.py",
         "status": "linked"
       },
       "name": "microminimax",
       "paper_slug": "alpha-beta",
       "source_path": "04-agents/microminimax.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/04-agents/microminimax.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/04-agents/microminimax.py",
       "teaching_kind": "train_infer",
       "thesis": "Adversarial search from first principles: minimax with alpha-beta pruning learns to play",
       "tier": "04-agents"
@@ -1101,14 +1122,14 @@
       "lines": 893,
       "media": {
         "note": null,
-        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/previews/microreact.gif",
-        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/7d852bc286f745c751dc5fbb03995c4bb6bc6f91/scenes/scene_microreact.py",
+        "preview_url": "https://raw.githubusercontent.com/no-magic-ai/no-magic-viz/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/previews/microreact.gif",
+        "scene_url": "https://github.com/no-magic-ai/no-magic-viz/blob/cb765cc7dee99167eb9ff057ddf80eb91bc3928a/scenes/scene_microreact.py",
         "status": "linked"
       },
       "name": "microreact",
       "paper_slug": "react",
       "source_path": "04-agents/microreact.py",
-      "source_url": "https://github.com/no-magic-ai/no-magic/blob/76ca0b70b293784825bc296df7ce67419f0228db/04-agents/microreact.py",
+      "source_url": "https://github.com/no-magic-ai/no-magic/blob/54d5c4138041c46fd45883d2add6458f1e6a9cf9/04-agents/microreact.py",
       "teaching_kind": "train_infer",
       "thesis": "The ReAct reasoning loop from first principles: Thought -> Action -> Observation as a",
       "tier": "04-agents"
@@ -1117,29 +1138,29 @@
   "cohort": {
     "inputs": {
       "no-magic": {
-        "blob": "afec3b6a2708f93e0e777ad33676ac0341568520",
+        "blob": "6bb082d76d2dc4953c08fe3a1cc348819579202c",
         "path": "docs/catalog.json",
-        "sha256": "e580c9abcfa8f74a7ff2ed4baf4fb1c0bb34d8b388b474bb2d53cca6d316f34e"
+        "sha256": "66de03fd10f75f595e32db264a09708bd14491522ec6468c19b7ed381f959d57"
       },
       "no-magic-papers": {
-        "blob": "8e0ceb68364e980137e2143de9ce3c647c22ec68",
+        "blob": "3e9b3f701ee523663cd418d6f6b5c976405191b3",
         "path": "data/papers.json",
-        "sha256": "b9329a48bbc22235fe4f53c64e9f737878155b0a2b29fe12c27b7fbaaf8941ba"
+        "sha256": "a8c251cd828b8395ce8a3f7abb0c5c0de6c671cb2d6c538f6b1276107d786071"
       }
     },
-    "receipt_sha256": "739925e73efd607e9401d20440daebfe1a49159de2134097146959ece2ebcd3c",
+    "receipt_sha256": "170de9290369fec90ab63337237dfc60346a70cdc60585486672cb9b55aa4dd3",
     "repositories": {
       "no-magic": {
-        "commit": "76ca0b70b293784825bc296df7ce67419f0228db",
-        "tree": "6362c675d149e932c95df3e61490102b6a655a66"
+        "commit": "54d5c4138041c46fd45883d2add6458f1e6a9cf9",
+        "tree": "d26fe8b971498e45d14177ac13a57cff47619967"
       },
       "no-magic-papers": {
-        "commit": "f4a8893bffdb833a81d088824d33ad06b561cb4f",
-        "tree": "98703619ad1b0b64455af5830c13bf8e0112aac7"
+        "commit": "498ad48fddfa70e13d6409fd78238d35cc8f396c",
+        "tree": "afcace6f1a5a59fb61e84eede6eea69077375162"
       },
       "no-magic-viz": {
-        "commit": "7d852bc286f745c751dc5fbb03995c4bb6bc6f91",
-        "tree": "16defcb16344a0fdfdc7b611004b43765120b537"
+        "commit": "cb765cc7dee99167eb9ff057ddf80eb91bc3928a",
+        "tree": "9179ecff19c9c3b27f44c8fd8ce7f12dc65e586f"
       }
     }
   },
@@ -1151,7 +1172,7 @@
         "Jimmy Ba"
       ],
       "card_path": "papers/adam.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/adam.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/adam.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1192,13 +1213,58 @@
       "year": "2015"
     },
     {
+      "arxiv_id": "2411.00640",
+      "authors": [
+        "Evan Miller"
+      ],
+      "card_path": "papers/adding-error-bars-to-evals.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/adding-error-bars-to-evals.md",
+      "dependencies": [],
+      "discovered_date": "2026-10-15",
+      "discovered_via": "maintainer",
+      "doi": null,
+      "implementations": [
+        "microerrorbars"
+      ],
+      "lesson": {
+        "path": "no-magic-papers/lessons/adding-error-bars-to-evals.md",
+        "status": "published",
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/adding-error-bars-to-evals.md"
+      },
+      "routing": {
+        "batch_label": "evaluation-seed",
+        "decision": "backlog-implement",
+        "review_date": null,
+        "target_path": "01-foundations/microerrorbars.py",
+        "target_repo": "no-magic",
+        "target_script_slug": "microerrorbars",
+        "target_tier": "01-foundations"
+      },
+      "slug": "adding-error-bars-to-evals",
+      "status": "implemented",
+      "tags": [
+        "error-bars",
+        "confidence-intervals",
+        "paired-differences",
+        "power-analysis"
+      ],
+      "themes": {
+        "primary": "evaluation",
+        "secondary": []
+      },
+      "title": "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations",
+      "url": "https://arxiv.org/abs/2411.00640",
+      "venue": "arXiv",
+      "year": "2024"
+    },
+    {
       "arxiv_id": null,
       "authors": [
         "Donald E. Knuth",
         "Ronald W. Moore"
       ],
       "card_path": "papers/alpha-beta.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/alpha-beta.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/alpha-beta.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1246,7 +1312,7 @@
         "Christian Szegedy"
       ],
       "card_path": "papers/batchnorm.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/batchnorm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/batchnorm.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1294,7 +1360,7 @@
         "Kristina Toutanova"
       ],
       "card_path": "papers/bert.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/bert.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/bert.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1341,7 +1407,7 @@
         "Hugo Zaragoza"
       ],
       "card_path": "papers/bm25.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/bm25.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/bm25.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1388,7 +1454,7 @@
         "Alexandra Birch"
       ],
       "card_path": "papers/bpe.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/bpe.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/bpe.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1441,7 +1507,7 @@
         "Denny Zhou"
       ],
       "card_path": "papers/chain-of-thought.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/chain-of-thought.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/chain-of-thought.md",
       "dependencies": [],
       "discovered_date": "2026-10-10",
       "discovered_via": "maintainer",
@@ -1486,7 +1552,7 @@
         "Pieter Abbeel"
       ],
       "card_path": "papers/ddpm.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/ddpm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/ddpm.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1532,7 +1598,7 @@
         "DeepSeek-AI"
       ],
       "card_path": "papers/deepseek-r1.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/deepseek-r1.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/deepseek-r1.md",
       "dependencies": [],
       "discovered_date": "2026-04-25",
       "discovered_via": "seed-papers-proposal",
@@ -1541,7 +1607,7 @@
       "lesson": {
         "path": "no-magic-papers/lessons/deepseek-r1.md",
         "status": "drafted",
-        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/lessons/deepseek-r1.md"
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/deepseek-r1.md"
       },
       "routing": {
         "batch_label": "reasoning-seed",
@@ -1579,7 +1645,7 @@
         "Jeff Dean"
       ],
       "card_path": "papers/distillation.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/distillation.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/distillation.md",
       "dependencies": [],
       "discovered_date": "2026-10-09",
       "discovered_via": "maintainer",
@@ -1629,7 +1695,7 @@
         "Chelsea Finn"
       ],
       "card_path": "papers/dpo.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/dpo.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/dpo.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1640,7 +1706,7 @@
       "lesson": {
         "path": "no-magic-papers/lessons/dpo.md",
         "status": "published",
-        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/lessons/dpo.md"
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/dpo.md"
       },
       "routing": {
         "batch_label": "v3-backfill-alignment",
@@ -1678,7 +1744,7 @@
         "Ruslan Salakhutdinov"
       ],
       "card_path": "papers/dropout.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/dropout.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/dropout.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1727,7 +1793,7 @@
         "Christopher Ré"
       ],
       "card_path": "papers/flash-attention.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/flash-attention.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/flash-attention.md",
       "dependencies": [
         "transformer"
       ],
@@ -1783,7 +1849,7 @@
         "Yoshua Bengio"
       ],
       "card_path": "papers/gan.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/gan.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/gan.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1831,7 +1897,7 @@
         "Ilya Sutskever"
       ],
       "card_path": "papers/gpt-1.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/gpt-1.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/gpt-1.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1842,7 +1908,7 @@
       "lesson": {
         "path": "no-magic-papers/lessons/gpt-1.md",
         "status": "published",
-        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/lessons/gpt-1.md"
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/gpt-1.md"
       },
       "routing": {
         "batch_label": "v3-backfill-foundations",
@@ -1880,7 +1946,7 @@
         "Carlos Guestrin"
       ],
       "card_path": "papers/gradient-checkpointing.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/gradient-checkpointing.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/gradient-checkpointing.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -1929,7 +1995,7 @@
         "Tom Goldstein"
       ],
       "card_path": "papers/green-list-watermark.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/green-list-watermark.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/green-list-watermark.md",
       "dependencies": [],
       "discovered_date": "2026-10-10",
       "discovered_via": "maintainer",
@@ -1984,7 +2050,7 @@
         "Daya Guo"
       ],
       "card_path": "papers/grpo.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/grpo.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/grpo.md",
       "dependencies": [
         "ppo"
       ],
@@ -2040,7 +2106,7 @@
         "Yoshua Bengio"
       ],
       "card_path": "papers/gru.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/gru.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/gru.md",
       "dependencies": [
         "rnn-elman",
         "lstm"
@@ -2090,7 +2156,7 @@
         "D. A. Yashunin"
       ],
       "card_path": "papers/hnsw.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/hnsw.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/hnsw.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2154,7 +2220,7 @@
         "Ryan Lowe"
       ],
       "card_path": "papers/instructgpt.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/instructgpt.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/instructgpt.md",
       "dependencies": [
         "ppo"
       ],
@@ -2210,7 +2276,7 @@
         "Jeff Dean"
       ],
       "card_path": "papers/kv-cache.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/kv-cache.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/kv-cache.md",
       "dependencies": [
         "transformer"
       ],
@@ -2223,7 +2289,7 @@
       "lesson": {
         "path": "no-magic-papers/lessons/kv-cache.md",
         "status": "published",
-        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/lessons/kv-cache.md"
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/kv-cache.md"
       },
       "routing": {
         "batch_label": "v3-backfill-systems",
@@ -2260,7 +2326,7 @@
         "Patrick Haffner"
       ],
       "card_path": "papers/lenet-5.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/lenet-5.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/lenet-5.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2309,7 +2375,7 @@
         "Luke Zettlemoyer"
       ],
       "card_path": "papers/llm-int8.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/llm-int8.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/llm-int8.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2361,7 +2427,7 @@
         "Weizhu Chen"
       ],
       "card_path": "papers/lora.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/lora.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/lora.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2372,7 +2438,7 @@
       "lesson": {
         "path": "no-magic-papers/lessons/lora.md",
         "status": "published",
-        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/lessons/lora.md"
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/lora.md"
       },
       "routing": {
         "batch_label": "v3-backfill-alignment",
@@ -2409,7 +2475,7 @@
         "Jürgen Schmidhuber"
       ],
       "card_path": "papers/lstm.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/lstm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/lstm.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2455,7 +2521,7 @@
         "Albert Gu"
       ],
       "card_path": "papers/mamba-2.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/mamba-2.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/mamba-2.md",
       "dependencies": [],
       "discovered_date": "2026-04-25",
       "discovered_via": "seed-papers-proposal",
@@ -2510,7 +2576,7 @@
         "Bryan Catanzaro"
       ],
       "card_path": "papers/megatron-lm.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/megatron-lm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/megatron-lm.md",
       "dependencies": [
         "transformer"
       ],
@@ -2563,7 +2629,7 @@
         "Jeff Dean"
       ],
       "card_path": "papers/moe-shazeer.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/moe-shazeer.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/moe-shazeer.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2625,7 +2691,7 @@
         "Wangding Zeng"
       ],
       "card_path": "papers/nsa.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/nsa.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/nsa.md",
       "dependencies": [],
       "discovered_date": "2026-04-25",
       "discovered_via": "seed-papers-proposal",
@@ -2673,7 +2739,7 @@
         "Ivo Danihelka"
       ],
       "card_path": "papers/ntm.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/ntm.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/ntm.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2725,7 +2791,7 @@
         "Yejin Choi"
       ],
       "card_path": "papers/nucleus-sampling.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/nucleus-sampling.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/nucleus-sampling.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -2779,7 +2845,7 @@
         "Ion Stoica"
       ],
       "card_path": "papers/pagedattention.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/pagedattention.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/pagedattention.md",
       "dependencies": [
         "transformer"
       ],
@@ -2833,7 +2899,7 @@
         "Oleg Klimov"
       ],
       "card_path": "papers/ppo.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/ppo.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/ppo.md",
       "dependencies": [
         "reinforce"
       ],
@@ -2885,7 +2951,7 @@
         "Luke Zettlemoyer"
       ],
       "card_path": "papers/qlora.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/qlora.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/qlora.md",
       "dependencies": [
         "lora"
       ],
@@ -2947,7 +3013,7 @@
         "Douwe Kiela"
       ],
       "card_path": "papers/rag.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/rag.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/rag.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3000,7 +3066,7 @@
         "Yuan Cao"
       ],
       "card_path": "papers/react.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/react.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/react.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3048,7 +3114,7 @@
         "Ronald J. Williams"
       ],
       "card_path": "papers/reinforce.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/reinforce.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/reinforce.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3096,7 +3162,7 @@
         "Jian Sun"
       ],
       "card_path": "papers/resnet.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/resnet.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/resnet.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3141,7 +3207,7 @@
         "Jeffrey L. Elman"
       ],
       "card_path": "papers/rnn-elman.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/rnn-elman.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/rnn-elman.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3189,7 +3255,7 @@
         "Yonatan Belinkov"
       ],
       "card_path": "papers/rome.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/rome.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/rome.md",
       "dependencies": [],
       "discovered_date": "2026-10-10",
       "discovered_via": "maintainer",
@@ -3238,7 +3304,7 @@
         "David Patterson"
       ],
       "card_path": "papers/roofline.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/roofline.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/roofline.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3287,7 +3353,7 @@
         "Yunfeng Liu"
       ],
       "card_path": "papers/rope.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/rope.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/rope.md",
       "dependencies": [
         "transformer"
       ],
@@ -3300,7 +3366,7 @@
       "lesson": {
         "path": "no-magic-papers/lessons/rope.md",
         "status": "published",
-        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/lessons/rope.md"
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/rope.md"
       },
       "routing": {
         "batch_label": "v3-backfill-systems",
@@ -3342,7 +3408,7 @@
         "Denny Zhou"
       ],
       "card_path": "papers/self-consistency.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/self-consistency.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/self-consistency.md",
       "dependencies": [
         "chain-of-thought"
       ],
@@ -3391,7 +3457,7 @@
         "Yossi Matias"
       ],
       "card_path": "papers/speculative-decoding.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/speculative-decoding.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/speculative-decoding.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3438,7 +3504,7 @@
         "Vahab Mirrokni"
       ],
       "card_path": "papers/titans-2501.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/titans-2501.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/titans-2501.md",
       "dependencies": [],
       "discovered_date": "2026-04-25",
       "discovered_via": "seed-papers-proposal",
@@ -3490,7 +3556,7 @@
         "Illia Polosukhin"
       ],
       "card_path": "papers/transformer.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/transformer.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/transformer.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3541,7 +3607,7 @@
         "Vahab Mirrokni"
       ],
       "card_path": "papers/turboquant.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/turboquant.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/turboquant.md",
       "dependencies": [],
       "discovered_date": "2026-04-25",
       "discovered_via": "maintainer",
@@ -3552,7 +3618,7 @@
       "lesson": {
         "path": "no-magic-papers/lessons/turboquant.md",
         "status": "published",
-        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/lessons/turboquant.md"
+        "url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/lessons/turboquant.md"
       },
       "routing": {
         "batch_label": "efficient-inference-seed",
@@ -3590,7 +3656,7 @@
         "Paul Fischer"
       ],
       "card_path": "papers/ucb1.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/ucb1.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/ucb1.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3638,7 +3704,7 @@
         "Csaba Szepesvári"
       ],
       "card_path": "papers/uct.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/uct.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/uct.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3687,7 +3753,7 @@
         "Max Welling"
       ],
       "card_path": "papers/vae.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/vae.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/vae.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3744,7 +3810,7 @@
         "Neil Houlsby"
       ],
       "card_path": "papers/vit.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/vit.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/vit.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
@@ -3794,7 +3860,7 @@
         "Jeffrey Dean"
       ],
       "card_path": "papers/word2vec.md",
-      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/f4a8893bffdb833a81d088824d33ad06b561cb4f/papers/word2vec.md",
+      "card_url": "https://github.com/no-magic-ai/no-magic-papers/blob/498ad48fddfa70e13d6409fd78238d35cc8f396c/papers/word2vec.md",
       "dependencies": [],
       "discovered_date": "2026-04-26",
       "discovered_via": "v3-backfill",
