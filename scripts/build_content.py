@@ -83,6 +83,7 @@ THEMES = (
     "safety-robustness",
     "agents",
     "multimodal",
+    "evaluation",
 )
 PAPER_STATUSES = (
     "triaged",

@@ -34,7 +34,7 @@
   const THEMES = [
     'efficient-inference', 'long-context', 'alignment', 'reasoning', 'architecture',
     'training-dynamics', 'parameter-efficient', 'interpretability', 'retrieval',
-    'safety-robustness', 'agents', 'multimodal',
+    'safety-robustness', 'agents', 'multimodal', 'evaluation',
   ];
   const PAPER_STATUSES = [
     'triaged', 'summarized', 'backlog-implement', 'implemented', 'deprecated',
